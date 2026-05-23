@@ -1,0 +1,19 @@
+You are given a research paper with its Related Work section removed.
+The paper title, reference list, figures, tables, figure captions, and table captions have also been removed.
+
+Your task is to write a Related Work section that fits this paper.
+
+You may use web search and academic search tools such as DeepXiv, arXiv, Semantic Scholar, Google Scholar, or equivalent databases.
+
+Requirements:
+1. Infer the paper's research topic, task, method, dataset type, and contribution from the provided body text.
+2. Search for relevant prior work using conservative and transparent academic queries.
+3. Cite only papers that are actually relevant to the inferred topic, task, method, and contribution.
+4. Do not cite papers only because they share keywords with the input paper.
+5. Do not invent papers, citations, datasets, numeric results, comparisons, or unsupported claims.
+6. Organize the Related Work section into coherent research themes.
+7. At the end, provide a list of all cited papers with title, authors, year, and source if available.
+
+Input paper body:
+[PASTE ANONYMIZED PAPER BODY HERE]
+

@@ -1,0 +1,13 @@
+Input condition: A1 Clean Search.
+
+No additional candidate papers are provided.
+
+You should rely on your own academic search process to identify relevant prior work.
+Do not search for the removed title, DOI, arXiv ID, reference list, figure captions, or any complete paper identifier.
+Use only the anonymized body text to infer the research topic and construct search queries.
+
+Please record:
+1. The search queries you used.
+2. The main candidate papers you considered.
+3. The papers you finally cited.
+

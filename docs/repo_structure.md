@@ -19,8 +19,12 @@ final_proj/
 │   └── ground_truth_related_work/
 ├── prompts/
 │   ├── base_prompt.txt
-│   ├── generic_writing_prompt.txt
-│   └── citation_grounding_workflow.md
+│   ├── input_A1_clean_search.txt
+│   ├── input_A2_noisy_search.txt
+│   ├── input_A3_misleading_search.txt
+│   ├── comparison_B1_no_intervention.txt
+│   ├── comparison_B2_generic_writing.txt
+│   └── comparison_B3_citation_grounding.txt
 ├── runs/
 │   ├── clean_search/
 │   ├── noisy_search/
@@ -78,7 +82,7 @@ New-Item -ItemType Directory -Force -Path "final_report\assets"
 | `papers/raw/` | 原始论文 PDF 或文本 | 成员 A |
 | `papers/anonymized_inputs/` | 删除敏感线索后的模型输入 | 成员 A |
 | `papers/ground_truth_related_work/` | 原论文 Related Work 片段 | 成员 A |
-| `prompts/` | base prompt、generic prompt、workflow | 成员 B |
+| `prompts/` | 统一 base prompt、A1/A2/A3 输入条件 prompt、B1/B2/B3 对比组 prompt | 成员 B |
 | `runs/` | 每次 OpenClaw 输出、query、候选论文、最终引用 | 成员 B |
 | `annotations/` | 打分表、citation 标签、复核记录 | 成员 C |
 | `analysis/` | 统计、图表、错误案例分析 | 成员 C |
