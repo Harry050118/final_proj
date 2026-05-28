@@ -1,0 +1,41 @@
+[aitw] Christopher Rawles, Alice Li, Daniel Rodriguez, Oriana Riva, and Timothy Lillicrap. "Android in the Wild: A Large-Scale Dataset for Android Device Control." arXiv:2307.10088, 2023.
+
+[cogagent] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, Junhui Ji, Yan Wang, Zihan Wang, Yuxiao Dong, Ming Ding, and Jie Tang. "CogAgent: A Visual Language Model for GUI Agents." arXiv:2312.08914, 2023.
+
+[appagent] Chi Zhang, Zhao Yang, Jiaxuan Liu, Yucheng Han, Xin Chen, Zebiao Huang, Bin Fu, and Gang Yu. "AppAgent: Multimodal Agents as Smartphone Users." arXiv:2312.13771, 2023.
+
+[auto-ui] Zecheng Zhang and Aston Zhang. "You Only Look at Screens: Multimodal Chain-of-Action Agents." arXiv:2309.11436, 2023.
+
+[seeclick] Kanzhi Cheng, Qiushi Sun, Yougang Chu, Fangzhi Xu, Yantao Li, Jianbing Zhang, and Zhiyong Wu. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." arXiv:2401.10935, 2024.
+
+[uground] Kanzhi Cheng, Yantao Li, Fangzhi Xu, Jianbing Zhang, Hao Zhou, and Yang Liu. "Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents." arXiv:2410.05243, 2024.
+
+[osatlas] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, Yian Wang, Qiushi Sun, Chengyou Jia, Kanzhi Cheng, Zihan Ding, Liqian Chen, Benlin Liu, et al. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
+
+[uitars] Yujia Qin, Yining Ye, Junjie Fang, Haoming Wang, Shihao Liang, Shizuo Tian, Junda Zhang, Jiahao Li, Yunxin Li, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
+
+[falconui] Wei Liu, Jiawei Chen, Yifei Zhang, Xi Chen, Jun Liu, Zhihong Chen, Zhiyi Zhang, and Yu Zheng. "Falcon-UI: Understanding GUI Before Following User Instructions." arXiv:2412.09362, 2024.
+
+[amex] Yuxiang Chai, Siyuan Huang, Yazhe Niu, Han Xiao, Liang Liu, Dingyu Zhang, Peng Gao, Shuai Ren, and Hongsheng Li. "AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents." arXiv:2407.17490, 2024.
+
+[androidcontrol] Jiachen Li, Yizhe Zhang, Qin Liu, Nan Hua, Pengyun Wang, Xiaofei Sun, and Tao Ge. "On the Effects of Data Scale on UI Control Agents." arXiv:2406.03679, 2024.
+
+[aitz] Jiwen Zhang, Jihao Wu, Yihua Teng, Minghui Liao, Wenjin Yang, Wei Li, Zhenyu He, and Xiang Bai. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." arXiv:2403.02713, 2024.
+
+[cot-mobile] Zongyu Li, Jiaxing Huang, Zhilin Yang, and Yuandong Tian. "Does Chain-of-Thought Reasoning Help Mobile GUI Agent? An Empirical Study." arXiv:2503.16788, 2025.
+
+[dpo] Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, and Chelsea Finn. "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." arXiv:2305.18290, 2023.
+
+[stepdpo] Xin Lai, Zhuotao Tian, Yukang Chen, Senqiao Yang, Xianglong Peng, and Jiaya Jia. "Step-DPO: Step-wise Preference Optimization for Long-chain Reasoning of LLMs." arXiv:2406.18629, 2024.
+
+[deepseekr1] Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, et al. "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." arXiv:2501.12948, 2025.
+
+[guig1] Yuqi Zhou, Shuai Wang, Haoyuan Li, Hanqing Zhao, Xiao Ma, and Yizhou Wang. "GUI-G1: Understanding R1-Zero-Like Training for Visual Grounding in GUI Agents." arXiv:2505.15810, 2025.
+
+[tot] Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths, Yuan Cao, and Karthik Narasimhan. "Tree of Thoughts: Deliberate Problem Solving with Large Language Models." arXiv:2305.10601, 2023.
+
+[mcts-dpo] Yuxi Xie, Anirudh Goyal, Wenyue Zheng, Min-Yen Kan, Timothy P. Lillicrap, Kenji Kawaguchi, and Michael Shieh. "Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning." arXiv:2405.00451, 2024.
+
+[restmcts] Dan Zhang, Sining Zhoubian, Ziniu Hu, Yisong Yue, Yuxiao Dong, and Jie Tang. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." arXiv:2406.03816, 2024.
+
+[cpo] Xinyue Chen, Jiaxin Ge, Tianyu Liu, Zhi Jin, Lingpeng Kong, and Jiajun Wu. "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs." arXiv:2406.09136, 2024.

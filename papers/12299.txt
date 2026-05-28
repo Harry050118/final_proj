@@ -1,0 +1,280 @@
+\begin{abstract}
+The Chain of Action-Planning Thoughts (CoaT) paradigm has been shown to improve the reasoning performance of VLM-based mobile agents in GUI tasks.
+However, the scarcity of diverse CoaT trajectories limits the expressiveness and generalization ability of such agents. While self-training is commonly employed to address data scarcity, existing approaches either overlook the correctness of intermediate reasoning steps or depend on expensive process-level annotations to construct process reward models (PRM).
+To address the above problems, we propose an \textbf{\underline{I}}terative \textbf{\underline{P}}reference \textbf{\underline{L}}earning (\textit{IPL}) that constructs a CoaT-tree through iterative sampling, scores leaf nodes using rule-based reward, and backpropagates feedback to derive Thinking-level Direct Preference Optimization (T-DPO) pairs.
+To prevent overfitting during warm-up supervised fine-tuning, we further introduce a three-stage instruction evolution, which leverages GPT-4o to generate diverse Q\&A pairs based on real mobile UI screenshots, enhancing both generality and layout understanding\footnote[4]{\url{https://huggingface.co/datasets/xwk123/MobileIPL-dataset}}.
+Experiments on three standard Mobile GUI-agent benchmarks
+demonstrate that our agent \textit{MobileIPL} outperforms strong baselines, including continual pretraining models such as OS-ATLAS and UI-TARS. It achieves state-of-the-art performance across three standard Mobile GUI-Agents benchmarks and shows strong generalization to out-of-domain scenarios.
+\end{abstract}
+
+\section{Introduction}
+
+VLM-based mobile agents~ have attracted considerable attention due to their ability to seamlessly interact with mobile graphical user interfaces (GUIs) and their potential to autonomously perform daily tasks.
+Since actions are not directly specified in user instructions, mobile agents benefit from generating intermediate thoughts aligned with the current GUI context.
+Recent work such as \textsc{AITZ} has demonstrated that the Chain of Action-Planning Thoughts (CoaT) pattern---resembling the slow-thinking ``System 2'' process---is particularly effective in GUI domains.
+
+However, directly applying supervised fine-tuning (SFT) on CoaT trajectories may cause overfitting, leading the model to be trapped in fixed reasoning patterns.
+To address this limitation, recent studies in the general domain have explored self-training strategies. These approaches typically utilize the correctness of the final answer in output as a reward signal to train the model. While effective in some contexts, relying solely on final answers overlooks the quality of intermediate reasoning steps, which can result in reward hacking and suboptimal reasoning processes.
+Some search-based approaches, such as ReST-MCTS~, tackle this problem by learning a process reward model (PRM) to evaluate individual reasoning steps.
+However, these approaches often require large-scale manual annotation of intermediate steps~. This challenge is especially severe in the Mobile GUI Agent domain.
+Unlike text-based tasks in coding or math, GUI environments rely on real devices or simulators, making step-level reward annotation significantly more costly and labor-intensive.
+
+To address these limitations, we propose an iterative sampling framework that constructs a CoaT-tree based on Monte Carlo Tree Search (MCTS).
+Instead of relying on a PRM, we score each reasoning step and construct thinking-level DPO (T-DPO) pairs without manual step annotation.
+Specifically, we perform multi-turn dialogue with a vision-language model (VLM) to incrementally build a CoaT-tree, where each node corresponds to a sampled response at a given reasoning step, conditioned on the dialogue history. This hierarchical structure captures diverse reasoning paths and facilitates fine-grained assessment of intermediate thoughts.
+We first assign rewards to the leaf node, and then propagate these signals backward through the CoaT-tree to earlier reasoning steps. Based on the resulting values, we construct thinking-level DPO pairs to help agents optimize both final actions and the overall quality of their reasoning.
+
+To mitigate the lack of diversity after warm-up SFT, we adopt an instruction evolution strategy. Specifically, we generate diverse Q\&A pairs grounded in real mobile UI screenshots from downstream training datasets. These Q\&A pairs serve two purposes: (1) prevent agents from overfitting to static downstream instructions by introducing varied reasoning contexts, and (2) improve agents' understanding of UI layouts through visually grounded question-answering.
+We evaluate our approach on the CoaT dataset \textsc{AITZ} and long-horizon dataset AMEX, where it outperforms state-of-the-art GUI-agent continual pretraining agents such as OS-ATLAS~ (+4.04\%) and UI-TARS~ (+3.54\%). Furthermore, experiments on the AndroidControl dataset demonstrate the strong generalization capability of our method to unseen apps and instructions (tasks). Under limited training resources, IPL consistently outperforms naive DPO using only half of the data for one iterative training round (+4.5\%), or one-fifth of the data for two iterative training rounds (+0.3\%).
+Analytical experiments show instruction evolution simultaneously improves both the diversity and quality of reasoning.
+
+Overall, our main contributions are summarized as follows:
+
+$\bullet$We propose an iterative framework to construct a CoaT-tree, and utilize rule-based rewards with backward credit assignment to form thinking-level DPO pairs for reasoning optimization.
+
+$\bullet$ We introduce an instruction evolution strategy to mitigate overfitting during warm-up SFT, enhancing the model's generalization and UI understanding.
+
+$\bullet$ We demonstrate the effectiveness of our method on three GUI-agent benchmarks: AITZ, AMEX, and AndroidControl. Furthermore, our approach even surpasses SoTA continual pretraining models.
+
+
+\section{Methodology}
+In this section, we first introduce the multi-turn thinking process formulation ~(\S~\ref{3.1}) and explain our method.
+As shown in Figure \ref{fig:main}, our method starts with instruction evolution strategy~(\S~\ref{3.2}) to enhance output diversity in warm-up SFT stage.
+Then, a CoaT-tree through iterative sampling~(\S~\ref{3.3}) is employed for each action.
+Every leaf node represents a complete action and is scored using a rule-based reward function. We then backpropagate the rewards along the tree to assign credit to intermediate reasoning steps. This process yields thinking-level contrastive pairs for DPO, which further improves the model’s reasoning ability. The detailed process is presented in Algorithm \ref{alg: ipl_algorithm}.
+
+\subsection{Multi-turn Thinking Process Formulation} \label{3.1}
+Each mobile GUI task contains a trajectory $\mathcal{T}$, several pages $u$,
+actions $\hat{a}$, and an instruction $I$, which can be represented as:
+\begin{equation}
+\mathcal{T} = \big\{I, u_0, \hat{a}_0, u_1, \hat{a}_1, \cdots, u_{n}, \hat{a}_{n}\}
+\end{equation}
+We formulate action $\hat{a}_{i}$ in the CoaT reasoning process as a multi-turn dialogue $\hat{a}_{i}=[s_1, s_2, s_3, s_4]$, where $s_i$ represents description, action-thought, action-decision, and grounding, respectively. This thinking paradigm based on the thinking–decision–grounding triplet, has been widely validated as effective in previous GUI works .
+So the reasoning process can be formulated as:
+\begin{equation}
+s_1 = \mathrm{Description} ( P_1, u_{i} )
+\end{equation}
+\begin{equation}
+s_2 = \mathrm{Thought} ( P_2, u_{i}, I, \hat{a}_0,\cdots, \hat{a}_{i-1}, s_1 )
+\end{equation}
+$P$ represents each round of dialogue input prompt, $I$ is the task instruction, $u$ is the current GUI, and $\hat{a}_i$ is the step $i$ history action.
+Agents perform poorly when decoding the entire reasoning process in a single step, which is because image modal $u$ dominates the input tokens, surpassing textual instructions $I$ and action history $\hat{a}_i$, and diverting their attention away from the textual details.
+During autoregressive training, the agent is unaware that producing a final answer conforming to the required format is indispensable throughout the reasoning process.
+Multi-turn thinking process effectively mitigates this problem, because additional dialogue steps guarantee a final answer is generated:
+\begin{equation}
+s_3 = \mathrm{Action} ( P_3, u_{i}, I, s_1, s_2 )
+\end{equation}
+\begin{equation}
+s_4 = \mathrm{Grounding} ( P_4, u_{i}, I, s_1, s_2, s_3 )
+\end{equation}
+Previous work either performed RL in GUI-Agent directly on the trajectory without CoaT, missing the detailed thinking process of each action, or forced the model to bear the heavy burden of outputting the entire reasoning process at once.
+In our method, when the reasoning process ends, the final $s_4$ is recorded as $\hat{a}_{n+1}$, step $i$ moves one step forward on the trajectory $\mathcal{T}$ and its thinking step reward is calculated recursively based on final step $s_4$.
+Dialogue-level textual input helps balance cross-modal token proportions and steers the agent’s attention toward the current reasoning step.
+\subsection{Instruction Evolution}\label{3.2}
+
+
+As discussed in the previous section, the CoaT patterns in the mobile agent domain are typically fixed. As a result, agents tend to overfit these static paradigms and struggle to generate diverse reasoning paths after the warm-up SFT training (as detailed in Sec \ref{sec:Output Space Sampling}). To address this issue, we enhance the original training trajectories, denoted as $\mathcal{T}$, by appending additional Q\&A annotations to UI screenshots through an instruction evolution process, thereby creating a new dataset $\mathcal{Q}$ with a broader range of instruction formats.
+Specifically, as shown in Figure \ref{fig:ins}, the evolution process consists of three levels:
+
+\noindent \textbf{Level I: General GUI Q\&A tasks}. Grounding, Reference (Ref), and Page Descriptions are aimed at enhancing the agent's foundational capabilities. These tasks are proven to be the core capabilities of GUI agents during the pre-training.
+
+\noindent \textbf{Level II: Widget caption and relationships}. Descriptions of widget functions and the nested partition relationships between widgets. These tasks help agents understand the relationships between widgets, as previous work has found that agents tend to click on the textview, even in scenarios where the textview and the button are separate.
+
+\noindent \textbf{Level III: GUI advanced FAQ}. Inspired by , we design an advanced FAQ that features more complex Q\&A, including descriptions of the page’s structural framework as well as expectations and predictions about navigation outcomes triggered by control interactions.
+
+\textbf{Warm-up Supervised Fine-tuning}:
+To develop agents with standard thinking format and expand the reasoning space, we mix $\mathcal{T}$ and the instruction evolution data $\mathcal{Q}$, then perform warm-up SFT on
+$\mathcal D = \Big\{\mathcal{T},\mathcal{Q}\Big\}= \Big\{(u, e)^{(i)}\Big\}_{i=1}^{|\mathcal D|}$,
+where $u$ represents the prior knowledge (instructions, screenshot and action history) from $\mathcal{T}$ or the questions from $\mathcal{Q}$, and $e$ is the reasoning process from $\mathcal{T}$ or the answer from $\mathcal{Q}$ which is organized into multi-turn dialogues.
+To ensure output diversity, we select an earlier checkpoint with better potential correct space and diverse output to serve as the seed policy model. More details can be seen in Appendix \ref{appendix:seed_policy_model}.
+\subsection{Iterative Preference Learning}\label{3.3}
+After the warm-up SFT, the agent acquires basic GUI capabilities. We construct a CoaT-tree by iteratively sampling each reasoning step and then assign a score to the leaf nodes based on a rule-based reward function. Using these scores, we generate thinking-level DPO pairs to optimize the agent's reasoning process.
+
+\noindent \textbf{Iterative Sampling \& Rule-based Reward.}
+We iteratively sample each reasoning step along the CoaT paradigm .
+The $\mathcal{K}$ sampling results $(\hat{s}_{t}|\hat{s}_{1:t-1})^\mathcal{K}$ at step $t$ can be expressed as:
+\begin{equation}
+\hat{s}_t = \Big\{ (\hat{s}^{(k)}_{t} \mid \hat{s}_0, \cdots, \hat{s}_{t-1}) \Big\}^K_{k=1}
+\end{equation}
+Naturally, the final step in CoaT (the leaf node in the sampling tree) expresses a reward compared with the ground truth action $a^*$, which is then propagated back to other intra-nodes.
+The formula for the rule-based reward of leaf nodes is as follows:
+\begin{equation}
+\small
+v(s_t) =
+ \begin{cases}
+ 1, & s_t=a* \\
+ v_{type} + score_{match}, & type(s_t \sim a^*) \\
+ 0, & others
+ \end{cases}
+\label{eq:leaf_value}
+\end{equation}
+
+
+\begin{equation}
+\small
+score_{match}=
+\begin{cases}
+ v_{format} + 1\cdot (1-d(x,y))-(v_{type}+v_{format})\cdot d(x,y), & type(a*)=CLICK\\
+ v_{format} + (1 - v_{type} - v_{format}) \cdot F_1, & type(a*)=INPUT \\
+ 0, & others \\
+\end{cases}
+\end{equation}
+
+
+The reward score $v(s_t)$ ranges from 0 to 1, with a fully correct prediction receiving a score of 1.
+We use $v_{\text{type}}$ and $v_{\text{format}}$ to indicate whether the predicted action type and output format match the ground truth.
+For \texttt{click} and \texttt{input} actions, we further evaluate their internal structure using smooth rewards based on spatial distance $d(x,y)$ and text match $F_1$. The final reward is computed from the similarity between the prediction and the ground truth:
+
+\begin{itemize}
+ \item \textbf{Click:} A distance-based score between the predicted and ground-truth coordinates, normalized to $[0,1]$; smaller distances yield higher scores.
+ \item \textbf{Input:} The $F_1$ score between the predicted and ground-truth strings; greater textual overlap yields higher scores.
+\end{itemize}
+
+The full reward is defined in Equation~\ref{eq:leaf_value} and discussed further in Section~\ref{sec:Rule-based Reward Design}.
+
+Based on the structure of the CoaT-tree, we recursively compute the value of each intermediate reasoning step. Specifically, the value of $s_{t-1}$ is computed as the average value of its $\mathcal{K}$ sampled continuations at $s_t$:
+\begin{equation}
+v(s_{t-1}) = c\cdot \frac{1}{\mathcal{K}} \sum_{k=1}^\mathcal{K} v(s_{t}^{(k)})
+\label{eq:intra_value}
+\end{equation}
+Here, $\mathcal{K}$ denotes the number of sampled continuations for each reasoning step, and $c$ is a discount factor. The parameter searching experiment for $\mathcal{K}$ is described in detail in Section \ref{para-searching}.
+
+\noindent \textbf{Contrastive Data Filter.}
+After obtaining the sampling tree and node values, we evaluate the quality of the trees and extract contrastive data.
+We can divided the sampling trees into three categories $\mathcal{R} = \{\alpha, \beta, \gamma\}$ based on their output quality, and the classification standards of $\alpha, \beta, \gamma$ are as follows:
+\begin{equation}
+\small{
+\alpha = \frac{\Big| \big\{ \mathcal{S}^{(i)} \mid \forall v_k \in \mathcal{S}^{(i)}, v_k=1 \big\} \Big|}{\sum_{i=1}^{|\mathcal{T}|} |(u, e)^{(i)}|}
+}
+\end{equation}
+\begin{equation}
+\small{
+\beta = \frac{\Big| \big\{ \mathcal{S}^{(i)} \mid \exists v_{k}, v_{k'} \in \mathcal{S}^{(i)}, v_{k}=1, v_{k'} \neq 1 \big\} \Big|}{\sum_{i=1}^{|\mathcal{T}|} |(u, e)^{(i)}|}
+}
+\end{equation}
+\begin{equation}
+\small{
+\gamma = \frac{\Big| \big\{ \mathcal{S}^{(i)} \mid \forall v_k \in \mathcal{S}^{(i)}, v_k \neq 1 \big\} \Big|}{\sum_{i=1}^{|\mathcal{T}|} |(u, e)^{(i)}|}
+}
+\end{equation}
+$\mathcal{S}^{(i)}$ and $v_k$ refer to the instruction $i$ sampling tree and the $k$-th leaf nodes value of $\mathcal{K}$ sampled output.
+$\alpha$ is considered a perfect sampling tree, which can stably output correct thoughts and actions with in-domain trajectories, $\beta$ represents potential correct trees that can be used to construct contrastive data, and $\gamma$ denotes sampling trees that require refinement.
+${\beta + \gamma}$ is considered a valid sampling space.
+In $\beta$, actions with a value of 1 and as many diverse action types as possible are extracted as positive samples.
+In $\gamma$, the final ground truth action $a^*$ is used as a positive sample, but the intermediate steps of CoaT are not provided, and the pairs can be represented as:
+\begin{equation}
+\begin{aligned}
+\beta_{pairs} &= \langle\hat{s}^{(k)}_{t}\uparrow ,\hat{s}^{(k')}_{t}\downarrow \mid (\hat{s}_1, \dots, \hat{s}_{t-1}), \\
+& ~~~~~~~~~~~~~~ v(\hat{s}^{(k)}_{t}) - v(\hat{s}^{(k')}_{t}) > 1 / \mathcal{K} \rangle
+\end{aligned} \label{eq:dpo_pair1}
+\end{equation}
+\begin{align}
+\gamma_{pairs} &= \langle a^*\uparrow,\hat{s}^{(k)}_{t}\downarrow \mid \hat{s}_1, \dots, \hat{s}_{t-1}\rangle
+\label{eq:dpo_pair2}
+\end{align}
+
+\textbf{Thinking-level Direct Preference Optimization}.
+After CoaT thinking-level Iterative Sampling, several positive and negative example pairs are collected.
+During this stage, the agent policy undergoes updates through the above data-pairs, SFT loss, and CoaT-DPO loss .
+Suppose the agent gets values to pair $\langle +, -\rangle$ at CoaT step $t$, which are named $s^+_{t}$ and $s^-_{t}$; we have the agent performing a comparison for these pairs based on the same thoughts $s_{1:t-1}$, which can be calculated as:
+\begin{equation}
+\begin{aligned}
+\mathcal L_{\mathrm{T\mbox{-}DPO}}= - \mathbb E_{(s_{1:t-1}, s^-_{t},s^+_{t})\sim \mathcal T_s}\bigg[\log\sigma(\beta \log\frac{\pi_\theta(s^+_{t}|s_{1:t-1})}{\pi_{ref}(s^+_{t}|s_{1:t-1})} &\\
+- \beta \log\frac{\pi_\theta(s^-_{t}|s_{1:t-1})}{\pi_{ref}(s^-_{t}|s_{1:t-1})} )\bigg]&,
+\end{aligned}
+\end{equation}
+To further refine the agent’s performance post-optimization, we employ the updated agent as the new base agent to continue collecting contrastive CoaT-action level pairs for additional T-DPO training.
+This iterative process is maintained until the agent reaches the performance bottleneck.
+
+
+\vspace{-9pt}
+\section{Experiments}
+\subsection{Experiments Setups}
+
+\noindent \textbf{Dataset.}
+\textbf{\textsc{AITZ}} is a high-quality trajectory set filtered and re-annotated from AITW , containing four subsets
+, which also includes five types of actions
+\textbf{AMEX} uses the same apps and action space as \textsc{AITZ}, but its task instructions are more complex and detailed, with an average trajectory length of 15+.
+\textbf{AndroidControl} includes OOD datasets, such as app unseen and task unseen.
+
+\noindent \textbf{Metrics.} For evaluation, we use \textbf{Step.Acc} as metrics, consistent with Auto-GUI, measures the agent's performance and uses \textbf{Action Type} to assess the degree of action type matching.
+This metric effectively evaluates the model's planning ability.
+
+\noindent \textbf{Baselines.} Following prior work, we use Qwen2-VL-7B~ as the backbone of our model.
+We select CogAgent , AUTO-GUI, Shpagent, OS-Atlas, UGround, UI-Tars and FedMobileAgent as baseline agents.
+GUI continuous pre-training agents can be further divided into two categories: (1) training the model as a GUI grounding agent, such as OS-Atlas-7B. (2) training the model as a general GUI agent, such as UI-Tars.
+More details are provided in Appendix \ref{appendix:setup}.
+\subsection{Main result}
+
+
+\noindent \textbf{\textsc{AITZ}.}
+As shown in Table \ref{tab:aitz},
+MobileIPL achieves SoTA performance on most metrics.
+The reason for the lower PRESS Acc. is discussed in Section \ref{IPL Scaling} and Appendix \ref{annotation preferences}.
+Multiple rounds of T-DPO improve MobileIPL by more than 10\% (55.40\% -> 69.15\%) compared to the seed model MobileIPL and Qwen2-VL-7B (60.36\% -> 69.15\%).
+Compared to continuous pre-training agents such as Falcon-UI, which is pre-trained on three million GUIs, MobileIPL still surpasses a performance difference of 0.05\%.
+The amount of training data required by our method is substantially smaller than that used by these pre-training approaches.
+
+
+\noindent \textbf{AMEX.}
+As shown in Table \ref{tab:amex}, MobileIPL surpasses the previous SOTA model, SphAgent-7B, by 3.58\%. It also outperforms the baseline model (Qwen2-vl+CoaT) by 3.36\%. Additionally, MobileIPL surpasses OS-Atlas (+3.69\%) and UI-Tars (+3.69\%), both of which also use Qwen2-vl as the backbone. With the incorporation of CoaT, the baseline model Qwen2-vl shows an increase of 1.92\%, demonstrating the effectiveness of CoaT patterns. In summary, these results confirm that MobileIPL delivers significant improvements over existing models in long trajectory scenarios.
+
+
+\noindent \textbf{AndroidControl.}
+As shown in Table \ref{tab:ac1}, MobileIPL achieves SOTA performance in Step.Acc (72.7\%), reaching the SOTA model Falcon-UI with fewer data. MobileIPL also outperforms continual pre-training agents in the GUI domain, such as OS-Atlas (+1.5\%) and UI-Tars (+0.2\%). Compared to the baseline model Qwen2-VL(SFT), MobileIPL not only improves Mobile Agent performance but also enhances grounding by 8.5\%. As shown in Table \ref{tab:ac2}, MobileIPL continues to achieve SOTA performance in unseen OOD settings, demonstrating strong generalization. In contrast, compared to performance in the IDD domain, the pre-trained model OS-Atlas shows a significant drop. MobileIPL exhibits less performance degradation in out-of-domain settings. We also ran GRPO with Qwen2-VL under the same computational resources, and found OOD performance similar to MobileIPL, because both are self-training. However, MobileIPL still outperforms GRPO in all subsets.
+\subsection{Ablation Study}
+To test the effectiveness of IPL and instruction evolution, we conducted ablation experiments. First, removing IPL and using only SFT caused performance to drop from 65.4\% to 60.4\%, compared to the first round of MobileIPL, highlighting the crucial role that IPL plays. Next, removing instruction evolution led to a 2.5\% drop in IPL performance in the first round. This occurs because, without evolution, the model generates fewer training samples (156{,}418 -> 113{,}239). And as shown in Figure \ref{fig:combined_fig} (a), without instruction evolution, the diversity of model outputs decreased, causing a drop in IPL performance. This further confirms that instruction evolution is crucial for improving IPL.
+
+
+\noindent \textbf{Ablation Study.}
+Additionally, we remove negative samples from IPL-R1, training the model using only fully correct samples. This results in a 4.0\% performance drop, suggesting that negative samples help the model learn how to reason rather than merely memorize (SFT).
+Furthermore, training on the entire trajectory with naive DPO reduces performance from 65.4\% to 60.3\%. Compared with SFT trained on CoaT tree positive data (–IPL Negative), naive DPO is still 1.1 \% lower, confirming the effectiveness of CoaT-tree sampling and the thinking-process optimization.
+
+
+\noindent \textbf{Low Resource.}
+We also perform low-resource on AITZ, sampling 1/2 and 1/5 of the training data. As shown in table \ref{tab:ablation1}, using only half of the data, the first round of IPL training already outperformed the best results achieved by the original CoAT-SFT (-IPL) and naive DPO training. Furthermore, when using only one-fifth of the data, the second round of IPL training surpassed the performance of CoAT-SFT (-IPL), demonstrating the effectiveness of our method even in low-resource scenarios.
+\subsection{Discussion and Analysis} \label{sec:Output Space Sampling}
+
+\noindent \textbf{Rollout Efficiency and Performance Trade-off.} We compare MobileIPL with GRPO and the MCTS-style baseline SPO-Chain. Although MobileIPL requires more rollout sampling than GRPO, it achieves better accuracy. Compared with SPO-Chain, MobileIPL uses only about half as many rollouts per sentence ($\sim$27 vs. $\sim$54) while still obtaining a +1.12 accuracy gain. We also observe that SPO-Chain is sensitive to hyperparameters (e.g., temperature and cut-point probabilities). Its best performance is achieved with a higher temperature (1.4) to enlarge the exploration space, but this also produces longer sentences and slows down sampling. Overall, MobileIPL offers a better efficiency–performance trade-off and is more practical for GUI settings.
+
+
+\noindent \textbf{Reasoning Space Sampling.}
+To evaluate the instruction evolution, we analyze the diversity of the sampling space for \textbf{Random 1000 steps}, the standard deviation of encoded embeddings, the dimensionality-reduced distribution, and the distribution of $S^{(i)}$ mentioned in Section \ref{3.3}.
+As shown in Figure \ref{fig:combined_fig} (a), the thoughts after instruction evolution exhibit a broader space than direct SFT.
+Additionally, the embedding standard deviation within each tree increases significantly compared to the original data (+ 0.158).
+The diversified outputs do not negatively impact the agent's reasoning process, while the proportion of action sampling that includes the correct answer improves from 72.7\% to 77.9\%.
+The bottom-right subplot reflects the distribution of output accuracy.
+\textbf{Consistently Correct} indicates that all samples for the current step match the golden answer, while \textbf{Consistently Error} is the opposite.
+\textbf{Both} represents cases where some samples are correct while others are incorrect, which serves as an ideal source for constructing T-DPO pairs.
+Compared to 47\% on the evolved data, the agent achieves 68.7\% convergence on the original data but exhibits a strong polarization(4\%).
+Three-stage instruction evolution significantly expands the sampling space (from 4\% to 31\%), proving that it simultaneously improves both the diversity and quality of reasoning.
+More details are in Appendix \ref{appendix:sampling}.
+
+
+\noindent \textbf{Parameters Searching.} \label{para-searching}
+We conducted an ablation study on the impact of the sampling number ($\mathcal{K}$) per stage and iterative round number ($R$).
+As shown in the table \ref{tab:sample_number}, increasing the number of samples generally leads to better model performance. However, since our framework adopts a tree structure, increasing the sampling number from 3 to 4 causes the minimum number of tree nodes to grow significantly from $3^3 = 27$ to $4^3 = 64$. Despite this sharp increase, the performance improvement is limited (less than 1\%). Therefore, we adopt a sampling number of 3 for the final experiments. Regarding the number of rounds, we observe that both IPL performance and the size of the self-training dataset converge after several iterations. We therefore select the convergence round as our default setting. Additional details on computational cost are provided in Appendix~\ref{compute_use}.
+
+
+\noindent \textbf{IPL Scaling.}
+\label{IPL Scaling}
+Although overall Step.Acc increases across IPL iterations, not all action types follow this trend. As shown in Figure~\ref{fig:combined_fig}(b), from the seed model to the first IPL round, PRESS accuracy drops sharply (58.22\% → 23.49\%), whereas CLICK rises (53.26\% → 71.12\%). In the second round, however, PRESS accuracy rebounds. This stems from the severe underrepresentation of PRESS actions early on: the proportion of PRESS samples in the preference data grows from 1.6\% (1 round) to 10.9\% (2 round) as training progresses. With greater reasoning diversity and more PRESS-related examples, the model gradually learns PRESS behaviors and recovers accuracy in later rounds.
+
+\noindent \textbf{Iterative Preference Learning On GUI Continuous Pre-training Agent.}
+As discussed in the previous experimental analysis, continuous pre-training in the GUI domain provides the agents with a stronger base model.
+However, we still need to explore the compatibility between post-training IPL, instruction evolution, and pre-training.
+As shown in Figure \ref{fig:combined_fig} (c), UI-Tars outperforms Qwen2-VL-7B in all training stages, demonstrating better performance during the instruction evolution phase (62.7\% > 55.4\%).
+After four rounds of IPL, UI-Tars Step.Acc improves by 1.4\% compared to MobileIPL (69.2\% -> 70.6\%).
+More importantly, UI-Tars nearly converges after the first round of IPL, significantly reducing the number of sampling and preference learning iterations, thereby keeping the computational cost of post-training within an acceptable range.
+\section{Conclusion}
+In this paper, we propose Mobile Iterative Preference Learning (\textbf{MobileIPL}), a self-training GUI agent framework that incorporates instruction evolution, iterative sampling in the CoaT-tree, and a rule-based reward.
+We extensively evaluate MobileIPL on the AITZ, AMEX, and AndroidControl benchmarks, demonstrating its effectiveness. Furthermore, MobileIPL exhibits strong generalization capabilities on the OOD subsets of AndroidControl.
+Experiments show that instruction evolution increases output diversity, generates more training data in IPL, and thereby improves IPL performance.
+Finally, Continuous Pre-training experiments confirm the mutual reinforcement between MobileIPL and pre-training, leading to enhanced performance.
+
+
+\section{Ethics Statement}
+We have rigorously refined our dataset to remove any elements that could compromise personal privacy, thereby guaranteeing the highest level of protection for individual data. Instruction evolution was completed by AI SoTA close-sourced VLM, to whom we paid the necessary compensation to ensure that the training data was not leaked. The human evaluation of our work was carried out through a meticulously randomized selection of IT professionals. This process ensured a gender-balanced and educationally diverse panel, reflecting a wide spectrum of perspectives and expertise.
+
+\section{Reproducibility statement}
+All models and datasets used in this paper are open-source. The full experimental setup is detailed in Appendix \ref{appendix:setup}. Unless noted, all experiments use the same settings. We describe compute resources in Appendix \ref{compute_use}. Overall, these practices make our results reproducible.

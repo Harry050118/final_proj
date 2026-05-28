@@ -1,0 +1,44 @@
+You are given a research paper with its Related Work section removed.
+The paper title, reference list, figures, tables, figure captions, and table captions have also been removed.
+
+Input paper: papers/anonymized_inputs/researcher.txt
+Candidate papers: none
+Output directory: runs/clean_search/sim_prompt/researcher
+
+Use DeepXiv as the only academic retrieval source.
+Do not use general web search, arXiv search, Semantic Scholar, Google Scholar, publisher search, DBLP, ACL Anthology, PubMed, ACM, IEEE, or memory-only citation discovery as substitutes.
+
+Your task is to write a Related Work section that fits this paper.
+
+Requirements:
+1. Infer the paper's research topic, task, method, dataset type, and contribution from the provided body text.
+2. Search for relevant prior work using conservative and transparent academic queries.
+3. Cite only papers that are actually relevant to the inferred topic, task, method, and contribution.
+4. Do not cite papers only because they share keywords with the input paper.
+5. Do not invent papers, citations, datasets, numeric results, comparisons, or unsupported claims.
+6. Organize the Related Work section into coherent research themes.
+7. At the end, provide a list of all cited papers with title, authors, year, and source if available.
+
+Input condition: A1 Clean Search.
+
+No additional candidate papers are provided.
+
+Do not search for the removed title, DOI, arXiv ID, reference list, figure captions, or any complete paper identifier.
+Use only the anonymized body text to infer the research topic and construct search queries.
+
+Please write:
+- runs/clean_search/sim_prompt/researcher/s_text.txt with only the generated Related Work section.
+- runs/clean_search/sim_prompt/researcher/s_reference.txt with the final cited paper list, one reference per entry.
+- Optionally write runs/clean_search/sim_prompt/researcher/trace.md with search queries, main candidate papers, final cited papers, and any uncertainty.
+
+Do not read papers/ground_truth_related_work or any ground-truth Related Work file.
+Do not read runs/clean_search/sim_prompt/researcher/g_text.txt or runs/clean_search/sim_prompt/researcher/g_reference.txt if those files already exist.
+
+
+
+python -m rw_eval.cli evaluate-files `
+   --directory ..\..\runs\clean_search\sim_prompt\researcher `
+   --sample-id sim_prompt-evotest `
+   --output ..\..\runs\clean_search\sim_prompt\researcher\report.json `
+   --markdown-output ..\..\runs\clean_search\sim_prompt\researcher\report.md `
+   --env ..\..\.env

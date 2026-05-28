@@ -64,9 +64,9 @@ Extract a paper profile:
 
 Then explicitly check for a visible `Related Work`, `RELATED WORK`, `Background`, or equivalent LaTeX section. If present, extract its paragraph headings and named citations. Do not claim the Related Work section is absent unless the complete visible input has been checked.
 
-### 2. Build A Coverage Ledger
+### 2. Build A Coverage Scaffold
 
-Create a `Visible Coverage Ledger` before searching. It is a search, structure, and coverage-control tool, not citation evidence.
+Create a `Visible Coverage Scaffold` before searching. It is a search-and-structure guide, not citation evidence.
 
 Capture:
 
@@ -76,22 +76,13 @@ Capture:
 - Publishing, peer-review, evaluation, reward-model, and LLM-as-judge signals.
 - Stated gaps or motivations that connect prior work to the target contribution.
 
-For each planned heading, keep only these signal types:
+For each planned heading, keep a lightweight scaffold with only these signal types:
 
 - `named works`: visible author-year citations, named systems, benchmarks, datasets, or methods.
 - `field background`: visible historical context, application areas, taxonomies, broad trends, or field-level challenges.
 - `target motivation`: the target paper's stated gap, positioning, or contribution hook.
 
-Every visible signal must receive one final disposition before output:
-
-- `covered`: directly appears in the Related Work with a supported citation or safe uncited target motivation.
-- `narrowed`: appears with narrower wording than the visible input because DeepXiv evidence only supports a limited claim.
-- `unresolved gap`: searched or considered, but not safely recoverable through DeepXiv or not citable with stable metadata.
-- `intentionally omitted`: excluded for a stated reason such as wrong scope, hidden/removed identifier, duplicated signal, or insufficient relevance.
-
-Do not leave a signal only in `trace.md` without a final disposition. If a named work cannot be recovered through DeepXiv, record `unresolved gap` and avoid forcing a weak substitute into the final citations. A substitute may still provide adjacent context, but it does not count as covering the named work.
-
-Before writing, create a `Must-Not-Drop Signals` list with 6-10 high-value signals from the ledger. Prioritize visible Related Work headings, named works, field background that defines the section's scope, and target-paper positioning hooks. After writing, check each item against `s_text.txt` and update its disposition.
+Use this scaffold to guide writing, but do not turn it into a hard coverage checklist. If a named work cannot be recovered through DeepXiv, record the gap and avoid forcing a weak substitute into the final citations.
 
 If a visible Related Work section has 2-4 headings, those headings define the default planned themes. For example, do not merge separate visible headings such as `LLMs for Research`, `LLMs for Science Discovery`, and `Automated Evaluation of Research Papers` into one theme.
 
@@ -113,14 +104,7 @@ Examples of exact recovery intent:
 - RewardBench + reward model evaluation.
 - Generative Reward Model / GenRM + next-token prediction reward modeling.
 
-Do not mark a named citation as covered using a different-author substitute. A substitute may be cited only as adjacent context after the named work is recorded as `unresolved gap` or `Not found`.
-
-If DeepXiv does not recover a named work:
-
-- Keep the planned theme alive when it is visible in the input.
-- Use a narrow background sentence from recovered adjacent work only if it is directly supported.
-- Use an uncited target motivation sentence only for the target paper's own positioning.
-- Do not silently delete the heading or collapse it into an unrelated theme.
+Do not mark a named citation as covered using a different-author substitute. A substitute may be cited only as adjacent context after the named work is recorded as `Gap` or `Not found`.
 
 For agent, test-time learning, self-improvement, or evolutionary-system papers, attempt canonical family searches only when those families are actually relevant to the visible input. Otherwise mark seed coverage as not applicable.
 
@@ -140,8 +124,6 @@ Apply a reference validity guard before final citation:
 - Do not final-cite records with missing authors, conflicting metadata, uncertain title matches, or likely RWEval metadata mismatch.
 - Do not final-cite papers that have already triggered `metadata_mismatch` in this project. In the current benchmark, `MARG: Multi-Agent Review Generation for Scientific Papers` / D'Arcy et al. / `arXiv:2401.04259` must be `screened only` or an `Uncertain Point`, not a final citation.
 - Prefer omitting an unstable paper over risking a hallucinated or metadata-mismatch reference.
-
-Maintain a benchmark-specific deny/handle list in `trace.md` when a paper is excluded for known metadata or benchmark reasons. Excluding a denied paper must not remove the whole theme. For example, if MARG is screened only, preserve the automated peer-review theme through stable alternatives such as Robertson, Liu/Shah, RewardBench, GenRM, or Paper SEA when those are visible and supported.
 
 Apply a claim-type guard before writing from a candidate:
 
@@ -168,16 +150,9 @@ If a visible Related Work section has 2-4 headings, mirror them unless DeepXiv c
 
 Benchmark/environment papers should not become standalone themes unless the target paper is itself a benchmark/environment paper or the visible Related Work makes evaluation the central topic. Otherwise, mention them briefly inside the relevant theme.
 
-Apply a coverage allocation gate before choosing final citations:
-
-- Each visible Related Work heading must cover at least two `named works` or `field background` signals when recoverable evidence exists.
-- If a heading contains four or more key named works, final text must cover at least two of them or record why this is impossible.
-- Each broad planned theme should cover at least two signal types when possible: `named works`, `field background`, and `target motivation`.
-- A final citation budget is not successful if it fills references while leaving high-value ledger signals uncovered.
-
 Use the active citation budget:
 
-- `8-12` final cited papers for focused method-paper Related Work with no broad visible ledger.
+- `8-12` final cited papers for focused method-paper Related Work with no broad visible scaffold.
 - `12-18` final cited papers when the visible input clearly covers three or more broad themes.
 
 Use the smaller `8-12` budget by default when the candidate pool is mostly weakly relevant, broad background, or unstable. Use `12-18` only when the visible input itself clearly has multiple themes and enough directly relevant, metadata-stable candidates to support them.
@@ -188,13 +163,6 @@ Write the active budget and the reason in `trace.md`. Do not invent other budget
 
 Write by theme, not by search result order.
 
-Use length controls:
-
-- For focused method papers, target 450-650 words by default.
-- If the visible Related Work or requested target is short, do not exceed roughly 1.8x its estimated word count unless `trace.md` explains why broader coverage is necessary.
-- Prefer adding missing high-value coverage over adding extra detail to already covered themes.
-- Remove redundant benchmark or survey exposition before removing a visible heading's core signal.
-
 Use compact synthesis:
 
 - One paragraph per planned theme when possible.
@@ -202,15 +170,11 @@ Use compact synthesis:
 - Multi-citation sentences for broad context.
 - Specific citations attached to specific claims.
 - Narrow wording for context citations.
-- For each broad planned theme, cover at least two ledger signal types when evidence permits: named works, field background, and target motivation.
+- For each broad planned theme, cover at least two of the lightweight scaffold signal types when evidence permits: named works, field background, and target motivation.
 - For Science Discovery context, prefer visible-background claims such as Langley, LeCun, AI4Science, and the shift from passive data analysis to active discovery. If DeepXiv cannot recover stable metadata for older or non-arXiv works, record the citation gap in `trace.md` instead of padding with unstable substitute surveys.
 - For Automated Evaluation context, prefer stable citations such as Robertson, Liu/Shah, RewardBench, GenRM, and Paper SEA. Do not final-cite MARG in this benchmark because it has triggered `metadata_mismatch`.
 - For missing named lines such as Hosseini & Horbach or Lu/Tyser full-PDF evaluation, use narrow wording only when needed for coverage and record the unresolved DeepXiv gap. Do not invent a citation.
 - No unsupported claims such as `first`, `state-of-the-art`, `outperforms`, or universal `prior work fails to...` unless directly verified.
-- Split bundled claims when one citation cannot support every part. For example:
-  - Do not cite Diffusion Policy for robomimic itself; cite or omit robomimic separately, then cite Diffusion Policy only for diffusion-based visuomotor policy learning.
-  - Do not cite the original Chain-of-Thought paper for widespread adoption in verifier designs unless another citation supports that adoption.
-  - Do not claim LLM-as-a-Judge is widely adopted from papers that only introduce or study the paradigm; attach adoption wording only to evidence that states broad use.
 
 Each theme may end with at most one target motivation sentence. This sentence can describe the target paper's gap, contribution, or positioning without a prior-work citation, but it must be phrased as target-paper motivation rather than cited prior-work evidence.
 
@@ -230,9 +194,6 @@ Before finalizing, check:
 - Every comparative claim is directly supported by the cited paper's DeepXiv evidence, or has been rewritten as target-paper motivation.
 - Every target-paper motivation sentence is uncited or clearly separated from the prior-work citation it follows.
 - No Related Work body paragraph is left without an in-text citation unless it has been merged into a cited paragraph.
-- Every `Must-Not-Drop Signals` item has a final disposition and the final text reflects all `covered` or `narrowed` items.
-- Every visible heading satisfies the coverage allocation gate, or `trace.md` records the specific unrecoverable gaps.
-- Final length satisfies the length controls, or `trace.md` explains the exception.
 - If a final self-check would label a citation-claim pair as `weak` or `Partially supported`, first narrow the claim. If narrowing still requires an inference chain beyond the retrieved evidence, rewrite the sentence as target-paper motivation or remove it.
 
 Final self-check labels must be:
@@ -249,14 +210,10 @@ Final actions must be only `keep` or `resolved`; apply `narrow`, `remove`, or `m
 Use these gates for RWEval-oriented runs:
 
 - `RWEval Citation Format`: `s_text.txt` uses numeric citations that map directly to numbered `s_reference.txt` entries.
-- `Read the Visible Input`: full input checked for a Related Work section before ledger construction.
+- `Read the Visible Input`: full input checked for a Related Work section before scaffold construction.
 - `Visible Heading Preservation`: visible 2-4 Related Work headings are mirrored as planned themes.
-- `Visible Coverage Ledger`: every visible signal has a final disposition: `covered`, `narrowed`, `unresolved gap`, or `intentionally omitted`.
-- `Coverage Allocation`: each visible heading meets the minimum recoverable named/background signal coverage or records the reason it cannot.
-- `Missing-Point Prevention`: 6-10 must-not-drop signals are checked against final `s_text.txt`.
 - `Named Citation Exactness`: author-year signals are searched exactly before substitutes are considered.
 - `Reference Validity Guard`: metadata-unstable papers are not final-cited.
-- `Length Control`: final text stays within the selected word budget or records a justified exception.
 - `Dynamic Citation Budget`: active budget is exactly `8-12` or `12-18`.
 - `Final Consistency`: in-text citations, final references, self-check, and trace ledger agree.
 
@@ -284,13 +241,9 @@ Use this structure for `trace.md` when an audit trail is requested:
 | Heading | Extracted coverage signals | Planned theme |
 |---|---|---|
 
-## Visible Coverage Ledger
-| Visible signal | Signal type | Exact recovery query | DeepXiv recovery status | Planned use | Final disposition |
-|---|---|---|---|---|---|
-
-## Must-Not-Drop Signals
-| Signal | Source heading/theme | Required handling | Final status |
-|---|---|---|---|
+## Visible Coverage Scaffold
+| Visible signal | Signal type | Exact recovery query | DeepXiv recovery status | Planned use |
+|---|---|---|---|---|
 
 ## Search Queries
 | Query | Purpose | Source |
@@ -303,16 +256,6 @@ Use this structure for `trace.md` when an audit trail is requested:
 ## Planned Themes
 | Theme | Input signal it maps to | Core/context citations | Notes |
 |---|---|---|---|
-
-## Coverage Allocation
-| Heading/theme | Recoverable named/background signals | Covered in final text | Unresolved gaps |
-|---|---|---|---|
-
-## Length Control
-- Target word budget:
-- Estimated visible Related Work length:
-- Final word count:
-- Status / exception reason:
 
 ## Final Cited Papers
 | Title | Authors | Year | Source | Citation role |
@@ -329,10 +272,6 @@ Use this structure for `trace.md` when an audit trail is requested:
 ## Completion Status
 | Gate | Status |
 |---|---|
-
-## Benchmark-Specific Deny / Handle List
-| Paper or pattern | Reason | Handling | Theme preserved by |
-|---|---|---|---|
 
 ## Uncertain Points
 -

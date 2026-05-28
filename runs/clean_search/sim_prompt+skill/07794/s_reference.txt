@@ -1,0 +1,19 @@
+[1] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, Douwe Kiela. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." arXiv:2005.11401, 2020.
+
+[2] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, Ashish Sabharwal. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." arXiv:2212.10509, 2022.
+
+[3] Xiaoxi Li, Guanting Dong, Jiajie Jin, Yuyao Zhang, Yujia Zhou, Yutao Zhu, Wayne Xin Zhao, Ji-Rong Wen. "Search-o1: Agentic Search-Enhanced Large Reasoning Models." arXiv:2501.05366, 2025.
+
+[4] Bowen Jin, Hansi Zeng, Zhenrui Yue, Jinsung Yoon, Sercan Ö. Arık, et al. "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning." arXiv:2503.09516, 2025.
+
+[5] Huatong Song, Jinhao Jiang, Yingqian Min, Jie Chen, Zhipeng Chen, et al. "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." arXiv:2503.05592, 2025.
+
+[6] Huatong Song, Jinhao Jiang, Wenqing Tian, Zhipeng Chen, Yuhuan Wu, et al. "R1-Searcher++: Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning." arXiv:2505.17005, 2025.
+
+[7] Peilin Wu, Mian Zhang, Xinlu Zhang, Xinya Du, Zhiyu Zoey Chen. "Search Wisely: Mitigating Sub-optimal Agentic Searches By Reducing Uncertainty." arXiv:2505.17281, 2025.
+
+[8] Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, Karl Cobbe. "Let's Verify Step by Step." arXiv:2305.20050, 2023.
+
+[9] DeepSeek-AI (Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, et al.). "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." arXiv:2501.12948, 2025.
+
+[10] Minhua Lin, Zongyu Wu, Zhichao Xu, Hui Liu, Xianfeng Tang, et al. "A Comprehensive Survey on Reinforcement Learning-based Agentic Search: Foundations, Roles, Optimizations, Evaluations, and Applications." arXiv:2510.16724, 2025.
