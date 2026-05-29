@@ -1,0 +1,3498 @@
+{
+  "metadata": {
+    "generated_on": "2026-05-28",
+    "condition": "Clean Search",
+    "source_root": "runs/clean_search",
+    "groups": {
+      "sim_prompt": "No Intervention / baseline",
+      "sim_prompt+skill": "Skill-guided citation-grounding intervention"
+    },
+    "limitations": [
+      "Noisy Search / Misleading Search were not run, so robustness against irrelevant or misleading injected papers is not evaluated.",
+      "RWEval reports are treated as the primary quantitative evidence; human audit placeholders are reserved for representative sanity checks.",
+      "This artifact does not include PPT or frontend implementation."
+    ]
+  },
+  "aggregates": {
+    "sim_prompt": {
+      "n": 5,
+      "metrics": {
+        "overall": {
+          "mean": 6.36
+        },
+        "citation_quality": {
+          "mean": 6.22
+        },
+        "relevance": {
+          "mean": 7.17
+        },
+        "content_coverage": {
+          "mean": 3.18
+        }
+      },
+      "diagnostics": {
+        "missing_points": {
+          "mean": 8.2
+        },
+        "hallucinated_references": {
+          "mean": 0.6
+        },
+        "bad_citation_claim_pairs": {
+          "mean": 8.8
+        },
+        "overclaim_citation_claim_pairs": {
+          "mean": 0.4
+        },
+        "citation_group_support": {
+          "mean": 1.4
+        },
+        "topic_structure_issues": {
+          "mean": 1.6
+        }
+      }
+    },
+    "sim_prompt+skill": {
+      "n": 5,
+      "metrics": {
+        "overall": {
+          "mean": 7.72
+        },
+        "citation_quality": {
+          "mean": 9.05
+        },
+        "relevance": {
+          "mean": 8.4
+        },
+        "content_coverage": {
+          "mean": 4.35
+        }
+      },
+      "diagnostics": {
+        "missing_points": {
+          "mean": 7.6
+        },
+        "hallucinated_references": {
+          "mean": 0.0
+        },
+        "bad_citation_claim_pairs": {
+          "mean": 0.0
+        },
+        "overclaim_citation_claim_pairs": {
+          "mean": 1.0
+        },
+        "citation_group_support": {
+          "mean": 1.0
+        },
+        "topic_structure_issues": {
+          "mean": 1.6
+        }
+      }
+    },
+    "skill_minus_baseline": {
+      "metrics": {
+        "overall": {
+          "mean_delta": 1.36
+        },
+        "citation_quality": {
+          "mean_delta": 2.83
+        },
+        "relevance": {
+          "mean_delta": 1.23
+        },
+        "content_coverage": {
+          "mean_delta": 1.17
+        }
+      },
+      "diagnostics": {
+        "missing_points": {
+          "mean_delta": -0.6
+        },
+        "hallucinated_references": {
+          "mean_delta": -0.6
+        },
+        "bad_citation_claim_pairs": {
+          "mean_delta": -8.8
+        },
+        "overclaim_citation_claim_pairs": {
+          "mean_delta": 0.6
+        },
+        "citation_group_support": {
+          "mean_delta": -0.4
+        },
+        "topic_structure_issues": {
+          "mean_delta": 0.0
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "07794",
+      "baseline": {
+        "sample_id": "sim_prompt-evotest",
+        "metrics": {
+          "overall": 7.92,
+          "citation_quality": 9.22,
+          "relevance": 8.33,
+          "content_coverage": 3.64
+        },
+        "diagnostics": {
+          "missing_points": 5,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 0,
+          "overclaim_citation_claim_pairs": 1,
+          "citation_group_support": 0,
+          "topic_structure_issues": 3
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint1",
+              "text": "ReAct demonstrated that LLMs can synergize reasoning and acting, enabling autonomous retrieval decisions.",
+              "rationale": "No candidate claim mentions ReAct or the synergistic reasoning-acting concept from the given citation."
+            },
+            {
+              "gold_point_id": "GPoint2",
+              "text": "Chain-of-Retrieval and DeepRAG structure retrieval into sequential steps for handling complex queries.",
+              "rationale": "No candidate claim mentions Chain-of-Retrieval, DeepRAG, or their specific citations."
+            },
+            {
+              "gold_point_id": "GPoint6",
+              "text": "Early approaches for adaptive retrieval used heuristics or classifiers to detect uncertainty and determine retrieval need.",
+              "rationale": "No candidate claim describes early approaches using heuristics or classifiers for uncertainty detection."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "SMART, SMARTCAL, and OTC train agents to be self-aware and make optimal tool calls using RL.",
+              "rationale": "No candidate claim mentions SMART, SMARTCAL, or OTC."
+            },
+            {
+              "gold_point_id": "GPoint13",
+              "text": "HiPRAG differs by introducing a direct, on-the-fly evaluation of each search step's necessity for explicit efficiency training.",
+              "rationale": "No candidate claim mentions HiPRAG or on-the-fly evaluation of search step necessity."
+            }
+          ],
+          "bad_citation_claim_pairs": [],
+          "overclaim_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim7",
+              "reference_key": "arxiv:2501.12948",
+              "support": "partial",
+              "appropriateness_score": 7.0,
+              "placement_score": 7.0,
+              "topic_consistency_score": 8.0,
+              "support_rationale": "DeepSeek-R1 demonstrates that RL with verifiable rewards elicits sophisticated reasoning in LLMs, but the paper focuses on reasoning enhancement, not on search or retrieval. The claim's extension to inspiring RL for autonomous search is an inference not directly supported by the paper.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim states that DeepSeek-R1 inspired RL training for autonomous search and retrieval, which is not explicitly demonstrated or claimed in the paper; the inspiration is indirect and mild.",
+              "rationale": "DeepSeek-R1 demonstrates that RL with verifiable rewards elicits sophisticated reasoning in LLMs, but the paper focuses on reasoning enhancement, not on search or retrieval. The claim's extension to inspiring RL for autonomous search is an inference not directly supported by the paper."
+            }
+          ],
+          "citation_group_support": [],
+          "topic_structure_issues": [
+            {
+              "paragraph_id": "S2",
+              "issue": "Paragraph is self-contained but could benefit from deeper connection to tool use specifically."
+            },
+            {
+              "paragraph_id": "S3",
+              "issue": "No significant issues; focus is clear and citations align well."
+            },
+            {
+              "paragraph_id": "S4",
+              "issue": "May be slightly narrow by emphasizing math reasoning heritage; still relevant to efficiency."
+            }
+          ]
+        }
+      },
+      "skill": {
+        "sample_id": "sim_prompt+skill-evotest",
+        "metrics": {
+          "overall": 7.78,
+          "citation_quality": 8.87,
+          "relevance": 8.61,
+          "content_coverage": 4.71
+        },
+        "diagnostics": {
+          "missing_points": 10,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 0,
+          "overclaim_citation_claim_pairs": 0,
+          "citation_group_support": 0,
+          "topic_structure_issues": 3
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint1",
+              "text": "ReAct shows LLMs can synergize reasoning and acting for autonomous retrieval decisions.",
+              "rationale": "No candidate claim mentions ReAct or its specific synergy of reasoning and acting for autonomous retrieval decisions."
+            },
+            {
+              "gold_point_id": "GPoint3",
+              "text": "Chain-of-Retrieval and DeepRAG structure retrieval as sequential steps for complex queries.",
+              "rationale": "No candidate claim mentions Chain-of-Retrieval or DeepRAG."
+            },
+            {
+              "gold_point_id": "GPoint5",
+              "text": "RAG-RL uses RL and curriculum learning to enhance retrieval-augmented generation.",
+              "rationale": "No candidate claim mentions RAG-RL or its use of curriculum learning."
+            },
+            {
+              "gold_point_id": "GPoint6",
+              "text": "ToolRL and ToRL show that task-success rewards scale tool-integration capabilities.",
+              "rationale": "No candidate claim mentions ToolRL or ToRL."
+            },
+            {
+              "gold_point_id": "GPoint8",
+              "text": "Inefficiency in agentic RAG leads to adaptive retrieval methods and RL-based efficiency optimization.",
+              "rationale": "No candidate claim directly states that inefficiency in agentic RAG leads to adaptive retrieval methods and RL-based efficiency optimization."
+            },
+            {
+              "gold_point_id": "GPoint9",
+              "text": "Agentic RAG introduces inefficiency through redundant or unnecessary tool calls.",
+              "rationale": "No candidate claim explicitly mentions redundant or unnecessary tool calls as a source of inefficiency."
+            },
+            {
+              "gold_point_id": "GPoint11",
+              "text": "Uncertainty detection methods like heuristics, classifiers, or confidence-based approaches are used for adaptive retrieval.",
+              "rationale": "No candidate claim discusses heuristics, classifiers, or confidence-based approaches for uncertainty detection in adaptive retrieval."
+            },
+            {
+              "gold_point_id": "GPoint14",
+              "text": "ReARTeR uses a trustworthy process reward model to score and refine each RAG step.",
+              "rationale": "No candidate claim mentions ReARTeR or its process reward model."
+            },
+            {
+              "gold_point_id": "GPoint15",
+              "text": "SMART, SMARTCAL, and OTC train agents to be self-aware and make optimal tool calls using RL.",
+              "rationale": "No candidate claim mentions SMART, SMARTCAL, or OTC."
+            },
+            {
+              "gold_point_id": "GPoint18",
+              "text": "HiPRAG introduces direct on-the-fly evaluation of each search step's necessity for efficiency.",
+              "rationale": "No candidate claim mentions HiPRAG or its on-the-fly evaluation of search step necessity."
+            }
+          ],
+          "bad_citation_claim_pairs": [],
+          "overclaim_citation_claim_pairs": [],
+          "citation_group_support": [],
+          "topic_structure_issues": [
+            {
+              "paragraph_id": "S2",
+              "issue": "Could more explicitly link to the evolution toward agentic systems mentioned in GTopic1, but still focused on prompting-based RAG."
+            },
+            {
+              "paragraph_id": "S3",
+              "issue": "None significant: clearly focused on RL-based search agents and their limitations."
+            },
+            {
+              "paragraph_id": "S4",
+              "issue": "Paragraph is brief but coherent; could expand on how process supervision addresses specific inefficiencies."
+            }
+          ]
+        }
+      },
+      "metric_delta_skill_minus_baseline": {
+        "overall": -0.14,
+        "citation_quality": -0.35,
+        "relevance": 0.28,
+        "content_coverage": 1.07
+      },
+      "diagnostic_delta_skill_minus_baseline": {
+        "missing_points": 5,
+        "hallucinated_references": 0,
+        "bad_citation_claim_pairs": 0,
+        "overclaim_citation_claim_pairs": -1,
+        "citation_group_support": 0,
+        "topic_structure_issues": 0
+      }
+    },
+    {
+      "case_id": "11662",
+      "baseline": {
+        "sample_id": "sim_prompt-evotest",
+        "metrics": {
+          "overall": 5.98,
+          "citation_quality": 5.0,
+          "relevance": 8.4,
+          "content_coverage": 3.52
+        },
+        "diagnostics": {
+          "missing_points": 8,
+          "hallucinated_references": 2,
+          "bad_citation_claim_pairs": 2,
+          "overclaim_citation_claim_pairs": 0,
+          "citation_group_support": 2,
+          "topic_structure_issues": 0
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint5",
+              "text": "Closest related work uses GPT-4V evaluator with benchmark-specific rubrics for trajectory evaluation in Reflexion and behavior cloning.",
+              "rationale": "No candidate claim mentions GPT-4V evaluator with rubrics for Reflexion and behavior cloning."
+            },
+            {
+              "gold_point_id": "GPoint6",
+              "text": "Similar evaluator used to guide tree search, filter trajectories for memories/tools, and for RL training.",
+              "rationale": "No candidate claim explicitly describes an evaluator used to guide tree search, filter trajectories for memories/tools, and for RL training."
+            },
+            {
+              "gold_point_id": "GPoint9",
+              "text": "Chain-of-thought extended to multimodal and environment-interaction settings.",
+              "rationale": "No candidate claim discusses extending CoT to multimodal or environment-interaction settings."
+            },
+            {
+              "gold_point_id": "GPoint13",
+              "text": "Consolidates disparate applications of MLLM evaluators under a shared framework based on multimodal rewards from MLLM verifiers.",
+              "rationale": "No candidate claim mentions consolidating applications under a shared framework."
+            },
+            {
+              "gold_point_id": "GPoint14",
+              "text": "Evaluates MLLM verifiers across broad range of models, benchmarks, agents, TTS techniques, templates, and applications.",
+              "rationale": "No candidate claim describes evaluating MLLM verifiers across a broad range of models, benchmarks, etc."
+            },
+            {
+              "gold_point_id": "GPoint15",
+              "text": "Dissects MLLM verifier performance over fine-grained metrics, offering guidance on measuring quality.",
+              "rationale": "No candidate claim discusses dissecting MLLM verifier performance over fine-grained metrics."
+            },
+            {
+              "gold_point_id": "GPoint17",
+              "text": "Discusses design choices for MLLM verifiers and introduces SGV, a lightweight method easy to integrate.",
+              "rationale": "No candidate claim discusses design choices or introduces SGV."
+            },
+            {
+              "gold_point_id": "GPoint18",
+              "text": "Improves MLLM verification with benefits to online supervision and self-improvement, achieving SOTA on VisualWebArena.",
+              "rationale": "No candidate claim describes improving MLLM verification with SOTA on VisualWebArena."
+            }
+          ],
+          "bad_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim3",
+              "reference_key": "wang2024deepseek",
+              "support": "weak",
+              "appropriateness_score": 3.0,
+              "placement_score": 3.0,
+              "topic_consistency_score": 4.0,
+              "support_rationale": "DeepSeek-Coder focuses on code generation but does not explicitly discuss formal verifiers like unit tests or reinforcement learning with verifiable rewards (RLVR). The connection to breakthroughs through RLVR is indirect and not stated in the cited work.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "DeepSeek-Coder focuses on code generation but does not explicitly discuss formal verifiers like unit tests or reinforcement learning with verifiable rewards (RLVR). The connection to breakthroughs through RLVR is indirect and not stated in the cited work.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim17",
+              "reference_key": "drouin2024browsergym",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No retrieved evidence or citation metadata is available to verify the claim. The reference key suggests a paper on BrowserGym, but without any concrete information, the support cannot be determined.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No retrieved evidence or citation metadata is available to verify the claim. The reference key suggests a paper on BrowserGym, but without any concrete information, the support cannot be determined.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            }
+          ],
+          "overclaim_citation_claim_pairs": [],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim2",
+              "citation_count": 2,
+              "group_support": "yes",
+              "group_rationale": "Both citations (silver2016mastering and silver2018general) describe AlphaZero, which uses win/loss signals from self-play as rewards to guide search and learning in Go and Chess. This directly supports all components of the claim: the use of win/loss-based verifiers in classical game-playing for guiding search and learning in Go and Chess.",
+              "covered_aspects": [
+                "Verifiers based on win/loss signals",
+                "guided search and learning",
+                "in Go and Chess"
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "silver2016mastering",
+                "silver2018general"
+              ]
+            },
+            {
+              "claim_id": "SClaim3",
+              "citation_count": 2,
+              "group_support": "yes",
+              "group_rationale": "Citation 2 (guo2025deepseek) explicitly supports the claim by describing DeepSeek-R1's use of reinforcement learning with verifiable rewards, including format and answer correctness, which are formal verifiers. This directly supports breakthroughs in mathematical reasoning and code generation. Citation 1 (wang2024deepseek) provides weak support as it does not discuss RLVR, but it does not contradict the claim. Thus, collectively the citations provide sufficient support.",
+              "covered_aspects": [
+                "formal verifiers",
+                "unit tests and exact-match checks",
+                "breakthroughs in code generation",
+                "breakthroughs in mathematical reasoning",
+                "reinforcement learning with verifiable rewards (RLVR)"
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "wang2024deepseek",
+                "guo2025deepseek"
+              ]
+            }
+          ],
+          "topic_structure_issues": []
+        }
+      },
+      "skill": {
+        "sample_id": "sim_prompt+skill-evotest",
+        "metrics": {
+          "overall": 7.38,
+          "citation_quality": 8.83,
+          "relevance": 8.7,
+          "content_coverage": 4.32
+        },
+        "diagnostics": {
+          "missing_points": 7,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 0,
+          "overclaim_citation_claim_pairs": 3,
+          "citation_group_support": 1,
+          "topic_structure_issues": 0
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint8",
+              "text": "Following works employ similar evaluator to guide tree search.",
+              "rationale": "No candidate claim mentions the use of a similar evaluator to guide tree search."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "Following works employ similar evaluator for RL training in simpler environments.",
+              "rationale": "No candidate claim mentions the use of a similar evaluator for RL training in simpler environments."
+            },
+            {
+              "gold_point_id": "GPoint14",
+              "text": "Orthogonal approaches scale test-time compute via sampling and search, using heuristics or verifiers.",
+              "rationale": "No candidate claim discusses scaling test-time compute via sampling and search using heuristics or verifiers."
+            },
+            {
+              "gold_point_id": "GPoint15",
+              "text": "Recent work leverages sampling, RL, and formal verifiers to train (M)LLMs that autonomously generate reasoning traces.",
+              "rationale": "No candidate claim mentions recent work leveraging sampling, RL, and formal verifiers to train (M)LLMs for generating reasoning traces."
+            },
+            {
+              "gold_point_id": "GPoint17",
+              "text": "The paper consolidates disparate applications of MLLM evaluators under a shared framework based on multimodal rewards derived from MLLM verifiers.",
+              "rationale": "No candidate claim describes consolidating disparate applications of MLLM evaluators under a shared framework based on multimodal rewards."
+            },
+            {
+              "gold_point_id": "GPoint18",
+              "text": "The paper evaluates MLLM verifiers across a broader range of models, multimodal benchmarks, agents, TTS techniques, evaluation templates, and applications.",
+              "rationale": "No candidate claim mentions evaluating MLLM verifiers across a broad range of models, benchmarks, agents, TTS techniques, and applications."
+            },
+            {
+              "gold_point_id": "GPoint19",
+              "text": "The paper dissects MLLM verifier performance over fine-grained metrics, offering guidance on how to measure quality of evaluations and derived artifacts.",
+              "rationale": "No candidate claim discusses dissecting MLLM verifier performance over fine-grained metrics or offering guidance on measuring evaluation quality."
+            }
+          ],
+          "bad_citation_claim_pairs": [],
+          "overclaim_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim3",
+              "reference_key": "arxiv:2306.05685",
+              "support": "partial",
+              "appropriateness_score": 8,
+              "placement_score": 10,
+              "topic_consistency_score": 9,
+              "support_rationale": "The cited paper studies LLMs as judges for chat assistants and identifies position and self-enhancement biases, but the claim also includes verbosity bias, which is not mentioned in the abstract/tldr (which lists 'morbidity' instead). The core claim about studying LLM judges is supported, but the specific bias list is partially inaccurate.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim states that the paper identified verbosity bias, but the available metadata only mentions position, morbidity, and self-enhancement biases. This introduces a minor inaccuracy.",
+              "rationale": "The cited paper studies LLMs as judges for chat assistants and identifies position and self-enhancement biases, but the claim also includes verbosity bias, which is not mentioned in the abstract/tldr (which lists 'morbidity' instead). The core claim about studying LLM judges is supported, but the specific bias list is partially inaccurate."
+            },
+            {
+              "claim_id": "SClaim21",
+              "reference_key": "arxiv:2210.03629",
+              "support": "partial",
+              "appropriateness_score": 7,
+              "placement_score": 10,
+              "topic_consistency_score": 8,
+              "support_rationale": "ReAct (Yao et al.) is a foundational paper for agent reasoning pipelines (reasoning+acting), but the claim specifically mentions 'MLLM verifiers provide feedback signals', which is not a focus of ReAct. The paper's interleaved reasoning and acting can anchor self-improvement, but the verifier aspect is overstated.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim implies that ReAct explicitly involves MLLM verifiers providing feedback, but the paper does not use MLLM verifiers in that manner; the feedback comes from environment interactions.",
+              "rationale": "ReAct (Yao et al.) is a foundational paper for agent reasoning pipelines (reasoning+acting), but the claim specifically mentions 'MLLM verifiers provide feedback signals', which is not a focus of ReAct. The paper's interleaved reasoning and acting can anchor self-improvement, but the verifier aspect is overstated."
+            },
+            {
+              "claim_id": "SClaim21",
+              "reference_key": "arxiv:2303.11366",
+              "support": "partial",
+              "appropriateness_score": 7,
+              "placement_score": 10,
+              "topic_consistency_score": 8,
+              "support_rationale": "Reflexion (Shinn et al.) uses verbal reflection from task feedback to improve agents, which aligns with 'self-improvement pipelines'. However, the claim specifies 'MLLM verifiers provide feedback signals', whereas Reflexion uses environmental feedback (e.g., binary success/failure) and does not rely on MLLM-based verification.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim overstates by attributing MLLM verifier feedback to Reflexion, when the paper uses general task feedback (not specifically MLLM-based).",
+              "rationale": "Reflexion (Shinn et al.) uses verbal reflection from task feedback to improve agents, which aligns with 'self-improvement pipelines'. However, the claim specifies 'MLLM verifiers provide feedback signals', whereas Reflexion uses environmental feedback (e.g., binary success/failure) and does not rely on MLLM-based verification."
+            }
+          ],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim21",
+              "citation_count": 2,
+              "group_support": "partial",
+              "group_rationale": "Both citations support that Yao et al. and Shinn et al. are foundational for self-improvement and agent reasoning pipelines, but neither citation supports the specific claim that these pipelines involve MLLM verifiers providing feedback signals. ReAct uses environment feedback, and Reflexion uses task feedback (e.g., success/failure), not MLLM-based verification. Thus, the claim is partially supported.",
+              "covered_aspects": [
+                "Yao et al. and Shinn et al. anchor self-improvement and agent reasoning pipelines"
+              ],
+              "missing_aspects": [
+                "MLLM verifiers provide feedback signals"
+              ],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "arxiv:2210.03629",
+                "arxiv:2303.11366"
+              ]
+            }
+          ],
+          "topic_structure_issues": []
+        }
+      },
+      "metric_delta_skill_minus_baseline": {
+        "overall": 1.4,
+        "citation_quality": 3.83,
+        "relevance": 0.3,
+        "content_coverage": 0.8
+      },
+      "diagnostic_delta_skill_minus_baseline": {
+        "missing_points": -1,
+        "hallucinated_references": -2,
+        "bad_citation_claim_pairs": -2,
+        "overclaim_citation_claim_pairs": 3,
+        "citation_group_support": -1,
+        "topic_structure_issues": 0
+      }
+    },
+    {
+      "case_id": "12299",
+      "baseline": {
+        "sample_id": "sim_prompt-evotest",
+        "metrics": {
+          "overall": 5.96,
+          "citation_quality": 5.05,
+          "relevance": 7.09,
+          "content_coverage": 3.33
+        },
+        "diagnostics": {
+          "missing_points": 8,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 20,
+          "overclaim_citation_claim_pairs": 1,
+          "citation_group_support": 2,
+          "topic_structure_issues": 0
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint4",
+              "text": "Our method organizes trajectory data into multi-turns of dialogues based on the CoaT thinking pattern.",
+              "rationale": "No candidate claim describes organizing trajectory data into multi-turn dialogues based on CoaT thinking pattern; related claims (SClaim16, SClaim41) do not cover this specific detail."
+            },
+            {
+              "gold_point_id": "GPoint6",
+              "text": "ReFT adopts reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
+              "rationale": "No candidate claim mentions ReFT or reinforcement learning fine-tuning for math problems."
+            },
+            {
+              "gold_point_id": "GPoint9",
+              "text": "Digirl and Distrl use online trajectory collection for mobile GUI agents, but the process is very slow.",
+              "rationale": "No candidate claim mentions Digirl or Distrl."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
+              "rationale": "No candidate claim mentions Reachagent."
+            },
+            {
+              "gold_point_id": "GPoint11",
+              "text": "TCPO optimizes thoughts but does not explicitly enforce thought–action consistency.",
+              "rationale": "No candidate claim mentions TCPO."
+            },
+            {
+              "gold_point_id": "GPoint12",
+              "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, leading to high computational cost and low data efficiency.",
+              "rationale": "No candidate claim mentions TreePO, TreeRL, or SPO."
+            },
+            {
+              "gold_point_id": "GPoint14",
+              "text": "Our design yields more efficient sampling and training, especially in GUI-agent settings.",
+              "rationale": "No candidate claim explicitly states that the design yields more efficient sampling and training in GUI-agent settings."
+            },
+            {
+              "gold_point_id": "GPoint15",
+              "text": "Warm-up fine-tuning of a general VLM to a mobile GUI domain agent with basic capabilities is performed.",
+              "rationale": "No candidate claim describes warm-up fine-tuning of a general VLM to a mobile GUI domain agent."
+            }
+          ],
+          "bad_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim1",
+              "reference_key": "aitw",
+              "support": "weak",
+              "appropriateness_score": 4.0,
+              "placement_score": 5.0,
+              "topic_consistency_score": 6.0,
+              "support_rationale": "AITW is a dataset for Android UI control, not a direct study of VLM-driven agents. The claim discusses general emergence driven by VLMs; AITW serves as a benchmark but is tangentially related.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "AITW is a dataset for Android UI control, not a direct study of VLM-driven agents. The claim discusses general emergence driven by VLMs; AITW serves as a benchmark but is tangentially related.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim1",
+              "reference_key": "cogagent",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence for 'cogagent' is available; the claim's support cannot be assessed.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence for 'cogagent' is available; the claim's support cannot be assessed.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim1",
+              "reference_key": "auto-ui",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence for 'auto-ui'; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence for 'auto-ui'; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim3",
+              "reference_key": "cogagent",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata for 'cogagent' found; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata for 'cogagent' found; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim5",
+              "reference_key": "auto-ui",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No retrieved evidence or metadata for 'auto-ui' available; cannot verify claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No retrieved evidence or metadata for 'auto-ui' available; cannot verify claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim11",
+              "reference_key": "falconui",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for 'falconui'; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for 'falconui'; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim13",
+              "reference_key": "amex",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference 'amex'; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference 'amex'; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim16",
+              "reference_key": "aitz",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No citation metadata or retrieved evidence available for reference 'aitz'; cannot verify claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No citation metadata or retrieved evidence available for reference 'aitz'; cannot verify claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim17",
+              "reference_key": "aitz",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata for 'aitz' was provided and no retrieved evidence is available. Therefore, the claim that CoaT improves performance on complex GUI actions when combined with AITZ fine-tuning cannot be assessed at all. The reference is unverifiable from the given information.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata for 'aitz' was provided and no retrieved evidence is available. Therefore, the claim that CoaT improves performance on complex GUI actions when combined with AITZ fine-tuning cannot be assessed at all. The reference is unverifiable from the given information.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim20",
+              "reference_key": "cot-mobile",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim21",
+              "reference_key": "cot-mobile",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim26",
+              "reference_key": "stepdpo",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata for 'stepdpo' found and no retrieved evidence; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata for 'stepdpo' found and no retrieved evidence; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim27",
+              "reference_key": "deepseekr1",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata for 'deepseekr1' found; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata for 'deepseekr1' found; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim29",
+              "reference_key": "guig1",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence for 'guig1' found; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence for 'guig1' found; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim30",
+              "reference_key": "guig1",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No citation metadata or retrieved evidence snippets are available for 'guig1'. Therefore, it is impossible to assess whether the claim is supported by the cited paper.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No citation metadata or retrieved evidence snippets are available for 'guig1'. Therefore, it is impossible to assess whether the claim is supported by the cited paper.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim32",
+              "reference_key": "tot",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No reference metadata or retrieved evidence available for 'tot'. Insufficient information to assess claim support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No reference metadata or retrieved evidence available for 'tot'. Insufficient information to assess claim support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim38",
+              "reference_key": "cpo",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference 'cpo'; unable to verify claim support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference 'cpo'; unable to verify claim support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim39",
+              "reference_key": "cpo",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No metadata or retrieved evidence for 'cpo' found; cannot assess support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence for 'cpo' found; cannot assess support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim42",
+              "reference_key": "cpo",
+              "support": "unknown",
+              "appropriateness_score": 1.0,
+              "placement_score": 1.0,
+              "topic_consistency_score": 1.0,
+              "support_rationale": "No evidence available for reference key 'cpo'; support remains unknown.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No evidence available for reference key 'cpo'; support remains unknown.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim42",
+              "reference_key": "mcts-dpo",
+              "support": "weak",
+              "appropriateness_score": 4.0,
+              "placement_score": 5.0,
+              "topic_consistency_score": 2.0,
+              "support_rationale": "No retrieved evidence or metadata to confirm that MCTS-DPO is indeed a text-based approach as claimed. The citation is used as a contrast, but without evidence, the support is weak.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No retrieved evidence or metadata to confirm that MCTS-DPO is indeed a text-based approach as claimed. The citation is used as a contrast, but without evidence, the support is weak.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            }
+          ],
+          "overclaim_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim41",
+              "reference_key": "restmcts",
+              "support": "partial",
+              "appropriateness_score": 6.0,
+              "placement_score": 6.0,
+              "topic_consistency_score": 6.0,
+              "support_rationale": "ReST-MCTS* uses MCTS with process reward guidance, which relates to the idea of tree-based backward credit assignment without explicit PRM, but it does not specifically describe CoaT-tree or rule-based rewards as in MobileIPL. The connection is partial.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim attributes 'CoaT-tree with rule-based rewards and backward credit assignment' to MobileIPL citing ReST-MCTS*, but ReST-MCTS* does not define CoaT-tree nor mention rule-based rewards; it uses process rewards from tree search. This overstates the similarity.",
+              "rationale": "ReST-MCTS* uses MCTS with process reward guidance, which relates to the idea of tree-based backward credit assignment without explicit PRM, but it does not specifically describe CoaT-tree or rule-based rewards as in MobileIPL. The connection is partial."
+            }
+          ],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim1",
+              "citation_count": 4,
+              "group_support": "yes",
+              "group_rationale": "AppAgent directly supports the claim by describing an LLM-based multimodal agent that autonomously interacts with smartphone interfaces, driven by advances in VLM-like models. AITW provides weak tangential support as a benchmark, while the other two citations have unknown support. The key components of the claim are covered by AppAgent.",
+              "covered_aspects": [
+                "Mobile GUI agents autonomously interact with smartphone interfaces",
+                "driven by advances in VLMs"
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "aitw",
+                "cogagent",
+                "appagent",
+                "auto-ui"
+              ]
+            },
+            {
+              "claim_id": "SClaim42",
+              "citation_count": 2,
+              "group_support": "no",
+              "group_rationale": "Neither citation provides evidence for the claim. The citation for 'cpo' has unknown support (no evidence retrieved), and the citation for 'mcts-dpo' weakly supports that it is a text-based approach but lacks any retrieved evidence to confirm. Therefore, the claim that MobileIPL operates in the visually grounded mobile GUI domain with multi-turn dialogues conditioned on UI screenshots, unlike text-based approaches, is unsupported.",
+              "covered_aspects": [],
+              "missing_aspects": [
+                "MobileIPL operates in the visually grounded mobile GUI domain with multi-turn dialogues conditioned on UI screenshots",
+                "MobileIPL is unlike text-based approaches"
+              ],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "cpo",
+                "mcts-dpo"
+              ]
+            }
+          ],
+          "topic_structure_issues": []
+        }
+      },
+      "skill": {
+        "sample_id": "sim_prompt+skill-evotest",
+        "metrics": {
+          "overall": 7.61,
+          "citation_quality": 8.45,
+          "relevance": 9.52,
+          "content_coverage": 3.18
+        },
+        "diagnostics": {
+          "missing_points": 6,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 0,
+          "overclaim_citation_claim_pairs": 1,
+          "citation_group_support": 1,
+          "topic_structure_issues": 0
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint2",
+              "text": "Closed-source VLM-based agents are used for mobile GUI and multi-agent frameworks.",
+              "rationale": "No candidate claim mentions closed-source VLM-based agents or multi-agent frameworks."
+            },
+            {
+              "gold_point_id": "GPoint5",
+              "text": "ReFT applies reinforcement learning fine-tuning to improve performance on math problems.",
+              "rationale": "No mention of ReFT."
+            },
+            {
+              "gold_point_id": "GPoint8",
+              "text": "Digirl and Distrl use online trajectory collection to improve generalization; however, the process is very slow.",
+              "rationale": "No mention of Digirl or Distrl."
+            },
+            {
+              "gold_point_id": "GPoint9",
+              "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
+              "rationale": "No mention of Reachagent."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "TCPO optimizes thoughts but does not explicitly enforce thought-action consistency.",
+              "rationale": "No mention of TCPO."
+            },
+            {
+              "gold_point_id": "GPoint11",
+              "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, which leads to high computational cost and low data efficiency.",
+              "rationale": "No mention of TreePO, TreeRL, or SPO."
+            }
+          ],
+          "bad_citation_claim_pairs": [],
+          "overclaim_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim2",
+              "reference_key": "arxiv:2312.08914",
+              "support": "yes",
+              "appropriateness_score": 10.0,
+              "placement_score": 9.0,
+              "topic_consistency_score": 10.0,
+              "support_rationale": "The retrieved evidence (abstract and tldr) explicitly confirms that CogAgent is an 18B-parameter VLM using dual low- and high-resolution encoders to process 1120x1120 screenshots, achieving state-of-the-art performance on the AITW benchmark, and that it uses only screenshots as input without relying on extracted HTML or OCR text. The claim's mention of 'accessibility trees' is not directly cited but is consistent with the model's visual-only approach.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim adds 'without relying on HTML or accessibility trees,' but the evidence only specifies that the model does not rely on extracted HTML or OCR text. The exclusion of accessibility trees is not explicitly supported, making this a minor overstatement relative to the cited paper.",
+              "rationale": "The retrieved evidence (abstract and tldr) explicitly confirms that CogAgent is an 18B-parameter VLM using dual low- and high-resolution encoders to process 1120x1120 screenshots, achieving state-of-the-art performance on the AITW benchmark, and that it uses only screenshots as input without relying on extracted HTML or OCR text. The claim's mention of 'accessibility trees' is not directly cited but is consistent with the model's visual-only approach.",
+              "retrieval_used": true,
+              "retrieved_evidence": [
+                {
+                  "source": "deepxiv_tldr",
+                  "citation": "2312.08914",
+                  "text": "[research paper] CogAgent introduces an 18B-parameter visual language model specialized in GUI understanding and navigation, leveraging dual encoders (low- and high-resolution) to process 1120×1120 screenshots. It achieves state-of-the-art performance on diverse VQA benchmarks and outperforms LLM-based methods on PC and Android GUI navigation tasks by directly interpreting visual GUI elements without relying on extracted HTML or OCR text, enabling end-to-end visual grounding for agent actions."
+                },
+                {
+                  "source": "deepxiv_abstract",
+                  "citation": "2312.08914",
+                  "text": "People are spending an enormous amount of time on digital devices through graphical user interfaces (GUIs), e.g., computer or smartphone screens. Large language models (LLMs) such as ChatGPT can assist people in tasks like writing emails, but struggle to understand and interact with GUIs, thus limiting their potential to increase automation levels. In this paper, we introduce CogAgent, an 18-billion-parameter visual language model (VLM) specializing in GUI understanding and navigation. By utilizing both low-resolution and high-resolution image encoders, CogAgent supports input at a resolution of 1120*1120, enabling it to recognize tiny page elements and text. As a generalist visual language model, CogAgent achieves the state of the art on five text-rich and four general VQA benchmarks, including VQAv2, OK-VQA, Text-VQA, ST-VQA, ChartQA, infoVQA, DocVQA, MM-Vet, and POPE. CogAgent, using only screenshots as input, outperforms LLM-based methods that consume extracted HTML text on both PC and Android GUI navigation tasks -- Mind2Web and AITW, advancing the state of the art. The model and codes are available at https://github.com/THUDM/CogVLM, with a new version of CogAgent-9B-20241220 available at https://github.com/THUDM/CogAgent."
+                }
+              ],
+              "second_pass_used": true
+            }
+          ],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim5",
+              "citation_count": 2,
+              "group_support": "yes",
+              "group_rationale": "Both citations provide direct evidence: OS-Atlas explicitly describes a unified grounding corpus across desktop, mobile, and web platforms; UI-TARS explicitly integrates perception, System-2 reasoning, and unified action modeling into an end-to-end agent with iterative self-improvement from online interaction traces. All components of the claim are fully supported.",
+              "covered_aspects": [
+                "OS-Atlas provides a unified grounding corpus spanning desktop, mobile, and web platforms.",
+                "UI-TARS integrates perception, System-2 reasoning, and unified action modeling.",
+                "UI-TARS is an end-to-end native agent capable of iterative self-improvement from online interaction traces."
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "arxiv:2410.23218",
+                "arxiv:2501.12326"
+              ]
+            }
+          ],
+          "topic_structure_issues": []
+        }
+      },
+      "metric_delta_skill_minus_baseline": {
+        "overall": 1.65,
+        "citation_quality": 3.4,
+        "relevance": 2.43,
+        "content_coverage": -0.15
+      },
+      "diagnostic_delta_skill_minus_baseline": {
+        "missing_points": -2,
+        "hallucinated_references": 0,
+        "bad_citation_claim_pairs": -20,
+        "overclaim_citation_claim_pairs": 0,
+        "citation_group_support": -1,
+        "topic_structure_issues": 0
+      }
+    },
+    {
+      "case_id": "researcher",
+      "baseline": {
+        "sample_id": "sim_prompt-evotest",
+        "metrics": {
+          "overall": 4.88,
+          "citation_quality": 3.5,
+          "relevance": 3.8,
+          "content_coverage": 2.06
+        },
+        "diagnostics": {
+          "missing_points": 14,
+          "hallucinated_references": 1,
+          "bad_citation_claim_pairs": 21,
+          "overclaim_citation_claim_pairs": 0,
+          "citation_group_support": 2,
+          "topic_structure_issues": 5
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint1",
+              "text": "Multi-agent collaborative writing and multi-module retrieval are used to improve research idea generation.",
+              "rationale": "No candidate claim covers multi-agent collaborative writing and multi-module retrieval for research idea generation."
+            },
+            {
+              "gold_point_id": "GPoint3",
+              "text": "Wang et al. proposed using LLMs to automatically write survey papers.",
+              "rationale": "No candidate claim mentions Wang et al. proposing LLMs for automatic survey writing."
+            },
+            {
+              "gold_point_id": "GPoint4",
+              "text": "Huang et al. introduced a benchmark for evaluating LLMs in coding solutions for machine learning.",
+              "rationale": "No candidate claim mentions Huang et al. introducing a benchmark for coding solutions for machine learning."
+            },
+            {
+              "gold_point_id": "GPoint5",
+              "text": "Wang et al. proposed a method leveraging LLMs for scientific literature retrieval.",
+              "rationale": "No candidate claim mentions Wang et al. leveraging LLMs for scientific literature retrieval."
+            },
+            {
+              "gold_point_id": "GPoint9",
+              "text": "The tradition of AI-assisted scientific discovery dates back to early applications in chemistry, biology, materials, and mathematics.",
+              "rationale": "No candidate claim discusses the tradition of AI-assisted scientific discovery in chemistry, biology, etc."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "AI is mainly used for data analysis within a single domain, playing a passive role without driving scientific discovery.",
+              "rationale": "No candidate claim states that AI is mainly used for passive data analysis within a single domain."
+            },
+            {
+              "gold_point_id": "GPoint11",
+              "text": "The key challenge is enabling AI to go beyond analysis and actively contribute to generating new research ideas, which demands advanced reasoning and creativity.",
+              "rationale": "No candidate claim explicitly identifies the challenge of enabling AI to actively generate new research ideas."
+            },
+            {
+              "gold_point_id": "GPoint12",
+              "text": "Our work builds on AI's historical role in science, aiming to shift AI from a supporting tool to a leader in scientific discovery.",
+              "rationale": "No candidate claim mentions building on AI's historical role to shift from supporting tool to leader in discovery."
+            },
+            {
+              "gold_point_id": "GPoint13",
+              "text": "AI tools are used in scientific publishing for summarizing content, detecting inaccuracies, and identifying fairness disparities.",
+              "rationale": "No candidate claim covers all aspects of AI tools in scientific publishing: summarizing, detecting inaccuracies, and identifying fairness disparities."
+            },
+            {
+              "gold_point_id": "GPoint14",
+              "text": "Hosseini & Horbach conducted small-scale qualitative experiments to evaluate ChatGPT in peer review.",
+              "rationale": "No candidate claim mentions Hosseini & Horbach's small-scale qualitative experiments on ChatGPT in peer review."
+            },
+            {
+              "gold_point_id": "GPoint15",
+              "text": "Robertson invited 10 participants to assess GPT-4's benefits in peer review assistance.",
+              "rationale": "No candidate claim mentions Robertson's study with 10 participants on GPT-4's benefits in peer review assistance."
+            },
+            {
+              "gold_point_id": "GPoint17",
+              "text": "When LLMs act as judges, even advanced models like GPT-4 and Gemini lag behind reward models trained specifically for the task, as shown in RewardBench.",
+              "rationale": "No candidate claim mentions RewardBench or the comparison showing LLM judges lag behind reward models."
+            },
+            {
+              "gold_point_id": "GPoint19",
+              "text": "We train a Generative Reward Model (Zhang et al., 2024) to simulate a comprehensive peer review.",
+              "rationale": "No candidate claim mentions training a Generative Reward Model (Zhang et al., 2024) to simulate peer review."
+            },
+            {
+              "gold_point_id": "GPoint20",
+              "text": "CycleReviewer simulates reviewers with varying perspectives, documenting summaries, strengths, and weaknesses, then a primary reviewer consolidates for final decision.",
+              "rationale": "No candidate claim describes CycleReviewer or its simulating of reviewers with varying perspectives."
+            }
+          ],
+          "bad_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim1",
+              "reference_key": "llm4sr",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No retrieved evidence or metadata available to verify the claim about Luo et al. providing the first systematic survey mapping LLM applications across the full research cycle.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No retrieved evidence or metadata available to verify the claim about Luo et al. providing the first systematic survey mapping LLM applications across the full research cycle.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim2",
+              "reference_key": "ai_scientist",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No retrieved evidence or citation metadata available for reference key 'ai_scientist'. Unable to verify any aspect of the claim from the source.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No retrieved evidence or citation metadata available for reference key 'ai_scientist'. Unable to verify any aspect of the claim from the source.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim3",
+              "reference_key": "mlr_copilot",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'mlr_copilot'. Unable to verify any aspect of the claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'mlr_copilot'. Unable to verify any aspect of the claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim5",
+              "reference_key": "si_idea",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No retrieved evidence or metadata available for reference key 'si_idea'. Unable to verify the claim's assertions about Si et al.'s study. Support remains unknown due to insufficient information.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No retrieved evidence or metadata available for reference key 'si_idea'. Unable to verify the claim's assertions about Si et al.'s study. Support remains unknown due to insufficient information.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim7",
+              "reference_key": "reviewergpt",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'reviewergpt'. Unable to verify any aspect of the claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'reviewergpt'. Unable to verify any aspect of the claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim8",
+              "reference_key": "marg",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'marg'. Unable to verify any aspect of the claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'marg'. Unable to verify any aspect of the claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim9",
+              "reference_key": "sea",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No citation metadata or retrieved evidence available for reference key 'sea'. Unable to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No citation metadata or retrieved evidence available for reference key 'sea'. Unable to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim10",
+              "reference_key": "ai_driven_review",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for the reference key 'ai_driven_review'. Unable to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for the reference key 'ai_driven_review'. Unable to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim11",
+              "reference_key": "reviewrl",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim12",
+              "reference_key": "llm_judge_survey1",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey1'. Unable to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey1'. Unable to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim12",
+              "reference_key": "llm_judge_survey2",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey2'. Unable to verify claim support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey2'. Unable to verify claim support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim15",
+              "reference_key": "dpo",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'dpo'. Unable to verify the claim that DPO simplifies RLHF by reparameterizing the reward function. Evidence is insufficient.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'dpo'. Unable to verify the claim that DPO simplifies RLHF by reparameterizing the reward function. Evidence is insufficient.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim16",
+              "reference_key": "simpo",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'simpo'. Unable to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'simpo'. Unable to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim17",
+              "reference_key": "self_rewarding",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No citation metadata or retrieved evidence available for reference key 'self_rewarding'. Unable to verify claim support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No citation metadata or retrieved evidence available for reference key 'self_rewarding'. Unable to verify claim support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim18",
+              "reference_key": "online_rlhf",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'online_rlhf'. Unable to verify the claim that Dong et al. present a practical workflow for online iterative RLHF using proxy preference models and demonstrate performance improvements over offline approaches.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'online_rlhf'. Unable to verify the claim that Dong et al. present a practical workflow for online iterative RLHF using proxy preference models and demonstrate performance improvements over offline approaches.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim20",
+              "reference_key": "autosurvey",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'autosurvey'. Unable to verify any aspect of the claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'autosurvey'. Unable to verify any aspect of the claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim21",
+              "reference_key": "llm4sr",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'llm4sr'. Cannot verify claim support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'llm4sr'. Cannot verify claim support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim23",
+              "reference_key": "fast_detectgpt",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim24",
+              "reference_key": "fast_detectgpt",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No citation metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify the claim that Fast-DetectGPT achieves substantial improvements in both accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No citation metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify the claim that Fast-DetectGPT achieves substantial improvements in both accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim24",
+              "reference_key": "detectgpt",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata or retrieved evidence available for reference key 'detectgpt'. Unable to verify support for the claim.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata or retrieved evidence available for reference key 'detectgpt'. Unable to verify support for the claim.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            },
+            {
+              "claim_id": "SClaim25",
+              "reference_key": "fast_detectgpt",
+              "support": "unknown",
+              "appropriateness_score": 0.0,
+              "placement_score": 0.0,
+              "topic_consistency_score": 0.0,
+              "support_rationale": "No metadata available for reference key 'fast_detectgpt' and no retrieved evidence. Unable to verify support.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "No metadata available for reference key 'fast_detectgpt' and no retrieved evidence. Unable to verify support.",
+              "retrieval_used": false,
+              "retrieved_evidence": [],
+              "second_pass_used": true
+            }
+          ],
+          "overclaim_citation_claim_pairs": [],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim12",
+              "citation_count": 2,
+              "group_support": "unknown",
+              "group_rationale": "No retrieved evidence is available for any of the citations ('llm_judge_survey1', 'llm_judge_survey2'), so it is unknown whether the claim is supported. All aspects of the claim remain unverified.",
+              "covered_aspects": [],
+              "missing_aspects": [
+                "comprehensive taxonomies",
+                "challenges in consistency, bias, and domain generalization"
+              ],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "llm_judge_survey1",
+                "llm_judge_survey2"
+              ]
+            },
+            {
+              "claim_id": "SClaim24",
+              "citation_count": 2,
+              "group_support": "unknown",
+              "group_rationale": "Both citations have support 'unknown' and no retrieved evidence, so there is no information to either support or refute the claim that Fast-DetectGPT achieves substantial improvements in accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.",
+              "covered_aspects": [],
+              "missing_aspects": [
+                "Substantial accuracy improvement over prior perturbation-based methods like DetectGPT",
+                "Substantial computational efficiency improvement over prior perturbation-based methods like DetectGPT"
+              ],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "fast_detectgpt",
+                "detectgpt"
+              ]
+            }
+          ],
+          "topic_structure_issues": [
+            {
+              "paragraph_id": "S2",
+              "issue": "Paragraph covers a broad range of automation tasks (idea generation, experimentation, writing); could be more focused on specific sub-topic."
+            },
+            {
+              "paragraph_id": "S3",
+              "issue": "None significant; well-focused on peer review."
+            },
+            {
+              "paragraph_id": "S4",
+              "issue": "Topic is methodological; its connection to scientific research context could be emphasized more in the paragraph."
+            },
+            {
+              "paragraph_id": "S5",
+              "issue": "Overlaps partially with S2 on writing; could be merged for conciseness."
+            },
+            {
+              "paragraph_id": "S6",
+              "issue": "Slightly tangential to the main focus of the related work; may be better placed in an ethics or limitations section."
+            }
+          ]
+        }
+      },
+      "skill": {
+        "sample_id": "sim_prompt+skill-evotest",
+        "metrics": {
+          "overall": 8.03,
+          "citation_quality": 10.0,
+          "relevance": 6.67,
+          "content_coverage": 4.12
+        },
+        "diagnostics": {
+          "missing_points": 11,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 0,
+          "overclaim_citation_claim_pairs": 0,
+          "citation_group_support": 0,
+          "topic_structure_issues": 3
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint1",
+              "text": "Multi-agent collaborative writing for research idea generation (Baek et al., 2024)",
+              "rationale": "No candidate claim mentions Baek et al. or multi-agent collaborative writing for research idea generation."
+            },
+            {
+              "gold_point_id": "GPoint2",
+              "text": "Multi-module retrieval for research idea generation (Yang et al., 2023)",
+              "rationale": "No candidate claim mentions Yang et al. or multi-module retrieval for research idea generation."
+            },
+            {
+              "gold_point_id": "GPoint6",
+              "text": "LLMs for scientific literature retrieval (Wang et al., 2023b)",
+              "rationale": "No candidate claim mentions Wang et al. or LLMs for scientific literature retrieval."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "Tradition of AI-assisted scientific discovery (Langley, 1987; 2024)",
+              "rationale": "No candidate claim mentions Langley or the tradition of AI-assisted scientific discovery."
+            },
+            {
+              "gold_point_id": "GPoint11",
+              "text": "AI applied in chemistry (Buchanan & Feigenbaum, 1981), synthetic biology (Jumper et al., 2021; Hayes et al., 2024), material discovery (Pyzer-Knapp et al., 2022; Merchant et al., 2023), and mathematics (Romera-Paredes et al., 2024)",
+              "rationale": "No candidate claim covers AI applied in specific scientific domains such as chemistry, synthetic biology, etc."
+            },
+            {
+              "gold_point_id": "GPoint12",
+              "text": "With neural networks, more researchers focus on AI4Science (A14Science & Quantum, 2023; LI, 2024; Yakaboski et al., 2023)",
+              "rationale": "No candidate claim discusses the increased focus on AI4Science with neural networks."
+            },
+            {
+              "gold_point_id": "GPoint15",
+              "text": "Builds on AI's historical role to shift AI from supporting tool to leader in scientific discovery",
+              "rationale": "No candidate claim describes shifting AI from supporting tool to leader in scientific discovery."
+            },
+            {
+              "gold_point_id": "GPoint16",
+              "text": "AI tools in scientific publishing for summarizing, detecting inaccuracies, and identifying fairness disparities",
+              "rationale": "No candidate claim mentions AI tools for summarizing, detecting inaccuracies, or fairness disparities in scientific publishing."
+            },
+            {
+              "gold_point_id": "GPoint17",
+              "text": "Small-scale qualitative experiment evaluating ChatGPT in peer review (Hosseini & Horbach, 2023)",
+              "rationale": "No candidate claim references Hosseini & Horbach's experiment evaluating ChatGPT in peer review."
+            },
+            {
+              "gold_point_id": "GPoint19",
+              "text": "Using GPT-4 to evaluate full-text PDFs of scientific papers (Lu et al., 2024; Tyser et al., 2024)",
+              "rationale": "No candidate claim covers Lu et al. or Tyser et al.'s work on using GPT-4 to evaluate full-text PDFs."
+            },
+            {
+              "gold_point_id": "GPoint23",
+              "text": "CycleReviewer simulates reviewers with varying perspectives, documents summaries, strengths, weaknesses, and consolidates final decision",
+              "rationale": "No candidate claim mentions CycleReviewer or its approach of simulating multiple reviewer perspectives."
+            }
+          ],
+          "bad_citation_claim_pairs": [],
+          "overclaim_citation_claim_pairs": [],
+          "citation_group_support": [],
+          "topic_structure_issues": [
+            {
+              "paragraph_id": "S2",
+              "issue": "Paragraph likely covers multiple aspects of LLMs in research, but may intermix idea generation with experimentation; citations are relevant but not all from gold list."
+            },
+            {
+              "paragraph_id": "S3",
+              "issue": "Paragraph appears too narrowly focused on data-to-paper, missing broader historical AI-assisted discovery context; only two citations."
+            },
+            {
+              "paragraph_id": "S4",
+              "issue": "Citations are relevant, but paragraph could benefit from including more gold citations like CycleReviewer."
+            }
+          ]
+        }
+      },
+      "metric_delta_skill_minus_baseline": {
+        "overall": 3.15,
+        "citation_quality": 6.5,
+        "relevance": 2.87,
+        "content_coverage": 2.06
+      },
+      "diagnostic_delta_skill_minus_baseline": {
+        "missing_points": -3,
+        "hallucinated_references": -1,
+        "bad_citation_claim_pairs": -21,
+        "overclaim_citation_claim_pairs": 0,
+        "citation_group_support": -2,
+        "topic_structure_issues": -2
+      }
+    },
+    {
+      "case_id": "source",
+      "baseline": {
+        "sample_id": "sim_prompt+skill-evotest",
+        "metrics": {
+          "overall": 7.07,
+          "citation_quality": 8.34,
+          "relevance": 8.24,
+          "content_coverage": 3.33
+        },
+        "diagnostics": {
+          "missing_points": 6,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 1,
+          "overclaim_citation_claim_pairs": 0,
+          "citation_group_support": 1,
+          "topic_structure_issues": 0
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint3",
+              "text": "MLLMs used to score and filter agent trajectories for finetuning and test-time refinements (prompts, reflections, tools).",
+              "rationale": "No candidate claim mentions MLLMs scoring and filtering agent trajectories for finetuning or test-time refinements."
+            },
+            {
+              "gold_point_id": "GPoint6",
+              "text": "Closely related work uses GPT-4V evaluator prompted with benchmark-specific rubrics to evaluate trajectories for Reflexion and behavior cloning.",
+              "rationale": "No candidate claim mentions GPT-4V evaluator prompted with benchmark-specific rubrics for Reflexion and behavior cloning."
+            },
+            {
+              "gold_point_id": "GPoint7",
+              "text": "Similar evaluator guides tree search, filters trajectories for memories/tools to boost performance in (Visual)WebArena, and for RL training.",
+              "rationale": "No claim about evaluator guiding tree search or filtering trajectories for (Visual)WebArena and RL training."
+            },
+            {
+              "gold_point_id": "GPoint9",
+              "text": "Early work: chain-of-thought prompting yields gains in reasoning.",
+              "rationale": "SClaim5 mentions chain-of-thought reasoning but in the context of verification, not as early work on CoT prompting yielding reasoning gains."
+            },
+            {
+              "gold_point_id": "GPoint10",
+              "text": "Chain-of-thought extended to multimodal and environment-interaction settings.",
+              "rationale": "No claim states that chain-of-thought is extended to multimodal and environment-interaction settings."
+            },
+            {
+              "gold_point_id": "GPoint12",
+              "text": "Recent work: training MLLMs with sampling, RL, and formal verifiers to generate reasoning traces autonomously.",
+              "rationale": "No claim about training MLLMs with sampling, RL, and formal verifiers to generate reasoning traces autonomously."
+            }
+          ],
+          "bad_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim5",
+              "reference_key": "arxiv:2201.11903",
+              "support": "no",
+              "appropriateness_score": 2.0,
+              "placement_score": 3.0,
+              "topic_consistency_score": 4.0,
+              "support_rationale": "The cited paper 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models' focuses on chain-of-thought prompting for reasoning tasks and does not address generative verifiers or the verification process. The abstract mentions 'verifier' only in passing to describe a baseline (finetuned GPT-3 with a verifier) that is surpassed, not to discuss enabling chain-of-thought reasoning during verification. The retrieved evidence confirms the paper's emphasis on few-shot prompting for reasoning, with no mention of generative verifiers. Thus, the claim that chain-of-thought reasoning is enabled during verification by generative verifiers is not supported.",
+              "overclaim_status": "none",
+              "overclaim_rationale": "",
+              "rationale": "The cited paper 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models' focuses on chain-of-thought prompting for reasoning tasks and does not address generative verifiers or the verification process. The abstract mentions 'verifier' only in passing to describe a baseline (finetuned GPT-3 with a verifier) that is surpassed, not to discuss enabling chain-of-thought reasoning during verification. The retrieved evidence confirms the paper's emphasis on few-shot prompting for reasoning, with no mention of generative verifiers. Thus, the claim that chain-of-thought reasoning is enabled during verification by generative verifiers is not supported.",
+              "retrieval_used": true,
+              "retrieved_evidence": [
+                {
+                  "source": "deepxiv_tldr",
+                  "citation": "2201.11903",
+                  "text": "[research paper] Chain-of-thought prompting enables large language models to perform complex reasoning by leveraging few-shot exemplars that include intermediate natural language reasoning steps. Empirical results show that even a small number of chain-of-thought demonstrations—such as eight—can significantly boost performance on arithmetic, commonsense, and symbolic reasoning tasks, with PaLM 540B achieving state-of-the-art results on GSM8K without fine-tuning, demonstrating that reasoning emerges naturally in sufficiently large models through in-context learning."
+                },
+                {
+                  "source": "deepxiv_abstract",
+                  "citation": "2201.11903",
+                  "text": "We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier."
+                }
+              ],
+              "second_pass_used": true
+            }
+          ],
+          "overclaim_citation_claim_pairs": [],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim3",
+              "citation_count": 2,
+              "group_support": "partial",
+              "group_rationale": "The first citation (arxiv:2306.05685) explicitly supports positional effects and self-preference (as self-enhancement), but does not clearly cover phrasing sensitivity (it mentions 'morbidity' instead). The second citation (arxiv:2402.04788) confirms general biases in multimodal LLM judges but does not specifically address phrasing sensitivity. Therefore, one key component remains unsupported.",
+              "covered_aspects": [
+                "positional effects",
+                "self-preference"
+              ],
+              "missing_aspects": [
+                "phrasing sensitivity"
+              ],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "arxiv:2306.05685",
+                "arxiv:2402.04788"
+              ]
+            }
+          ],
+          "topic_structure_issues": []
+        }
+      },
+      "skill": {
+        "sample_id": "sim_prompt-evotest",
+        "metrics": {
+          "overall": 7.82,
+          "citation_quality": 9.11,
+          "relevance": 8.5,
+          "content_coverage": 5.42
+        },
+        "diagnostics": {
+          "missing_points": 4,
+          "hallucinated_references": 0,
+          "bad_citation_claim_pairs": 0,
+          "overclaim_citation_claim_pairs": 1,
+          "citation_group_support": 3,
+          "topic_structure_issues": 2
+        },
+        "detailed_diagnostics": {
+          "missing_points": [
+            {
+              "gold_point_id": "GPoint3",
+              "text": "MLLMs score and filter agent trajectories for fine-tuning.",
+              "rationale": "No candidate claim explicitly states that MLLMs score and filter agent trajectories for fine-tuning."
+            },
+            {
+              "gold_point_id": "GPoint7",
+              "text": "Closely related work uses a GPT-4V-based evaluator prompted with benchmark-specific rubrics to evaluate trajectories for Reflexion and behavior cloning.",
+              "rationale": "None of the candidate claims mention a GPT-4V-based evaluator with benchmark-specific rubrics used for Reflexion and behavior cloning."
+            },
+            {
+              "gold_point_id": "GPoint8",
+              "text": "Following works employ a similar evaluator to guide tree search, filter trajectories for memory/tool generation, and for RL training.",
+              "rationale": "No candidate claim explicitly describes subsequent works using a similar evaluator for tree search, trajectory filtering for memory/tool generation, or RL training."
+            },
+            {
+              "gold_point_id": "GPoint11",
+              "text": "Chain-of-thought has been extended to multimodal and environment-interaction settings.",
+              "rationale": "No candidate claim asserts that chain-of-thought has been extended to multimodal and environment-interaction settings."
+            }
+          ],
+          "bad_citation_claim_pairs": [],
+          "overclaim_citation_claim_pairs": [
+            {
+              "claim_id": "SClaim2",
+              "reference_key": "arxiv:2306.05685",
+              "support": "partial",
+              "appropriateness_score": 7,
+              "placement_score": 7,
+              "topic_consistency_score": 8,
+              "support_rationale": "The paper identifies and proposes mitigations for some biases (position, self-enhancement) but does not explicitly mention 'verbosity preference' or cover all applications listed in the claim. The claim overreaches by stating mitigations for verbosity preference.",
+              "overclaim_status": "mild",
+              "overclaim_rationale": "The claim asserts that studies have identified and mitigated verbosity preference, but the cited paper does not explicitly address verbosity preference, only position and self-enhancement biases.",
+              "rationale": "The paper identifies and proposes mitigations for some biases (position, self-enhancement) but does not explicitly mention 'verbosity preference' or cover all applications listed in the claim. The claim overreaches by stating mitigations for verbosity preference."
+            }
+          ],
+          "citation_group_support": [
+            {
+              "claim_id": "SClaim12",
+              "citation_count": 2,
+              "group_support": "yes",
+              "group_rationale": "Both citations fully support the claim: the first describes training reward predictors from human pairwise preferences over trajectory segments (Christiano et al.), and the second describes scaling this approach to align language models via RLHF (Ouyang et al.).",
+              "covered_aspects": [
+                "Christiano et al. train reward predictors from human pairwise preferences over trajectory segments",
+                "Ouyang et al. scale this approach to align language models via reinforcement learning from human feedback (RLHF)"
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "arxiv:1706.03741",
+                "arxiv:2203.02155"
+              ]
+            },
+            {
+              "claim_id": "SClaim14",
+              "citation_count": 2,
+              "group_support": "yes",
+              "group_rationale": "Both citations fully support the claim: RewardBench for systematic evaluation of reward models, and AgentRewardBench specifically for multimodal agents across perception, planning, and safety.",
+              "covered_aspects": [
+                "RewardBench introduced to systematically evaluate reward models",
+                "AgentRewardBench introduced, focusing on multimodal agents across perception, planning, and safety"
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "arxiv:2403.13787",
+                "arxiv:2506.21252"
+              ]
+            },
+            {
+              "claim_id": "SClaim19",
+              "citation_count": 2,
+              "group_support": "yes",
+              "group_rationale": "Both citations fully support the claim: VisualWebArena extends WebArena with visually grounded tasks using multimodal perception, and set-of-marks prompting is correctly introduced as the method to ground agent actions. No missing aspects.",
+              "covered_aspects": [
+                "VisualWebArena extends framework with visually grounded tasks",
+                "introduces set-of-marks (SoM) prompting",
+                "to ground agent actions in visual interface elements"
+              ],
+              "missing_aspects": [],
+              "derived_from_single_pair": false,
+              "reference_keys": [
+                "arxiv:2401.13649",
+                "arxiv:2310.11441"
+              ]
+            }
+          ],
+          "topic_structure_issues": [
+            {
+              "paragraph_id": "S2",
+              "issue": "No significant issues; some overlap with test-time scaling is acceptable."
+            },
+            {
+              "paragraph_id": "S5",
+              "issue": "Only one citation cited; could benefit from more references."
+            }
+          ]
+        }
+      },
+      "metric_delta_skill_minus_baseline": {
+        "overall": 0.75,
+        "citation_quality": 0.77,
+        "relevance": 0.26,
+        "content_coverage": 2.09
+      },
+      "diagnostic_delta_skill_minus_baseline": {
+        "missing_points": -2,
+        "hallucinated_references": 0,
+        "bad_citation_claim_pairs": -1,
+        "overclaim_citation_claim_pairs": 1,
+        "citation_group_support": 2,
+        "topic_structure_issues": 2
+      }
+    }
+  ],
+  "detailed_diagnostics": {
+    "07794": {
+      "baseline": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint1",
+            "text": "ReAct demonstrated that LLMs can synergize reasoning and acting, enabling autonomous retrieval decisions.",
+            "rationale": "No candidate claim mentions ReAct or the synergistic reasoning-acting concept from the given citation."
+          },
+          {
+            "gold_point_id": "GPoint2",
+            "text": "Chain-of-Retrieval and DeepRAG structure retrieval into sequential steps for handling complex queries.",
+            "rationale": "No candidate claim mentions Chain-of-Retrieval, DeepRAG, or their specific citations."
+          },
+          {
+            "gold_point_id": "GPoint6",
+            "text": "Early approaches for adaptive retrieval used heuristics or classifiers to detect uncertainty and determine retrieval need.",
+            "rationale": "No candidate claim describes early approaches using heuristics or classifiers for uncertainty detection."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "SMART, SMARTCAL, and OTC train agents to be self-aware and make optimal tool calls using RL.",
+            "rationale": "No candidate claim mentions SMART, SMARTCAL, or OTC."
+          },
+          {
+            "gold_point_id": "GPoint13",
+            "text": "HiPRAG differs by introducing a direct, on-the-fly evaluation of each search step's necessity for explicit efficiency training.",
+            "rationale": "No candidate claim mentions HiPRAG or on-the-fly evaluation of search step necessity."
+          }
+        ],
+        "bad_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim7",
+            "reference_key": "arxiv:2501.12948",
+            "support": "partial",
+            "appropriateness_score": 7.0,
+            "placement_score": 7.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "DeepSeek-R1 demonstrates that RL with verifiable rewards elicits sophisticated reasoning in LLMs, but the paper focuses on reasoning enhancement, not on search or retrieval. The claim's extension to inspiring RL for autonomous search is an inference not directly supported by the paper.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim states that DeepSeek-R1 inspired RL training for autonomous search and retrieval, which is not explicitly demonstrated or claimed in the paper; the inspiration is indirect and mild.",
+            "rationale": "DeepSeek-R1 demonstrates that RL with verifiable rewards elicits sophisticated reasoning in LLMs, but the paper focuses on reasoning enhancement, not on search or retrieval. The claim's extension to inspiring RL for autonomous search is an inference not directly supported by the paper."
+          }
+        ],
+        "citation_group_support": [],
+        "topic_structure_issues": [
+          {
+            "paragraph_id": "S2",
+            "issue": "Paragraph is self-contained but could benefit from deeper connection to tool use specifically."
+          },
+          {
+            "paragraph_id": "S3",
+            "issue": "No significant issues; focus is clear and citations align well."
+          },
+          {
+            "paragraph_id": "S4",
+            "issue": "May be slightly narrow by emphasizing math reasoning heritage; still relevant to efficiency."
+          }
+        ]
+      },
+      "skill": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint1",
+            "text": "ReAct shows LLMs can synergize reasoning and acting for autonomous retrieval decisions.",
+            "rationale": "No candidate claim mentions ReAct or its specific synergy of reasoning and acting for autonomous retrieval decisions."
+          },
+          {
+            "gold_point_id": "GPoint3",
+            "text": "Chain-of-Retrieval and DeepRAG structure retrieval as sequential steps for complex queries.",
+            "rationale": "No candidate claim mentions Chain-of-Retrieval or DeepRAG."
+          },
+          {
+            "gold_point_id": "GPoint5",
+            "text": "RAG-RL uses RL and curriculum learning to enhance retrieval-augmented generation.",
+            "rationale": "No candidate claim mentions RAG-RL or its use of curriculum learning."
+          },
+          {
+            "gold_point_id": "GPoint6",
+            "text": "ToolRL and ToRL show that task-success rewards scale tool-integration capabilities.",
+            "rationale": "No candidate claim mentions ToolRL or ToRL."
+          },
+          {
+            "gold_point_id": "GPoint8",
+            "text": "Inefficiency in agentic RAG leads to adaptive retrieval methods and RL-based efficiency optimization.",
+            "rationale": "No candidate claim directly states that inefficiency in agentic RAG leads to adaptive retrieval methods and RL-based efficiency optimization."
+          },
+          {
+            "gold_point_id": "GPoint9",
+            "text": "Agentic RAG introduces inefficiency through redundant or unnecessary tool calls.",
+            "rationale": "No candidate claim explicitly mentions redundant or unnecessary tool calls as a source of inefficiency."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "Uncertainty detection methods like heuristics, classifiers, or confidence-based approaches are used for adaptive retrieval.",
+            "rationale": "No candidate claim discusses heuristics, classifiers, or confidence-based approaches for uncertainty detection in adaptive retrieval."
+          },
+          {
+            "gold_point_id": "GPoint14",
+            "text": "ReARTeR uses a trustworthy process reward model to score and refine each RAG step.",
+            "rationale": "No candidate claim mentions ReARTeR or its process reward model."
+          },
+          {
+            "gold_point_id": "GPoint15",
+            "text": "SMART, SMARTCAL, and OTC train agents to be self-aware and make optimal tool calls using RL.",
+            "rationale": "No candidate claim mentions SMART, SMARTCAL, or OTC."
+          },
+          {
+            "gold_point_id": "GPoint18",
+            "text": "HiPRAG introduces direct on-the-fly evaluation of each search step's necessity for efficiency.",
+            "rationale": "No candidate claim mentions HiPRAG or its on-the-fly evaluation of search step necessity."
+          }
+        ],
+        "bad_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [],
+        "citation_group_support": [],
+        "topic_structure_issues": [
+          {
+            "paragraph_id": "S2",
+            "issue": "Could more explicitly link to the evolution toward agentic systems mentioned in GTopic1, but still focused on prompting-based RAG."
+          },
+          {
+            "paragraph_id": "S3",
+            "issue": "None significant: clearly focused on RL-based search agents and their limitations."
+          },
+          {
+            "paragraph_id": "S4",
+            "issue": "Paragraph is brief but coherent; could expand on how process supervision addresses specific inefficiencies."
+          }
+        ]
+      }
+    },
+    "11662": {
+      "baseline": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint5",
+            "text": "Closest related work uses GPT-4V evaluator with benchmark-specific rubrics for trajectory evaluation in Reflexion and behavior cloning.",
+            "rationale": "No candidate claim mentions GPT-4V evaluator with rubrics for Reflexion and behavior cloning."
+          },
+          {
+            "gold_point_id": "GPoint6",
+            "text": "Similar evaluator used to guide tree search, filter trajectories for memories/tools, and for RL training.",
+            "rationale": "No candidate claim explicitly describes an evaluator used to guide tree search, filter trajectories for memories/tools, and for RL training."
+          },
+          {
+            "gold_point_id": "GPoint9",
+            "text": "Chain-of-thought extended to multimodal and environment-interaction settings.",
+            "rationale": "No candidate claim discusses extending CoT to multimodal or environment-interaction settings."
+          },
+          {
+            "gold_point_id": "GPoint13",
+            "text": "Consolidates disparate applications of MLLM evaluators under a shared framework based on multimodal rewards from MLLM verifiers.",
+            "rationale": "No candidate claim mentions consolidating applications under a shared framework."
+          },
+          {
+            "gold_point_id": "GPoint14",
+            "text": "Evaluates MLLM verifiers across broad range of models, benchmarks, agents, TTS techniques, templates, and applications.",
+            "rationale": "No candidate claim describes evaluating MLLM verifiers across a broad range of models, benchmarks, etc."
+          },
+          {
+            "gold_point_id": "GPoint15",
+            "text": "Dissects MLLM verifier performance over fine-grained metrics, offering guidance on measuring quality.",
+            "rationale": "No candidate claim discusses dissecting MLLM verifier performance over fine-grained metrics."
+          },
+          {
+            "gold_point_id": "GPoint17",
+            "text": "Discusses design choices for MLLM verifiers and introduces SGV, a lightweight method easy to integrate.",
+            "rationale": "No candidate claim discusses design choices or introduces SGV."
+          },
+          {
+            "gold_point_id": "GPoint18",
+            "text": "Improves MLLM verification with benefits to online supervision and self-improvement, achieving SOTA on VisualWebArena.",
+            "rationale": "No candidate claim describes improving MLLM verification with SOTA on VisualWebArena."
+          }
+        ],
+        "bad_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim3",
+            "reference_key": "wang2024deepseek",
+            "support": "weak",
+            "appropriateness_score": 3.0,
+            "placement_score": 3.0,
+            "topic_consistency_score": 4.0,
+            "support_rationale": "DeepSeek-Coder focuses on code generation but does not explicitly discuss formal verifiers like unit tests or reinforcement learning with verifiable rewards (RLVR). The connection to breakthroughs through RLVR is indirect and not stated in the cited work.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "DeepSeek-Coder focuses on code generation but does not explicitly discuss formal verifiers like unit tests or reinforcement learning with verifiable rewards (RLVR). The connection to breakthroughs through RLVR is indirect and not stated in the cited work.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim17",
+            "reference_key": "drouin2024browsergym",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No retrieved evidence or citation metadata is available to verify the claim. The reference key suggests a paper on BrowserGym, but without any concrete information, the support cannot be determined.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No retrieved evidence or citation metadata is available to verify the claim. The reference key suggests a paper on BrowserGym, but without any concrete information, the support cannot be determined.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          }
+        ],
+        "overclaim_citation_claim_pairs": [],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim2",
+            "citation_count": 2,
+            "group_support": "yes",
+            "group_rationale": "Both citations (silver2016mastering and silver2018general) describe AlphaZero, which uses win/loss signals from self-play as rewards to guide search and learning in Go and Chess. This directly supports all components of the claim: the use of win/loss-based verifiers in classical game-playing for guiding search and learning in Go and Chess.",
+            "covered_aspects": [
+              "Verifiers based on win/loss signals",
+              "guided search and learning",
+              "in Go and Chess"
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "silver2016mastering",
+              "silver2018general"
+            ]
+          },
+          {
+            "claim_id": "SClaim3",
+            "citation_count": 2,
+            "group_support": "yes",
+            "group_rationale": "Citation 2 (guo2025deepseek) explicitly supports the claim by describing DeepSeek-R1's use of reinforcement learning with verifiable rewards, including format and answer correctness, which are formal verifiers. This directly supports breakthroughs in mathematical reasoning and code generation. Citation 1 (wang2024deepseek) provides weak support as it does not discuss RLVR, but it does not contradict the claim. Thus, collectively the citations provide sufficient support.",
+            "covered_aspects": [
+              "formal verifiers",
+              "unit tests and exact-match checks",
+              "breakthroughs in code generation",
+              "breakthroughs in mathematical reasoning",
+              "reinforcement learning with verifiable rewards (RLVR)"
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "wang2024deepseek",
+              "guo2025deepseek"
+            ]
+          }
+        ],
+        "topic_structure_issues": []
+      },
+      "skill": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint8",
+            "text": "Following works employ similar evaluator to guide tree search.",
+            "rationale": "No candidate claim mentions the use of a similar evaluator to guide tree search."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "Following works employ similar evaluator for RL training in simpler environments.",
+            "rationale": "No candidate claim mentions the use of a similar evaluator for RL training in simpler environments."
+          },
+          {
+            "gold_point_id": "GPoint14",
+            "text": "Orthogonal approaches scale test-time compute via sampling and search, using heuristics or verifiers.",
+            "rationale": "No candidate claim discusses scaling test-time compute via sampling and search using heuristics or verifiers."
+          },
+          {
+            "gold_point_id": "GPoint15",
+            "text": "Recent work leverages sampling, RL, and formal verifiers to train (M)LLMs that autonomously generate reasoning traces.",
+            "rationale": "No candidate claim mentions recent work leveraging sampling, RL, and formal verifiers to train (M)LLMs for generating reasoning traces."
+          },
+          {
+            "gold_point_id": "GPoint17",
+            "text": "The paper consolidates disparate applications of MLLM evaluators under a shared framework based on multimodal rewards derived from MLLM verifiers.",
+            "rationale": "No candidate claim describes consolidating disparate applications of MLLM evaluators under a shared framework based on multimodal rewards."
+          },
+          {
+            "gold_point_id": "GPoint18",
+            "text": "The paper evaluates MLLM verifiers across a broader range of models, multimodal benchmarks, agents, TTS techniques, evaluation templates, and applications.",
+            "rationale": "No candidate claim mentions evaluating MLLM verifiers across a broad range of models, benchmarks, agents, TTS techniques, and applications."
+          },
+          {
+            "gold_point_id": "GPoint19",
+            "text": "The paper dissects MLLM verifier performance over fine-grained metrics, offering guidance on how to measure quality of evaluations and derived artifacts.",
+            "rationale": "No candidate claim discusses dissecting MLLM verifier performance over fine-grained metrics or offering guidance on measuring evaluation quality."
+          }
+        ],
+        "bad_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim3",
+            "reference_key": "arxiv:2306.05685",
+            "support": "partial",
+            "appropriateness_score": 8,
+            "placement_score": 10,
+            "topic_consistency_score": 9,
+            "support_rationale": "The cited paper studies LLMs as judges for chat assistants and identifies position and self-enhancement biases, but the claim also includes verbosity bias, which is not mentioned in the abstract/tldr (which lists 'morbidity' instead). The core claim about studying LLM judges is supported, but the specific bias list is partially inaccurate.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim states that the paper identified verbosity bias, but the available metadata only mentions position, morbidity, and self-enhancement biases. This introduces a minor inaccuracy.",
+            "rationale": "The cited paper studies LLMs as judges for chat assistants and identifies position and self-enhancement biases, but the claim also includes verbosity bias, which is not mentioned in the abstract/tldr (which lists 'morbidity' instead). The core claim about studying LLM judges is supported, but the specific bias list is partially inaccurate."
+          },
+          {
+            "claim_id": "SClaim21",
+            "reference_key": "arxiv:2210.03629",
+            "support": "partial",
+            "appropriateness_score": 7,
+            "placement_score": 10,
+            "topic_consistency_score": 8,
+            "support_rationale": "ReAct (Yao et al.) is a foundational paper for agent reasoning pipelines (reasoning+acting), but the claim specifically mentions 'MLLM verifiers provide feedback signals', which is not a focus of ReAct. The paper's interleaved reasoning and acting can anchor self-improvement, but the verifier aspect is overstated.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim implies that ReAct explicitly involves MLLM verifiers providing feedback, but the paper does not use MLLM verifiers in that manner; the feedback comes from environment interactions.",
+            "rationale": "ReAct (Yao et al.) is a foundational paper for agent reasoning pipelines (reasoning+acting), but the claim specifically mentions 'MLLM verifiers provide feedback signals', which is not a focus of ReAct. The paper's interleaved reasoning and acting can anchor self-improvement, but the verifier aspect is overstated."
+          },
+          {
+            "claim_id": "SClaim21",
+            "reference_key": "arxiv:2303.11366",
+            "support": "partial",
+            "appropriateness_score": 7,
+            "placement_score": 10,
+            "topic_consistency_score": 8,
+            "support_rationale": "Reflexion (Shinn et al.) uses verbal reflection from task feedback to improve agents, which aligns with 'self-improvement pipelines'. However, the claim specifies 'MLLM verifiers provide feedback signals', whereas Reflexion uses environmental feedback (e.g., binary success/failure) and does not rely on MLLM-based verification.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim overstates by attributing MLLM verifier feedback to Reflexion, when the paper uses general task feedback (not specifically MLLM-based).",
+            "rationale": "Reflexion (Shinn et al.) uses verbal reflection from task feedback to improve agents, which aligns with 'self-improvement pipelines'. However, the claim specifies 'MLLM verifiers provide feedback signals', whereas Reflexion uses environmental feedback (e.g., binary success/failure) and does not rely on MLLM-based verification."
+          }
+        ],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim21",
+            "citation_count": 2,
+            "group_support": "partial",
+            "group_rationale": "Both citations support that Yao et al. and Shinn et al. are foundational for self-improvement and agent reasoning pipelines, but neither citation supports the specific claim that these pipelines involve MLLM verifiers providing feedback signals. ReAct uses environment feedback, and Reflexion uses task feedback (e.g., success/failure), not MLLM-based verification. Thus, the claim is partially supported.",
+            "covered_aspects": [
+              "Yao et al. and Shinn et al. anchor self-improvement and agent reasoning pipelines"
+            ],
+            "missing_aspects": [
+              "MLLM verifiers provide feedback signals"
+            ],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "arxiv:2210.03629",
+              "arxiv:2303.11366"
+            ]
+          }
+        ],
+        "topic_structure_issues": []
+      }
+    },
+    "12299": {
+      "baseline": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint4",
+            "text": "Our method organizes trajectory data into multi-turns of dialogues based on the CoaT thinking pattern.",
+            "rationale": "No candidate claim describes organizing trajectory data into multi-turn dialogues based on CoaT thinking pattern; related claims (SClaim16, SClaim41) do not cover this specific detail."
+          },
+          {
+            "gold_point_id": "GPoint6",
+            "text": "ReFT adopts reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
+            "rationale": "No candidate claim mentions ReFT or reinforcement learning fine-tuning for math problems."
+          },
+          {
+            "gold_point_id": "GPoint9",
+            "text": "Digirl and Distrl use online trajectory collection for mobile GUI agents, but the process is very slow.",
+            "rationale": "No candidate claim mentions Digirl or Distrl."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
+            "rationale": "No candidate claim mentions Reachagent."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "TCPO optimizes thoughts but does not explicitly enforce thought–action consistency.",
+            "rationale": "No candidate claim mentions TCPO."
+          },
+          {
+            "gold_point_id": "GPoint12",
+            "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, leading to high computational cost and low data efficiency.",
+            "rationale": "No candidate claim mentions TreePO, TreeRL, or SPO."
+          },
+          {
+            "gold_point_id": "GPoint14",
+            "text": "Our design yields more efficient sampling and training, especially in GUI-agent settings.",
+            "rationale": "No candidate claim explicitly states that the design yields more efficient sampling and training in GUI-agent settings."
+          },
+          {
+            "gold_point_id": "GPoint15",
+            "text": "Warm-up fine-tuning of a general VLM to a mobile GUI domain agent with basic capabilities is performed.",
+            "rationale": "No candidate claim describes warm-up fine-tuning of a general VLM to a mobile GUI domain agent."
+          }
+        ],
+        "bad_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim1",
+            "reference_key": "aitw",
+            "support": "weak",
+            "appropriateness_score": 4.0,
+            "placement_score": 5.0,
+            "topic_consistency_score": 6.0,
+            "support_rationale": "AITW is a dataset for Android UI control, not a direct study of VLM-driven agents. The claim discusses general emergence driven by VLMs; AITW serves as a benchmark but is tangentially related.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "AITW is a dataset for Android UI control, not a direct study of VLM-driven agents. The claim discusses general emergence driven by VLMs; AITW serves as a benchmark but is tangentially related.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim1",
+            "reference_key": "cogagent",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence for 'cogagent' is available; the claim's support cannot be assessed.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence for 'cogagent' is available; the claim's support cannot be assessed.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim1",
+            "reference_key": "auto-ui",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence for 'auto-ui'; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence for 'auto-ui'; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim3",
+            "reference_key": "cogagent",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata for 'cogagent' found; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata for 'cogagent' found; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim5",
+            "reference_key": "auto-ui",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No retrieved evidence or metadata for 'auto-ui' available; cannot verify claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No retrieved evidence or metadata for 'auto-ui' available; cannot verify claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim11",
+            "reference_key": "falconui",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for 'falconui'; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for 'falconui'; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim13",
+            "reference_key": "amex",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference 'amex'; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference 'amex'; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim16",
+            "reference_key": "aitz",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No citation metadata or retrieved evidence available for reference 'aitz'; cannot verify claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No citation metadata or retrieved evidence available for reference 'aitz'; cannot verify claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim17",
+            "reference_key": "aitz",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata for 'aitz' was provided and no retrieved evidence is available. Therefore, the claim that CoaT improves performance on complex GUI actions when combined with AITZ fine-tuning cannot be assessed at all. The reference is unverifiable from the given information.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata for 'aitz' was provided and no retrieved evidence is available. Therefore, the claim that CoaT improves performance on complex GUI actions when combined with AITZ fine-tuning cannot be assessed at all. The reference is unverifiable from the given information.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim20",
+            "reference_key": "cot-mobile",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim21",
+            "reference_key": "cot-mobile",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for 'cot-mobile'; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim26",
+            "reference_key": "stepdpo",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata for 'stepdpo' found and no retrieved evidence; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata for 'stepdpo' found and no retrieved evidence; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim27",
+            "reference_key": "deepseekr1",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata for 'deepseekr1' found; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata for 'deepseekr1' found; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim29",
+            "reference_key": "guig1",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence for 'guig1' found; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence for 'guig1' found; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim30",
+            "reference_key": "guig1",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No citation metadata or retrieved evidence snippets are available for 'guig1'. Therefore, it is impossible to assess whether the claim is supported by the cited paper.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No citation metadata or retrieved evidence snippets are available for 'guig1'. Therefore, it is impossible to assess whether the claim is supported by the cited paper.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim32",
+            "reference_key": "tot",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No reference metadata or retrieved evidence available for 'tot'. Insufficient information to assess claim support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No reference metadata or retrieved evidence available for 'tot'. Insufficient information to assess claim support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim38",
+            "reference_key": "cpo",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference 'cpo'; unable to verify claim support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference 'cpo'; unable to verify claim support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim39",
+            "reference_key": "cpo",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No metadata or retrieved evidence for 'cpo' found; cannot assess support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence for 'cpo' found; cannot assess support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim42",
+            "reference_key": "cpo",
+            "support": "unknown",
+            "appropriateness_score": 1.0,
+            "placement_score": 1.0,
+            "topic_consistency_score": 1.0,
+            "support_rationale": "No evidence available for reference key 'cpo'; support remains unknown.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No evidence available for reference key 'cpo'; support remains unknown.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim42",
+            "reference_key": "mcts-dpo",
+            "support": "weak",
+            "appropriateness_score": 4.0,
+            "placement_score": 5.0,
+            "topic_consistency_score": 2.0,
+            "support_rationale": "No retrieved evidence or metadata to confirm that MCTS-DPO is indeed a text-based approach as claimed. The citation is used as a contrast, but without evidence, the support is weak.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No retrieved evidence or metadata to confirm that MCTS-DPO is indeed a text-based approach as claimed. The citation is used as a contrast, but without evidence, the support is weak.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          }
+        ],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim41",
+            "reference_key": "restmcts",
+            "support": "partial",
+            "appropriateness_score": 6.0,
+            "placement_score": 6.0,
+            "topic_consistency_score": 6.0,
+            "support_rationale": "ReST-MCTS* uses MCTS with process reward guidance, which relates to the idea of tree-based backward credit assignment without explicit PRM, but it does not specifically describe CoaT-tree or rule-based rewards as in MobileIPL. The connection is partial.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim attributes 'CoaT-tree with rule-based rewards and backward credit assignment' to MobileIPL citing ReST-MCTS*, but ReST-MCTS* does not define CoaT-tree nor mention rule-based rewards; it uses process rewards from tree search. This overstates the similarity.",
+            "rationale": "ReST-MCTS* uses MCTS with process reward guidance, which relates to the idea of tree-based backward credit assignment without explicit PRM, but it does not specifically describe CoaT-tree or rule-based rewards as in MobileIPL. The connection is partial."
+          }
+        ],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim1",
+            "citation_count": 4,
+            "group_support": "yes",
+            "group_rationale": "AppAgent directly supports the claim by describing an LLM-based multimodal agent that autonomously interacts with smartphone interfaces, driven by advances in VLM-like models. AITW provides weak tangential support as a benchmark, while the other two citations have unknown support. The key components of the claim are covered by AppAgent.",
+            "covered_aspects": [
+              "Mobile GUI agents autonomously interact with smartphone interfaces",
+              "driven by advances in VLMs"
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "aitw",
+              "cogagent",
+              "appagent",
+              "auto-ui"
+            ]
+          },
+          {
+            "claim_id": "SClaim42",
+            "citation_count": 2,
+            "group_support": "no",
+            "group_rationale": "Neither citation provides evidence for the claim. The citation for 'cpo' has unknown support (no evidence retrieved), and the citation for 'mcts-dpo' weakly supports that it is a text-based approach but lacks any retrieved evidence to confirm. Therefore, the claim that MobileIPL operates in the visually grounded mobile GUI domain with multi-turn dialogues conditioned on UI screenshots, unlike text-based approaches, is unsupported.",
+            "covered_aspects": [],
+            "missing_aspects": [
+              "MobileIPL operates in the visually grounded mobile GUI domain with multi-turn dialogues conditioned on UI screenshots",
+              "MobileIPL is unlike text-based approaches"
+            ],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "cpo",
+              "mcts-dpo"
+            ]
+          }
+        ],
+        "topic_structure_issues": []
+      },
+      "skill": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint2",
+            "text": "Closed-source VLM-based agents are used for mobile GUI and multi-agent frameworks.",
+            "rationale": "No candidate claim mentions closed-source VLM-based agents or multi-agent frameworks."
+          },
+          {
+            "gold_point_id": "GPoint5",
+            "text": "ReFT applies reinforcement learning fine-tuning to improve performance on math problems.",
+            "rationale": "No mention of ReFT."
+          },
+          {
+            "gold_point_id": "GPoint8",
+            "text": "Digirl and Distrl use online trajectory collection to improve generalization; however, the process is very slow.",
+            "rationale": "No mention of Digirl or Distrl."
+          },
+          {
+            "gold_point_id": "GPoint9",
+            "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
+            "rationale": "No mention of Reachagent."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "TCPO optimizes thoughts but does not explicitly enforce thought-action consistency.",
+            "rationale": "No mention of TCPO."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, which leads to high computational cost and low data efficiency.",
+            "rationale": "No mention of TreePO, TreeRL, or SPO."
+          }
+        ],
+        "bad_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim2",
+            "reference_key": "arxiv:2312.08914",
+            "support": "yes",
+            "appropriateness_score": 10.0,
+            "placement_score": 9.0,
+            "topic_consistency_score": 10.0,
+            "support_rationale": "The retrieved evidence (abstract and tldr) explicitly confirms that CogAgent is an 18B-parameter VLM using dual low- and high-resolution encoders to process 1120x1120 screenshots, achieving state-of-the-art performance on the AITW benchmark, and that it uses only screenshots as input without relying on extracted HTML or OCR text. The claim's mention of 'accessibility trees' is not directly cited but is consistent with the model's visual-only approach.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim adds 'without relying on HTML or accessibility trees,' but the evidence only specifies that the model does not rely on extracted HTML or OCR text. The exclusion of accessibility trees is not explicitly supported, making this a minor overstatement relative to the cited paper.",
+            "rationale": "The retrieved evidence (abstract and tldr) explicitly confirms that CogAgent is an 18B-parameter VLM using dual low- and high-resolution encoders to process 1120x1120 screenshots, achieving state-of-the-art performance on the AITW benchmark, and that it uses only screenshots as input without relying on extracted HTML or OCR text. The claim's mention of 'accessibility trees' is not directly cited but is consistent with the model's visual-only approach.",
+            "retrieval_used": true,
+            "retrieved_evidence": [
+              {
+                "source": "deepxiv_tldr",
+                "citation": "2312.08914",
+                "text": "[research paper] CogAgent introduces an 18B-parameter visual language model specialized in GUI understanding and navigation, leveraging dual encoders (low- and high-resolution) to process 1120×1120 screenshots. It achieves state-of-the-art performance on diverse VQA benchmarks and outperforms LLM-based methods on PC and Android GUI navigation tasks by directly interpreting visual GUI elements without relying on extracted HTML or OCR text, enabling end-to-end visual grounding for agent actions."
+              },
+              {
+                "source": "deepxiv_abstract",
+                "citation": "2312.08914",
+                "text": "People are spending an enormous amount of time on digital devices through graphical user interfaces (GUIs), e.g., computer or smartphone screens. Large language models (LLMs) such as ChatGPT can assist people in tasks like writing emails, but struggle to understand and interact with GUIs, thus limiting their potential to increase automation levels. In this paper, we introduce CogAgent, an 18-billion-parameter visual language model (VLM) specializing in GUI understanding and navigation. By utilizing both low-resolution and high-resolution image encoders, CogAgent supports input at a resolution of 1120*1120, enabling it to recognize tiny page elements and text. As a generalist visual language model, CogAgent achieves the state of the art on five text-rich and four general VQA benchmarks, including VQAv2, OK-VQA, Text-VQA, ST-VQA, ChartQA, infoVQA, DocVQA, MM-Vet, and POPE. CogAgent, using only screenshots as input, outperforms LLM-based methods that consume extracted HTML text on both PC and Android GUI navigation tasks -- Mind2Web and AITW, advancing the state of the art. The model and codes are available at https://github.com/THUDM/CogVLM, with a new version of CogAgent-9B-20241220 available at https://github.com/THUDM/CogAgent."
+              }
+            ],
+            "second_pass_used": true
+          }
+        ],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim5",
+            "citation_count": 2,
+            "group_support": "yes",
+            "group_rationale": "Both citations provide direct evidence: OS-Atlas explicitly describes a unified grounding corpus across desktop, mobile, and web platforms; UI-TARS explicitly integrates perception, System-2 reasoning, and unified action modeling into an end-to-end agent with iterative self-improvement from online interaction traces. All components of the claim are fully supported.",
+            "covered_aspects": [
+              "OS-Atlas provides a unified grounding corpus spanning desktop, mobile, and web platforms.",
+              "UI-TARS integrates perception, System-2 reasoning, and unified action modeling.",
+              "UI-TARS is an end-to-end native agent capable of iterative self-improvement from online interaction traces."
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "arxiv:2410.23218",
+              "arxiv:2501.12326"
+            ]
+          }
+        ],
+        "topic_structure_issues": []
+      }
+    },
+    "researcher": {
+      "baseline": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint1",
+            "text": "Multi-agent collaborative writing and multi-module retrieval are used to improve research idea generation.",
+            "rationale": "No candidate claim covers multi-agent collaborative writing and multi-module retrieval for research idea generation."
+          },
+          {
+            "gold_point_id": "GPoint3",
+            "text": "Wang et al. proposed using LLMs to automatically write survey papers.",
+            "rationale": "No candidate claim mentions Wang et al. proposing LLMs for automatic survey writing."
+          },
+          {
+            "gold_point_id": "GPoint4",
+            "text": "Huang et al. introduced a benchmark for evaluating LLMs in coding solutions for machine learning.",
+            "rationale": "No candidate claim mentions Huang et al. introducing a benchmark for coding solutions for machine learning."
+          },
+          {
+            "gold_point_id": "GPoint5",
+            "text": "Wang et al. proposed a method leveraging LLMs for scientific literature retrieval.",
+            "rationale": "No candidate claim mentions Wang et al. leveraging LLMs for scientific literature retrieval."
+          },
+          {
+            "gold_point_id": "GPoint9",
+            "text": "The tradition of AI-assisted scientific discovery dates back to early applications in chemistry, biology, materials, and mathematics.",
+            "rationale": "No candidate claim discusses the tradition of AI-assisted scientific discovery in chemistry, biology, etc."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "AI is mainly used for data analysis within a single domain, playing a passive role without driving scientific discovery.",
+            "rationale": "No candidate claim states that AI is mainly used for passive data analysis within a single domain."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "The key challenge is enabling AI to go beyond analysis and actively contribute to generating new research ideas, which demands advanced reasoning and creativity.",
+            "rationale": "No candidate claim explicitly identifies the challenge of enabling AI to actively generate new research ideas."
+          },
+          {
+            "gold_point_id": "GPoint12",
+            "text": "Our work builds on AI's historical role in science, aiming to shift AI from a supporting tool to a leader in scientific discovery.",
+            "rationale": "No candidate claim mentions building on AI's historical role to shift from supporting tool to leader in discovery."
+          },
+          {
+            "gold_point_id": "GPoint13",
+            "text": "AI tools are used in scientific publishing for summarizing content, detecting inaccuracies, and identifying fairness disparities.",
+            "rationale": "No candidate claim covers all aspects of AI tools in scientific publishing: summarizing, detecting inaccuracies, and identifying fairness disparities."
+          },
+          {
+            "gold_point_id": "GPoint14",
+            "text": "Hosseini & Horbach conducted small-scale qualitative experiments to evaluate ChatGPT in peer review.",
+            "rationale": "No candidate claim mentions Hosseini & Horbach's small-scale qualitative experiments on ChatGPT in peer review."
+          },
+          {
+            "gold_point_id": "GPoint15",
+            "text": "Robertson invited 10 participants to assess GPT-4's benefits in peer review assistance.",
+            "rationale": "No candidate claim mentions Robertson's study with 10 participants on GPT-4's benefits in peer review assistance."
+          },
+          {
+            "gold_point_id": "GPoint17",
+            "text": "When LLMs act as judges, even advanced models like GPT-4 and Gemini lag behind reward models trained specifically for the task, as shown in RewardBench.",
+            "rationale": "No candidate claim mentions RewardBench or the comparison showing LLM judges lag behind reward models."
+          },
+          {
+            "gold_point_id": "GPoint19",
+            "text": "We train a Generative Reward Model (Zhang et al., 2024) to simulate a comprehensive peer review.",
+            "rationale": "No candidate claim mentions training a Generative Reward Model (Zhang et al., 2024) to simulate peer review."
+          },
+          {
+            "gold_point_id": "GPoint20",
+            "text": "CycleReviewer simulates reviewers with varying perspectives, documenting summaries, strengths, and weaknesses, then a primary reviewer consolidates for final decision.",
+            "rationale": "No candidate claim describes CycleReviewer or its simulating of reviewers with varying perspectives."
+          }
+        ],
+        "bad_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim1",
+            "reference_key": "llm4sr",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No retrieved evidence or metadata available to verify the claim about Luo et al. providing the first systematic survey mapping LLM applications across the full research cycle.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No retrieved evidence or metadata available to verify the claim about Luo et al. providing the first systematic survey mapping LLM applications across the full research cycle.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim2",
+            "reference_key": "ai_scientist",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No retrieved evidence or citation metadata available for reference key 'ai_scientist'. Unable to verify any aspect of the claim from the source.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No retrieved evidence or citation metadata available for reference key 'ai_scientist'. Unable to verify any aspect of the claim from the source.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim3",
+            "reference_key": "mlr_copilot",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'mlr_copilot'. Unable to verify any aspect of the claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'mlr_copilot'. Unable to verify any aspect of the claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim5",
+            "reference_key": "si_idea",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No retrieved evidence or metadata available for reference key 'si_idea'. Unable to verify the claim's assertions about Si et al.'s study. Support remains unknown due to insufficient information.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No retrieved evidence or metadata available for reference key 'si_idea'. Unable to verify the claim's assertions about Si et al.'s study. Support remains unknown due to insufficient information.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim7",
+            "reference_key": "reviewergpt",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'reviewergpt'. Unable to verify any aspect of the claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'reviewergpt'. Unable to verify any aspect of the claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim8",
+            "reference_key": "marg",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'marg'. Unable to verify any aspect of the claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'marg'. Unable to verify any aspect of the claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim9",
+            "reference_key": "sea",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No citation metadata or retrieved evidence available for reference key 'sea'. Unable to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No citation metadata or retrieved evidence available for reference key 'sea'. Unable to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim10",
+            "reference_key": "ai_driven_review",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for the reference key 'ai_driven_review'. Unable to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for the reference key 'ai_driven_review'. Unable to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim11",
+            "reference_key": "reviewrl",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim12",
+            "reference_key": "llm_judge_survey1",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey1'. Unable to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey1'. Unable to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim12",
+            "reference_key": "llm_judge_survey2",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey2'. Unable to verify claim support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'llm_judge_survey2'. Unable to verify claim support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim15",
+            "reference_key": "dpo",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'dpo'. Unable to verify the claim that DPO simplifies RLHF by reparameterizing the reward function. Evidence is insufficient.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'dpo'. Unable to verify the claim that DPO simplifies RLHF by reparameterizing the reward function. Evidence is insufficient.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim16",
+            "reference_key": "simpo",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'simpo'. Unable to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'simpo'. Unable to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim17",
+            "reference_key": "self_rewarding",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No citation metadata or retrieved evidence available for reference key 'self_rewarding'. Unable to verify claim support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No citation metadata or retrieved evidence available for reference key 'self_rewarding'. Unable to verify claim support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim18",
+            "reference_key": "online_rlhf",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'online_rlhf'. Unable to verify the claim that Dong et al. present a practical workflow for online iterative RLHF using proxy preference models and demonstrate performance improvements over offline approaches.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'online_rlhf'. Unable to verify the claim that Dong et al. present a practical workflow for online iterative RLHF using proxy preference models and demonstrate performance improvements over offline approaches.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim20",
+            "reference_key": "autosurvey",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'autosurvey'. Unable to verify any aspect of the claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'autosurvey'. Unable to verify any aspect of the claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim21",
+            "reference_key": "llm4sr",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'llm4sr'. Cannot verify claim support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'llm4sr'. Cannot verify claim support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim23",
+            "reference_key": "fast_detectgpt",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim24",
+            "reference_key": "fast_detectgpt",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No citation metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify the claim that Fast-DetectGPT achieves substantial improvements in both accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No citation metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify the claim that Fast-DetectGPT achieves substantial improvements in both accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim24",
+            "reference_key": "detectgpt",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata or retrieved evidence available for reference key 'detectgpt'. Unable to verify support for the claim.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata or retrieved evidence available for reference key 'detectgpt'. Unable to verify support for the claim.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          },
+          {
+            "claim_id": "SClaim25",
+            "reference_key": "fast_detectgpt",
+            "support": "unknown",
+            "appropriateness_score": 0.0,
+            "placement_score": 0.0,
+            "topic_consistency_score": 0.0,
+            "support_rationale": "No metadata available for reference key 'fast_detectgpt' and no retrieved evidence. Unable to verify support.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "No metadata available for reference key 'fast_detectgpt' and no retrieved evidence. Unable to verify support.",
+            "retrieval_used": false,
+            "retrieved_evidence": [],
+            "second_pass_used": true
+          }
+        ],
+        "overclaim_citation_claim_pairs": [],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim12",
+            "citation_count": 2,
+            "group_support": "unknown",
+            "group_rationale": "No retrieved evidence is available for any of the citations ('llm_judge_survey1', 'llm_judge_survey2'), so it is unknown whether the claim is supported. All aspects of the claim remain unverified.",
+            "covered_aspects": [],
+            "missing_aspects": [
+              "comprehensive taxonomies",
+              "challenges in consistency, bias, and domain generalization"
+            ],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "llm_judge_survey1",
+              "llm_judge_survey2"
+            ]
+          },
+          {
+            "claim_id": "SClaim24",
+            "citation_count": 2,
+            "group_support": "unknown",
+            "group_rationale": "Both citations have support 'unknown' and no retrieved evidence, so there is no information to either support or refute the claim that Fast-DetectGPT achieves substantial improvements in accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.",
+            "covered_aspects": [],
+            "missing_aspects": [
+              "Substantial accuracy improvement over prior perturbation-based methods like DetectGPT",
+              "Substantial computational efficiency improvement over prior perturbation-based methods like DetectGPT"
+            ],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "fast_detectgpt",
+              "detectgpt"
+            ]
+          }
+        ],
+        "topic_structure_issues": [
+          {
+            "paragraph_id": "S2",
+            "issue": "Paragraph covers a broad range of automation tasks (idea generation, experimentation, writing); could be more focused on specific sub-topic."
+          },
+          {
+            "paragraph_id": "S3",
+            "issue": "None significant; well-focused on peer review."
+          },
+          {
+            "paragraph_id": "S4",
+            "issue": "Topic is methodological; its connection to scientific research context could be emphasized more in the paragraph."
+          },
+          {
+            "paragraph_id": "S5",
+            "issue": "Overlaps partially with S2 on writing; could be merged for conciseness."
+          },
+          {
+            "paragraph_id": "S6",
+            "issue": "Slightly tangential to the main focus of the related work; may be better placed in an ethics or limitations section."
+          }
+        ]
+      },
+      "skill": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint1",
+            "text": "Multi-agent collaborative writing for research idea generation (Baek et al., 2024)",
+            "rationale": "No candidate claim mentions Baek et al. or multi-agent collaborative writing for research idea generation."
+          },
+          {
+            "gold_point_id": "GPoint2",
+            "text": "Multi-module retrieval for research idea generation (Yang et al., 2023)",
+            "rationale": "No candidate claim mentions Yang et al. or multi-module retrieval for research idea generation."
+          },
+          {
+            "gold_point_id": "GPoint6",
+            "text": "LLMs for scientific literature retrieval (Wang et al., 2023b)",
+            "rationale": "No candidate claim mentions Wang et al. or LLMs for scientific literature retrieval."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "Tradition of AI-assisted scientific discovery (Langley, 1987; 2024)",
+            "rationale": "No candidate claim mentions Langley or the tradition of AI-assisted scientific discovery."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "AI applied in chemistry (Buchanan & Feigenbaum, 1981), synthetic biology (Jumper et al., 2021; Hayes et al., 2024), material discovery (Pyzer-Knapp et al., 2022; Merchant et al., 2023), and mathematics (Romera-Paredes et al., 2024)",
+            "rationale": "No candidate claim covers AI applied in specific scientific domains such as chemistry, synthetic biology, etc."
+          },
+          {
+            "gold_point_id": "GPoint12",
+            "text": "With neural networks, more researchers focus on AI4Science (A14Science & Quantum, 2023; LI, 2024; Yakaboski et al., 2023)",
+            "rationale": "No candidate claim discusses the increased focus on AI4Science with neural networks."
+          },
+          {
+            "gold_point_id": "GPoint15",
+            "text": "Builds on AI's historical role to shift AI from supporting tool to leader in scientific discovery",
+            "rationale": "No candidate claim describes shifting AI from supporting tool to leader in scientific discovery."
+          },
+          {
+            "gold_point_id": "GPoint16",
+            "text": "AI tools in scientific publishing for summarizing, detecting inaccuracies, and identifying fairness disparities",
+            "rationale": "No candidate claim mentions AI tools for summarizing, detecting inaccuracies, or fairness disparities in scientific publishing."
+          },
+          {
+            "gold_point_id": "GPoint17",
+            "text": "Small-scale qualitative experiment evaluating ChatGPT in peer review (Hosseini & Horbach, 2023)",
+            "rationale": "No candidate claim references Hosseini & Horbach's experiment evaluating ChatGPT in peer review."
+          },
+          {
+            "gold_point_id": "GPoint19",
+            "text": "Using GPT-4 to evaluate full-text PDFs of scientific papers (Lu et al., 2024; Tyser et al., 2024)",
+            "rationale": "No candidate claim covers Lu et al. or Tyser et al.'s work on using GPT-4 to evaluate full-text PDFs."
+          },
+          {
+            "gold_point_id": "GPoint23",
+            "text": "CycleReviewer simulates reviewers with varying perspectives, documents summaries, strengths, weaknesses, and consolidates final decision",
+            "rationale": "No candidate claim mentions CycleReviewer or its approach of simulating multiple reviewer perspectives."
+          }
+        ],
+        "bad_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [],
+        "citation_group_support": [],
+        "topic_structure_issues": [
+          {
+            "paragraph_id": "S2",
+            "issue": "Paragraph likely covers multiple aspects of LLMs in research, but may intermix idea generation with experimentation; citations are relevant but not all from gold list."
+          },
+          {
+            "paragraph_id": "S3",
+            "issue": "Paragraph appears too narrowly focused on data-to-paper, missing broader historical AI-assisted discovery context; only two citations."
+          },
+          {
+            "paragraph_id": "S4",
+            "issue": "Citations are relevant, but paragraph could benefit from including more gold citations like CycleReviewer."
+          }
+        ]
+      }
+    },
+    "source": {
+      "baseline": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint3",
+            "text": "MLLMs used to score and filter agent trajectories for finetuning and test-time refinements (prompts, reflections, tools).",
+            "rationale": "No candidate claim mentions MLLMs scoring and filtering agent trajectories for finetuning or test-time refinements."
+          },
+          {
+            "gold_point_id": "GPoint6",
+            "text": "Closely related work uses GPT-4V evaluator prompted with benchmark-specific rubrics to evaluate trajectories for Reflexion and behavior cloning.",
+            "rationale": "No candidate claim mentions GPT-4V evaluator prompted with benchmark-specific rubrics for Reflexion and behavior cloning."
+          },
+          {
+            "gold_point_id": "GPoint7",
+            "text": "Similar evaluator guides tree search, filters trajectories for memories/tools to boost performance in (Visual)WebArena, and for RL training.",
+            "rationale": "No claim about evaluator guiding tree search or filtering trajectories for (Visual)WebArena and RL training."
+          },
+          {
+            "gold_point_id": "GPoint9",
+            "text": "Early work: chain-of-thought prompting yields gains in reasoning.",
+            "rationale": "SClaim5 mentions chain-of-thought reasoning but in the context of verification, not as early work on CoT prompting yielding reasoning gains."
+          },
+          {
+            "gold_point_id": "GPoint10",
+            "text": "Chain-of-thought extended to multimodal and environment-interaction settings.",
+            "rationale": "No claim states that chain-of-thought is extended to multimodal and environment-interaction settings."
+          },
+          {
+            "gold_point_id": "GPoint12",
+            "text": "Recent work: training MLLMs with sampling, RL, and formal verifiers to generate reasoning traces autonomously.",
+            "rationale": "No claim about training MLLMs with sampling, RL, and formal verifiers to generate reasoning traces autonomously."
+          }
+        ],
+        "bad_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim5",
+            "reference_key": "arxiv:2201.11903",
+            "support": "no",
+            "appropriateness_score": 2.0,
+            "placement_score": 3.0,
+            "topic_consistency_score": 4.0,
+            "support_rationale": "The cited paper 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models' focuses on chain-of-thought prompting for reasoning tasks and does not address generative verifiers or the verification process. The abstract mentions 'verifier' only in passing to describe a baseline (finetuned GPT-3 with a verifier) that is surpassed, not to discuss enabling chain-of-thought reasoning during verification. The retrieved evidence confirms the paper's emphasis on few-shot prompting for reasoning, with no mention of generative verifiers. Thus, the claim that chain-of-thought reasoning is enabled during verification by generative verifiers is not supported.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "The cited paper 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models' focuses on chain-of-thought prompting for reasoning tasks and does not address generative verifiers or the verification process. The abstract mentions 'verifier' only in passing to describe a baseline (finetuned GPT-3 with a verifier) that is surpassed, not to discuss enabling chain-of-thought reasoning during verification. The retrieved evidence confirms the paper's emphasis on few-shot prompting for reasoning, with no mention of generative verifiers. Thus, the claim that chain-of-thought reasoning is enabled during verification by generative verifiers is not supported.",
+            "retrieval_used": true,
+            "retrieved_evidence": [
+              {
+                "source": "deepxiv_tldr",
+                "citation": "2201.11903",
+                "text": "[research paper] Chain-of-thought prompting enables large language models to perform complex reasoning by leveraging few-shot exemplars that include intermediate natural language reasoning steps. Empirical results show that even a small number of chain-of-thought demonstrations—such as eight—can significantly boost performance on arithmetic, commonsense, and symbolic reasoning tasks, with PaLM 540B achieving state-of-the-art results on GSM8K without fine-tuning, demonstrating that reasoning emerges naturally in sufficiently large models through in-context learning."
+              },
+              {
+                "source": "deepxiv_abstract",
+                "citation": "2201.11903",
+                "text": "We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier."
+              }
+            ],
+            "second_pass_used": true
+          }
+        ],
+        "overclaim_citation_claim_pairs": [],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim3",
+            "citation_count": 2,
+            "group_support": "partial",
+            "group_rationale": "The first citation (arxiv:2306.05685) explicitly supports positional effects and self-preference (as self-enhancement), but does not clearly cover phrasing sensitivity (it mentions 'morbidity' instead). The second citation (arxiv:2402.04788) confirms general biases in multimodal LLM judges but does not specifically address phrasing sensitivity. Therefore, one key component remains unsupported.",
+            "covered_aspects": [
+              "positional effects",
+              "self-preference"
+            ],
+            "missing_aspects": [
+              "phrasing sensitivity"
+            ],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "arxiv:2306.05685",
+              "arxiv:2402.04788"
+            ]
+          }
+        ],
+        "topic_structure_issues": []
+      },
+      "skill": {
+        "missing_points": [
+          {
+            "gold_point_id": "GPoint3",
+            "text": "MLLMs score and filter agent trajectories for fine-tuning.",
+            "rationale": "No candidate claim explicitly states that MLLMs score and filter agent trajectories for fine-tuning."
+          },
+          {
+            "gold_point_id": "GPoint7",
+            "text": "Closely related work uses a GPT-4V-based evaluator prompted with benchmark-specific rubrics to evaluate trajectories for Reflexion and behavior cloning.",
+            "rationale": "None of the candidate claims mention a GPT-4V-based evaluator with benchmark-specific rubrics used for Reflexion and behavior cloning."
+          },
+          {
+            "gold_point_id": "GPoint8",
+            "text": "Following works employ a similar evaluator to guide tree search, filter trajectories for memory/tool generation, and for RL training.",
+            "rationale": "No candidate claim explicitly describes subsequent works using a similar evaluator for tree search, trajectory filtering for memory/tool generation, or RL training."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "Chain-of-thought has been extended to multimodal and environment-interaction settings.",
+            "rationale": "No candidate claim asserts that chain-of-thought has been extended to multimodal and environment-interaction settings."
+          }
+        ],
+        "bad_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim2",
+            "reference_key": "arxiv:2306.05685",
+            "support": "partial",
+            "appropriateness_score": 7,
+            "placement_score": 7,
+            "topic_consistency_score": 8,
+            "support_rationale": "The paper identifies and proposes mitigations for some biases (position, self-enhancement) but does not explicitly mention 'verbosity preference' or cover all applications listed in the claim. The claim overreaches by stating mitigations for verbosity preference.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim asserts that studies have identified and mitigated verbosity preference, but the cited paper does not explicitly address verbosity preference, only position and self-enhancement biases.",
+            "rationale": "The paper identifies and proposes mitigations for some biases (position, self-enhancement) but does not explicitly mention 'verbosity preference' or cover all applications listed in the claim. The claim overreaches by stating mitigations for verbosity preference."
+          }
+        ],
+        "citation_group_support": [
+          {
+            "claim_id": "SClaim12",
+            "citation_count": 2,
+            "group_support": "yes",
+            "group_rationale": "Both citations fully support the claim: the first describes training reward predictors from human pairwise preferences over trajectory segments (Christiano et al.), and the second describes scaling this approach to align language models via RLHF (Ouyang et al.).",
+            "covered_aspects": [
+              "Christiano et al. train reward predictors from human pairwise preferences over trajectory segments",
+              "Ouyang et al. scale this approach to align language models via reinforcement learning from human feedback (RLHF)"
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "arxiv:1706.03741",
+              "arxiv:2203.02155"
+            ]
+          },
+          {
+            "claim_id": "SClaim14",
+            "citation_count": 2,
+            "group_support": "yes",
+            "group_rationale": "Both citations fully support the claim: RewardBench for systematic evaluation of reward models, and AgentRewardBench specifically for multimodal agents across perception, planning, and safety.",
+            "covered_aspects": [
+              "RewardBench introduced to systematically evaluate reward models",
+              "AgentRewardBench introduced, focusing on multimodal agents across perception, planning, and safety"
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "arxiv:2403.13787",
+              "arxiv:2506.21252"
+            ]
+          },
+          {
+            "claim_id": "SClaim19",
+            "citation_count": 2,
+            "group_support": "yes",
+            "group_rationale": "Both citations fully support the claim: VisualWebArena extends WebArena with visually grounded tasks using multimodal perception, and set-of-marks prompting is correctly introduced as the method to ground agent actions. No missing aspects.",
+            "covered_aspects": [
+              "VisualWebArena extends framework with visually grounded tasks",
+              "introduces set-of-marks (SoM) prompting",
+              "to ground agent actions in visual interface elements"
+            ],
+            "missing_aspects": [],
+            "derived_from_single_pair": false,
+            "reference_keys": [
+              "arxiv:2401.13649",
+              "arxiv:2310.11441"
+            ]
+          }
+        ],
+        "topic_structure_issues": [
+          {
+            "paragraph_id": "S2",
+            "issue": "No significant issues; some overlap with test-time scaling is acceptable."
+          },
+          {
+            "paragraph_id": "S5",
+            "issue": "Only one citation cited; could benefit from more references."
+          }
+        ]
+      }
+    }
+  },
+  "human_audit_placeholders": [
+    {
+      "case_id": "07794",
+      "audit_status": "pending",
+      "human_notes": "",
+      "confirmed_issue": "",
+      "frontend_highlight": false
+    },
+    {
+      "case_id": "11662",
+      "audit_status": "pending",
+      "human_notes": "",
+      "confirmed_issue": "",
+      "frontend_highlight": false
+    },
+    {
+      "case_id": "12299",
+      "audit_status": "pending",
+      "human_notes": "",
+      "confirmed_issue": "",
+      "frontend_highlight": false
+    },
+    {
+      "case_id": "researcher",
+      "audit_status": "pending",
+      "human_notes": "",
+      "confirmed_issue": "",
+      "frontend_highlight": false
+    },
+    {
+      "case_id": "source",
+      "audit_status": "pending",
+      "human_notes": "",
+      "confirmed_issue": "",
+      "frontend_highlight": false
+    }
+  ]
+}

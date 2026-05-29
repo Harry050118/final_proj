@@ -1,82 +1,56 @@
 # Related Work Evaluation: sim_prompt-evotest
 
-Overall: 4.88/10
+Overall: 6.34/10
 
 ## Metric Breakdown
-- content_coverage: 2.06/10
-- citation_quality: 3.50/10
-- relevance: 3.80/10
-- thematic_structure: 7.77/10
-- synthesis_quality: 7.00/10
-- writing_quality: 8.00/10
-- length_conciseness: 7.18/10
+- content_coverage: 4.58/10
+- citation_quality: 5.00/10
+- relevance: 7.50/10
+- thematic_structure: 8.17/10
+- synthesis_quality: 7.50/10
+- writing_quality: 8.50/10
+- length_conciseness: 7.96/10
 - citation_validity: 9.44/10
-- citation_appropriateness: 0.00/10
-- citation_coverage: 5.70/10
-- citation_placement: 0.00/10
-- citation_topic_consistency: 0.00/10
+- citation_appropriateness: 9.39/10
+- citation_coverage: 7.50/10
+- citation_placement: 8.61/10
+- citation_topic_consistency: 9.70/10
 
 ## Input Cleaning
-- s_text: replacements={}, length 6147 -> 6146
+- s_text: replacements={}, length 5838 -> 5837
 - s_references: replacements={}, length 2656 -> 2655
 - g_text: replacements={'\\&': 4}, length 3651 -> 3646
 - g_references: replacements={}, length 6935 -> 6934
 
 ## Missing Points
-- Multi-agent collaborative writing and multi-module retrieval are used to improve research idea generation. (No candidate claim covers multi-agent collaborative writing and multi-module retrieval for research idea generation.)
-- Wang et al. proposed using LLMs to automatically write survey papers. (No candidate claim mentions Wang et al. proposing LLMs for automatic survey writing.)
-- Huang et al. introduced a benchmark for evaluating LLMs in coding solutions for machine learning. (No candidate claim mentions Huang et al. introducing a benchmark for coding solutions for machine learning.)
-- Wang et al. proposed a method leveraging LLMs for scientific literature retrieval. (No candidate claim mentions Wang et al. leveraging LLMs for scientific literature retrieval.)
-- The tradition of AI-assisted scientific discovery dates back to early applications in chemistry, biology, materials, and mathematics. (No candidate claim discusses the tradition of AI-assisted scientific discovery in chemistry, biology, etc.)
-- AI is mainly used for data analysis within a single domain, playing a passive role without driving scientific discovery. (No candidate claim states that AI is mainly used for passive data analysis within a single domain.)
-- The key challenge is enabling AI to go beyond analysis and actively contribute to generating new research ideas, which demands advanced reasoning and creativity. (No candidate claim explicitly identifies the challenge of enabling AI to actively generate new research ideas.)
-- Our work builds on AI's historical role in science, aiming to shift AI from a supporting tool to a leader in scientific discovery. (No candidate claim mentions building on AI's historical role to shift from supporting tool to leader in discovery.)
-- AI tools are used in scientific publishing for summarizing content, detecting inaccuracies, and identifying fairness disparities. (No candidate claim covers all aspects of AI tools in scientific publishing: summarizing, detecting inaccuracies, and identifying fairness disparities.)
-- Hosseini & Horbach conducted small-scale qualitative experiments to evaluate ChatGPT in peer review. (No candidate claim mentions Hosseini & Horbach's small-scale qualitative experiments on ChatGPT in peer review.)
-- Robertson invited 10 participants to assess GPT-4's benefits in peer review assistance. (No candidate claim mentions Robertson's study with 10 participants on GPT-4's benefits in peer review assistance.)
-- When LLMs act as judges, even advanced models like GPT-4 and Gemini lag behind reward models trained specifically for the task, as shown in RewardBench. (No candidate claim mentions RewardBench or the comparison showing LLM judges lag behind reward models.)
-- We train a Generative Reward Model (Zhang et al., 2024) to simulate a comprehensive peer review. (No candidate claim mentions training a Generative Reward Model (Zhang et al., 2024) to simulate peer review.)
-- CycleReviewer simulates reviewers with varying perspectives, documenting summaries, strengths, and weaknesses, then a primary reviewer consolidates for final decision. (No candidate claim describes CycleReviewer or its simulating of reviewers with varying perspectives.)
+- Their framework improves upon prompt-based methods in diversity and practicality. (No claim explicitly states that a framework improves upon prompt-based methods in diversity and practicality. SClaim20 describes the framework but not the improvement comparison.)
+- AI-assisted scientific discovery has a long tradition in fields like chemistry, biology, materials, and mathematics. (No candidate claim mentions the long tradition of AI-assisted scientific discovery in chemistry, biology, materials, or mathematics.)
+- AI is mainly used for passive data analysis within single domains, without driving discovery. (No claim addresses the limitation of AI being used for passive data analysis within single domains without driving discovery.)
+- The key challenge is enabling AI to go beyond analysis to actively generate new research ideas. (No claim identifies the key challenge of enabling AI to generate new research ideas actively; the claims describe existing systems but not the challenge itself.)
+- Their work aims to shift AI from a supporting tool to a leader in scientific discovery. (No claim states that a work aims to shift AI from a supporting tool to a leader in scientific discovery.)
+- LLMs as judges lag behind reward models trained specifically for the task (RewardBench). (No claim compares LLMs as judges to task-specific reward models or mentions RewardBench; SClaim14 discusses challenges but not the specific lag.)
+- They train a Generative Reward Model to simulate comprehensive peer review. (No claim mentions training a Generative Reward Model to simulate peer review; related claims focus on RL or DPO without specifying a generative reward model for review.)
 
 ## Hallucinated References
 - MARG: Multi-Agent Review Generation for Scientific Papers [metadata_mismatch]
 
 ## Bad Citation-Claim Pairs
-- SClaim1 -> llm4sr [support=unknown]: support_reason=No retrieved evidence or metadata available to verify the claim about Luo et al. providing the first systematic survey mapping LLM applications across the full research cycle.
-- SClaim2 -> ai_scientist [support=unknown]: support_reason=No retrieved evidence or citation metadata available for reference key 'ai_scientist'. Unable to verify any aspect of the claim from the source.
-- SClaim3 -> mlr_copilot [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'mlr_copilot'. Unable to verify any aspect of the claim.
-- SClaim5 -> si_idea [support=unknown]: support_reason=No retrieved evidence or metadata available for reference key 'si_idea'. Unable to verify the claim's assertions about Si et al.'s study. Support remains unknown due to insufficient information.
-- SClaim7 -> reviewergpt [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'reviewergpt'. Unable to verify any aspect of the claim.
-- SClaim8 -> marg [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'marg'. Unable to verify any aspect of the claim.
-- SClaim9 -> sea [support=unknown]: support_reason=No citation metadata or retrieved evidence available for reference key 'sea'. Unable to verify support.
-- SClaim10 -> ai_driven_review [support=unknown]: support_reason=No metadata or retrieved evidence available for the reference key 'ai_driven_review'. Unable to verify support.
-- SClaim11 -> reviewrl [support=unknown]: support_reason=No metadata or retrieved evidence available to verify support.
-- SClaim12 -> llm_judge_survey1 [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'llm_judge_survey1'. Unable to verify support.
-- SClaim12 -> llm_judge_survey2 [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'llm_judge_survey2'. Unable to verify claim support.
-- SClaim15 -> dpo [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'dpo'. Unable to verify the claim that DPO simplifies RLHF by reparameterizing the reward function. Evidence is insufficient.
-- SClaim16 -> simpo [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'simpo'. Unable to verify support.
-- SClaim17 -> self_rewarding [support=unknown]: support_reason=No citation metadata or retrieved evidence available for reference key 'self_rewarding'. Unable to verify claim support.
-- SClaim18 -> online_rlhf [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'online_rlhf'. Unable to verify the claim that Dong et al. present a practical workflow for online iterative RLHF using proxy preference models and demonstrate performance improvements over offline approaches.
-- SClaim20 -> autosurvey [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'autosurvey'. Unable to verify any aspect of the claim.
-- SClaim21 -> llm4sr [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'llm4sr'. Cannot verify claim support.
-- SClaim23 -> fast_detectgpt [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify support.
-- SClaim24 -> fast_detectgpt [support=unknown]: support_reason=No citation metadata or retrieved evidence available for reference key 'fast_detectgpt'. Unable to verify the claim that Fast-DetectGPT achieves substantial improvements in both accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.
-- SClaim24 -> detectgpt [support=unknown]: support_reason=No metadata or retrieved evidence available for reference key 'detectgpt'. Unable to verify support for the claim.
-- SClaim25 -> fast_detectgpt [support=unknown]: support_reason=No metadata available for reference key 'fast_detectgpt' and no retrieved evidence. Unable to verify support.
+- SClaim25 -> arxiv:2301.11305 [support=no]: support_reason=The cited paper describes DetectGPT and its performance, but does not mention Fast-DetectGPT or any improvements over itself. The retrieved evidence (abstract and TLDR) only refer to DetectGPT's own results, not to Fast-DetectGPT. Therefore, the citation does not support the claim that Fast-DetectGPT achieves substantial improvements in accuracy and computational efficiency over DetectGPT.
+- SClaim26 -> arxiv:2310.05130 [support=weak]: support_reason=The retrieved evidence (tldr and abstract) describes Fast-DetectGPT as a method for detecting machine-generated text, but does not indicate that the authors of the claiming paper adopted it as an ethical safeguard. The reference supports the existence and functionality of Fast-DetectGPT, but not the specific claim of adoption by the claiming authors.
 
 ## Overclaim Citation-Claim Pairs
-- None
+- SClaim5 -> arxiv:2409.04109 [support=partial, overclaim=mild]: support_reason=The paper conducts a large-scale human study comparing LLM and human research ideas, but the metadata does not explicitly claim it is the 'first' such study. The core activity is supported, but the 'first' qualifier lacks explicit evidence.; overclaim_reason=The claim adds the 'first' descriptor not clearly stated in the paper's available metadata, implying a novelty attribution the paper may not assert.
+- SClaim14 -> arxiv:2411.16594 [support=partial, overclaim=mild]: support_reason=The tldr mentions 'bias' and 'lack of standardized evaluation frameworks', which relate to challenges in consistency and domain generalization, but does not explicitly list all three (consistency, bias, domain generalization).; overclaim_reason=The claim attributes three specific challenges (consistency, bias, domain generalization) to the survey, but the available tldr highlights bias and evaluation gaps without explicitly naming consistency and domain generalization.
+- SClaim14 -> arxiv:2411.15594 [support=partial, overclaim=mild]: support_reason=The tldr mentions 'consistency' and 'bias' but not 'domain generalization' explicitly; it focuses on reliability challenges broadly.; overclaim_reason=The claim includes 'domain generalization' which is not explicitly highlighted in the tldr; the survey may cover it partially but the connection is not strong.
 
 ## Citation Group Support
-- SClaim12 [group_support=unknown, citation_count=2]: reason=No retrieved evidence is available for any of the citations ('llm_judge_survey1', 'llm_judge_survey2'), so it is unknown whether the claim is supported. All aspects of the claim remain unverified.; missing=['comprehensive taxonomies', 'challenges in consistency, bias, and domain generalization']
-- SClaim24 [group_support=unknown, citation_count=2]: reason=Both citations have support 'unknown' and no retrieved evidence, so there is no information to either support or refute the claim that Fast-DetectGPT achieves substantial improvements in accuracy and computational efficiency over prior perturbation-based methods such as DetectGPT.; missing=['Substantial accuracy improvement over prior perturbation-based methods like DetectGPT', 'Substantial computational efficiency improvement over prior perturbation-based methods like DetectGPT']
+- SClaim14 [group_support=partial, citation_count=2]: reason=The two surveys together cover consistency (via citation 2411.15594) and bias (via both), but neither explicitly highlights domain generalization as a challenge.; covered=['consistency', 'bias']; missing=['domain generalization']
+- SClaim25 [group_support=yes, citation_count=2]: reason=The first citation (arxiv:2310.13050) directly supports the claim by reporting a 340x speedup and 75% accuracy improvement over DetectGPT, covering both accuracy and computational efficiency. The second citation (arxiv:2301.11305) describes DetectGPT but does not provide evidence about Fast-DetectGPT; however, it does not contradict the claim. Thus, collectively, the citations support the claim fully.; covered=['accuracy improvement over DetectGPT', 'computational efficiency improvement over DetectGPT']
 
 ## Topic Structure Issues
-- paragraph_id=S2, issue=Paragraph covers a broad range of automation tasks (idea generation, experimentation, writing); could be more focused on specific sub-topic.
-- paragraph_id=S3, issue=None significant; well-focused on peer review.
-- paragraph_id=S4, issue=Topic is methodological; its connection to scientific research context could be emphasized more in the paragraph.
-- paragraph_id=S5, issue=Overlaps partially with S2 on writing; could be merged for conciseness.
-- paragraph_id=S6, issue=Slightly tangential to the main focus of the related work; may be better placed in an ethics or limitations section.
+- paragraph_id=S1, issue=Paragraph covers multiple sub-aspects of automated research, but still focused on the overarching topic.
+- paragraph_id=S3, issue=Topic appears tangential to the main focus of the paper; no corresponding gold topic.
+- paragraph_id=S5, issue=Topic appears unrelated to the core topics of the related work as indicated by gold standard; inclusion may dilute focus.
 
 ## Length / Conciseness Issues
-- None
+- Duplicate-like sentences S1_sent2 and S2_sent5 similarity=0.82
