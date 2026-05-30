@@ -1,6 +1,6 @@
 # Related Work Evaluation: sim_prompt-evotest
 
-Overall: 7.88/10
+Overall: 7.08/10
 
 ## Metric Breakdown
 - content_coverage: 3.64/10
@@ -10,11 +10,11 @@ Overall: 7.88/10
 - synthesis_quality: 8.00/10
 - writing_quality: 9.00/10
 - length_conciseness: 8.58/10
-- citation_validity: 9.55/10
-- citation_appropriateness: 9.79/10
+- citation_validity: 9.25/10
+- citation_appropriateness: 8.79/10
 - citation_coverage: 6.67/10
-- citation_placement: 9.79/10
-- citation_topic_consistency: 9.86/10
+- citation_placement: 9.39/10
+- citation_topic_consistency: 9.26/10
 
 ## Input Cleaning
 - s_text: replacements={}, length 4109 -> 4108
