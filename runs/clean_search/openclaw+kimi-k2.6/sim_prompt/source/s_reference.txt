@@ -1,0 +1,39 @@
+[1] Zhou et al. "WebArena: A Realistic Web Environment for Building Autonomous Agents." arXiv:2307.13854, 2023.
+
+[2] Koh et al. "VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks." arXiv:2401.13649, 2024.
+
+[3] Xie et al. "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments." arXiv:2404.07972, 2024.
+
+[4] Mandlekar et al. "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation." arXiv:2108.03298, 2021.
+
+[5] Chi et al. "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion." arXiv:2303.04137, 2023.
+
+[6] Wang et al. "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge." arXiv:2406.07791, 2024.
+
+[7] Li et al. "Evaluating Scoring Bias in LLM-as-a-Judge." arXiv:2506.22316, 2025.
+
+[8] Zheng et al. "LLM Evaluators Recognize and Favor Their Own Generations." arXiv:2404.13076, 2024.
+
+[9] Yin et al. "Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement." arXiv:2402.11436, 2024.
+
+[10] Li et al. "Humans or LLMs as the Judge? A Study on Judgement Biases." arXiv:2402.10669, 2024.
+
+[11] Deng et al. "AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories." arXiv:2504.08942, 2025.
+
+[12] Zhang et al. "GUI-Shepherd: Reliable Process Reward and Verification for Long-Sequence GUI Tasks." arXiv:2509.23738, 2025.
+
+[13] Wang et al. "Agentic Reward Modeling: Integrating Human Preferences with Verifiable Correctness Signals for Reliable Reward Systems." arXiv:2502.19328, 2025.
+
+[14] Zhang et al. "UI-Genie: A Self-Improving Approach for Iteratively Boosting MLLM-based Mobile GUI Agents." arXiv:2505.21496, 2025.
+
+[15] Li et al. "MagicGUI-RMS: A Multi-Agent Reward Model System for Self-Evolving GUI Agents via Automated Feedback Reflux." arXiv:2601.13060, 2026.
+
+[16] Lu et al. "STEVE: A Step Verification Pipeline for Computer-use Agent Training." arXiv:2503.12532, 2025.
+
+[17] Shinn et al. "Reflexion: Language Agents with Verbal Reinforcement Learning." arXiv:2303.11366, 2023.
+
+[18] Yao et al. "ReAct: Synergizing Reasoning and Acting in Language Models." arXiv:2210.03629, 2022.
+
+[19] Snell et al. "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters." arXiv:2408.03314, 2024.
+
+[20] Li et al. "Co-Evolution of Policy and Internal Reward for Language Agents." arXiv:2604.03098, 2026.

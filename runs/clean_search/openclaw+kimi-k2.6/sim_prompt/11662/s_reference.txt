@@ -1,0 +1,37 @@
+[1] Tianyi Men, Zhuoran Jin, Pengfei Cao, Yubo Chen, Kang Liu, and Weiran Wang. "Agent-RewardBench: Towards a Unified Benchmark for Reward Modeling across Perception, Planning, and Safety in Real-World Multimodal Agents." arXiv:2506.21252, 2025.
+
+[2] Chaoqun Cui, Jing Huang, Shijing Wang, Liming Zheng, Qingchao Kong, and Zhiyong Wu. "Agentic Reward Modeling: Verifying GUI Agent via Online Proactive Interaction." arXiv:2602.00575, 2026.
+
+[3] Cong Chen, Kaixiang Ji, Hao Zhong, Muzhi Zhu, Anzhou Li, and others. "GUI-Shepherd: Reliable Process Reward and Verification for Long-Sequence GUI Tasks." arXiv:2509.23738, 2025.
+
+[4] Danyang Zhang, Situo Zhang, Ziyue Yang, Zichen Zhu, Zihan Zhao, and others. "ProgRM: Build Better GUI Agents with Progress Rewards." arXiv:2505.18121, 2025.
+
+[5] Lin Shi, Chiyu Ma, Wenhua Liang, Xingjian Diao, Weicheng Ma, and Soroush Vosoughi. "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge." arXiv:2406.07791, 2024.
+
+[6] Arjun Panickssery, Samuel R. Bowman, and Shi Feng. "LLM Evaluators Recognize and Favor Their Own Generations." arXiv:2404.13076, 2024.
+
+[7] Koki Wataoka, Tsubasa Takahashi, and Ryokan Ri. "Self-Preference Bias in LLM-as-a-Judge." arXiv:2410.21819, 2024.
+
+[8] Guiming Hardy Chen, Shunian Chen, Ziche Liu, Feng Jiang, and Benyou Wang. "Humans or LLMs as the Judge? A Study on Judgement Biases." arXiv:2402.10669, 2024.
+
+[9] Dani Roytburg, Matthew Bozoukov, Matthew Nguyen, Mackenzie Puig-Hall, and Narmeen Oozeer. "Are LLM Evaluators Really Narcissists? Sanity Checking Self-Preference Evaluations." arXiv:2601.22548, 2026.
+
+[10] Jinming Yang, Chuxian Qiu, Zhenyu Deng, Xinshan Jiao, and Tao Zhou. "Quantifying and Mitigating Self-Preference Bias of LLM Judges." arXiv:2604.22891, 2026.
+
+[11] Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. "Reflexion: Language Agents with Verbal Reinforcement Learning." arXiv:2303.11366, 2023.
+
+[12] Karthik Valmeekam, Matthew Marquez, and Subbarao Kambhampati. "Can Large Language Models Really Improve by Self-critiquing Their Own Plans?" arXiv:2310.08118, 2023.
+
+[13] Yucheng Shi, Wenhao Yu, Zaitang Li, Yonglin Wang, Hongming Zhang, and others. "MobileGUI-RL: Advancing Mobile GUI Agent through Reinforcement Learning in Online Environment." arXiv:2507.05720, 2025.
+
+[14] Sanjiban Choudhury. "Process Reward Models for LLM Agents: Practical Framework and Directions." arXiv:2502.10325, 2025.
+
+[15] Ganqu Cui, Lifan Yuan, Zefan Wang, Hanbin Wang, Yuchen Zhang, and others. "Process Reinforcement through Implicit Rewards." arXiv:2502.01456, 2025.
+
+[16] Jing Yu Koh, Robert Lo, Lawrence Jang, Vikram Duvvur, Ming Chong Lim, and others. "VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks." arXiv:2401.13649, 2024.
+
+[17] Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, and others. "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments." arXiv:2404.07972, 2024.
+
+[18] Rogerio Bonatti, Dan Zhao, Francesco Bonacci, Dillon Dupont, Sara Abdali, and others. "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale." arXiv:2409.08264, 2024.
+
+[19] InclusionAI AWorld-RL. "StressWeb: A Diagnostic Benchmark for Web Agent Robustness under Realistic Interaction Variability." arXiv:2604.16385, 2026.

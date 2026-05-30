@@ -1,0 +1,17 @@
+[1] Y. Gao et al. "Searching for Best Practices in Retrieval-Augmented Generation." arXiv:2407.01219, 2024.
+[2] H. Trivedi et al. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." arXiv:2212.10509, 2022.
+[3] S. Li et al. "Search-o1: Agentic Search-Enhanced Large Reasoning Models." arXiv:2501.05366, 2025.
+[4] S. Jin et al. "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning." arXiv:2503.09516, 2025.
+[5] J. Zhang et al. "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." arXiv:2503.05592, 2025.
+[6] J. Zhang et al. "R1-Searcher++: Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning." arXiv:2505.17005, 2025.
+[7] P. Lu et al. "s3: You Don't Need That Much Data to Train a Search Agent via RL." arXiv:2505.14146, 2025.
+[8] Y. Chen et al. "Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning." arXiv:2501.15228, 2025.
+[9] M. Zhang et al. "Search Wisely: Mitigating Sub-optimal Agentic Searches By Reducing Uncertainty." arXiv:2505.17281, 2025.
+[10] B. Sun et al. "AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning." arXiv:2604.17337, 2026.
+[11] Y. Li et al. "RAG-R1: Incentivizing the Search and Reasoning Capabilities of LLMs through Multi-query Parallelism." arXiv:2507.02962, 2025.
+[12] Y. Li et al. "Cost-Aware Retrieval-Augmentation Reasoning Models with Adaptive Retrieval Depth." arXiv:2510.15719, 2025.
+[13] Z. Yuan et al. "Process Reinforcement through Implicit Rewards." arXiv:2502.01456, 2025.
+[14] J. Yao et al. "PRL: Process Reward Learning Improves LLMs' Reasoning Ability and Broadens the Reasoning Boundary." arXiv:2601.10201, 2026.
+[15] H. Xu et al. "Search-P1: Path-Centric Reward Shaping for Stable and Efficient Agentic RAG Training." arXiv:2602.22576, 2026.
+[16] X. Shen et al. "DecEx-RAG: Boosting Agentic Retrieval-Augmented Generation with Decision and Execution Optimization via Process Supervision." arXiv:2510.05691, 2025.
+[17] J. Liu et al. "Beyond Correctness: Rewarding Faithful Reasoning in Retrieval-Augmented Generation." arXiv:2510.13272, 2025.

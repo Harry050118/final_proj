@@ -1,0 +1,37 @@
+[1] W. Hong et al. "CogAgent: A Visual Language Model for GUI Agents." arXiv:2312.08914, 2023.
+
+[2] K. Cheng et al. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." arXiv:2401.10935, 2024.
+
+[3] Z. Wu et al. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
+
+[4] Y. Qin et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
+
+[5] Z. Zhang et al. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." arXiv:2403.02713, 2024.
+
+[6] C. Rawles et al. "Android in the Wild: A Large-Scale Dataset for Android Device Control." arXiv:2307.10088, 2023.
+
+[7] Y. Li et al. "AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents." arXiv:2407.17490, 2024.
+
+[8] T. Wang et al. "Self-Training with Direct Preference Optimization Improves Chain-of-Thought Reasoning." arXiv:2407.18248, 2024.
+
+[9] A. S. et al. "Iterative Reasoning Preference Optimization." arXiv:2404.19733, 2024.
+
+[10] X. Feng et al. "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs." arXiv:2406.09136, 2024.
+
+[11] L. Z. et al. "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees." arXiv:2410.12854, 2024.
+
+[12] H. Lightman et al. "Let's reward step by step: Step-Level reward model as the Navigators for Reasoning." arXiv:2310.10080, 2023.
+
+[13] Z. Luo et al. "Coarse-to-Fine Process Reward Modeling for Mathematical Reasoning." arXiv:2501.13622, 2025.
+
+[14] X. Zhang et al. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." arXiv:2406.03816, 2024.
+
+[15] H. L. et al. "Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search." arXiv:2412.18319, 2024.
+
+[16] J. Li et al. "ARPO: End-to-End Policy Optimization for GUI Agents with Experience Replay." arXiv:2505.16282, 2025.
+
+[17] H. W. et al. "MobileGUI-RL: Advancing Mobile GUI Agent through Reinforcement Learning in Online Environment." arXiv:2507.05720, 2025.
+
+[18] X. Chen et al. "CRAFT-GUI: Curriculum-Reinforced Agent For GUI Tasks." arXiv:2508.11360, 2025.
+
+[19] S. Li et al. "On the Effects of Data Scale on UI Control Agents." arXiv:2406.03679, 2024.

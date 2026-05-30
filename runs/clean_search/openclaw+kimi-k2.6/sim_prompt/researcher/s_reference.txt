@@ -1,0 +1,31 @@
+[1] C. Lu et al. "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery." arXiv:2408.06292, 2024.
+
+[2] Y. Li et al. "A Vision for Auto Research with LLM Agents." arXiv:2504.18765, 2025.
+
+[3] H. Dong et al. "AutoSurvey: Large Language Models Can Automatically Write Surveys." arXiv:2406.10252, 2024.
+
+[4] M. Gao et al. "Exploring Design of Multi-Agent LLM Dialogues for Research Ideation." arXiv:2507.08350, 2025.
+
+[5] Q. Huang et al. "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation." arXiv:2310.03302, 2023.
+
+[6] Y. Si et al. "IdeaBench: Benchmarking Large Language Models for Research Idea Generation." arXiv:2411.02429, 2024.
+
+[7] C. Shuai et al. "Enhancing Research Idea Generation through Combinatorial Innovation and Multi-Agent Iterative Search Strategies." arXiv:2604.20548, 2026.
+
+[8] Y. Song et al. "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges." arXiv:2412.11427, 2024.
+
+[9] J. Zhang et al. "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery." arXiv:2505.13259, 2025.
+
+[10] Z. Zhang et al. "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery." arXiv:2508.14111, 2025.
+
+[11] Z. Robertson et al. "GPT4 is Slightly Helpful for Peer-Review Assistance: A Pilot Study." arXiv:2307.05492, 2023.
+
+[12] M. Hosseini and S. Horbach. "Can ChatGPT evaluate research quality?" arXiv:2402.05519, 2024.
+
+[13] J. Liu et al. "Automated Peer Reviewing in Paper SEA: Standardization, Evaluation, and Analysis." arXiv:2407.12857, 2024.
+
+[14] L. Zheng et al. "A Survey on LLM-as-a-Judge." arXiv:2411.15594, 2024.
+
+[15] Y. Tan et al. "JudgeBench: A Benchmark for Evaluating LLM-based Judges." arXiv:2410.12784, 2024.
+
+[16] L. Zhang et al. "Generative Verifiers: Reward Modeling as Next-Token Prediction." arXiv:2408.15240, 2024.

@@ -1,0 +1,19 @@
+\section{Related Work}
+\subsection{Mobile GUI Agent}
+LLMs~ are increasingly used as autonomous agents for mobile interaction~.
+With the rapid development of vision-language models (VLMs), researchers build mobile GUI agents and multi-agent frameworks based on closed-source VLMs.
+Meanwhile, some researchers focus on training agents with stronger element grounding , page navigation , GUI understanding and task planning capabilities based on open-source VLMs.
+Our method organizes trajectory data into multi-turns of dialogues based on the CoaT thinking pattern, preventing the agent becomes an action model with limited capabilities.
+\subsection{Reinforcement Learning}
+The algorithms applied in natural language processing to align with human preferences include Direct Preference Optimization (DPO) , Identity Preference Optimization (IPO) , Kahneman-Tversky Optimization (KTO) , and Proximal Policy Optimization (PPO) . Specifically, ReFT adopts reinforcement learning as a fine-tuning paradigm to improve performance on math problems.
+ReST-MCTS* focuses on the higher-quality step reward, where the process reward model is important. Xie, et al. label the preference via MCTS based on feedback from self-evaluation.
+For mobile GUI agents, Digirl and Distrl use online trajectory collection to improve the generalization of agents whose process is very slow.
+Reachagent uses DPO training to compare the quality of multiple actions.
+TCPO also optimizes thoughts, but does not explicitly enforce thought–action consistency. TreePO , TreeRL , and SPO segment long sequences into many short segments, which leads to high computational cost and low data efficiency.
+In contrast, our method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, while step values are computed directly from rule-based rewards, without unstable PRMs. This design yields more efficient sampling and training, especially in GUI-agent settings.
+\begin{figure*}[ht]
+ \centering
+ \includegraphics[width=0.85\textwidth]{img/main.pdf}
+ \caption{Overview of iterative preference learning framework. The left part presents the process of warm-up fine-tuning a general VLM to a mobile GUI domain agent with basic capabilities. The mid and right parts represent the iterative CoaT thinking-level sampling and T-DPO training process.}
+ \label{fig:main}
+\end{figure*}
