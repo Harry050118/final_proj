@@ -1,0 +1,19 @@
+[1] Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foerster, and Jeff Clune. "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery." arXiv:2408.06292, 2024.
+
+[2] Tal Ifargan, Lukas Hafner, Maor Kern, Ori Alcalay, and Roy Kishony. "Autonomous LLM-driven research from data to human-verifiable research papers." arXiv:2404.17605, 2024.
+
+[3] Chenglei Si, Diyi Yang, and Tatsunori Hashimoto. "Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers." arXiv:2409.04109, 2024.
+
+[4] Zhumin Chu, Qingyao Ai, Haitao Li, Yiteng Tu, and Yiqun Liu. "PRE: A Peer Review Based Large Language Model Evaluator." arXiv:2401.15641, 2024.
+
+[5] Keith Tyser, Ben Segev, Gaston Longhitano, Xin-Yu Zhang, Zachary Meeks, Jason Lee, Uday Garg, Nandavardhan R. Bhamidipati, Naba Rizvi, Preet Gill, Akash Vartak, Chenyang Zhu, Rajat Agarwal, Anushka Vartak, and Gerrard Mascarenhas. "AI-Driven Review Systems: Evaluating LLMs in Scalable and Bias-Aware Academic Reviews." arXiv:2408.10365, 2024.
+
+[6] Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, and Chelsea Finn. "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." arXiv:2305.18290, 2023.
+
+[7] Yu Meng, Mengzhou Xia, and Danqi Chen. "SimPO: Simple Preference Optimization with a Reference-Free Reward." arXiv:2405.14734, 2024.
+
+[8] Lunjun Zhang, Arian Hosseini, Hritik Bansal, Mehran Kazemi, Aviral Kumar, and Rishabh Agarwal. "Generative Verifiers: Reward Modeling as Next-Token Prediction." arXiv:2408.15240, 2024.
+
+[9] Eric Mitchell, Yoonho Lee, Alexander Khazatsky, Christopher D. Manning, and Chelsea Finn. "DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature." arXiv:2301.11305, 2023.
+
+[10] Guangsheng Bao, Yanbin Zhao, Zhiyang Teng, Linyi Yang, and Yue Zhang. "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature." arXiv:2310.05130, 2023.

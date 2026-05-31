@@ -1,0 +1,25 @@
+[1] Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, and Sung Ju Hwang. "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models." arXiv preprint arXiv:2404.07738, 2024.
+
+[2] Qingyun Wang, Doug Downey, Heng Ji, and Tom Hope. "SciMON: Scientific Inspiration Machines Optimized for Novelty." arXiv preprint arXiv:2305.14259, 2023.
+
+[3] Chenglei Si, Diyi Yang, and Tatsunori Hashimoto. "Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers." arXiv preprint arXiv:2409.04109, 2024.
+
+[4] Yidong Wang, Qi Guo, Wenjin Yao, Hongbo Zhang, Xin Zhang, Zhen Wu, et al. "AutoSurvey: Large Language Models Can Automatically Write Surveys." arXiv preprint arXiv:2406.10252, 2024.
+
+[5] Qian Huang, Jian Vora, Percy Liang, and Jure Leskovec. "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation." arXiv preprint arXiv:2310.03302, 2023.
+
+[6] Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foerster, Jeff Clune, et al. "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery." arXiv preprint arXiv:2408.06292, 2024.
+
+[7] Yu Zhang, Xiusi Chen, Bowen Jin, Sheng Wang, Shuiwang Ji, et al. "A Comprehensive Survey of Scientific Large Language Models and Their Applications in Scientific Discovery." arXiv preprint arXiv:2406.10833, 2024.
+
+[8] Yizhen Zheng, Huan Yee Koh, Jiaxin Ju, Anh T.N. Nguyen, Lauren T. May, Geoffrey I. Webb, and Shirui Pan. "Large Language Models for Scientific Synthesis, Inference and Explanation." arXiv preprint arXiv:2310.07984, 2023.
+
+[9] Weixin Liang, Yuhui Zhang, Hancheng Cao, Binglu Wang, Daisy Yi Ding, Xinyu Yang, Kailas Vodrahalli, Siyu He, Daniel S. Smith, Yian Yin, Daniel A. McFarland, and James Zou. "Can large language models provide useful feedback on research papers? A large-scale empirical analysis." arXiv preprint arXiv:2310.01783, 2023.
+
+[10] Zachary Robertson. "GPT4 is Slightly Helpful for Peer-Review Assistance: A Pilot Study." arXiv preprint arXiv:2307.05492, 2023.
+
+[11] Mike D'Arcy, Tom Hope, Larry Birnbaum, and Doug Downey. "MARG: Multi-Agent Review Generation for Scientific Papers." arXiv preprint arXiv:2401.04259, 2024.
+
+[12] Lunjun Zhang, Arian Hosseini, Hritik Bansal, Mehran Kazemi, Aviral Kumar, and Rishabh Agarwal. "Generative Verifiers: Reward Modeling as Next-Token Prediction." arXiv preprint arXiv:2408.15240, 2024.
+
+[13] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, LJ Miranda, Bill Yuchen Lin, Khyathi Chandu, Nouha Dziri, Sachin Kumar, Rowan Zellers, Yejin Choi, Noah A. Smith, and Hannaneh Hajishirzi. "RewardBench: Evaluating Reward Models for Language Modeling." arXiv preprint arXiv:2403.13787, 2024.

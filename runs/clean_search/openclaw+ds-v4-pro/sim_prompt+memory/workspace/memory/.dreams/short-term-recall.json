@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-31T13:39:00.085Z",
+  "entries": {
+    "memory:memory/2026-05-31.md:1:33": {
+      "key": "memory:memory/2026-05-31.md:1:33",
+      "path": "memory/2026-05-31.md",
+      "startLine": 1,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "# 2026-05-31 - Related Work Generation Task (A1 Clean Search) ## Task Summary Generated a Related Work section for an anonymized paper about automating scientific research with open-source LLMs (CycleResearcher + CycleReviewer + Iterative SimPO). Used DeepXiv as the only academic retrieval source. ## Overall Score: 6.17/10 ### Strong areas: - Citation validity (9.44/10), appropriateness (9.37/10), topic consistency (9.74/10) - Writing quality (8.00/10), thematic structure (8.20/10) - Length/conciseness (8.48/10), citation placement (8.63/10) ### Weak areas: - Content coverage (3.71/10) — missed 10 key points from ground truth - Citation quality (5.00/10) — moderate - Citation coverage (",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-31T10:56:34.452Z",
+      "lastRecalledAt": "2026-05-31T13:39:00.085Z",
+      "queryHashes": [
+        "a604352e0802",
+        "3c8ae03df415",
+        "f143e7b457ea"
+      ],
+      "recallDays": [
+        "2026-05-31"
+      ],
+      "conceptTags": [
+        "open-source",
+        "6.17/10",
+        "9.44/10",
+        "9.37/10",
+        "9.74/10",
+        "8.00/10",
+        "8.20/10",
+        "length/conciseness"
+      ]
+    },
+    "memory:memory/2026-05-31.md:66:82": {
+      "key": "memory:memory/2026-05-31.md:66:82",
+      "path": "memory/2026-05-31.md",
+      "startLine": 66,
+      "endLine": 82,
+      "source": "memory",
+      "snippet": "2. Struggled with DeepXiv API auth (see above) — critical learning point 3. Eventual fix: `pip install deepxiv-sdk` and `Reader(token=...)` 4. Ran 20+ search queries across 5 inferred themes 5. Verified 18 papers through `search()`, `brief()`, `head()` APIs 6. Wrote 5-theme Related Work section (LLMs for Research, Preference Optimization, Peer Review, Text Detection, AI4Science) 7. References: all 18 verified through DeepXiv, 1 with metadata mismatch ## Key Lessons for Future Related Work Tasks 1. **Use `deepxiv-sdk` package, not direct HTTP** — saves enormous time 2. **Verify exact titles/metadata** from DeepXiv brief() before writing reference entries 3. **Don't overclaim** — state only",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8881367907162798,
+      "maxScore": 0.8881367907162798,
+      "firstRecalledAt": "2026-05-31T10:56:34.452Z",
+      "lastRecalledAt": "2026-05-31T10:56:34.452Z",
+      "queryHashes": [
+        "a604352e0802"
+      ],
+      "recallDays": [
+        "2026-05-31"
+      ],
+      "conceptTags": [
+        "deepxiv-sdk",
+        "5-theme",
+        "titles/metadata",
+        "struggled",
+        "deepxiv",
+        "api",
+        "auth",
+        "see"
+      ]
+    },
+    "memory:memory/2026-05-31.md:45:70": {
+      "key": "memory:memory/2026-05-31.md:45:70",
+      "path": "memory/2026-05-31.md",
+      "startLine": 45,
+      "endLine": 70,
+      "source": "memory",
+      "snippet": "Missed several ground-truth prior works: - ResearchAgent (Baek et al.) - multi-agent collaborative writing for idea generation - SciMON (Yang et al.) / SciMON (Wang et al.) - literature retrieval and idea generation - MLAgentBench (Huang et al.) - benchmark for LLM coding ML experiments - D'Arcy et al. (MARG) - multi-agent review generation - Generative Verifiers (Zhang et al.) - reward modeling as next-token prediction - Liang et al. - large-scale analysis of LLM feedback on research papers - Hosseini & Horbach - ChatGPT for peer review - Tyser et al. - AI-driven review systems - Historical AI4Science works (Langley, Buchanan, LeCun, AlphaFold) Also missed key narrative points: - Prompt-ba",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.6312754570837193,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-31T10:56:34.452Z",
+      "lastRecalledAt": "2026-05-31T13:39:00.085Z",
+      "queryHashes": [
+        "a604352e0802",
+        "f143e7b457ea"
+      ],
+      "recallDays": [
+        "2026-05-31"
+      ],
+      "conceptTags": [
+        "gpt",
+        "ground-truth",
+        "multi-agent",
+        "next-token",
+        "large-scale",
+        "ai-driven",
+        "prompt-ba",
+        "missed"
+      ]
+    },
+    "memory:memory/2026-05-31.md:28:49": {
+      "key": "memory:memory/2026-05-31.md:28:49",
+      "path": "memory/2026-05-31.md",
+      "startLine": 28,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "### 2. Hallucinated Reference (1 paper) - Reference [4] \"Transforming Science with Large Language Models\" flagged as `metadata_mismatch` - The title I wrote didn't match what DeepXiv returned exactly - Lesson: Always verify exact titles/metadata from DeepXiv, don't rely on search-result titles ### 3. Overclaims (4 instances, all mild) - Claimed Self-Rewarding LMs [10] explore \"self-play\" — paper uses \"self-rewarding\" not \"self-play\" - Claimed RewardBench [15] established that trained RMs \"consistently outperform\" general LLM judges — this is an inference, not the paper's central finding - Claimed surveys [4, 18] \"documented this transition from passive to active tools\" — neither explicitly",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6312437970738127,
+      "maxScore": 0.6312437970738127,
+      "firstRecalledAt": "2026-05-31T10:56:34.452Z",
+      "lastRecalledAt": "2026-05-31T10:56:34.452Z",
+      "queryHashes": [
+        "a604352e0802"
+      ],
+      "recallDays": [
+        "2026-05-31"
+      ],
+      "conceptTags": [
+        "metadata-mismatch",
+        "titles/metadata",
+        "search-result",
+        "self-rewarding",
+        "self-play",
+        "hallucinated",
+        "reference",
+        "paper"
+      ]
+    },
+    "memory:memory/2026-05-31.md:66:88": {
+      "key": "memory:memory/2026-05-31.md:66:88",
+      "path": "memory/2026-05-31.md",
+      "startLine": 66,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "2. Struggled with DeepXiv API auth (see above) — critical learning point 3. Eventual fix: `pip install deepxiv-sdk` and `Reader(token=...)` 4. Ran 20+ search queries across 5 inferred themes 5. Verified 18 papers through `search()`, `brief()`, `head()` APIs 6. Wrote 5-theme Related Work section (LLMs for Research, Preference Optimization, Peer Review, Text Detection, AI4Science) 7. References: all 18 verified through DeepXiv, 1 with metadata mismatch ## Key Lessons for Future Related Work Tasks 1. **Use `deepxiv-sdk` package, not direct HTTP** — saves enormous time 2. **Verify exact titles/metadata** from DeepXiv brief() before writing reference entries 3. **Don't overclaim** — state only",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-31T12:51:00.801Z",
+      "lastRecalledAt": "2026-05-31T13:39:00.085Z",
+      "queryHashes": [
+        "3c8ae03df415",
+        "f143e7b457ea"
+      ],
+      "recallDays": [
+        "2026-05-31"
+      ],
+      "conceptTags": [
+        "deepxiv-sdk",
+        "5-theme",
+        "titles/metadata",
+        "struggled",
+        "deepxiv",
+        "api",
+        "auth",
+        "see"
+      ]
+    },
+    "memory:memory/2026-05-31.md:80:102": {
+      "key": "memory:memory/2026-05-31.md:80:102",
+      "path": "memory/2026-05-31.md",
+      "startLine": 80,
+      "endLine": 102,
+      "source": "memory",
+      "snippet": "6. **Search more broadly** — missed important papers like ResearchAgent, SciMON, MLAgentBench, MARG, Generative Verifiers because queries were too focused on high-level themes 7. **Include historical/classical references** where appropriate — the ground truth cites Langley 1987, Buchanan 1981, LeCun 2015 --- ## Task #2: Same Paper, Second Attempt (Memory-Enabled) ### Score: 8.12/10 (improved from 6.17) Applied all lessons from Task #1. Major improvement in thematic structure (9.32), writing (9.00), citation validity (9.17). ### New Critical Issue: Reference [9] MARG Mismatch - Wrote correct title/author for MARG (verified via brief()), but failed to include arXiv ID in reference format",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-31T12:51:00.801Z",
+      "lastRecalledAt": "2026-05-31T12:51:00.801Z",
+      "queryHashes": [
+        "3c8ae03df415"
+      ],
+      "recallDays": [
+        "2026-05-31"
+      ],
+      "conceptTags": [
+        "high-level",
+        "historical/classical",
+        "memory-enabled",
+        "8.12/10",
+        "6.17",
+        "9.32",
+        "9.00",
+        "9.17"
+      ]
+    }
+  }
+}

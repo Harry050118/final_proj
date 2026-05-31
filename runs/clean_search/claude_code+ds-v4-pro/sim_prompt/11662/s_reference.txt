@@ -1,0 +1,57 @@
+[1] L. Zheng, W.-L. Chiang, Y. Sheng, S. Zhuang, Z. Wu, Y. Zhuang, et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena." NeurIPS, 2023.
+
+[2] Y. Liu, D. Iter, Y. Xu, S. Wang, R. Xu, and C. Zhu. "G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment." EMNLP, 2023.
+
+[3] L. Shi, C. Ma, W. Liang, X. Diao, W. Ma, and S. Vosoughi. "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge." IJCNLP-AACL, 2024.
+
+[4] A. Panickssery, S. R. Bowman, and S. Feng. "LLM Evaluators Recognize and Favor Their Own Generations." NeurIPS, 2024.
+
+[5] K. Wataoka, T. Takahashi, and R. Ri. "Self-Preference Bias in LLM-as-a-Judge." arXiv, 2024.
+
+[6] H. Lightman, V. Kosaraju, Y. Burda, H. Edwards, B. Baker, T. Lee, et al. "Let's Verify Step by Step." ICLR, 2023.
+
+[7] L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. L. Wainwright, P. Mishkin, et al. "Training language models to follow instructions with human feedback." NeurIPS, 2022.
+
+[8] W. Yuan, R. Y. Pang, K. Cho, X. Li, S. Sukhbaatar, J. Xu, et al. "Self-Rewarding Language Models." ICML, 2024.
+
+[9] J. H. Kirchner, Y. Chen, H. Edwards, J. Leike, N. McAleese, and Y. Burda. "Prover-Verifier Games improve legibility of LLM outputs." arXiv, 2024.
+
+[10] S. Zhou, F. F. Xu, H. Zhu, X. Zhou, R. Lo, A. Sridhar, et al. "WebArena: A Realistic Web Environment for Building Autonomous Agents." ICLR, 2023.
+
+[11] J. Y. Koh, R. Lo, L. Jang, V. Duvvur, M. C. Lim, P.-Y. Huang, et al. "VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks." arXiv, 2024.
+
+[12] T. Xie, D. Zhang, J. Chen, X. Li, S. Zhao, R. Cao, et al. "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments." NeurIPS, 2024.
+
+[13] A. Mandlekar, D. Xu, J. Wong, S. Nasiriany, C. Wang, R. Kulkarni, et al. "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation." CoRL, 2021.
+
+[14] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." arXiv, 2022.
+
+[15] J. Yang, H. Zhang, F. Li, X. Zou, C. Li, and J. Gao. "Set-of-Mark Prompting Unleashes Extraordinary Visual Grounding in GPT-4V." arXiv, 2023.
+
+[16] K. Cheng, Q. Sun, Y. Chu, F. Xu, Y. Li, J. Zhang, et al. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." ACL, 2024.
+
+[17] B. Zheng, B. Gou, J. Kil, H. Sun, and Y. Su. "GPT-4V(ision) is a Generalist Web Agent, if Grounded." ICML, 2024.
+
+[18] Y. Qin, Y. Ye, J. Fang, H. Wang, S. Liang, S. Tian, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv, 2025.
+
+[19] C. Chi, S. Feng, Y. Du, Z. Xu, E. Cousineau, B. Burchfiel, et al. "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion." RSS, 2023.
+
+[20] Y. Du, K. Konyushkova, M. Denil, A. Raju, J. Landon, F. Hill, et al. "Vision-Language Models as Success Detectors." CoLLAs, 2023.
+
+[21] J. Pan, Y. Zhang, N. Tomlin, Y. Zhou, S. Levine, and A. Suhr. "Autonomous Evaluation and Refinement of Digital Agents." arXiv, 2024.
+
+[22] X. H. Lu, A. Kazemnejad, N. Meade, A. Patel, D. Shin, A. Zambrano, et al. "AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories." arXiv, 2025.
+
+[23] T. Men, Z. Jin, P. Cao, Y. Chen, K. Liu, and J. Zhao. "Agent-RewardBench: Towards a Unified Benchmark for Reward Modeling across Perception, Planning, and Safety in Real-World Multimodal Agents." ACL, 2025.
+
+[24] C. Chen, K. Ji, H. Zhong, M. Zhu, A. Li, G. Gan, et al. "GUI-Shepherd: Reliable Process Reward and Verification for Long-Sequence GUI Tasks." arXiv, 2025.
+
+[25] C. Cui, J. Huang, S. Wang, L. Zheng, Q. Kong, and Z. Zeng. "Agentic Reward Modeling: Verifying GUI Agent via Online Proactive Interaction." arXiv, 2026.
+
+[26] J. Duan, W. Pumacay, N. Kumar, Y. R. Wang, S. Tian, W. Yuan, et al. "AHA: A Vision-Language-Model for Detecting and Reasoning Over Failures in Robotic Manipulation." ICLR, 2024.
+
+[27] N. Shinn, F. Cassano, E. Berman, A. Gopinath, K. Narasimhan, and S. Yao. "Reflexion: Language Agents with Verbal Reinforcement Learning." NeurIPS, 2023.
+
+[28] R. Aksitov, S. Miryosefi, Z. Li, D. Li, S. Babayan, K. Kopparapu, et al. "ReST meets ReAct: Self-Improvement for Multi-Step Reasoning LLM Agent." arXiv, 2023.
+
+[29] Z. Qi, X. Liu, I. L. Iong, H. Lai, X. Sun, W. Zhao, et al. "WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning." arXiv, 2024.
