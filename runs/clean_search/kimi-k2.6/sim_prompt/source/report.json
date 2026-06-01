@@ -1,81 +1,62 @@
 {
   "sample_id": "sim_prompt-evotest",
-  "overall": 7.12,
+  "overall": 7.05,
   "scores": {
-    "content_coverage": 2.22,
-    "citation_quality": 9.02,
-    "relevance": 7.94,
-    "thematic_structure": 7.92,
-    "synthesis_quality": 7.5,
+    "content_coverage": 3.41,
+    "citation_quality": 8.3,
+    "relevance": 9.06,
+    "thematic_structure": 7.76,
+    "synthesis_quality": 6.5,
     "writing_quality": 8.5,
-    "length_conciseness": 5.13,
+    "length_conciseness": 5.32,
     "citation_validity": 10.0,
-    "citation_appropriateness": 9.7,
-    "citation_coverage": 5.83,
-    "citation_placement": 9.7,
-    "citation_topic_consistency": 9.85
+    "citation_appropriateness": 9.2,
+    "citation_coverage": 3.5,
+    "citation_placement": 9.3,
+    "citation_topic_consistency": 9.5
   },
   "diagnostics": {
     "missing_points": [
       {
         "gold_point_id": "GPoint1",
         "text": "MLLMs have been employed as evaluators of model outputs under various names: judges, critics, reward models, value functions.",
-        "rationale": "No candidate claim mentions MLLMs being used as evaluators under various names like judges, critics, reward models, or value functions."
+        "rationale": "No candidate claim explicitly states that MLLMs have been employed as evaluators under various names like judges, critics, reward models, or value functions."
+      },
+      {
+        "gold_point_id": "GPoint5",
+        "text": "The most closely related work uses a GPT-4V-based evaluator, prompted with benchmark-specific rubrics, to evaluate trajectories for Reflexion and behavior cloning.",
+        "rationale": "No candidate claim mentions a GPT-4V-based evaluator with benchmark-specific rubrics for evaluating trajectories for Reflexion and behavior cloning. S13 mentions Reflexion but not the evaluator."
       },
       {
         "gold_point_id": "GPoint6",
-        "text": "GPT-4V-based evaluator, prompted with benchmark-specific rubrics, is used to evaluate trajectories for Reflexion and behavior cloning.",
-        "rationale": "No claim mentions a GPT-4V-based evaluator prompted with benchmark-specific rubrics for evaluating Reflexion or behavior cloning trajectories."
-      },
-      {
-        "gold_point_id": "GPoint7",
-        "text": "Similar evaluator is used to guide tree search for agent performance improvement.",
-        "rationale": "No claim discusses an evaluator being used to guide tree search for agent performance improvement."
+        "text": "Following works employ a similar evaluator to guide tree search, filter trajectories to generate text-based memories or tools to boost agent performance in (Visual)WebArena, and for RL training in simpler environments.",
+        "rationale": "No candidate claim describes a similar evaluator used to guide tree search, filter trajectories, or generate memories/tools in (Visual)WebArena. S2 mentions VisualWebArena but not an evaluator."
       },
       {
         "gold_point_id": "GPoint8",
-        "text": "Similar evaluator filters trajectories to generate text-based memories or tools to boost agent performance in (Visual)WebArena.",
-        "rationale": "No claim describes an evaluator filtering trajectories to generate text-based memories or tools for boosting agent performance in (Visual)WebArena."
+        "text": "Early work shows that prompting LLMs to generate chains-of-thought yields substantial gains in reasoning-oriented tasks.",
+        "rationale": "No candidate claim mentions early work on chain-of-thought prompting yielding gains in reasoning. S14 discusses ReAct but not chain-of-thought."
       },
       {
         "gold_point_id": "GPoint9",
-        "text": "Similar evaluator is used for RL training in simpler environments.",
-        "rationale": "No claim covers an evaluator used for RL training in simpler environments."
-      },
-      {
-        "gold_point_id": "GPoint11",
-        "text": "Prompting LLMs to generate chains-of-thought yields substantial gains in reasoning-oriented tasks.",
-        "rationale": "No claim mentions chain-of-thought prompting or its gains on reasoning tasks."
-      },
-      {
-        "gold_point_id": "GPoint12",
-        "text": "Chain-of-thought idea has been extended to multimodal and environment-interaction settings.",
-        "rationale": "No claim discusses extending chain-of-thought to multimodal or environment-interaction settings."
-      },
-      {
-        "gold_point_id": "GPoint14",
-        "text": "Recent work leverages sampling, RL, and formal verifiers to train MLLMs that autonomously generate reasoning traces.",
-        "rationale": "No claim describes leveraging sampling, RL, and formal verifiers to train MLLMs for autonomous reasoning traces."
-      },
-      {
-        "gold_point_id": "GPoint15",
-        "text": "Extending these methods to open-ended problems requires flexible and multimodal verification, for which MLLMs offer an appealing solution.",
-        "rationale": "No claim discusses the need for flexible multimodal verification or MLLMs as a solution."
+        "text": "Chain-of-thought prompting has been extended to several settings, including multimodal and environment-interaction.",
+        "rationale": "No candidate claim explicitly states that chain-of-thought prompting has been extended to multimodal and environment-interaction settings. S14 (ReAct) involves environment interaction but does not reference chain-of-thought."
       }
     ],
     "hallucinated_references": [],
+    "bibliographic_accuracy_issues": [],
     "bad_citation_claim_pairs": [
       {
         "claim_id": "SClaim4",
         "reference_key": "arxiv:2303.04137",
-        "support": "weak",
-        "appropriateness_score": 5.0,
-        "placement_score": 5.0,
-        "topic_consistency_score": 7.0,
-        "support_rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+        "support": "no",
+        "appropriateness_score": 2.0,
+        "placement_score": 2.0,
+        "topic_consistency_score": 5.0,
+        "support_rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
         "overclaim_status": "none",
         "overclaim_rationale": "",
-        "rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+        "rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
         "retrieval_used": true,
         "retrieved_evidence": [
           {
@@ -92,18 +73,57 @@
         "second_pass_used": true
       }
     ],
-    "overclaim_citation_claim_pairs": [],
+    "overclaim_citation_claim_pairs": [
+      {
+        "claim_id": "SClaim4",
+        "reference_key": "arxiv:2108.03298",
+        "support": "partial",
+        "appropriateness_score": 8.0,
+        "placement_score": 8.0,
+        "topic_consistency_score": 9.0,
+        "support_rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark.",
+        "overclaim_status": "mild",
+        "overclaim_rationale": "Claim attributes 'offers long-horizon manipulation tasks' to robomimic, but the cited paper focuses on learning algorithms rather than introducing the framework; partial support.",
+        "rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark."
+      },
+      {
+        "claim_id": "SClaim5",
+        "reference_key": "arxiv:2406.07791",
+        "support": "partial",
+        "appropriateness_score": 7.0,
+        "placement_score": 8.0,
+        "topic_consistency_score": 8.0,
+        "support_rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity.",
+        "overclaim_status": "mild",
+        "overclaim_rationale": "Claim attributes multiple biases to a single paper, but the paper only covers position bias; mild overclaim.",
+        "rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity."
+      },
+      {
+        "claim_id": "SClaim5",
+        "reference_key": "arxiv:2506.22316",
+        "support": "partial",
+        "appropriateness_score": 7.0,
+        "placement_score": 8.0,
+        "topic_consistency_score": 8.0,
+        "support_rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly.",
+        "overclaim_status": "mild",
+        "overclaim_rationale": "Claim lumps all biases; paper covers scoring bias but not position bias; mild overclaim.",
+        "rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly."
+      }
+    ],
     "citation_group_support": [
       {
         "claim_id": "SClaim4",
         "citation_count": 2,
-        "group_support": "partial",
-        "group_rationale": "The first citation (arxiv:2108.03298) supports that robomimic offers long-horizon manipulation tasks with human demonstrations. However, the second citation (arxiv:2303.04137) is weak and does not explicitly link Diffusion Policy evaluations to robomimic, so the claim that robomimic serves as a standard for evaluating visuomotor policies such as Diffusion Policy remains unsupported. Therefore, the claim is only partially supported.",
+        "group_support": "weak",
+        "group_rationale": "The first citation (2108.03298) is related to human demonstrations for manipulation tasks but does not explicitly mention robomimic as a benchmark offering long-horizon tasks. The second citation (2303.04137) does not mention robomimic at all. Therefore, the claim that robomimic offers specific tasks for evaluating Diffusion Policy is weakly supported.",
         "covered_aspects": [
-          "robomimic offers long-horizon manipulation tasks with human demonstrations"
+          "human demonstration data for robot manipulation"
         ],
         "missing_aspects": [
-          "robomimic serves as a standard for evaluating visuomotor policies such as Diffusion Policy"
+          "robomimic as an offering framework",
+          "long-horizon manipulation tasks",
+          "evaluation of visuomotor policies like Diffusion Policy"
         ],
         "derived_from_single_pair": false,
         "reference_keys": [
@@ -115,12 +135,13 @@
         "claim_id": "SClaim5",
         "citation_count": 2,
         "group_support": "yes",
-        "group_rationale": "Both citations directly support the claim: the first addresses position bias (sensitivity to prompt ordering), and the second addresses scoring bias (sensitivity to rubric phrasing and reference framing). Together, they cover all key components of the claim, resulting in full support.",
+        "group_rationale": "Citation 1 (arxiv:2406.07791) supports position bias and sensitivity to prompt ordering; Citation 2 (arxiv:2506.22316) supports scoring bias, sensitivity to rubric phrasing, and reference framing. Together, they cover all components of the claim.",
         "covered_aspects": [
+          "position bias",
+          "scoring bias",
           "sensitivity to prompt ordering",
           "sensitivity to rubric phrasing",
-          "sensitivity to reference framing",
-          "production of inconsistent ratings under neutral perturbations"
+          "sensitivity to reference framing"
         ],
         "missing_aspects": [],
         "derived_from_single_pair": false,
@@ -133,11 +154,11 @@
         "claim_id": "SClaim6",
         "citation_count": 2,
         "group_support": "yes",
-        "group_rationale": "Both citations collectively confirm the existence of self-preference bias (arxiv:2404.13076) and self-bias in self-refinement (arxiv:2402.11436), and both indicate that these biases undermine reliability when the same model is used as generator and evaluator. Thus the claim is fully supported.",
+        "group_rationale": "Both citations collectively support the entire claim. The first citation supports self-preference bias, while the second supports self-bias in self-refinement and the resulting reliability concerns when a model acts as both generator and evaluator. Together, they cover all aspects of the claim.",
         "covered_aspects": [
-          "Self-preference bias in LLMs favoring own outputs",
-          "Self-bias in self-refinement amplifying earlier judgments",
-          "Undermining reliability of same-model generation and evaluation"
+          "self-preference bias",
+          "self-bias in self-refinement",
+          "undermining reliability when the same model acts as both generator and evaluator"
         ],
         "missing_aspects": [],
         "derived_from_single_pair": false,
@@ -145,24 +166,40 @@
           "arxiv:2404.13076",
           "arxiv:2402.11436"
         ]
+      },
+      {
+        "claim_id": "SClaim11",
+        "citation_count": 2,
+        "group_support": "yes",
+        "group_rationale": "Both UI-Genie and MagicGUI-RMS are individually supported by their respective citations, covering the full claim.",
+        "covered_aspects": [
+          "UI-Genie self-improving GUI agents with reward models and synthetic data generation",
+          "MagicGUI-RMS self-improving GUI agents with reward models and synthetic data generation"
+        ],
+        "missing_aspects": [],
+        "derived_from_single_pair": false,
+        "reference_keys": [
+          "arxiv:2505.21496",
+          "arxiv:2601.13060"
+        ]
       }
     ],
     "topic_structure_issues": [
       {
         "paragraph_id": "S1",
-        "issue": "Focus is narrow on benchmarks; could explore relation to evaluators more explicitly."
+        "issue": "Could benefit from explicit connection to how these environments are used with evaluators or agents."
       },
       {
         "paragraph_id": "S2",
-        "issue": "No major issues; content is well-scoped to LLM-as-judge biases."
+        "issue": "Narrowly focuses on biases; might be better integrated into a broader evaluator section."
       },
       {
         "paragraph_id": "S3",
-        "issue": "No major issues; citations strongly align with reward modeling for agents."
+        "issue": "Overlaps with evaluation-related topics in S2; could lead to fragmentation."
       },
       {
         "paragraph_id": "S4",
-        "issue": "Combines multiple sub-themes (test-time scaling, self-improvement, online supervision) reducing cohesion; could benefit from clearer focus."
+        "issue": "Combines test-time scaling, self-improvement, and online supervision; these could be separated into distinct topics for clarity."
       }
     ],
     "length_conciseness_issues": [
@@ -104050,7 +104087,7 @@
         {
           "id": "GTopic1",
           "label": "MLLMs as Evaluators",
-          "summary": "Describes the use of MLLMs as evaluators (judges, critics, reward models, value functions) in multimodal and environment-interaction scenarios for scoring/filtering trajectories, test-time refinements, and real-time feedback.",
+          "summary": "(M)LLMs have been employed as evaluators of model outputs in various scenarios, focusing on multimodal and environment-interaction scenarios. They are used to score and filter agent trajectories for finetuning and test-time refinements, and to provide real-time feedback through critiques, scores, and rewards.",
           "paragraph_ids": [
             "G1"
           ],
@@ -104060,32 +104097,30 @@
         {
           "id": "GTopic2",
           "label": "AI Agents",
-          "summary": "Discusses AI agents acting in web, mobile, and computer environments. Closely related work uses a GPT-4V-based evaluator with rubrics to evaluate trajectories for Reflexion and behavior cloning. Also applied to tree search, trajectory filtering for memories/tools, and RL training.",
+          "summary": "Growing interest in building AI agents to act in web, mobile, and computer environments. The most closely related work uses a GPT-4V-based evaluator with benchmark-specific rubrics to evaluate trajectories for Reflexion and behavior cloning. Subsequent works use similar evaluators for tree search, trajectory filtering, and RL training.",
           "paragraph_ids": [
             "G2"
           ],
-          "importance": 1,
+          "importance": 2,
           "key_citations": [
             "arxiv:2303.11366",
-            "arxiv:2407.01476",
-            "arxiv:2401.13649",
-            "arxiv:2307.13854",
-            "arxiv:2406.11896"
+            "arxiv:2401.13649"
           ]
         },
         {
           "id": "GTopic3",
-          "label": "Test-time Scaling",
-          "summary": "Covers the test-time scaling paradigm for improving model performance without increasing parameters. Includes chain-of-thought prompting, extensions to multimodal and environment-interaction, orthogonal approaches via sampling and search, and recent work training MLLMs with sampling, RL, and formal verifiers. Highlights the need for flexible multimodal verification.",
+          "label": "Test-time scaling",
+          "summary": "Test-time scaling improves model performance without increasing parameters. Early work uses chain-of-thought prompting for reasoning; later extended to multimodal and environment-interaction settings. Orthogonal approaches use sampling and search with heuristics or verifiers. Recent work uses sampling, RL, and formal verifiers to train (M)LLMs that generate reasoning traces autonomously.",
           "paragraph_ids": [
             "G3"
           ],
-          "importance": 1,
+          "importance": 2,
           "key_citations": [
             "arxiv:2201.11903",
             "arxiv:2302.00923",
             "arxiv:2210.03629",
             "arxiv:2305.10601",
+            "arxiv:2305.14992",
             "arxiv:2203.11171",
             "arxiv:2402.03300",
             "arxiv:2501.12948"
@@ -104097,14 +104132,14 @@
           "id": "GPoint1",
           "type": "topic",
           "text": "MLLMs have been employed as evaluators of model outputs under various names: judges, critics, reward models, value functions.",
-          "importance": 1,
+          "importance": 2,
           "topic_id": "GTopic1",
           "citations": []
         },
         {
           "id": "GPoint2",
           "type": "method",
-          "text": "MLLMs used to score and filter agent trajectories for subsequent finetuning.",
+          "text": "MLLMs used to score and filter agent trajectories for finetuning and test-time refinements such as inducing prompts, reflections, and tools.",
           "importance": 2,
           "topic_id": "GTopic1",
           "citations": []
@@ -104112,31 +104147,23 @@
         {
           "id": "GPoint3",
           "type": "method",
-          "text": "MLLMs used for test-time refinements such as inducing prompts, reflections, and tools.",
+          "text": "MLLMs serve as a source of real-time feedback by producing natural language critiques, scores to rank action proposals in search, and rewards for training.",
           "importance": 2,
           "topic_id": "GTopic1",
           "citations": []
         },
         {
           "id": "GPoint4",
-          "type": "method",
-          "text": "MLLMs produce natural language critiques, scores to rank action proposals in search, and rewards for training.",
-          "importance": 2,
-          "topic_id": "GTopic1",
-          "citations": []
-        },
-        {
-          "id": "GPoint5",
           "type": "topic",
-          "text": "There is growing interest in building AI agents to act in web, mobile, and computer environments.",
+          "text": "Growing interest in building AI agents to act in various environments including the web, mobile phones, and computers.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": []
         },
         {
-          "id": "GPoint6",
+          "id": "GPoint5",
           "type": "method",
-          "text": "GPT-4V-based evaluator, prompted with benchmark-specific rubrics, is used to evaluate trajectories for Reflexion and behavior cloning.",
+          "text": "The most closely related work uses a GPT-4V-based evaluator, prompted with benchmark-specific rubrics, to evaluate trajectories for Reflexion and behavior cloning.",
           "importance": 1,
           "topic_id": "GTopic2",
           "citations": [
@@ -104144,50 +104171,27 @@
           ]
         },
         {
-          "id": "GPoint7",
+          "id": "GPoint6",
           "type": "method",
-          "text": "Similar evaluator is used to guide tree search for agent performance improvement.",
+          "text": "Following works employ a similar evaluator to guide tree search, filter trajectories to generate text-based memories or tools to boost agent performance in (Visual)WebArena, and for RL training in simpler environments.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
-            "arxiv:2407.01476"
+            "arxiv:2401.13649"
           ]
+        },
+        {
+          "id": "GPoint7",
+          "type": "topic",
+          "text": "Test-time scaling is a major paradigm to improve model performance without increasing parameters.",
+          "importance": 2,
+          "topic_id": "GTopic3",
+          "citations": []
         },
         {
           "id": "GPoint8",
           "type": "method",
-          "text": "Similar evaluator filters trajectories to generate text-based memories or tools to boost agent performance in (Visual)WebArena.",
-          "importance": 2,
-          "topic_id": "GTopic2",
-          "citations": [
-            "arxiv:2401.13649",
-            "arxiv:2307.13854"
-          ]
-        },
-        {
-          "id": "GPoint9",
-          "type": "method",
-          "text": "Similar evaluator is used for RL training in simpler environments.",
-          "importance": 3,
-          "topic_id": "GTopic2",
-          "citations": [
-            "arxiv:2406.11896"
-          ]
-        },
-        {
-          "id": "GPoint10",
-          "type": "topic",
-          "text": "Test-time scaling is a major paradigm to improve model performance without increasing parameters.",
-          "importance": 1,
-          "topic_id": "GTopic3",
-          "citations": [
-            "arxiv:2408.03314"
-          ]
-        },
-        {
-          "id": "GPoint11",
-          "type": "method",
-          "text": "Prompting LLMs to generate chains-of-thought yields substantial gains in reasoning-oriented tasks.",
+          "text": "Early work shows that prompting LLMs to generate chains-of-thought yields substantial gains in reasoning-oriented tasks.",
           "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
@@ -104195,9 +104199,9 @@
           ]
         },
         {
-          "id": "GPoint12",
+          "id": "GPoint9",
           "type": "method",
-          "text": "Chain-of-thought idea has been extended to multimodal and environment-interaction settings.",
+          "text": "Chain-of-thought prompting has been extended to several settings, including multimodal and environment-interaction.",
           "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
@@ -104206,20 +104210,21 @@
           ]
         },
         {
-          "id": "GPoint13",
+          "id": "GPoint10",
           "type": "method",
           "text": "Orthogonal approaches scale test-time compute via sampling and search, where multiple generations are selected through heuristics or verifiers.",
           "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
             "arxiv:2305.10601",
+            "arxiv:2305.14992",
             "arxiv:2203.11171"
           ]
         },
         {
-          "id": "GPoint14",
+          "id": "GPoint11",
           "type": "method",
-          "text": "Recent work leverages sampling, RL, and formal verifiers to train MLLMs that autonomously generate reasoning traces.",
+          "text": "Recent work leverages sampling, RL, and formal verifiers to train (M)LLMs that autonomously generate reasoning traces.",
           "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
@@ -104228,7 +104233,7 @@
           ]
         },
         {
-          "id": "GPoint15",
+          "id": "GPoint12",
           "type": "gap",
           "text": "Extending these methods to open-ended problems requires flexible and multimodal verification, for which MLLMs offer an appealing solution.",
           "importance": 1,
@@ -104240,67 +104245,57 @@
         {
           "reference_key": "arxiv:2303.11366",
           "importance": 1,
-          "reason": "Core method for agent evaluation and refinement; closely related work."
-        },
-        {
-          "reference_key": "arxiv:2407.01476",
-          "importance": 2,
-          "reason": "Used to guide agent decision-making via tree search."
+          "reason": "Core agent method using GPT-4V evaluator."
         },
         {
           "reference_key": "arxiv:2401.13649",
           "importance": 2,
-          "reason": "Benchmark for multimodal agent evaluation."
+          "reason": "Benchmark for multimodal web agents."
         },
         {
           "reference_key": "arxiv:2307.13854",
           "importance": 2,
-          "reason": "Benchmark for web agent evaluation."
-        },
-        {
-          "reference_key": "arxiv:2406.11896",
-          "importance": 3,
-          "reason": "Example of RL training with evaluator in simpler environments."
-        },
-        {
-          "reference_key": "arxiv:2408.03314",
-          "importance": 2,
-          "reason": "Paradigm of test-time scaling without parameter increase."
+          "reason": "Web agent benchmark."
         },
         {
           "reference_key": "arxiv:2201.11903",
           "importance": 1,
-          "reason": "Foundational work on chain-of-thought reasoning."
+          "reason": "Foundational chain-of-thought prompting."
         },
         {
           "reference_key": "arxiv:2302.00923",
           "importance": 2,
-          "reason": "Extension of CoT to multimodal settings."
+          "reason": "Extension of CoT to multimodal reasoning."
         },
         {
           "reference_key": "arxiv:2210.03629",
           "importance": 2,
-          "reason": "Synergizing reasoning and acting in environment-interaction."
+          "reason": "Environment-interaction reasoning with ReAct."
         },
         {
           "reference_key": "arxiv:2305.10601",
           "importance": 2,
-          "reason": "Search-based test-time scaling via tree search."
+          "reason": "Tree of Thoughts for search at test-time."
+        },
+        {
+          "reference_key": "arxiv:2305.14992",
+          "importance": 2,
+          "reason": "Planning with world model for reasoning."
         },
         {
           "reference_key": "arxiv:2203.11171",
           "importance": 2,
-          "reason": "Heuristic for sampling selection in test-time scaling."
+          "reason": "Self-consistency heuristic for selection."
         },
         {
           "reference_key": "arxiv:2402.03300",
           "importance": 2,
-          "reason": "RL and verifier-based training for mathematical reasoning."
+          "reason": "RL for mathematical reasoning."
         },
         {
           "reference_key": "arxiv:2501.12948",
-          "importance": 1,
-          "reason": "Recent work on training reasoning models with RL and verifiers."
+          "importance": 2,
+          "reason": "RL for training reasoning traces."
         }
       ]
     },
@@ -104309,7 +104304,7 @@
         {
           "id": "STopic1",
           "label": "Benchmarks and Environments for Evaluating Digital and Embodied Agents",
-          "summary": "The development of autonomous agents has motivated benchmarks like WebArena, VisualWebArena, OSWorld, and robomimic to measure open-ended task completion in realistic web, desktop, and robotic settings.",
+          "summary": "This section reviews benchmark environments for evaluating agents in web, desktop, and robotics settings, including WebArena, VisualWebArena, OSWorld, and robomimic.",
           "paragraph_ids": [
             "S1"
           ],
@@ -104324,7 +104319,7 @@
         {
           "id": "STopic2",
           "label": "LLM-as-a-Judge and Biases in Automated Evaluation",
-          "summary": "LLMs used as evaluators exhibit systematic biases such as position bias, scoring bias, self-preference bias, and self-bias in self-refinement, undermining reliability in automated assessment.",
+          "summary": "This section discusses biases in using LLMs as evaluators, such as position bias, scoring bias, self-preference bias, and their impact on reliability.",
           "paragraph_ids": [
             "S2"
           ],
@@ -104339,7 +104334,7 @@
         {
           "id": "STopic3",
           "label": "Reward Modeling and Verification for Agent Trajectories",
-          "summary": "Recent work on reward modeling for agent behavior includes benchmarks like AgentRewardBench, process reward models like GUI-Shepherd, and self-improving systems like UI-Genie, MagicGUI-RMS, and STEVE.",
+          "summary": "This section covers reward modeling and verification methods for agent trajectories, including AgentRewardBench, GUI-Shepherd, agentic reward modeling, UI-Genie, MagicGUI-RMS, and STEVE.",
           "paragraph_ids": [
             "S3"
           ],
@@ -104355,7 +104350,7 @@
         {
           "id": "STopic4",
           "label": "Test-Time Scaling, Self-Improvement, and Online Supervision",
-          "summary": "Methods like Reflexion, ReAct, test-time scaling, and co-evolution of policy and reward leverage feedback to improve agent performance, highlighting the importance of verifier quality.",
+          "summary": "This section discusses methods for improving agent performance at inference or training time via feedback signals, including Reflexion, ReAct, test-time scaling, and co-evolution of policy and internal reward.",
           "paragraph_ids": [
             "S4"
           ],
@@ -104371,7 +104366,7 @@
         {
           "id": "SClaim1",
           "paragraph_id": "S1",
-          "text": "WebArena introduced a self-hosted web environment spanning e-commerce, social forums, and content management, evaluating agents on functional correctness rather than action matching.",
+          "text": "WebArena introduced a self-hosted web environment for evaluating agents on functional correctness.",
           "is_factual": true,
           "citations": [
             "arxiv:2307.13854"
@@ -104380,7 +104375,7 @@
         {
           "id": "SClaim2",
           "paragraph_id": "S1",
-          "text": "VisualWebArena extended the web benchmark paradigm to visually grounded tasks, showing that vision-language models outperform text-only agents but still fall far short of human performance.",
+          "text": "VisualWebArena extended web tasks to visually grounded tasks; VLMs outperform text-only agents but fall short of human performance.",
           "is_factual": true,
           "citations": [
             "arxiv:2401.13649"
@@ -104389,7 +104384,7 @@
         {
           "id": "SClaim3",
           "paragraph_id": "S1",
-          "text": "OSWorld provided the first scalable, executable benchmark for cross-platform computer use, revealing substantial gaps in GUI grounding and multi-application workflows.",
+          "text": "OSWorld provided the first scalable executable benchmark for cross-platform computer use.",
           "is_factual": true,
           "citations": [
             "arxiv:2404.07972"
@@ -104398,7 +104393,7 @@
         {
           "id": "SClaim4",
           "paragraph_id": "S1",
-          "text": "robomimic offers long-horizon manipulation tasks with human demonstrations, serving as a standard for evaluating visuomotor policies such as Diffusion Policy.",
+          "text": "robomimic offers long-horizon manipulation tasks with human demonstrations for evaluating visuomotor policies like Diffusion Policy.",
           "is_factual": true,
           "citations": [
             "arxiv:2108.03298",
@@ -104408,7 +104403,7 @@
         {
           "id": "SClaim5",
           "paragraph_id": "S2",
-          "text": "Studies of position bias and scoring bias show that LLM judges are sensitive to prompt ordering, rubric phrasing, and reference framing, producing inconsistent ratings under seemingly neutral perturbations.",
+          "text": "LLM judges exhibit position bias and scoring bias, being sensitive to prompt ordering, rubric phrasing, and reference framing.",
           "is_factual": true,
           "citations": [
             "arxiv:2406.07791",
@@ -104418,7 +104413,7 @@
         {
           "id": "SClaim6",
           "paragraph_id": "S2",
-          "text": "Self-preference bias and self-bias in self-refinement demonstrate that models favor their own outputs or rationalize their earlier judgments, undermining reliability when the same model acts as both generator and evaluator.",
+          "text": "Self-preference bias and self-bias in self-refinement show models favor their own outputs, undermining reliability when the same model acts as both generator and evaluator.",
           "is_factual": true,
           "citations": [
             "arxiv:2404.13076",
@@ -104428,7 +104423,7 @@
         {
           "id": "SClaim7",
           "paragraph_id": "S2",
-          "text": "Humans or LLMs as the Judge quantified multiple judgment biases in both human and automated raters, highlighting that neither is immune to systematic skew.",
+          "text": "Humans and LLMs both exhibit systematic judgment biases as raters.",
           "is_factual": true,
           "citations": [
             "arxiv:2402.10669"
@@ -104437,7 +104432,7 @@
         {
           "id": "SClaim8",
           "paragraph_id": "S3",
-          "text": "AgentRewardBench provided the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, revealing that rule-based methods systematically underestimate success and that no single LLM dominates across environments.",
+          "text": "AgentRewardBench is the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories.",
           "is_factual": true,
           "citations": [
             "arxiv:2504.08942"
@@ -104446,7 +104441,7 @@
         {
           "id": "SClaim9",
           "paragraph_id": "S3",
-          "text": "GUI-Shepherd introduced a process reward model trained on human-annotated GUI interactions, showing that dense, step-level feedback improves long-horizon reinforcement learning over sparse outcome rewards.",
+          "text": "GUI-Shepherd introduced a process reward model with dense step-level feedback for long-horizon RL.",
           "is_factual": true,
           "citations": [
             "arxiv:2509.23738"
@@ -104455,7 +104450,7 @@
         {
           "id": "SClaim10",
           "paragraph_id": "S3",
-          "text": "Agentic reward modeling proposed integrating human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias in reward construction.",
+          "text": "Agentic reward modeling integrates human preferences with verifiable correctness checks to reduce bias.",
           "is_factual": true,
           "citations": [
             "arxiv:2502.19328"
@@ -104464,23 +104459,15 @@
         {
           "id": "SClaim11",
           "paragraph_id": "S3",
-          "text": "UI-Genie explored self-improving GUI agents driven by reward models that verify trajectory outcomes and generate synthetic training data.",
+          "text": "UI-Genie and MagicGUI-RMS explored self-improving GUI agents with reward models for verification and synthetic data generation.",
           "is_factual": true,
           "citations": [
-            "arxiv:2505.21496"
-          ]
-        },
-        {
-          "id": "SClaim12",
-          "paragraph_id": "S3",
-          "text": "MagicGUI-RMS explored self-evolving GUI agents with a multi-agent reward model system for automated feedback reflux.",
-          "is_factual": true,
-          "citations": [
+            "arxiv:2505.21496",
             "arxiv:2601.13060"
           ]
         },
         {
-          "id": "SClaim13",
+          "id": "SClaim12",
           "paragraph_id": "S3",
           "text": "STEVE used automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation.",
           "is_factual": true,
@@ -104489,36 +104476,36 @@
           ]
         },
         {
-          "id": "SClaim14",
+          "id": "SClaim13",
           "paragraph_id": "S4",
-          "text": "Reflexion showed that language agents can use verbal self-reflection stored in episodic memory to boost decision-making without gradient updates.",
+          "text": "Reflexion showed language agents can use verbal self-reflection in episodic memory to improve decision-making without gradient updates.",
           "is_factual": true,
           "citations": [
             "arxiv:2303.11366"
           ]
         },
         {
-          "id": "SClaim15",
+          "id": "SClaim14",
           "paragraph_id": "S4",
-          "text": "ReAct interleaved reasoning and acting to ground language models in external environments, providing a foundation for agent architectures that later work extended with reflection and search.",
+          "text": "ReAct interleaved reasoning and acting to ground LMs in external environments.",
           "is_factual": true,
           "citations": [
             "arxiv:2210.03629"
           ]
         },
         {
-          "id": "SClaim16",
+          "id": "SClaim15",
           "paragraph_id": "S4",
-          "text": "Test-time scaling demonstrated that allocating additional compute during inference—through iterative revision or search against a verifier—can outperform simply enlarging model parameters, underscoring the importance of verifier quality.",
+          "text": "Test-time scaling shows additional compute at inference can outperform larger models, highlighting verifier quality.",
           "is_factual": true,
           "citations": [
             "arxiv:2408.03314"
           ]
         },
         {
-          "id": "SClaim17",
+          "id": "SClaim16",
           "paragraph_id": "S4",
-          "text": "Co-evolution of policy and internal reward proposed self-generated reward signals that guide both inference and training, showing gains on interactive tasks.",
+          "text": "Co-evolution of policy and internal reward proposes self-generated reward signals for inference and training.",
           "is_factual": true,
           "citations": [
             "arxiv:2604.03098"
@@ -104533,118 +104520,107 @@
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions MLLMs being used as evaluators under various names like judges, critics, reward models, or value functions."
+          "rationale": "No candidate claim explicitly states that MLLMs have been employed as evaluators under various names like judges, critics, reward models, or value functions."
         },
         {
           "gold_point_id": "GPoint2",
           "best_claim_ids": [
-            "SClaim11"
+            "S9",
+            "S10",
+            "S11",
+            "S12"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "SClaim11 describes reward models verifying trajectory outcomes and generating synthetic training data, which partially aligns with scoring/filtering trajectories for finetuning, but does not explicitly state finetuning."
+          "rationale": "Claims S9, S10, S11, and S12 involve scoring or filtering agent trajectories using reward models or verification, which aligns with the method, but they do not explicitly mention MLLMs or all specific refinements (inducing prompts, reflections, tools)."
         },
         {
           "gold_point_id": "GPoint3",
           "best_claim_ids": [
-            "SClaim14"
+            "S9",
+            "S10",
+            "S11",
+            "S12"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "SClaim14 covers test-time refinement via verbal self-reflection, but does not address inducing prompts or tools."
+          "rationale": "Claims S9, S10, S11, and S12 describe mechanisms providing feedback (step-level rewards, preference integration, verification) that can serve as real-time feedback, but they do not explicitly mention MLLMs or natural language critiques."
         },
         {
           "gold_point_id": "GPoint4",
           "best_claim_ids": [
-            "SClaim14",
-            "SClaim9"
+            "S1",
+            "S2",
+            "S3"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "SClaim14 provides natural language critiques (self-reflection), and SClaim9 provides rewards for training (process reward model), but neither covers scoring to rank action proposals in search."
+          "rationale": "Claims S1, S2, and S3 introduce benchmarks for web and computer environments (WebArena, VisualWebArena, OSWorld), indicating growing interest in building AI agents for these domains, but do not explicitly state the growing interest or mention mobile phones."
         },
         {
           "gold_point_id": "GPoint5",
-          "best_claim_ids": [
-            "SClaim3"
-          ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim3 about OSWorld indicates growing interest in cross-platform agents, but the gold point states 'growing interest' as a broader claim, which the benchmark alone partially supports."
+          "best_claim_ids": [],
+          "match_score": 0.0,
+          "status": "missing",
+          "rationale": "No candidate claim mentions a GPT-4V-based evaluator with benchmark-specific rubrics for evaluating trajectories for Reflexion and behavior cloning. S13 mentions Reflexion but not the evaluator."
         },
         {
           "gold_point_id": "GPoint6",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim mentions a GPT-4V-based evaluator prompted with benchmark-specific rubrics for evaluating Reflexion or behavior cloning trajectories."
+          "rationale": "No candidate claim describes a similar evaluator used to guide tree search, filter trajectories, or generate memories/tools in (Visual)WebArena. S2 mentions VisualWebArena but not an evaluator."
         },
         {
           "gold_point_id": "GPoint7",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No claim discusses an evaluator being used to guide tree search for agent performance improvement."
+          "best_claim_ids": [
+            "S15"
+          ],
+          "match_score": 1.0,
+          "status": "complete",
+          "rationale": "S15 directly states that test-time scaling allows additional compute at inference to outperform larger models without increasing parameters, matching the gold point."
         },
         {
           "gold_point_id": "GPoint8",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim describes an evaluator filtering trajectories to generate text-based memories or tools for boosting agent performance in (Visual)WebArena."
+          "rationale": "No candidate claim mentions early work on chain-of-thought prompting yielding gains in reasoning. S14 discusses ReAct but not chain-of-thought."
         },
         {
           "gold_point_id": "GPoint9",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim covers an evaluator used for RL training in simpler environments."
+          "rationale": "No candidate claim explicitly states that chain-of-thought prompting has been extended to multimodal and environment-interaction settings. S14 (ReAct) involves environment interaction but does not reference chain-of-thought."
         },
         {
           "gold_point_id": "GPoint10",
           "best_claim_ids": [
-            "SClaim16"
-          ],
-          "match_score": 1.0,
-          "status": "complete",
-          "rationale": "SClaim16 explicitly states that test-time scaling improves performance without increasing parameters, matching the gold point."
-        },
-        {
-          "gold_point_id": "GPoint11",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No claim mentions chain-of-thought prompting or its gains on reasoning tasks."
-        },
-        {
-          "gold_point_id": "GPoint12",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No claim discusses extending chain-of-thought to multimodal or environment-interaction settings."
-        },
-        {
-          "gold_point_id": "GPoint13",
-          "best_claim_ids": [
-            "SClaim16"
+            "S15"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "SClaim16 mentions search against a verifier, which partially covers scaling test-time compute via search and verifiers, but does not mention sampling or selection by heuristics."
+          "rationale": "S15 addresses test-time scaling and verifier quality, which relates to selection through verifiers, but does not explicitly cover sampling and search or heuristics."
         },
         {
-          "gold_point_id": "GPoint14",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No claim describes leveraging sampling, RL, and formal verifiers to train MLLMs for autonomous reasoning traces."
+          "gold_point_id": "GPoint11",
+          "best_claim_ids": [
+            "S10",
+            "S16"
+          ],
+          "match_score": 0.5,
+          "status": "partial",
+          "rationale": "S10 mentions verifiable correctness checks (similar to formal verifiers) and S16 proposes self-generated reward signals for training, partially covering sampling, RL, and verifiers for training reasoning traces."
         },
         {
-          "gold_point_id": "GPoint15",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No claim discusses the need for flexible multimodal verification or MLLMs as a solution."
+          "gold_point_id": "GPoint12",
+          "best_claim_ids": [
+            "S12"
+          ],
+          "match_score": 0.5,
+          "status": "partial",
+          "rationale": "S12 presents a method using automated step verification with screenshots (multimodal) for training agents, which exemplifies the flexible multimodal verification that MLLMs can provide, though it does not explicitly state the gap or that MLLMs are the solution."
         }
       ]
     },
@@ -104652,88 +104628,83 @@
       "claim_judgments": [
         {
           "claim_id": "SClaim1",
-          "relevance_score": 0.5,
-          "rationale": "The claim introduces WebArena, a web environment benchmark for agents. While not directly about MLLM evaluators, it provides context for agent evaluation in web environments, which is related to ground truth topics on web agents (GTopic2)."
+          "relevance_score": 1.0,
+          "rationale": "Directly related to the ground-truth topic of building AI agents for web environments (GPoint4) and the evaluation of such agents. WebArena is cited in ground-truth points (GPoint5, GPoint6) as the environment where GPT-4V evaluators are used."
         },
         {
           "claim_id": "SClaim2",
-          "relevance_score": 0.5,
-          "rationale": "The claim extends to VisualWebArena, a visually grounded web benchmark. It relates to agent evaluation in web environments (GTopic2) but does not focus on MLLMs as evaluators."
+          "relevance_score": 1.0,
+          "rationale": "Directly cited in ground-truth point GPoint6, describing the extension of web tasks with visual grounding, relevant to the evaluation of multimodal agents and the use of MLLM evaluators."
         },
         {
           "claim_id": "SClaim3",
-          "relevance_score": 0.5,
-          "rationale": "The claim describes OSWorld, a cross-platform computer-use benchmark. This is relevant to ground truth about agents in computer environments (GTopic2) but not directly about MLLM evaluators."
+          "relevance_score": 1.0,
+          "rationale": "Relevant to the ground-truth topic of building AI agents for various environments including computers (GPoint4). OSWorld is a scalable benchmark for cross-platform computer use, directly supporting the theme."
         },
         {
           "claim_id": "SClaim4",
           "relevance_score": 0.0,
-          "rationale": "The claim discusses robomimic, a robot manipulation benchmark. This is outside the scope of ground truth, which focuses on MLLMs, web agents, and test-time scaling."
+          "rationale": "Focuses on robot manipulation and visuomotor policies, which are outside the scope of the ground-truth related work. The ground truth centers on web/computer agents, MLLM evaluators, and test-time scaling, not robotics."
         },
         {
           "claim_id": "SClaim5",
           "relevance_score": 1.0,
-          "rationale": "The claim directly addresses biases in LLM judges, which aligns with ground truth topic on MLLMs as evaluators (GTopic1)."
+          "rationale": "Directly addresses biases in LLM judges, which is a core topic of the ground truth regarding MLLMs used as evaluators (GPoint1)."
         },
         {
           "claim_id": "SClaim6",
           "relevance_score": 1.0,
-          "rationale": "The claim discusses self-preference bias and self-bias in LLM evaluators, directly relevant to ground truth topic on MLLMs as evaluators (GTopic1)."
+          "rationale": "Directly addresses self-bias in self-refinement, a key limitation of LLM evaluators, aligning with ground-truth point GPoint1 on MLLMs as evaluators."
         },
         {
           "claim_id": "SClaim7",
           "relevance_score": 1.0,
-          "rationale": "The claim quantifies judgment biases in both human and LLM raters, directly relevant to ground truth topic on MLLMs as evaluators (GTopic1)."
+          "rationale": "Compares human and LLM judgment biases, which is relevant to the topic of MLLMs as evaluators (GPoint1) and their reliability."
         },
         {
           "claim_id": "SClaim8",
           "relevance_score": 1.0,
-          "rationale": "The claim introduces a benchmark for evaluating LLM judges on web-agent trajectories, directly relevant to ground truth topics on MLLM evaluators (GTopic1) and web agents (GTopic2)."
+          "rationale": "Introduces a benchmark for evaluating LLM judges on web-agent trajectories, directly relevant to ground-truth points on MLLMs as evaluators (GPoint1) and their application in agent training (GPoint2, GPoint3)."
         },
         {
           "claim_id": "SClaim9",
           "relevance_score": 1.0,
-          "rationale": "The claim presents a process reward model for GUI agents, directly relevant to ground truth on MLLMs as reward models (GTopic1) and agents in GUI environments (GTopic2)."
+          "rationale": "Describes a process reward model for GUI tasks, which is a direct instance of MLLMs serving as evaluators/reward models (GPoint1, GPoint2)."
         },
         {
           "claim_id": "SClaim10",
           "relevance_score": 1.0,
-          "rationale": "The claim proposes agentic reward modeling to reduce bias, directly relevant to ground truth on MLLMs as reward models and evaluators (GTopic1)."
+          "rationale": "Addresses reward modeling with bias reduction, directly fitting the ground-truth theme of MLLMs as evaluators (GPoint1) and feedback integration."
         },
         {
           "claim_id": "SClaim11",
           "relevance_score": 1.0,
-          "rationale": "The claim describes reward models for self-improving GUI agents, directly relevant to ground truth on MLLMs as evaluators for agents (GTopic2) and reward models (GTopic1)."
+          "rationale": "Describes self-improving GUI agents using reward models, directly relevant to ground-truth points about MLLMs as evaluators for filtering and training (GPoint2, GPoint3)."
         },
         {
           "claim_id": "SClaim12",
           "relevance_score": 1.0,
-          "rationale": "The claim introduces a multi-agent reward model system for GUI agents, directly relevant to ground truth on MLLMs as reward models (GTopic1) and agents (GTopic2)."
+          "rationale": "Describes step verification using automated evaluation, aligning with ground-truth points on MLLMs as evaluators for scoring and feedback (GPoint2, GPoint3)."
         },
         {
           "claim_id": "SClaim13",
           "relevance_score": 1.0,
-          "rationale": "The claim presents automated step verification for computer-use agents, directly relevant to ground truth on MLLMs as evaluators for agent trajectories (GTopic2)."
+          "rationale": "Directly cited in ground-truth point GPoint5 as a method that uses a GPT-4V-based evaluator for trajectory evaluation."
         },
         {
           "claim_id": "SClaim14",
           "relevance_score": 0.5,
-          "rationale": "The claim describes Reflexion, a method for agent self-reflection. It is related to ground truth on test-time refinements (GPoint3) and evaluator use (GPoint6), but not centrally about MLLM evaluators."
+          "rationale": "Relevant to the general topic of agent reasoning and environment interaction (GPoint4, GPoint8), but not directly about MLLM evaluators or test-time scaling which are the primary focus of the ground truth."
         },
         {
           "claim_id": "SClaim15",
-          "relevance_score": 0.5,
-          "rationale": "The claim describes ReAct, a reasoning and acting framework. It is related to ground truth on reasoning and acting (GPoint12) and agent architectures (GTopic2), but not directly about MLLM evaluators."
+          "relevance_score": 1.0,
+          "rationale": "Directly addresses test-time scaling and the importance of verifier quality, which is a core theme of ground-truth points GPoint7, GPoint10, and GPoint12."
         },
         {
           "claim_id": "SClaim16",
           "relevance_score": 1.0,
-          "rationale": "The claim addresses test-time scaling and verifier quality, directly relevant to ground truth topic on test-time scaling (GTopic3) and the need for flexible verification (GPoint15)."
-        },
-        {
-          "claim_id": "SClaim17",
-          "relevance_score": 1.0,
-          "rationale": "The claim proposes self-generated rewards for policy and reward co-evolution, directly relevant to ground truth on MLLMs as reward models (GTopic1) and training with rewards (GPoint9, GPoint14)."
+          "rationale": "Introduces self-generated reward signals for inference and training, directly relevant to ground-truth points on MLLMs as evaluators (GPoint1) and test-time refinement (GPoint3)."
         }
       ]
     },
@@ -104746,17 +104717,16 @@
             "STopic3"
           ],
           "match_score": 7,
-          "rationale": "GTopic1 focuses on MLLMs as evaluators in multimodal and interactive settings. Candidate topics STopic2 (biases in LLM-as-a-judge) and STopic3 (reward modeling for agent trajectories) address aspects of evaluator usage but lack explicit multimodal emphasis. Partial alignment."
+          "rationale": "STopic2 covers biases in LLM-as-a-Judge, which is central to using MLLMs as evaluators. STopic3 covers reward modeling and verification, which is an extension of evaluation for agent trajectories. Together, they address key aspects of GTopic1 but miss the direct focus on multimodal and environment-interaction scoring and the use of evaluators for test-time refinement."
         },
         {
           "g_topic_id": "GTopic2",
           "s_topic_ids": [
             "STopic1",
-            "STopic3",
             "STopic4"
           ],
-          "match_score": 8,
-          "rationale": "GTopic2 covers AI agents in web/mobile/computer environments with evaluator-guided improvement. STopic1 (benchmarks and environments), STopic3 (reward modeling), and STopic4 (self-improvement via Reflexion) collectively cover environments, reward, and iterative improvement. Strong alignment."
+          "match_score": 7,
+          "rationale": "STopic1 provides benchmarks for agent evaluation (WebArena, VisualWebArena) cited in GTopic2. STopic4 covers Reflexion and self-improvement methods central to GTopic2. However, behavior cloning and tree search with GPT-4V evaluator are not explicitly covered, and the reward modeling aspect (STopic3) is partially relevant but not included."
         },
         {
           "g_topic_id": "GTopic3",
@@ -104764,7 +104734,7 @@
             "STopic4"
           ],
           "match_score": 9,
-          "rationale": "GTopic3 addresses test-time scaling and chain-of-thought approaches. STopic4 directly covers test-time scaling, self-improvement, and online supervision, including key citations like Reflexion and chain-of-thought. Very close alignment."
+          "rationale": "STopic4 directly addresses test-time scaling, self-improvement, and online supervision, with key citations (e.g., Reflexion, ReAct, chain-of-thought) that align closely with GTopic3. Minor missing detail on formal verifiers and RL training of reasoning traces."
         }
       ],
       "paragraph_scores": [
@@ -104774,7 +104744,7 @@
           "topic_coherence": 8,
           "citation_topic_consistency": 9,
           "issues": [
-            "Focus is narrow on benchmarks; could explore relation to evaluators more explicitly."
+            "Could benefit from explicit connection to how these environments are used with evaluators or agents."
           ]
         },
         {
@@ -104783,56 +104753,54 @@
           "topic_coherence": 8,
           "citation_topic_consistency": 9,
           "issues": [
-            "No major issues; content is well-scoped to LLM-as-judge biases."
+            "Narrowly focuses on biases; might be better integrated into a broader evaluator section."
           ]
         },
         {
           "paragraph_id": "S3",
-          "topic_purity": 9,
+          "topic_purity": 8,
           "topic_coherence": 8,
           "citation_topic_consistency": 9,
           "issues": [
-            "No major issues; citations strongly align with reward modeling for agents."
+            "Overlaps with evaluation-related topics in S2; could lead to fragmentation."
           ]
         },
         {
           "paragraph_id": "S4",
           "topic_purity": 7,
           "topic_coherence": 7,
-          "citation_topic_consistency": 8,
+          "citation_topic_consistency": 9,
           "issues": [
-            "Combines multiple sub-themes (test-time scaling, self-improvement, online supervision) reducing cohesion; could benefit from clearer focus."
+            "Combines test-time scaling, self-improvement, and online supervision; these could be separated into distinct topics for clarity."
           ]
         }
       ],
       "topic_granularity": {
         "score": 7,
-        "rationale": "Candidate topics are slightly more granular than gold, splitting the evaluator concept into biases and reward modeling, and dedicating a separate topic to benchmarks. This is acceptable but not perfectly aligned with the gold three-topic structure."
+        "rationale": "The candidate topics provide a reasonable level of detail, with dedicated coverage of benchmarks, biases, and reward modeling. However, the test-time scaling section includes multiple distinct strategies (Reflexion, ReAct, online supervision) under one roof, leading to uneven granularity. Separating self-improvement from test-time scaling would improve balance."
       },
       "topic_ordering": {
         "score": 8,
-        "rationale": "Candidate ordering starts with benchmarks (context), then evaluation biases, reward modeling, and finally test-time scaling. This logical progression from problem setup to methods is coherent, though different from the gold order which begins with evaluators."
+        "rationale": "The ordering begins with benchmarks (context), then evaluation biases (issue), followed by reward modeling (method), and finally test-time scaling/improvement (advancement). This flow is logical and builds from environment to evaluation to enhancement. However, the biases and reward modeling sections could be reordered to group evaluation-related topics together, and the final section could be placed after a discussion of existing evaluators."
       }
     },
     "synthesis_writing_judgment": {
       "synthesis_quality": {
-        "score": 7.5,
-        "rationale": "The candidate covers four relevant areas (benchmarks, LLM judge biases, reward modeling for agents, test-time scaling) and makes some connections between them. It identifies limitations (e.g., biases in LLM judges, over-validation tendency) and points to a gap (verifier quality under bias). However, the landscape is presented more as a sequential survey than a tightly integrated narrative. The connection between benchmarks and the need for better evaluation is implicit rather than explicit. The third paragraph on reward modeling partly overlaps with the second on biases, and the overall structure does not build strongly toward a single motivating gap. Comparing methods and discussing limitations is present but could be more systematic.",
+        "score": 6.5,
+        "rationale": "The candidate builds a reasonable landscape covering benchmarks, LLM-as-a-judge biases, reward modeling, and test-time scaling. It organizes literature into coherent topical sections and compares methods within each section. However, it falls short of the gold standard's emphasis on MLLMs as evaluators as a unifying theme; the candidate's separation of 'LLM-as-a-Judge biases' and 'Reward Modeling for Agent Trajectories' obscures the direct connection to MLLM-based evaluation. The gap motivation is present only in the final sentence and is not explicitly tied to the paper's own contribution (over-validation tendency). Cross-paragraph synthesis (e.g., how biases affect reward modeling or test-time scaling) is limited. Overall, it goes beyond a simple paper list but lacks deep integration and a strong, forward-looking gap statement.",
         "issues": [
-          "Paragraph organization reads as a list of topics rather than a synthesized critique leading to a clear research gap.",
-          "The connection between the benchmark paragraph and the rest of the section is not explicitly stated.",
-          "Overlap between 'LLM-as-a-Judge' and 'Reward Modeling' paragraphs could be integrated to avoid redundancy.",
-          "The gap statement in paragraph 3 ('yet they do not directly address the over-validation tendency') is specific but not fully connected to the preceding discussion of biases.",
-          "Final paragraph's gap about verifier quality is well-stated but comes after a separate topic, diluting the narrative cohesion."
+          "Does not center MLLMs as evaluators as the key theme (as in gold), instead splits evaluation biases and reward modeling into separate sections without strong linkage.",
+          "Missing explicit mention of the closely related GPT-4V evaluator work (e.g., for Reflexion) that the gold highlights as most relevant.",
+          "Gap motivation is weak: only one sentence at the end, not tied back to the paper's over-validation problem.",
+          "Limited cross-topic integration (e.g., how benchmark limitations relate to evaluation biases)."
         ]
       },
       "writing_quality": {
         "score": 8.5,
-        "rationale": "The writing maintains a formal academic tone throughout. Sentences are clear and mostly concise, with good terminology consistency (e.g., 'verifier', 'LLM-as-a-Judge', 'MLLMs'). Paragraphs flow logically from one topic to the next, and transitions are smooth. There are no grammatical errors or awkward phrasings. Some sentences are dense with multiple citations and clauses, which slightly reduces readability, but overall clarity is high.",
+        "rationale": "The writing maintains a strong academic tone, is generally clear and concise, and uses terminology consistently (e.g., 'LLM judges', 'trajectories', 'verifier'). Sentence flow is smooth with good transitions between paragraphs. The text avoids colloquialisms and presents factual claims with appropriate citations. Minor issues include slight redundancy ('systematic weaknesses', 'systematic skew', 'systematic bias') and some sentences are long, but these do not detract significantly from readability. Overall, the writing demonstrates a high level of polish.",
         "issues": [
-          "A few sentences are long and pack many details, e.g., 'AgentRewardBench ... revealed that rule-based methods systematically underestimate success and that no single LLM dominates across environments' could be split for readability.",
-          "Minor: 'sampling, RL, and formal verifiers' in the last paragraph of the gold summary appears in the candidate text as 'self-generated reward signals'—not an issue in candidate text, but the candidate's phrasing is fine.",
-          "No major flaws in academic tone or clarity."
+          "Minor redundancy in phrasing (e.g., 'systematic' repeated across multiple sentences).",
+          "Some sentences are dense and could be slightly shortened for improved conciseness."
         ]
       }
     },
@@ -104845,10 +104813,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The WebArena paper explicitly describes a self-hosted web environment with four domains (e-commerce, social forums, development, content management) and evaluates agents on functional correctness rather than action matching, exactly matching the claim.",
+          "support_rationale": "The paper introduces WebArena as a realistic, self-hosted web environment with 812 long-horizon tasks evaluated by functional correctness, matching the claim exactly.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "The WebArena paper explicitly describes a self-hosted web environment with four domains (e-commerce, social forums, development, content management) and evaluates agents on functional correctness rather than action matching, exactly matching the claim."
+          "overclaim_rationale": "No overclaim; the claim accurately reflects the paper's contribution.",
+          "rationale": "The paper introduces WebArena as a realistic, self-hosted web environment with 812 long-horizon tasks evaluated by functional correctness, matching the claim exactly."
         },
         {
           "claim_id": "SClaim2",
@@ -104857,10 +104825,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "VisualWebArena introduces a benchmark for visually grounded tasks and reports that VLMs outperform text-only LLMs, with the best VLM achieving 16.4% vs. 88.7% human performance, directly supporting the claim.",
+          "support_rationale": "The paper presents VisualWebArena, extending web tasks to visually grounded tasks, and reports that VLMs outperform text-only LLMs with best VLM at 16.4% vs human 88.7%, supporting all parts of the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "VisualWebArena introduces a benchmark for visually grounded tasks and reports that VLMs outperform text-only LLMs, with the best VLM achieving 16.4% vs. 88.7% human performance, directly supporting the claim."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper presents VisualWebArena, extending web tasks to visually grounded tasks, and reports that VLMs outperform text-only LLMs with best VLM at 16.4% vs human 88.7%, supporting all parts of the claim."
         },
         {
           "claim_id": "SClaim3",
@@ -104869,34 +104837,34 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "OSWorld is described as the first scalable, real-world executable environment for cross-platform computer tasks, with findings of significant gaps in GUI grounding and multi-application workflows.",
+          "support_rationale": "The paper introduces OSWorld as the first scalable, real-world executable environment for cross-platform computer tasks, directly supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "OSWorld is described as the first scalable, real-world executable environment for cross-platform computer tasks, with findings of significant gaps in GUI grounding and multi-application workflows."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces OSWorld as the first scalable, real-world executable environment for cross-platform computer tasks, directly supporting the claim."
         },
         {
           "claim_id": "SClaim4",
           "reference_key": "arxiv:2108.03298",
-          "support": "yes",
-          "appropriateness_score": 9.0,
-          "placement_score": 9.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "This paper (often associated with robomimic) evaluates offline learning on human-demonstrated manipulation tasks, including complex multi-stage tasks, supporting the claim that robomimic offers long-horizon tasks with human demonstrations.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "This paper (often associated with robomimic) evaluates offline learning on human-demonstrated manipulation tasks, including complex multi-stage tasks, supporting the claim that robomimic offers long-horizon tasks with human demonstrations."
+          "support": "partial",
+          "appropriateness_score": 8.0,
+          "placement_score": 8.0,
+          "topic_consistency_score": 9.0,
+          "support_rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark.",
+          "overclaim_status": "mild",
+          "overclaim_rationale": "Claim attributes 'offers long-horizon manipulation tasks' to robomimic, but the cited paper focuses on learning algorithms rather than introducing the framework; partial support.",
+          "rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark."
         },
         {
           "claim_id": "SClaim4",
           "reference_key": "arxiv:2303.04137",
-          "support": "weak",
-          "appropriateness_score": 5.0,
-          "placement_score": 5.0,
-          "topic_consistency_score": 7.0,
-          "support_rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+          "support": "no",
+          "appropriateness_score": 2.0,
+          "placement_score": 2.0,
+          "topic_consistency_score": 5.0,
+          "support_rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+          "rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
           "retrieval_used": true,
           "retrieved_evidence": [
             {
@@ -104915,26 +104883,26 @@
         {
           "claim_id": "SClaim5",
           "reference_key": "arxiv:2406.07791",
-          "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "This paper systematically studies position bias in LLM-as-a-Judge, showing sensitivity to prompt ordering and other factors, directly supporting the claim.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "This paper systematically studies position bias in LLM-as-a-Judge, showing sensitivity to prompt ordering and other factors, directly supporting the claim."
+          "support": "partial",
+          "appropriateness_score": 7.0,
+          "placement_score": 8.0,
+          "topic_consistency_score": 8.0,
+          "support_rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity.",
+          "overclaim_status": "mild",
+          "overclaim_rationale": "Claim attributes multiple biases to a single paper, but the paper only covers position bias; mild overclaim.",
+          "rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity."
         },
         {
           "claim_id": "SClaim5",
           "reference_key": "arxiv:2506.22316",
-          "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "This paper defines and evaluates scoring bias in LLM-as-a-Judge, including rubric order bias and reference answer bias, supporting the claim about sensitivity to rubric phrasing and reference framing.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "This paper defines and evaluates scoring bias in LLM-as-a-Judge, including rubric order bias and reference answer bias, supporting the claim about sensitivity to rubric phrasing and reference framing."
+          "support": "partial",
+          "appropriateness_score": 7.0,
+          "placement_score": 8.0,
+          "topic_consistency_score": 8.0,
+          "support_rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly.",
+          "overclaim_status": "mild",
+          "overclaim_rationale": "Claim lumps all biases; paper covers scoring bias but not position bias; mild overclaim.",
+          "rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly."
         },
         {
           "claim_id": "SClaim6",
@@ -104943,10 +104911,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "This paper demonstrates self-preference bias in LLM evaluators, where models favor their own outputs, supporting the claim about self-preference bias and reliability concerns.",
+          "support_rationale": "The paper demonstrates that LLMs exhibit self-preference, favoring their own outputs, directly supporting the self-preference bias part of the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "This paper demonstrates self-preference bias in LLM evaluators, where models favor their own outputs, supporting the claim about self-preference bias and reliability concerns."
+          "overclaim_rationale": "No overclaim; the paper fully supports its part.",
+          "rationale": "The paper demonstrates that LLMs exhibit self-preference, favoring their own outputs, directly supporting the self-preference bias part of the claim."
         },
         {
           "claim_id": "SClaim6",
@@ -104955,10 +104923,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "This paper identifies self-bias in LLMs that amplifies during self-refinement, supporting the claim about self-bias in self-refinement and its impact on reliability.",
+          "support_rationale": "The paper identifies and quantifies self-bias in LLMs, especially during self-refinement, aligning with the self-bias and reliability concerns in the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "This paper identifies self-bias in LLMs that amplifies during self-refinement, supporting the claim about self-bias in self-refinement and its impact on reliability."
+          "overclaim_rationale": "No overclaim; the paper fully supports its part.",
+          "rationale": "The paper identifies and quantifies self-bias in LLMs, especially during self-refinement, aligning with the self-bias and reliability concerns in the claim."
         },
         {
           "claim_id": "SClaim7",
@@ -104967,10 +104935,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "This paper evaluates five judgment biases in both human and LLM judges, concluding that neither is immune to systematic biases.",
+          "support_rationale": "The paper evaluates five judgment biases in both human and LLM judges, demonstrating that both exhibit systematic biases, exactly matching the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "This paper evaluates five judgment biases in both human and LLM judges, concluding that neither is immune to systematic biases."
+          "overclaim_rationale": "No overclaim; the claim is accurately supported.",
+          "rationale": "The paper evaluates five judgment biases in both human and LLM judges, demonstrating that both exhibit systematic biases, exactly matching the claim."
         },
         {
           "claim_id": "SClaim8",
@@ -104979,10 +104947,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "AgentRewardBench is described as the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, showing rule-based methods underestimate success and no single LLM dominates.",
+          "support_rationale": "The paper introduces AgentRewardBench as the first comprehensive benchmark for evaluating LLM judges on web agent trajectories, directly supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "AgentRewardBench is described as the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, showing rule-based methods underestimate success and no single LLM dominates."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces AgentRewardBench as the first comprehensive benchmark for evaluating LLM judges on web agent trajectories, directly supporting the claim."
         },
         {
           "claim_id": "SClaim9",
@@ -104991,10 +104959,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "GUI-Shepherd introduces a process reward model trained on human-annotated GUI interactions, showing step-level feedback improves long-horizon RL over outcome rewards.",
+          "support_rationale": "The paper presents GUI-Shepherd, a Process Reward Model with dense step-level feedback for long-horizon reinforcement learning, directly supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "GUI-Shepherd introduces a process reward model trained on human-annotated GUI interactions, showing step-level feedback improves long-horizon RL over outcome rewards."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper presents GUI-Shepherd, a Process Reward Model with dense step-level feedback for long-horizon reinforcement learning, directly supporting the claim."
         },
         {
           "claim_id": "SClaim10",
@@ -105003,10 +104971,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "Agentic reward modeling integrates human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias.",
+          "support_rationale": "The paper introduces agentic reward modeling that integrates human preferences with verifiable correctness signals to reduce bias, directly supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "Agentic reward modeling integrates human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces agentic reward modeling that integrates human preferences with verifiable correctness signals to reduce bias, directly supporting the claim."
         },
         {
           "claim_id": "SClaim11",
@@ -105015,82 +104983,82 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "UI-Genie explores self-improving GUI agents with reward models that verify trajectory outcomes and generate synthetic training data.",
+          "support_rationale": "The paper introduces UI-Genie, a self-improving framework for mobile GUI agents with reward models and synthetic data generation, matching the UI-Genie part of the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "UI-Genie explores self-improving GUI agents with reward models that verify trajectory outcomes and generate synthetic training data."
+          "overclaim_rationale": "No overclaim; the paper supports its part.",
+          "rationale": "The paper introduces UI-Genie, a self-improving framework for mobile GUI agents with reward models and synthetic data generation, matching the UI-Genie part of the claim."
         },
         {
-          "claim_id": "SClaim12",
+          "claim_id": "SClaim11",
           "reference_key": "arxiv:2601.13060",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "MagicGUI-RMS proposes a multi-agent reward model system for self-evolving GUI agents with automated feedback reflux.",
+          "support_rationale": "The paper introduces MagicGUI-RMS, a multi-agent reward model system for self-evolving GUI agents with automated synthetic data generation, matching the MagicGUI-RMS part of the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "MagicGUI-RMS proposes a multi-agent reward model system for self-evolving GUI agents with automated feedback reflux."
+          "overclaim_rationale": "No overclaim; the paper supports its part.",
+          "rationale": "The paper introduces MagicGUI-RMS, a multi-agent reward model system for self-evolving GUI agents with automated synthetic data generation, matching the MagicGUI-RMS part of the claim."
         },
         {
-          "claim_id": "SClaim13",
+          "claim_id": "SClaim12",
           "reference_key": "arxiv:2503.12532",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "STEVE uses automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation.",
+          "support_rationale": "The paper introduces STEVE, a step verification pipeline using pre- and post-action screenshots to automatically generate labels for training computer-use agents without human annotation.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "STEVE uses automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces STEVE, a step verification pipeline using pre- and post-action screenshots to automatically generate labels for training computer-use agents without human annotation."
         },
         {
-          "claim_id": "SClaim14",
+          "claim_id": "SClaim13",
           "reference_key": "arxiv:2303.11366",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "Reflexion introduces verbal self-reflection stored in episodic memory to improve decision-making without gradient updates.",
+          "support_rationale": "The paper introduces Reflexion, where language agents use verbal self-reflection in episodic memory to improve decision-making without gradient updates, exactly matching the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "Reflexion introduces verbal self-reflection stored in episodic memory to improve decision-making without gradient updates."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces Reflexion, where language agents use verbal self-reflection in episodic memory to improve decision-making without gradient updates, exactly matching the claim."
         },
         {
-          "claim_id": "SClaim15",
+          "claim_id": "SClaim14",
           "reference_key": "arxiv:2210.03629",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "ReAct interleaves reasoning and acting to ground language models in external environments, providing a foundation for agent architectures.",
+          "support_rationale": "The paper introduces ReAct, which interleaves reasoning and acting to ground language models in external environments, directly supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "ReAct interleaves reasoning and acting to ground language models in external environments, providing a foundation for agent architectures."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces ReAct, which interleaves reasoning and acting to ground language models in external environments, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim16",
+          "claim_id": "SClaim15",
           "reference_key": "arxiv:2408.03314",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "Test-time scaling paper demonstrates that allocating additional compute during inference can outperform larger models, emphasizing verifier quality.",
+          "support_rationale": "The paper demonstrates that adaptive test-time scaling outperforms larger models and highlights the role of verifier quality, supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "Test-time scaling paper demonstrates that allocating additional compute during inference can outperform larger models, emphasizing verifier quality."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper demonstrates that adaptive test-time scaling outperforms larger models and highlights the role of verifier quality, supporting the claim."
         },
         {
-          "claim_id": "SClaim17",
+          "claim_id": "SClaim16",
           "reference_key": "arxiv:2604.03098",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "Co-evolution of policy and internal reward proposes self-generated reward signals that guide inference and training, showing gains on interactive tasks.",
+          "support_rationale": "The paper introduces a self-generated internal reward mechanism for language agents that co-evolves policy and reward, directly supporting the claim.",
           "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "Co-evolution of policy and internal reward proposes self-generated reward signals that guide inference and training, showing gains on interactive tasks."
+          "overclaim_rationale": "No overclaim; the claim is accurate.",
+          "rationale": "The paper introduces a self-generated internal reward mechanism for language agents that co-evolves policy and reward, directly supporting the claim."
         }
       ],
       "retrieval_events": [
@@ -105107,7 +105075,7 @@
           "claim_id": "SClaim1",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The WebArena paper explicitly describes a self-hosted web environment with four domains (e-commerce, social forums, development, content management) and evaluates agents on functional correctness rather than action matching, exactly matching the claim.",
+          "group_rationale": "The paper introduces WebArena as a realistic, self-hosted web environment with 812 long-horizon tasks evaluated by functional correctness, matching the claim exactly.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105119,7 +105087,7 @@
           "claim_id": "SClaim2",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "VisualWebArena introduces a benchmark for visually grounded tasks and reports that VLMs outperform text-only LLMs, with the best VLM achieving 16.4% vs. 88.7% human performance, directly supporting the claim.",
+          "group_rationale": "The paper presents VisualWebArena, extending web tasks to visually grounded tasks, and reports that VLMs outperform text-only LLMs with best VLM at 16.4% vs human 88.7%, supporting all parts of the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105131,7 +105099,7 @@
           "claim_id": "SClaim3",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "OSWorld is described as the first scalable, real-world executable environment for cross-platform computer tasks, with findings of significant gaps in GUI grounding and multi-application workflows.",
+          "group_rationale": "The paper introduces OSWorld as the first scalable, real-world executable environment for cross-platform computer tasks, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105142,13 +105110,15 @@
         {
           "claim_id": "SClaim4",
           "citation_count": 2,
-          "group_support": "partial",
-          "group_rationale": "The first citation (arxiv:2108.03298) supports that robomimic offers long-horizon manipulation tasks with human demonstrations. However, the second citation (arxiv:2303.04137) is weak and does not explicitly link Diffusion Policy evaluations to robomimic, so the claim that robomimic serves as a standard for evaluating visuomotor policies such as Diffusion Policy remains unsupported. Therefore, the claim is only partially supported.",
+          "group_support": "weak",
+          "group_rationale": "The first citation (2108.03298) is related to human demonstrations for manipulation tasks but does not explicitly mention robomimic as a benchmark offering long-horizon tasks. The second citation (2303.04137) does not mention robomimic at all. Therefore, the claim that robomimic offers specific tasks for evaluating Diffusion Policy is weakly supported.",
           "covered_aspects": [
-            "robomimic offers long-horizon manipulation tasks with human demonstrations"
+            "human demonstration data for robot manipulation"
           ],
           "missing_aspects": [
-            "robomimic serves as a standard for evaluating visuomotor policies such as Diffusion Policy"
+            "robomimic as an offering framework",
+            "long-horizon manipulation tasks",
+            "evaluation of visuomotor policies like Diffusion Policy"
           ],
           "derived_from_single_pair": false,
           "reference_keys": [
@@ -105160,12 +105130,13 @@
           "claim_id": "SClaim5",
           "citation_count": 2,
           "group_support": "yes",
-          "group_rationale": "Both citations directly support the claim: the first addresses position bias (sensitivity to prompt ordering), and the second addresses scoring bias (sensitivity to rubric phrasing and reference framing). Together, they cover all key components of the claim, resulting in full support.",
+          "group_rationale": "Citation 1 (arxiv:2406.07791) supports position bias and sensitivity to prompt ordering; Citation 2 (arxiv:2506.22316) supports scoring bias, sensitivity to rubric phrasing, and reference framing. Together, they cover all components of the claim.",
           "covered_aspects": [
+            "position bias",
+            "scoring bias",
             "sensitivity to prompt ordering",
             "sensitivity to rubric phrasing",
-            "sensitivity to reference framing",
-            "production of inconsistent ratings under neutral perturbations"
+            "sensitivity to reference framing"
           ],
           "missing_aspects": [],
           "derived_from_single_pair": false,
@@ -105178,11 +105149,11 @@
           "claim_id": "SClaim6",
           "citation_count": 2,
           "group_support": "yes",
-          "group_rationale": "Both citations collectively confirm the existence of self-preference bias (arxiv:2404.13076) and self-bias in self-refinement (arxiv:2402.11436), and both indicate that these biases undermine reliability when the same model is used as generator and evaluator. Thus the claim is fully supported.",
+          "group_rationale": "Both citations collectively support the entire claim. The first citation supports self-preference bias, while the second supports self-bias in self-refinement and the resulting reliability concerns when a model acts as both generator and evaluator. Together, they cover all aspects of the claim.",
           "covered_aspects": [
-            "Self-preference bias in LLMs favoring own outputs",
-            "Self-bias in self-refinement amplifying earlier judgments",
-            "Undermining reliability of same-model generation and evaluation"
+            "self-preference bias",
+            "self-bias in self-refinement",
+            "undermining reliability when the same model acts as both generator and evaluator"
           ],
           "missing_aspects": [],
           "derived_from_single_pair": false,
@@ -105195,7 +105166,7 @@
           "claim_id": "SClaim7",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "This paper evaluates five judgment biases in both human and LLM judges, concluding that neither is immune to systematic biases.",
+          "group_rationale": "The paper evaluates five judgment biases in both human and LLM judges, demonstrating that both exhibit systematic biases, exactly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105207,7 +105178,7 @@
           "claim_id": "SClaim8",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "AgentRewardBench is described as the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, showing rule-based methods underestimate success and no single LLM dominates.",
+          "group_rationale": "The paper introduces AgentRewardBench as the first comprehensive benchmark for evaluating LLM judges on web agent trajectories, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105219,7 +105190,7 @@
           "claim_id": "SClaim9",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "GUI-Shepherd introduces a process reward model trained on human-annotated GUI interactions, showing step-level feedback improves long-horizon RL over outcome rewards.",
+          "group_rationale": "The paper presents GUI-Shepherd, a Process Reward Model with dense step-level feedback for long-horizon reinforcement learning, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105231,7 +105202,7 @@
           "claim_id": "SClaim10",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Agentic reward modeling integrates human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias.",
+          "group_rationale": "The paper introduces agentic reward modeling that integrates human preferences with verifiable correctness signals to reduce bias, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105241,33 +105212,25 @@
         },
         {
           "claim_id": "SClaim11",
-          "citation_count": 1,
+          "citation_count": 2,
           "group_support": "yes",
-          "group_rationale": "UI-Genie explores self-improving GUI agents with reward models that verify trajectory outcomes and generate synthetic training data.",
-          "covered_aspects": [],
+          "group_rationale": "Both UI-Genie and MagicGUI-RMS are individually supported by their respective citations, covering the full claim.",
+          "covered_aspects": [
+            "UI-Genie self-improving GUI agents with reward models and synthetic data generation",
+            "MagicGUI-RMS self-improving GUI agents with reward models and synthetic data generation"
+          ],
           "missing_aspects": [],
-          "derived_from_single_pair": true,
+          "derived_from_single_pair": false,
           "reference_keys": [
-            "arxiv:2505.21496"
+            "arxiv:2505.21496",
+            "arxiv:2601.13060"
           ]
         },
         {
           "claim_id": "SClaim12",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "MagicGUI-RMS proposes a multi-agent reward model system for self-evolving GUI agents with automated feedback reflux.",
-          "covered_aspects": [],
-          "missing_aspects": [],
-          "derived_from_single_pair": true,
-          "reference_keys": [
-            "arxiv:2601.13060"
-          ]
-        },
-        {
-          "claim_id": "SClaim13",
-          "citation_count": 1,
-          "group_support": "yes",
-          "group_rationale": "STEVE uses automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation.",
+          "group_rationale": "The paper introduces STEVE, a step verification pipeline using pre- and post-action screenshots to automatically generate labels for training computer-use agents without human annotation.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105276,10 +105239,10 @@
           ]
         },
         {
-          "claim_id": "SClaim14",
+          "claim_id": "SClaim13",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Reflexion introduces verbal self-reflection stored in episodic memory to improve decision-making without gradient updates.",
+          "group_rationale": "The paper introduces Reflexion, where language agents use verbal self-reflection in episodic memory to improve decision-making without gradient updates, exactly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105288,10 +105251,10 @@
           ]
         },
         {
-          "claim_id": "SClaim15",
+          "claim_id": "SClaim14",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "ReAct interleaves reasoning and acting to ground language models in external environments, providing a foundation for agent architectures.",
+          "group_rationale": "The paper introduces ReAct, which interleaves reasoning and acting to ground language models in external environments, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105300,10 +105263,10 @@
           ]
         },
         {
-          "claim_id": "SClaim16",
+          "claim_id": "SClaim15",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Test-time scaling paper demonstrates that allocating additional compute during inference can outperform larger models, emphasizing verifier quality.",
+          "group_rationale": "The paper demonstrates that adaptive test-time scaling outperforms larger models and highlights the role of verifier quality, supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105312,10 +105275,10 @@
           ]
         },
         {
-          "claim_id": "SClaim17",
+          "claim_id": "SClaim16",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Co-evolution of policy and internal reward proposes self-generated reward signals that guide inference and training, showing gains on interactive tasks.",
+          "group_rationale": "The paper introduces a self-generated internal reward mechanism for language agents that co-evolves policy and reward, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -105329,82 +105292,67 @@
   "metric_details": {
     "content_coverage": {
       "name": "content_coverage",
-      "score": 2.22,
+      "score": 3.41,
       "details": {
-        "matched_weight": 6.0,
-        "total_weight": 27.0,
+        "matched_weight": 7.5,
+        "total_weight": 22.0,
         "missing_points": [
           {
             "gold_point_id": "GPoint1",
             "text": "MLLMs have been employed as evaluators of model outputs under various names: judges, critics, reward models, value functions.",
-            "rationale": "No candidate claim mentions MLLMs being used as evaluators under various names like judges, critics, reward models, or value functions."
+            "rationale": "No candidate claim explicitly states that MLLMs have been employed as evaluators under various names like judges, critics, reward models, or value functions."
+          },
+          {
+            "gold_point_id": "GPoint5",
+            "text": "The most closely related work uses a GPT-4V-based evaluator, prompted with benchmark-specific rubrics, to evaluate trajectories for Reflexion and behavior cloning.",
+            "rationale": "No candidate claim mentions a GPT-4V-based evaluator with benchmark-specific rubrics for evaluating trajectories for Reflexion and behavior cloning. S13 mentions Reflexion but not the evaluator."
           },
           {
             "gold_point_id": "GPoint6",
-            "text": "GPT-4V-based evaluator, prompted with benchmark-specific rubrics, is used to evaluate trajectories for Reflexion and behavior cloning.",
-            "rationale": "No claim mentions a GPT-4V-based evaluator prompted with benchmark-specific rubrics for evaluating Reflexion or behavior cloning trajectories."
-          },
-          {
-            "gold_point_id": "GPoint7",
-            "text": "Similar evaluator is used to guide tree search for agent performance improvement.",
-            "rationale": "No claim discusses an evaluator being used to guide tree search for agent performance improvement."
+            "text": "Following works employ a similar evaluator to guide tree search, filter trajectories to generate text-based memories or tools to boost agent performance in (Visual)WebArena, and for RL training in simpler environments.",
+            "rationale": "No candidate claim describes a similar evaluator used to guide tree search, filter trajectories, or generate memories/tools in (Visual)WebArena. S2 mentions VisualWebArena but not an evaluator."
           },
           {
             "gold_point_id": "GPoint8",
-            "text": "Similar evaluator filters trajectories to generate text-based memories or tools to boost agent performance in (Visual)WebArena.",
-            "rationale": "No claim describes an evaluator filtering trajectories to generate text-based memories or tools for boosting agent performance in (Visual)WebArena."
+            "text": "Early work shows that prompting LLMs to generate chains-of-thought yields substantial gains in reasoning-oriented tasks.",
+            "rationale": "No candidate claim mentions early work on chain-of-thought prompting yielding gains in reasoning. S14 discusses ReAct but not chain-of-thought."
           },
           {
             "gold_point_id": "GPoint9",
-            "text": "Similar evaluator is used for RL training in simpler environments.",
-            "rationale": "No claim covers an evaluator used for RL training in simpler environments."
-          },
-          {
-            "gold_point_id": "GPoint11",
-            "text": "Prompting LLMs to generate chains-of-thought yields substantial gains in reasoning-oriented tasks.",
-            "rationale": "No claim mentions chain-of-thought prompting or its gains on reasoning tasks."
-          },
-          {
-            "gold_point_id": "GPoint12",
-            "text": "Chain-of-thought idea has been extended to multimodal and environment-interaction settings.",
-            "rationale": "No claim discusses extending chain-of-thought to multimodal or environment-interaction settings."
-          },
-          {
-            "gold_point_id": "GPoint14",
-            "text": "Recent work leverages sampling, RL, and formal verifiers to train MLLMs that autonomously generate reasoning traces.",
-            "rationale": "No claim describes leveraging sampling, RL, and formal verifiers to train MLLMs for autonomous reasoning traces."
-          },
-          {
-            "gold_point_id": "GPoint15",
-            "text": "Extending these methods to open-ended problems requires flexible and multimodal verification, for which MLLMs offer an appealing solution.",
-            "rationale": "No claim discusses the need for flexible multimodal verification or MLLMs as a solution."
+            "text": "Chain-of-thought prompting has been extended to several settings, including multimodal and environment-interaction.",
+            "rationale": "No candidate claim explicitly states that chain-of-thought prompting has been extended to multimodal and environment-interaction settings. S14 (ReAct) involves environment interaction but does not reference chain-of-thought."
           }
         ],
         "partial_points": [
           {
             "gold_point_id": "GPoint2",
-            "text": "MLLMs used to score and filter agent trajectories for subsequent finetuning.",
-            "rationale": "SClaim11 describes reward models verifying trajectory outcomes and generating synthetic training data, which partially aligns with scoring/filtering trajectories for finetuning, but does not explicitly state finetuning."
+            "text": "MLLMs used to score and filter agent trajectories for finetuning and test-time refinements such as inducing prompts, reflections, and tools.",
+            "rationale": "Claims S9, S10, S11, and S12 involve scoring or filtering agent trajectories using reward models or verification, which aligns with the method, but they do not explicitly mention MLLMs or all specific refinements (inducing prompts, reflections, tools)."
           },
           {
             "gold_point_id": "GPoint3",
-            "text": "MLLMs used for test-time refinements such as inducing prompts, reflections, and tools.",
-            "rationale": "SClaim14 covers test-time refinement via verbal self-reflection, but does not address inducing prompts or tools."
+            "text": "MLLMs serve as a source of real-time feedback by producing natural language critiques, scores to rank action proposals in search, and rewards for training.",
+            "rationale": "Claims S9, S10, S11, and S12 describe mechanisms providing feedback (step-level rewards, preference integration, verification) that can serve as real-time feedback, but they do not explicitly mention MLLMs or natural language critiques."
           },
           {
             "gold_point_id": "GPoint4",
-            "text": "MLLMs produce natural language critiques, scores to rank action proposals in search, and rewards for training.",
-            "rationale": "SClaim14 provides natural language critiques (self-reflection), and SClaim9 provides rewards for training (process reward model), but neither covers scoring to rank action proposals in search."
+            "text": "Growing interest in building AI agents to act in various environments including the web, mobile phones, and computers.",
+            "rationale": "Claims S1, S2, and S3 introduce benchmarks for web and computer environments (WebArena, VisualWebArena, OSWorld), indicating growing interest in building AI agents for these domains, but do not explicitly state the growing interest or mention mobile phones."
           },
           {
-            "gold_point_id": "GPoint5",
-            "text": "There is growing interest in building AI agents to act in web, mobile, and computer environments.",
-            "rationale": "SClaim3 about OSWorld indicates growing interest in cross-platform agents, but the gold point states 'growing interest' as a broader claim, which the benchmark alone partially supports."
-          },
-          {
-            "gold_point_id": "GPoint13",
+            "gold_point_id": "GPoint10",
             "text": "Orthogonal approaches scale test-time compute via sampling and search, where multiple generations are selected through heuristics or verifiers.",
-            "rationale": "SClaim16 mentions search against a verifier, which partially covers scaling test-time compute via search and verifiers, but does not mention sampling or selection by heuristics."
+            "rationale": "S15 addresses test-time scaling and verifier quality, which relates to selection through verifiers, but does not explicitly cover sampling and search or heuristics."
+          },
+          {
+            "gold_point_id": "GPoint11",
+            "text": "Recent work leverages sampling, RL, and formal verifiers to train (M)LLMs that autonomously generate reasoning traces.",
+            "rationale": "S10 mentions verifiable correctness checks (similar to formal verifiers) and S16 proposes self-generated reward signals for training, partially covering sampling, RL, and verifiers for training reasoning traces."
+          },
+          {
+            "gold_point_id": "GPoint12",
+            "text": "Extending these methods to open-ended problems requires flexible and multimodal verification, for which MLLMs offer an appealing solution.",
+            "rationale": "S12 presents a method using automated step verification with screenshots (multimodal) for training agents, which exemplifies the flexible multimodal verification that MLLMs can provide, though it does not explicitly state the gap or that MLLMs are the solution."
           }
         ],
         "incorrect_points": []
@@ -105412,14 +105360,14 @@
     },
     "citation_quality": {
       "name": "citation_quality",
-      "score": 9.02,
+      "score": 8.3,
       "details": {
         "sub_scores": {
           "citation_validity": 10.0,
-          "citation_appropriateness": 9.7,
-          "citation_coverage": 5.833333333333333,
-          "citation_placement": 9.7,
-          "citation_topic_consistency": 9.85
+          "citation_appropriateness": 9.2,
+          "citation_coverage": 3.5,
+          "citation_placement": 9.3,
+          "citation_topic_consistency": 9.5
         },
         "validity": {
           "reference_count": 20,
@@ -105591,38 +105539,43 @@
           ]
         },
         "coverage": {
-          "matched_weight": 14.0,
-          "total_weight": 24.0,
+          "matched_weight": 7.0,
+          "total_weight": 20.0,
           "missing_key_references": [
             {
               "reference_key": "arxiv:2201.11903",
               "importance": 1,
-              "reason": "Foundational work on chain-of-thought reasoning."
+              "reason": "Foundational chain-of-thought prompting."
             },
             {
               "reference_key": "arxiv:2302.00923",
               "importance": 2,
-              "reason": "Extension of CoT to multimodal settings."
+              "reason": "Extension of CoT to multimodal reasoning."
             },
             {
               "reference_key": "arxiv:2305.10601",
               "importance": 2,
-              "reason": "Search-based test-time scaling via tree search."
+              "reason": "Tree of Thoughts for search at test-time."
+            },
+            {
+              "reference_key": "arxiv:2305.14992",
+              "importance": 2,
+              "reason": "Planning with world model for reasoning."
             },
             {
               "reference_key": "arxiv:2203.11171",
               "importance": 2,
-              "reason": "Heuristic for sampling selection in test-time scaling."
+              "reason": "Self-consistency heuristic for selection."
             },
             {
               "reference_key": "arxiv:2402.03300",
               "importance": 2,
-              "reason": "RL and verifier-based training for mathematical reasoning."
+              "reason": "RL for mathematical reasoning."
             },
             {
               "reference_key": "arxiv:2501.12948",
-              "importance": 1,
-              "reason": "Recent work on training reasoning models with RL and verifiers."
+              "importance": 2,
+              "reason": "RL for training reasoning traces."
             }
           ]
         },
@@ -105630,14 +105583,14 @@
           {
             "claim_id": "SClaim4",
             "reference_key": "arxiv:2303.04137",
-            "support": "weak",
-            "appropriateness_score": 5.0,
-            "placement_score": 5.0,
-            "topic_consistency_score": 7.0,
-            "support_rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+            "support": "no",
+            "appropriateness_score": 2.0,
+            "placement_score": 2.0,
+            "topic_consistency_score": 5.0,
+            "support_rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+            "rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
             "retrieval_used": true,
             "retrieved_evidence": [
               {
@@ -105654,13 +105607,50 @@
             "second_pass_used": true
           }
         ],
-        "overclaim_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim4",
+            "reference_key": "arxiv:2108.03298",
+            "support": "partial",
+            "appropriateness_score": 8.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 9.0,
+            "support_rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "Claim attributes 'offers long-horizon manipulation tasks' to robomimic, but the cited paper focuses on learning algorithms rather than introducing the framework; partial support.",
+            "rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark."
+          },
+          {
+            "claim_id": "SClaim5",
+            "reference_key": "arxiv:2406.07791",
+            "support": "partial",
+            "appropriateness_score": 7.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "Claim attributes multiple biases to a single paper, but the paper only covers position bias; mild overclaim.",
+            "rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity."
+          },
+          {
+            "claim_id": "SClaim5",
+            "reference_key": "arxiv:2506.22316",
+            "support": "partial",
+            "appropriateness_score": 7.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "Claim lumps all biases; paper covers scoring bias but not position bias; mild overclaim.",
+            "rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly."
+          }
+        ],
         "citation_group_judgments": [
           {
             "claim_id": "SClaim1",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The WebArena paper explicitly describes a self-hosted web environment with four domains (e-commerce, social forums, development, content management) and evaluates agents on functional correctness rather than action matching, exactly matching the claim.",
+            "group_rationale": "The paper introduces WebArena as a realistic, self-hosted web environment with 812 long-horizon tasks evaluated by functional correctness, matching the claim exactly.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105672,7 +105662,7 @@
             "claim_id": "SClaim2",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "VisualWebArena introduces a benchmark for visually grounded tasks and reports that VLMs outperform text-only LLMs, with the best VLM achieving 16.4% vs. 88.7% human performance, directly supporting the claim.",
+            "group_rationale": "The paper presents VisualWebArena, extending web tasks to visually grounded tasks, and reports that VLMs outperform text-only LLMs with best VLM at 16.4% vs human 88.7%, supporting all parts of the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105684,7 +105674,7 @@
             "claim_id": "SClaim3",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "OSWorld is described as the first scalable, real-world executable environment for cross-platform computer tasks, with findings of significant gaps in GUI grounding and multi-application workflows.",
+            "group_rationale": "The paper introduces OSWorld as the first scalable, real-world executable environment for cross-platform computer tasks, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105695,13 +105685,15 @@
           {
             "claim_id": "SClaim4",
             "citation_count": 2,
-            "group_support": "partial",
-            "group_rationale": "The first citation (arxiv:2108.03298) supports that robomimic offers long-horizon manipulation tasks with human demonstrations. However, the second citation (arxiv:2303.04137) is weak and does not explicitly link Diffusion Policy evaluations to robomimic, so the claim that robomimic serves as a standard for evaluating visuomotor policies such as Diffusion Policy remains unsupported. Therefore, the claim is only partially supported.",
+            "group_support": "weak",
+            "group_rationale": "The first citation (2108.03298) is related to human demonstrations for manipulation tasks but does not explicitly mention robomimic as a benchmark offering long-horizon tasks. The second citation (2303.04137) does not mention robomimic at all. Therefore, the claim that robomimic offers specific tasks for evaluating Diffusion Policy is weakly supported.",
             "covered_aspects": [
-              "robomimic offers long-horizon manipulation tasks with human demonstrations"
+              "human demonstration data for robot manipulation"
             ],
             "missing_aspects": [
-              "robomimic serves as a standard for evaluating visuomotor policies such as Diffusion Policy"
+              "robomimic as an offering framework",
+              "long-horizon manipulation tasks",
+              "evaluation of visuomotor policies like Diffusion Policy"
             ],
             "derived_from_single_pair": false,
             "reference_keys": [
@@ -105713,12 +105705,13 @@
             "claim_id": "SClaim5",
             "citation_count": 2,
             "group_support": "yes",
-            "group_rationale": "Both citations directly support the claim: the first addresses position bias (sensitivity to prompt ordering), and the second addresses scoring bias (sensitivity to rubric phrasing and reference framing). Together, they cover all key components of the claim, resulting in full support.",
+            "group_rationale": "Citation 1 (arxiv:2406.07791) supports position bias and sensitivity to prompt ordering; Citation 2 (arxiv:2506.22316) supports scoring bias, sensitivity to rubric phrasing, and reference framing. Together, they cover all components of the claim.",
             "covered_aspects": [
+              "position bias",
+              "scoring bias",
               "sensitivity to prompt ordering",
               "sensitivity to rubric phrasing",
-              "sensitivity to reference framing",
-              "production of inconsistent ratings under neutral perturbations"
+              "sensitivity to reference framing"
             ],
             "missing_aspects": [],
             "derived_from_single_pair": false,
@@ -105731,11 +105724,11 @@
             "claim_id": "SClaim6",
             "citation_count": 2,
             "group_support": "yes",
-            "group_rationale": "Both citations collectively confirm the existence of self-preference bias (arxiv:2404.13076) and self-bias in self-refinement (arxiv:2402.11436), and both indicate that these biases undermine reliability when the same model is used as generator and evaluator. Thus the claim is fully supported.",
+            "group_rationale": "Both citations collectively support the entire claim. The first citation supports self-preference bias, while the second supports self-bias in self-refinement and the resulting reliability concerns when a model acts as both generator and evaluator. Together, they cover all aspects of the claim.",
             "covered_aspects": [
-              "Self-preference bias in LLMs favoring own outputs",
-              "Self-bias in self-refinement amplifying earlier judgments",
-              "Undermining reliability of same-model generation and evaluation"
+              "self-preference bias",
+              "self-bias in self-refinement",
+              "undermining reliability when the same model acts as both generator and evaluator"
             ],
             "missing_aspects": [],
             "derived_from_single_pair": false,
@@ -105748,7 +105741,7 @@
             "claim_id": "SClaim7",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "This paper evaluates five judgment biases in both human and LLM judges, concluding that neither is immune to systematic biases.",
+            "group_rationale": "The paper evaluates five judgment biases in both human and LLM judges, demonstrating that both exhibit systematic biases, exactly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105760,7 +105753,7 @@
             "claim_id": "SClaim8",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "AgentRewardBench is described as the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, showing rule-based methods underestimate success and no single LLM dominates.",
+            "group_rationale": "The paper introduces AgentRewardBench as the first comprehensive benchmark for evaluating LLM judges on web agent trajectories, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105772,7 +105765,7 @@
             "claim_id": "SClaim9",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "GUI-Shepherd introduces a process reward model trained on human-annotated GUI interactions, showing step-level feedback improves long-horizon RL over outcome rewards.",
+            "group_rationale": "The paper presents GUI-Shepherd, a Process Reward Model with dense step-level feedback for long-horizon reinforcement learning, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105784,7 +105777,7 @@
             "claim_id": "SClaim10",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Agentic reward modeling integrates human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias.",
+            "group_rationale": "The paper introduces agentic reward modeling that integrates human preferences with verifiable correctness signals to reduce bias, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105794,33 +105787,25 @@
           },
           {
             "claim_id": "SClaim11",
-            "citation_count": 1,
+            "citation_count": 2,
             "group_support": "yes",
-            "group_rationale": "UI-Genie explores self-improving GUI agents with reward models that verify trajectory outcomes and generate synthetic training data.",
-            "covered_aspects": [],
+            "group_rationale": "Both UI-Genie and MagicGUI-RMS are individually supported by their respective citations, covering the full claim.",
+            "covered_aspects": [
+              "UI-Genie self-improving GUI agents with reward models and synthetic data generation",
+              "MagicGUI-RMS self-improving GUI agents with reward models and synthetic data generation"
+            ],
             "missing_aspects": [],
-            "derived_from_single_pair": true,
+            "derived_from_single_pair": false,
             "reference_keys": [
-              "arxiv:2505.21496"
+              "arxiv:2505.21496",
+              "arxiv:2601.13060"
             ]
           },
           {
             "claim_id": "SClaim12",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "MagicGUI-RMS proposes a multi-agent reward model system for self-evolving GUI agents with automated feedback reflux.",
-            "covered_aspects": [],
-            "missing_aspects": [],
-            "derived_from_single_pair": true,
-            "reference_keys": [
-              "arxiv:2601.13060"
-            ]
-          },
-          {
-            "claim_id": "SClaim13",
-            "citation_count": 1,
-            "group_support": "yes",
-            "group_rationale": "STEVE uses automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation.",
+            "group_rationale": "The paper introduces STEVE, a step verification pipeline using pre- and post-action screenshots to automatically generate labels for training computer-use agents without human annotation.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105829,10 +105814,10 @@
             ]
           },
           {
-            "claim_id": "SClaim14",
+            "claim_id": "SClaim13",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Reflexion introduces verbal self-reflection stored in episodic memory to improve decision-making without gradient updates.",
+            "group_rationale": "The paper introduces Reflexion, where language agents use verbal self-reflection in episodic memory to improve decision-making without gradient updates, exactly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105841,10 +105826,10 @@
             ]
           },
           {
-            "claim_id": "SClaim15",
+            "claim_id": "SClaim14",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "ReAct interleaves reasoning and acting to ground language models in external environments, providing a foundation for agent architectures.",
+            "group_rationale": "The paper introduces ReAct, which interleaves reasoning and acting to ground language models in external environments, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105853,10 +105838,10 @@
             ]
           },
           {
-            "claim_id": "SClaim16",
+            "claim_id": "SClaim15",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Test-time scaling paper demonstrates that allocating additional compute during inference can outperform larger models, emphasizing verifier quality.",
+            "group_rationale": "The paper demonstrates that adaptive test-time scaling outperforms larger models and highlights the role of verifier quality, supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105865,10 +105850,10 @@
             ]
           },
           {
-            "claim_id": "SClaim17",
+            "claim_id": "SClaim16",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Co-evolution of policy and internal reward proposes self-generated reward signals that guide inference and training, showing gains on interactive tasks.",
+            "group_rationale": "The paper introduces a self-generated internal reward mechanism for language agents that co-evolves policy and reward, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -105885,10 +105870,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The WebArena paper explicitly describes a self-hosted web environment with four domains (e-commerce, social forums, development, content management) and evaluates agents on functional correctness rather than action matching, exactly matching the claim.",
+            "support_rationale": "The paper introduces WebArena as a realistic, self-hosted web environment with 812 long-horizon tasks evaluated by functional correctness, matching the claim exactly.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "The WebArena paper explicitly describes a self-hosted web environment with four domains (e-commerce, social forums, development, content management) and evaluates agents on functional correctness rather than action matching, exactly matching the claim."
+            "overclaim_rationale": "No overclaim; the claim accurately reflects the paper's contribution.",
+            "rationale": "The paper introduces WebArena as a realistic, self-hosted web environment with 812 long-horizon tasks evaluated by functional correctness, matching the claim exactly."
           },
           {
             "claim_id": "SClaim2",
@@ -105897,10 +105882,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "VisualWebArena introduces a benchmark for visually grounded tasks and reports that VLMs outperform text-only LLMs, with the best VLM achieving 16.4% vs. 88.7% human performance, directly supporting the claim.",
+            "support_rationale": "The paper presents VisualWebArena, extending web tasks to visually grounded tasks, and reports that VLMs outperform text-only LLMs with best VLM at 16.4% vs human 88.7%, supporting all parts of the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "VisualWebArena introduces a benchmark for visually grounded tasks and reports that VLMs outperform text-only LLMs, with the best VLM achieving 16.4% vs. 88.7% human performance, directly supporting the claim."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper presents VisualWebArena, extending web tasks to visually grounded tasks, and reports that VLMs outperform text-only LLMs with best VLM at 16.4% vs human 88.7%, supporting all parts of the claim."
           },
           {
             "claim_id": "SClaim3",
@@ -105909,34 +105894,34 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "OSWorld is described as the first scalable, real-world executable environment for cross-platform computer tasks, with findings of significant gaps in GUI grounding and multi-application workflows.",
+            "support_rationale": "The paper introduces OSWorld as the first scalable, real-world executable environment for cross-platform computer tasks, directly supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "OSWorld is described as the first scalable, real-world executable environment for cross-platform computer tasks, with findings of significant gaps in GUI grounding and multi-application workflows."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces OSWorld as the first scalable, real-world executable environment for cross-platform computer tasks, directly supporting the claim."
           },
           {
             "claim_id": "SClaim4",
             "reference_key": "arxiv:2108.03298",
-            "support": "yes",
-            "appropriateness_score": 9.0,
-            "placement_score": 9.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "This paper (often associated with robomimic) evaluates offline learning on human-demonstrated manipulation tasks, including complex multi-stage tasks, supporting the claim that robomimic offers long-horizon tasks with human demonstrations.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "This paper (often associated with robomimic) evaluates offline learning on human-demonstrated manipulation tasks, including complex multi-stage tasks, supporting the claim that robomimic offers long-horizon tasks with human demonstrations."
+            "support": "partial",
+            "appropriateness_score": 8.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 9.0,
+            "support_rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "Claim attributes 'offers long-horizon manipulation tasks' to robomimic, but the cited paper focuses on learning algorithms rather than introducing the framework; partial support.",
+            "rationale": "The paper studies offline learning from human demonstrations for robot manipulation tasks, which are the basis of robomimic, but does not explicitly name robomimic or claim to offer a benchmark."
           },
           {
             "claim_id": "SClaim4",
             "reference_key": "arxiv:2303.04137",
-            "support": "weak",
-            "appropriateness_score": 5.0,
-            "placement_score": 5.0,
-            "topic_consistency_score": 7.0,
-            "support_rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+            "support": "no",
+            "appropriateness_score": 2.0,
+            "placement_score": 2.0,
+            "topic_consistency_score": 5.0,
+            "support_rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The claim states that robomimic offers long-horizon manipulation tasks and serves as a standard for evaluating visuomotor policies like Diffusion Policy. The retrieved evidence (abstract and TLDR of the Diffusion Policy paper) mentions benchmarking across '4 different robot manipulation benchmarks' but does not explicitly name robomimic. Without any direct mention or specific evidence linking the Diffusion Policy evaluation to robomimic, the support for the claim remains weak.",
+            "rationale": "The paper does not mention robomimic or claim that robomimic offers tasks for evaluating Diffusion Policy. The evidence shows the paper benchmarked on multiple benchmarks but does not specify robomimic.",
             "retrieval_used": true,
             "retrieved_evidence": [
               {
@@ -105955,26 +105940,26 @@
           {
             "claim_id": "SClaim5",
             "reference_key": "arxiv:2406.07791",
-            "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "This paper systematically studies position bias in LLM-as-a-Judge, showing sensitivity to prompt ordering and other factors, directly supporting the claim.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "This paper systematically studies position bias in LLM-as-a-Judge, showing sensitivity to prompt ordering and other factors, directly supporting the claim."
+            "support": "partial",
+            "appropriateness_score": 7.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "Claim attributes multiple biases to a single paper, but the paper only covers position bias; mild overclaim.",
+            "rationale": "The paper conducts a systematic study of position bias in LLM-as-a-Judge, supporting only part of the claim (position bias), not scoring bias or rubric/reference sensitivity."
           },
           {
             "claim_id": "SClaim5",
             "reference_key": "arxiv:2506.22316",
-            "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "This paper defines and evaluates scoring bias in LLM-as-a-Judge, including rubric order bias and reference answer bias, supporting the claim about sensitivity to rubric phrasing and reference framing.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "This paper defines and evaluates scoring bias in LLM-as-a-Judge, including rubric order bias and reference answer bias, supporting the claim about sensitivity to rubric phrasing and reference framing."
+            "support": "partial",
+            "appropriateness_score": 7.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "Claim lumps all biases; paper covers scoring bias but not position bias; mild overclaim.",
+            "rationale": "The paper defines and evaluates scoring bias including rubric order, score ID, and reference answer biases, supporting the scoring bias part but not position bias explicitly."
           },
           {
             "claim_id": "SClaim6",
@@ -105983,10 +105968,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "This paper demonstrates self-preference bias in LLM evaluators, where models favor their own outputs, supporting the claim about self-preference bias and reliability concerns.",
+            "support_rationale": "The paper demonstrates that LLMs exhibit self-preference, favoring their own outputs, directly supporting the self-preference bias part of the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "This paper demonstrates self-preference bias in LLM evaluators, where models favor their own outputs, supporting the claim about self-preference bias and reliability concerns."
+            "overclaim_rationale": "No overclaim; the paper fully supports its part.",
+            "rationale": "The paper demonstrates that LLMs exhibit self-preference, favoring their own outputs, directly supporting the self-preference bias part of the claim."
           },
           {
             "claim_id": "SClaim6",
@@ -105995,10 +105980,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "This paper identifies self-bias in LLMs that amplifies during self-refinement, supporting the claim about self-bias in self-refinement and its impact on reliability.",
+            "support_rationale": "The paper identifies and quantifies self-bias in LLMs, especially during self-refinement, aligning with the self-bias and reliability concerns in the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "This paper identifies self-bias in LLMs that amplifies during self-refinement, supporting the claim about self-bias in self-refinement and its impact on reliability."
+            "overclaim_rationale": "No overclaim; the paper fully supports its part.",
+            "rationale": "The paper identifies and quantifies self-bias in LLMs, especially during self-refinement, aligning with the self-bias and reliability concerns in the claim."
           },
           {
             "claim_id": "SClaim7",
@@ -106007,10 +105992,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "This paper evaluates five judgment biases in both human and LLM judges, concluding that neither is immune to systematic biases.",
+            "support_rationale": "The paper evaluates five judgment biases in both human and LLM judges, demonstrating that both exhibit systematic biases, exactly matching the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "This paper evaluates five judgment biases in both human and LLM judges, concluding that neither is immune to systematic biases."
+            "overclaim_rationale": "No overclaim; the claim is accurately supported.",
+            "rationale": "The paper evaluates five judgment biases in both human and LLM judges, demonstrating that both exhibit systematic biases, exactly matching the claim."
           },
           {
             "claim_id": "SClaim8",
@@ -106019,10 +106004,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "AgentRewardBench is described as the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, showing rule-based methods underestimate success and no single LLM dominates.",
+            "support_rationale": "The paper introduces AgentRewardBench as the first comprehensive benchmark for evaluating LLM judges on web agent trajectories, directly supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "AgentRewardBench is described as the first comprehensive benchmark for evaluating LLM judges on web-agent trajectories, showing rule-based methods underestimate success and no single LLM dominates."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces AgentRewardBench as the first comprehensive benchmark for evaluating LLM judges on web agent trajectories, directly supporting the claim."
           },
           {
             "claim_id": "SClaim9",
@@ -106031,10 +106016,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "GUI-Shepherd introduces a process reward model trained on human-annotated GUI interactions, showing step-level feedback improves long-horizon RL over outcome rewards.",
+            "support_rationale": "The paper presents GUI-Shepherd, a Process Reward Model with dense step-level feedback for long-horizon reinforcement learning, directly supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "GUI-Shepherd introduces a process reward model trained on human-annotated GUI interactions, showing step-level feedback improves long-horizon RL over outcome rewards."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper presents GUI-Shepherd, a Process Reward Model with dense step-level feedback for long-horizon reinforcement learning, directly supporting the claim."
           },
           {
             "claim_id": "SClaim10",
@@ -106043,10 +106028,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "Agentic reward modeling integrates human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias.",
+            "support_rationale": "The paper introduces agentic reward modeling that integrates human preferences with verifiable correctness signals to reduce bias, directly supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "Agentic reward modeling integrates human preference signals with verifiable correctness checks via specialized modules, aiming to reduce bias."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces agentic reward modeling that integrates human preferences with verifiable correctness signals to reduce bias, directly supporting the claim."
           },
           {
             "claim_id": "SClaim11",
@@ -106055,82 +106040,82 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "UI-Genie explores self-improving GUI agents with reward models that verify trajectory outcomes and generate synthetic training data.",
+            "support_rationale": "The paper introduces UI-Genie, a self-improving framework for mobile GUI agents with reward models and synthetic data generation, matching the UI-Genie part of the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "UI-Genie explores self-improving GUI agents with reward models that verify trajectory outcomes and generate synthetic training data."
+            "overclaim_rationale": "No overclaim; the paper supports its part.",
+            "rationale": "The paper introduces UI-Genie, a self-improving framework for mobile GUI agents with reward models and synthetic data generation, matching the UI-Genie part of the claim."
           },
           {
-            "claim_id": "SClaim12",
+            "claim_id": "SClaim11",
             "reference_key": "arxiv:2601.13060",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "MagicGUI-RMS proposes a multi-agent reward model system for self-evolving GUI agents with automated feedback reflux.",
+            "support_rationale": "The paper introduces MagicGUI-RMS, a multi-agent reward model system for self-evolving GUI agents with automated synthetic data generation, matching the MagicGUI-RMS part of the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "MagicGUI-RMS proposes a multi-agent reward model system for self-evolving GUI agents with automated feedback reflux."
+            "overclaim_rationale": "No overclaim; the paper supports its part.",
+            "rationale": "The paper introduces MagicGUI-RMS, a multi-agent reward model system for self-evolving GUI agents with automated synthetic data generation, matching the MagicGUI-RMS part of the claim."
           },
           {
-            "claim_id": "SClaim13",
+            "claim_id": "SClaim12",
             "reference_key": "arxiv:2503.12532",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "STEVE uses automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation.",
+            "support_rationale": "The paper introduces STEVE, a step verification pipeline using pre- and post-action screenshots to automatically generate labels for training computer-use agents without human annotation.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "STEVE uses automated step verification with pre- and post-action screenshots to train computer-use agents without human annotation."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces STEVE, a step verification pipeline using pre- and post-action screenshots to automatically generate labels for training computer-use agents without human annotation."
           },
           {
-            "claim_id": "SClaim14",
+            "claim_id": "SClaim13",
             "reference_key": "arxiv:2303.11366",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "Reflexion introduces verbal self-reflection stored in episodic memory to improve decision-making without gradient updates.",
+            "support_rationale": "The paper introduces Reflexion, where language agents use verbal self-reflection in episodic memory to improve decision-making without gradient updates, exactly matching the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "Reflexion introduces verbal self-reflection stored in episodic memory to improve decision-making without gradient updates."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces Reflexion, where language agents use verbal self-reflection in episodic memory to improve decision-making without gradient updates, exactly matching the claim."
           },
           {
-            "claim_id": "SClaim15",
+            "claim_id": "SClaim14",
             "reference_key": "arxiv:2210.03629",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "ReAct interleaves reasoning and acting to ground language models in external environments, providing a foundation for agent architectures.",
+            "support_rationale": "The paper introduces ReAct, which interleaves reasoning and acting to ground language models in external environments, directly supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "ReAct interleaves reasoning and acting to ground language models in external environments, providing a foundation for agent architectures."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces ReAct, which interleaves reasoning and acting to ground language models in external environments, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim16",
+            "claim_id": "SClaim15",
             "reference_key": "arxiv:2408.03314",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "Test-time scaling paper demonstrates that allocating additional compute during inference can outperform larger models, emphasizing verifier quality.",
+            "support_rationale": "The paper demonstrates that adaptive test-time scaling outperforms larger models and highlights the role of verifier quality, supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "Test-time scaling paper demonstrates that allocating additional compute during inference can outperform larger models, emphasizing verifier quality."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper demonstrates that adaptive test-time scaling outperforms larger models and highlights the role of verifier quality, supporting the claim."
           },
           {
-            "claim_id": "SClaim17",
+            "claim_id": "SClaim16",
             "reference_key": "arxiv:2604.03098",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "Co-evolution of policy and internal reward proposes self-generated reward signals that guide inference and training, showing gains on interactive tasks.",
+            "support_rationale": "The paper introduces a self-generated internal reward mechanism for language agents that co-evolves policy and reward, directly supporting the claim.",
             "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "Co-evolution of policy and internal reward proposes self-generated reward signals that guide inference and training, showing gains on interactive tasks."
+            "overclaim_rationale": "No overclaim; the claim is accurate.",
+            "rationale": "The paper introduces a self-generated internal reward mechanism for language agents that co-evolves policy and reward, directly supporting the claim."
           }
         ],
         "applied_caps": []
@@ -106138,52 +106123,32 @@
     },
     "relevance": {
       "name": "relevance",
-      "score": 7.94,
+      "score": 9.06,
       "details": {
         "irrelevant_claims": [
           {
             "claim_id": "SClaim4",
             "relevance_score": 0.0,
-            "rationale": "The claim discusses robomimic, a robot manipulation benchmark. This is outside the scope of ground truth, which focuses on MLLMs, web agents, and test-time scaling."
+            "rationale": "Focuses on robot manipulation and visuomotor policies, which are outside the scope of the ground-truth related work. The ground truth centers on web/computer agents, MLLM evaluators, and test-time scaling, not robotics."
           }
         ],
         "weakly_relevant_claims": [
           {
-            "claim_id": "SClaim1",
-            "relevance_score": 0.5,
-            "rationale": "The claim introduces WebArena, a web environment benchmark for agents. While not directly about MLLM evaluators, it provides context for agent evaluation in web environments, which is related to ground truth topics on web agents (GTopic2)."
-          },
-          {
-            "claim_id": "SClaim2",
-            "relevance_score": 0.5,
-            "rationale": "The claim extends to VisualWebArena, a visually grounded web benchmark. It relates to agent evaluation in web environments (GTopic2) but does not focus on MLLMs as evaluators."
-          },
-          {
-            "claim_id": "SClaim3",
-            "relevance_score": 0.5,
-            "rationale": "The claim describes OSWorld, a cross-platform computer-use benchmark. This is relevant to ground truth about agents in computer environments (GTopic2) but not directly about MLLM evaluators."
-          },
-          {
             "claim_id": "SClaim14",
             "relevance_score": 0.5,
-            "rationale": "The claim describes Reflexion, a method for agent self-reflection. It is related to ground truth on test-time refinements (GPoint3) and evaluator use (GPoint6), but not centrally about MLLM evaluators."
-          },
-          {
-            "claim_id": "SClaim15",
-            "relevance_score": 0.5,
-            "rationale": "The claim describes ReAct, a reasoning and acting framework. It is related to ground truth on reasoning and acting (GPoint12) and agent architectures (GTopic2), but not directly about MLLM evaluators."
+            "rationale": "Relevant to the general topic of agent reasoning and environment interaction (GPoint4, GPoint8), but not directly about MLLM evaluators or test-time scaling which are the primary focus of the ground truth."
           }
         ],
-        "claim_count": 17
+        "claim_count": 16
       }
     },
     "thematic_structure": {
       "name": "thematic_structure",
-      "score": 7.92,
+      "score": 7.76,
       "details": {
         "sub_scores": {
-          "topic_coverage": 8.0,
-          "topic_purity": 8.5,
+          "topic_coverage": 7.666666666666667,
+          "topic_purity": 8.25,
           "topic_coherence": 7.75,
           "topic_granularity": 7.0,
           "topic_ordering": 8.0
@@ -106196,17 +106161,16 @@
               "STopic3"
             ],
             "match_score": 7,
-            "rationale": "GTopic1 focuses on MLLMs as evaluators in multimodal and interactive settings. Candidate topics STopic2 (biases in LLM-as-a-judge) and STopic3 (reward modeling for agent trajectories) address aspects of evaluator usage but lack explicit multimodal emphasis. Partial alignment."
+            "rationale": "STopic2 covers biases in LLM-as-a-Judge, which is central to using MLLMs as evaluators. STopic3 covers reward modeling and verification, which is an extension of evaluation for agent trajectories. Together, they address key aspects of GTopic1 but miss the direct focus on multimodal and environment-interaction scoring and the use of evaluators for test-time refinement."
           },
           {
             "g_topic_id": "GTopic2",
             "s_topic_ids": [
               "STopic1",
-              "STopic3",
               "STopic4"
             ],
-            "match_score": 8,
-            "rationale": "GTopic2 covers AI agents in web/mobile/computer environments with evaluator-guided improvement. STopic1 (benchmarks and environments), STopic3 (reward modeling), and STopic4 (self-improvement via Reflexion) collectively cover environments, reward, and iterative improvement. Strong alignment."
+            "match_score": 7,
+            "rationale": "STopic1 provides benchmarks for agent evaluation (WebArena, VisualWebArena) cited in GTopic2. STopic4 covers Reflexion and self-improvement methods central to GTopic2. However, behavior cloning and tree search with GPT-4V evaluator are not explicitly covered, and the reward modeling aspect (STopic3) is partially relevant but not included."
           },
           {
             "g_topic_id": "GTopic3",
@@ -106214,7 +106178,7 @@
               "STopic4"
             ],
             "match_score": 9,
-            "rationale": "GTopic3 addresses test-time scaling and chain-of-thought approaches. STopic4 directly covers test-time scaling, self-improvement, and online supervision, including key citations like Reflexion and chain-of-thought. Very close alignment."
+            "rationale": "STopic4 directly addresses test-time scaling, self-improvement, and online supervision, with key citations (e.g., Reflexion, ReAct, chain-of-thought) that align closely with GTopic3. Minor missing detail on formal verifiers and RL training of reasoning traces."
           }
         ],
         "paragraph_scores": [
@@ -106224,7 +106188,7 @@
             "topic_coherence": 8,
             "citation_topic_consistency": 9,
             "issues": [
-              "Focus is narrow on benchmarks; could explore relation to evaluators more explicitly."
+              "Could benefit from explicit connection to how these environments are used with evaluators or agents."
             ]
           },
           {
@@ -106233,67 +106197,66 @@
             "topic_coherence": 8,
             "citation_topic_consistency": 9,
             "issues": [
-              "No major issues; content is well-scoped to LLM-as-judge biases."
+              "Narrowly focuses on biases; might be better integrated into a broader evaluator section."
             ]
           },
           {
             "paragraph_id": "S3",
-            "topic_purity": 9,
+            "topic_purity": 8,
             "topic_coherence": 8,
             "citation_topic_consistency": 9,
             "issues": [
-              "No major issues; citations strongly align with reward modeling for agents."
+              "Overlaps with evaluation-related topics in S2; could lead to fragmentation."
             ]
           },
           {
             "paragraph_id": "S4",
             "topic_purity": 7,
             "topic_coherence": 7,
-            "citation_topic_consistency": 8,
+            "citation_topic_consistency": 9,
             "issues": [
-              "Combines multiple sub-themes (test-time scaling, self-improvement, online supervision) reducing cohesion; could benefit from clearer focus."
+              "Combines test-time scaling, self-improvement, and online supervision; these could be separated into distinct topics for clarity."
             ]
           }
         ],
         "issues": [
           {
             "paragraph_id": "S1",
-            "issue": "Focus is narrow on benchmarks; could explore relation to evaluators more explicitly."
+            "issue": "Could benefit from explicit connection to how these environments are used with evaluators or agents."
           },
           {
             "paragraph_id": "S2",
-            "issue": "No major issues; content is well-scoped to LLM-as-judge biases."
+            "issue": "Narrowly focuses on biases; might be better integrated into a broader evaluator section."
           },
           {
             "paragraph_id": "S3",
-            "issue": "No major issues; citations strongly align with reward modeling for agents."
+            "issue": "Overlaps with evaluation-related topics in S2; could lead to fragmentation."
           },
           {
             "paragraph_id": "S4",
-            "issue": "Combines multiple sub-themes (test-time scaling, self-improvement, online supervision) reducing cohesion; could benefit from clearer focus."
+            "issue": "Combines test-time scaling, self-improvement, and online supervision; these could be separated into distinct topics for clarity."
           }
         ],
         "granularity": {
           "score": 7,
-          "rationale": "Candidate topics are slightly more granular than gold, splitting the evaluator concept into biases and reward modeling, and dedicating a separate topic to benchmarks. This is acceptable but not perfectly aligned with the gold three-topic structure."
+          "rationale": "The candidate topics provide a reasonable level of detail, with dedicated coverage of benchmarks, biases, and reward modeling. However, the test-time scaling section includes multiple distinct strategies (Reflexion, ReAct, online supervision) under one roof, leading to uneven granularity. Separating self-improvement from test-time scaling would improve balance."
         },
         "ordering": {
           "score": 8,
-          "rationale": "Candidate ordering starts with benchmarks (context), then evaluation biases, reward modeling, and finally test-time scaling. This logical progression from problem setup to methods is coherent, though different from the gold order which begins with evaluators."
+          "rationale": "The ordering begins with benchmarks (context), then evaluation biases (issue), followed by reward modeling (method), and finally test-time scaling/improvement (advancement). This flow is logical and builds from environment to evaluation to enhancement. However, the biases and reward modeling sections could be reordered to group evaluation-related topics together, and the final section could be placed after a discussion of existing evaluators."
         }
       }
     },
     "synthesis_quality": {
       "name": "synthesis_quality",
-      "score": 7.5,
+      "score": 6.5,
       "details": {
-        "rationale": "The candidate covers four relevant areas (benchmarks, LLM judge biases, reward modeling for agents, test-time scaling) and makes some connections between them. It identifies limitations (e.g., biases in LLM judges, over-validation tendency) and points to a gap (verifier quality under bias). However, the landscape is presented more as a sequential survey than a tightly integrated narrative. The connection between benchmarks and the need for better evaluation is implicit rather than explicit. The third paragraph on reward modeling partly overlaps with the second on biases, and the overall structure does not build strongly toward a single motivating gap. Comparing methods and discussing limitations is present but could be more systematic.",
+        "rationale": "The candidate builds a reasonable landscape covering benchmarks, LLM-as-a-judge biases, reward modeling, and test-time scaling. It organizes literature into coherent topical sections and compares methods within each section. However, it falls short of the gold standard's emphasis on MLLMs as evaluators as a unifying theme; the candidate's separation of 'LLM-as-a-Judge biases' and 'Reward Modeling for Agent Trajectories' obscures the direct connection to MLLM-based evaluation. The gap motivation is present only in the final sentence and is not explicitly tied to the paper's own contribution (over-validation tendency). Cross-paragraph synthesis (e.g., how biases affect reward modeling or test-time scaling) is limited. Overall, it goes beyond a simple paper list but lacks deep integration and a strong, forward-looking gap statement.",
         "issues": [
-          "Paragraph organization reads as a list of topics rather than a synthesized critique leading to a clear research gap.",
-          "The connection between the benchmark paragraph and the rest of the section is not explicitly stated.",
-          "Overlap between 'LLM-as-a-Judge' and 'Reward Modeling' paragraphs could be integrated to avoid redundancy.",
-          "The gap statement in paragraph 3 ('yet they do not directly address the over-validation tendency') is specific but not fully connected to the preceding discussion of biases.",
-          "Final paragraph's gap about verifier quality is well-stated but comes after a separate topic, diluting the narrative cohesion."
+          "Does not center MLLMs as evaluators as the key theme (as in gold), instead splits evaluation biases and reward modeling into separate sections without strong linkage.",
+          "Missing explicit mention of the closely related GPT-4V evaluator work (e.g., for Reflexion) that the gold highlights as most relevant.",
+          "Gap motivation is weak: only one sentence at the end, not tied back to the paper's over-validation problem.",
+          "Limited cross-topic integration (e.g., how benchmark limitations relate to evaluation biases)."
         ]
       }
     },
@@ -106301,24 +106264,23 @@
       "name": "writing_quality",
       "score": 8.5,
       "details": {
-        "rationale": "The writing maintains a formal academic tone throughout. Sentences are clear and mostly concise, with good terminology consistency (e.g., 'verifier', 'LLM-as-a-Judge', 'MLLMs'). Paragraphs flow logically from one topic to the next, and transitions are smooth. There are no grammatical errors or awkward phrasings. Some sentences are dense with multiple citations and clauses, which slightly reduces readability, but overall clarity is high.",
+        "rationale": "The writing maintains a strong academic tone, is generally clear and concise, and uses terminology consistently (e.g., 'LLM judges', 'trajectories', 'verifier'). Sentence flow is smooth with good transitions between paragraphs. The text avoids colloquialisms and presents factual claims with appropriate citations. Minor issues include slight redundancy ('systematic weaknesses', 'systematic skew', 'systematic bias') and some sentences are long, but these do not detract significantly from readability. Overall, the writing demonstrates a high level of polish.",
         "issues": [
-          "A few sentences are long and pack many details, e.g., 'AgentRewardBench ... revealed that rule-based methods systematically underestimate success and that no single LLM dominates across environments' could be split for readability.",
-          "Minor: 'sampling, RL, and formal verifiers' in the last paragraph of the gold summary appears in the candidate text as 'self-generated reward signals'—not an issue in candidate text, but the candidate's phrasing is fine.",
-          "No major flaws in academic tone or clarity."
+          "Minor redundancy in phrasing (e.g., 'systematic' repeated across multiple sentences).",
+          "Some sentences are dense and could be slightly shortened for improved conciseness."
         ]
       }
     },
     "length_conciseness": {
       "name": "length_conciseness",
-      "score": 5.13,
+      "score": 5.32,
       "details": {
         "s_word_count": 673,
         "g_word_count": 278,
         "length_ratio": 2.420863309352518,
         "sub_scores": {
           "relative_length_score": 4.316546762589928,
-          "information_density_score": 3.239103417533433,
+          "information_density_score": 3.889047176820208,
           "redundancy_score": 10.0
         },
         "redundancy": {

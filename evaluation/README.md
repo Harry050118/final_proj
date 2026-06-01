@@ -60,6 +60,8 @@ runs\clean_search\sample1\report.md
 
 Repeat the same command with `sample2`, `sample3`, and so on for later runs.
 
+The reports include citation sub-scores (`citation_validity`, `citation_appropriateness`, `citation_coverage`, `citation_placement`, and `citation_topic_consistency`). JSON reports also expose `diagnostics.bibliographic_accuracy_issues`, and Markdown reports render the same entries under `## Bibliographic Accuracy Issues`.
+
 ## Run Upstream Examples
 
 From the project root:

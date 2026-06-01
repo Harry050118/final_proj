@@ -239,12 +239,33 @@ def _diagnostics(metric_results: Dict[str, Dict[str, Any]], claim_judgment: Dict
     return {
         "missing_points": coverage.get("missing_points", []),
         "hallucinated_references": hallucinated_refs,
+        "bibliographic_accuracy_issues": _bibliographic_accuracy_issues(citation),
         "bad_citation_claim_pairs": citation.get("problematic_citation_claim_pairs", []),
         "overclaim_citation_claim_pairs": citation.get("overclaim_citation_claim_pairs", []),
         "citation_group_support": _nonredundant_citation_group_support(citation),
         "topic_structure_issues": thematic.get("issues", []),
         "length_conciseness_issues": _length_issues(length),
     }
+
+
+def _bibliographic_accuracy_issues(citation_details: Dict[str, Any]) -> List[Dict[str, Any]]:
+    issues: List[Dict[str, Any]] = []
+    for ref in citation_details.get("validity", {}).get("references", []):
+        ref_issues = list(ref.get("issues") or [])
+        validity = str(ref.get("validity") or "unknown")
+        if validity == "valid" and not ref_issues:
+            continue
+        issues.append(
+            {
+                "ref_id": ref.get("ref_id"),
+                "title": ref.get("title"),
+                "normalized_key": ref.get("normalized_key"),
+                "validity": validity,
+                "match_score": ref.get("match_score"),
+                "issues": ref_issues,
+            }
+        )
+    return issues
 
 
 def _nonredundant_citation_group_support(citation_details: Dict[str, Any]) -> List[Dict[str, Any]]:

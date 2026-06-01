@@ -33,6 +33,7 @@ def render_markdown_report(report: Dict[str, Any]) -> str:
     sections = [
         ("Missing Points", diagnostics.get("missing_points", [])),
         ("Hallucinated References", diagnostics.get("hallucinated_references", [])),
+        ("Bibliographic Accuracy Issues", diagnostics.get("bibliographic_accuracy_issues", [])),
         ("Bad Citation-Claim Pairs", diagnostics.get("bad_citation_claim_pairs", [])),
         ("Overclaim Citation-Claim Pairs", diagnostics.get("overclaim_citation_claim_pairs", [])),
         ("Citation Group Support", diagnostics.get("citation_group_support", [])),
@@ -95,7 +96,14 @@ def _format_item(item: Any) -> str:
         suffix = f": {'; '.join(details)}" if details else ""
         return f"{item.get('claim_id')} [{', '.join(parts)}]{suffix}"
     if "title" in item:
-        return f"{item.get('title')} [{item.get('validity', 'unknown')}]"
+        fields = [f"validity={item.get('validity', 'unknown')}"]
+        if item.get("normalized_key"):
+            fields.append(f"key={item.get('normalized_key')}")
+        if item.get("match_score") is not None:
+            fields.append(f"match_score={float(item.get('match_score')):.2f}")
+        if item.get("issues"):
+            fields.append(f"issues={item.get('issues')}")
+        return f"{item.get('title')} [{', '.join(fields)}]"
     if item.get("type") == "relative_length":
         return (
             f"Relative length ratio={item.get('length_ratio'):.2f} "

@@ -50,6 +50,7 @@ Output formatting requirements:
 
 6. Write s_reference.txt as a numbered reference list:
    [1] Authors. "Title." Venue or arXiv/source, year.
+   
    [2] Authors. "Title." Venue or arXiv/source, year.
 
 7. Do not wrap either file in Markdown code fences.

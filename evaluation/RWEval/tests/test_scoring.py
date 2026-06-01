@@ -4,6 +4,7 @@ from rw_eval.scoring.aggregate import aggregate_scores
 from rw_eval.scoring.citation import score_citation_quality
 from rw_eval.scoring.coverage import score_content_coverage
 from rw_eval.scoring.relevance import score_relevance
+from rw_eval.schemas import ReferenceEntry
 
 
 class ScoringTests(unittest.TestCase):
@@ -88,6 +89,40 @@ class ScoringTests(unittest.TestCase):
         overclaim_pairs = result["details"]["overclaim_citation_claim_pairs"]
         self.assertEqual(len(overclaim_pairs), 1)
         self.assertEqual(overclaim_pairs[0]["claim_id"], "S1")
+
+    def test_citation_validity_scores_reference_statuses_and_caps(self):
+        refs = [
+            ReferenceEntry(ref_id="R1", raw_text="Valid", title="Valid Paper", validity="valid"),
+            ReferenceEntry(ref_id="R2", raw_text="Unknown", title="Unknown Paper", validity="unknown"),
+            ReferenceEntry(ref_id="R3", raw_text="Unresolved", title="Unresolved Paper", validity="unresolved"),
+            ReferenceEntry(
+                ref_id="R4",
+                raw_text="Mismatch",
+                title="Mismatch Paper",
+                validity="metadata_mismatch",
+                issues=["deepxiv_metadata_mismatch"],
+            ),
+        ]
+        result = score_citation_quality(
+            s_references=refs,
+            g_references=[],
+            gold={},
+            citation_judgment={"citation_judgments": []},
+            config={
+                "citation_weights": {"citation_validity": 1.0},
+                "caps": {"citation_quality": {"hallucinated_reference_count_any": 5.0}},
+                "thresholds": {"many_hallucinated_references": 3},
+            },
+        )
+
+        validity = result["details"]["validity"]
+        self.assertEqual(validity["valid_count"], 1)
+        self.assertEqual(validity["unknown_count"], 1)
+        self.assertEqual(validity["unresolved_reference_count"], 1)
+        self.assertEqual(validity["hallucinated_reference_count"], 1)
+        self.assertEqual(result["details"]["sub_scores"]["citation_validity"], 4.375)
+        self.assertEqual(result["score"], 4.38)
+        self.assertEqual(result["details"]["applied_caps"][0]["rule"], "hallucinated_reference_count_any")
 
 
 if __name__ == "__main__":

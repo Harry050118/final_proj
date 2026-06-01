@@ -58,6 +58,18 @@ python -m rw_eval.cli evaluate \
   --markdown-output outputs_local/sample1_report.md
 ```
 
+## Citation Scores And Reports
+
+`citation_quality` is reported together with these front-page sub-scores:
+
+- `citation_validity`
+- `citation_appropriateness`
+- `citation_coverage`
+- `citation_placement`
+- `citation_topic_consistency`
+
+The JSON report includes `diagnostics.bibliographic_accuracy_issues`, derived from the normalized reference validity records. It lists references whose `validity` is not `valid` or whose `issues` list is non-empty. The Markdown report renders the same information under `## Bibliographic Accuracy Issues`.
+
 ## Disable DeepXiv
 
 Use this only for local parser/smoke checks when DeepXiv is intentionally unavailable:

@@ -1,66 +1,77 @@
 {
   "sample_id": "sim_prompt-evotest",
-  "overall": 8.24,
+  "overall": 7.79,
   "scores": {
-    "content_coverage": 5.95,
-    "citation_quality": 9.05,
-    "relevance": 9.5,
-    "thematic_structure": 8.14,
-    "synthesis_quality": 7.5,
-    "writing_quality": 8.5,
-    "length_conciseness": 9.16,
+    "content_coverage": 5.62,
+    "citation_quality": 8.78,
+    "relevance": 6.19,
+    "thematic_structure": 8.08,
+    "synthesis_quality": 8.0,
+    "writing_quality": 8.0,
+    "length_conciseness": 8.75,
     "citation_validity": 10.0,
-    "citation_appropriateness": 9.5,
-    "citation_coverage": 6.57,
-    "citation_placement": 9.56,
-    "citation_topic_consistency": 9.56
+    "citation_appropriateness": 9.31,
+    "citation_coverage": 5.71,
+    "citation_placement": 9.38,
+    "citation_topic_consistency": 9.44
   },
   "diagnostics": {
     "missing_points": [
       {
         "gold_point_id": "GPoint2",
-        "text": "Si et al. (2024) conducted human evaluation of idea generation by LLMs.",
-        "rationale": "No claim mentions Si et al. (2024) or human evaluation of idea generation by LLMs."
+        "text": "Si et al. (2024) conducted comprehensive human evaluation of idea generation by LLMs.",
+        "rationale": "No candidate claim mentions Si et al.'s human evaluation of idea generation."
       },
       {
         "gold_point_id": "GPoint4",
-        "text": "Huang et al. (2024) introduced a benchmark for evaluating LLMs in coding solutions for ML problems.",
-        "rationale": "No claim mentions a benchmark for coding solutions for ML problems as in Huang et al. (2024)."
+        "text": "Huang et al. (2024) introduced a benchmark for evaluating LLMs in coding ML problems.",
+        "rationale": "No candidate claim mentions Huang et al.'s benchmark for coding ML problems."
       },
       {
         "gold_point_id": "GPoint5",
-        "text": "Wang et al. (2023b) proposed LLMs for scientific literature retrieval.",
-        "rationale": "No claim specifically addresses scientific literature retrieval as proposed by Wang et al. (2023b)."
+        "text": "Wang et al. (2023b) proposed a method for scientific literature retrieval.",
+        "rationale": "No candidate claim describes Wang et al.'s method for scientific literature retrieval."
       },
       {
         "gold_point_id": "GPoint11",
-        "text": "With neural networks, researchers have focused on AI4Science.",
-        "rationale": "No claim mentions neural networks or AI4Science specifically."
+        "text": "With neural networks, more researchers focus on AI4Science.",
+        "rationale": "No candidate claim mentions the shift to AI4Science driven by neural networks."
       },
       {
-        "gold_point_id": "GPoint17",
+        "gold_point_id": "GPoint16",
+        "text": "Hosseini & Horbach (2023) conducted small-scale qualitative experiments on ChatGPT's peer review effectiveness.",
+        "rationale": "No candidate claim mentions Hosseini & Horbach's experiments on ChatGPT peer review."
+      },
+      {
+        "gold_point_id": "GPoint18",
         "text": "Lu et al. (2024) and Tyser et al. (2024) used GPT-4 to evaluate full-text PDFs of scientific papers.",
-        "rationale": "No claim refers to using GPT-4 to evaluate full-text PDFs as done by Lu et al. (2024) and Tyser et al. (2024)."
+        "rationale": "No candidate claim mentions Lu et al. or Tyser et al.'s work on evaluating full-text PDFs with GPT-4."
       },
       {
-        "gold_point_id": "GPoint21",
-        "text": "CycleReviewer simulates reviewers with varying perspectives and a primary reviewer consolidates final decision.",
-        "rationale": "No claim mentions CycleReviewer or simulates multiple reviewer perspectives."
+        "gold_point_id": "GPoint19",
+        "text": "Even advanced LLMs like GPT-4 and Gemini lag behind reward models trained for evaluation tasks.",
+        "rationale": "No candidate claim compares GPT-4 and Gemini to reward models in evaluation tasks."
+      },
+      {
+        "gold_point_id": "GPoint22",
+        "text": "CycleReviewer simulates reviewers with varying perspectives, documenting summaries, strengths, weaknesses, and consolidates final decision.",
+        "rationale": "No candidate claim mentions CycleReviewer or its features."
       }
     ],
     "hallucinated_references": [],
+    "bibliographic_accuracy_issues": [],
     "bad_citation_claim_pairs": [
       {
-        "claim_id": "SClaim9",
+        "claim_id": "SClaim10",
         "reference_key": "arxiv:2412.11427",
-        "support": "no",
+        "support": "unknown",
         "appropriateness_score": 2.0,
-        "placement_score": 3.0,
+        "placement_score": 2.0,
         "topic_consistency_score": 3.0,
-        "support_rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+        "support_rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
         "overclaim_status": "none",
         "overclaim_rationale": "",
-        "rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+        "rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
         "retrieval_used": true,
         "retrieved_evidence": [
           {
@@ -77,37 +88,41 @@
         "second_pass_used": true
       }
     ],
-    "overclaim_citation_claim_pairs": [],
-    "citation_group_support": [
+    "overclaim_citation_claim_pairs": [
       {
-        "claim_id": "SClaim4",
-        "citation_count": 2,
-        "group_support": "yes",
-        "group_rationale": "Both components of the claim are fully supported by the cited sources: AutoSurvey covers automated survey generation, and the multi-agent dialogue paper covers iterative critique and revision loops for research ideation.",
-        "covered_aspects": [
-          "automated survey generation via retrieval-augmented pipelines",
-          "multi-agent dialogue designs for research ideation through iterative critique and revision loops"
-        ],
-        "missing_aspects": [],
-        "derived_from_single_pair": false,
-        "reference_keys": [
-          "arxiv:2406.10252",
-          "arxiv:2507.08350"
-        ]
+        "claim_id": "SClaim8",
+        "reference_key": "arxiv:2604.20548",
+        "support": "partial",
+        "appropriateness_score": 8.0,
+        "placement_score": 8.0,
+        "topic_consistency_score": 8.0,
+        "support_rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial.",
+        "overclaim_status": "mild",
+        "overclaim_rationale": "The claim attributes a general limitation to prompt-based/single-pass methods based on one paper's comparative results, which may overstate the evidence.",
+        "rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial."
+      },
+      {
+        "claim_id": "SClaim12",
+        "reference_key": "arxiv:2508.14111",
+        "support": "partial",
+        "appropriateness_score": 9.0,
+        "placement_score": 10.0,
+        "topic_consistency_score": 10.0,
+        "support_rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported.",
+        "overclaim_status": "mild",
+        "overclaim_rationale": "The claim omits 'optimization' from the paper's list, slightly misrepresenting the full set of capabilities identified.",
+        "rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported."
       }
     ],
+    "citation_group_support": [],
     "topic_structure_issues": [
       {
         "paragraph_id": "S1",
-        "issue": "Combines content from two gold topics (LLMs for Research and Science Discovery), reducing purity."
+        "issue": "Combines aspects of GTopic1 and GTopic2, which reduces purity; some citations (e.g., arxiv:2310.03302) are not present in any gold topic, but are topically relevant."
       },
       {
         "paragraph_id": "S2",
-        "issue": "None"
-      },
-      {
-        "paragraph_id": "S3",
-        "issue": "Minor: includes some citations that are tangentially related to evaluation (e.g., bias analysis), but overall consistent."
+        "issue": "Citations are very recent and do not cover the historical AI discovery works (e.g., Langley, Buchanan) emphasized in GTopic2."
       }
     ],
     "length_conciseness_issues": []
@@ -2269,7 +2284,7 @@
         {
           "id": "GTopic1",
           "label": "LLMs for Research",
-          "summary": "Studies use LLMs for creative research tasks like idea generation and writing. Prompt-based methods have limitations. The authors propose an iterative self-rewarding framework.",
+          "summary": "Surveys LLM applications in creative research tasks including idea generation, survey writing, and automation, and identifies limitations of prompt-based methods, motivating an iterative self-rewarding framework.",
           "paragraph_ids": [
             "G1"
           ],
@@ -2277,19 +2292,24 @@
           "key_citations": [
             "arxiv:2404.07738",
             "arxiv:2309.02726",
+            "arxiv:2409.04109",
+            "arxiv:2406.10252",
+            "huang-2024",
+            "arxiv:2305.14259",
             "arxiv:2408.06292"
           ]
         },
         {
           "id": "GTopic2",
           "label": "LLMs for Science Discovery",
-          "summary": "AI has a long tradition in scientific discovery but is currently passive. The challenge is to move AI from data analysis to active idea generation. This work aims to shift AI to a leader.",
+          "summary": "Reviews historical AI-assisted discovery across domains and highlights the passive role of AI in data analysis, emphasizing the need for active idea generation and reasoning.",
           "paragraph_ids": [
             "G2"
           ],
-          "importance": 2,
+          "importance": 1,
           "key_citations": [
             "langley-1987",
+            "langley-2024",
             "buchanan-1981",
             "jumper-2021",
             "hayes-2024",
@@ -2305,7 +2325,7 @@
         {
           "id": "GTopic3",
           "label": "Automated Evaluation of Research Papers",
-          "summary": "AI tools are used in publishing for various tasks. LLMs as judges lag behind trained reward models. The authors propose CycleReviewer with a Generative Reward Model.",
+          "summary": "Covers AI tools in publishing and peer review, compares LLM judges against trained reward models, and introduces a Generative Reward Model and CycleReviewer for comprehensive evaluation.",
           "paragraph_ids": [
             "G3"
           ],
@@ -2320,6 +2340,8 @@
             "arxiv:2211.06398",
             "horbach-2023",
             "arxiv:2307.05492",
+            "arxiv:2408.06292",
+            "arxiv:2408.10365",
             "arxiv:2303.08774",
             "arxiv:2403.05530",
             "arxiv:2403.13787",
@@ -2330,8 +2352,8 @@
       "key_points": [
         {
           "id": "GPoint1",
-          "type": "topic",
-          "text": "Several studies explore LLMs for creative research tasks like multi-agent collaborative writing and multi-module retrieval to improve idea generation.",
+          "type": "method",
+          "text": "Multi-agent collaborative writing and multi-module retrieval improve research idea generation.",
           "importance": 2,
           "topic_id": "GTopic1",
           "citations": [
@@ -2342,39 +2364,47 @@
         {
           "id": "GPoint2",
           "type": "method",
-          "text": "Si et al. (2024) conducted human evaluation of idea generation by LLMs.",
-          "importance": 2,
+          "text": "Si et al. (2024) conducted comprehensive human evaluation of idea generation by LLMs.",
+          "importance": 1,
           "topic_id": "GTopic1",
-          "citations": []
+          "citations": [
+            "arxiv:2409.04109"
+          ]
         },
         {
           "id": "GPoint3",
           "type": "method",
-          "text": "Wang et al. (2024b) used LLMs to automatically write survey papers.",
+          "text": "Wang et al. (2024b) proposed LLMs for automatic survey paper writing.",
           "importance": 2,
           "topic_id": "GTopic1",
-          "citations": []
+          "citations": [
+            "arxiv:2406.10252"
+          ]
         },
         {
           "id": "GPoint4",
           "type": "method",
-          "text": "Huang et al. (2024) introduced a benchmark for evaluating LLMs in coding solutions for ML problems.",
+          "text": "Huang et al. (2024) introduced a benchmark for evaluating LLMs in coding ML problems.",
           "importance": 2,
           "topic_id": "GTopic1",
-          "citations": []
+          "citations": [
+            "huang-2024"
+          ]
         },
         {
           "id": "GPoint5",
           "type": "method",
-          "text": "Wang et al. (2023b) proposed LLMs for scientific literature retrieval.",
+          "text": "Wang et al. (2023b) proposed a method for scientific literature retrieval.",
           "importance": 2,
           "topic_id": "GTopic1",
-          "citations": []
+          "citations": [
+            "arxiv:2305.14259"
+          ]
         },
         {
           "id": "GPoint6",
           "type": "method",
-          "text": "AI Scientist project (Lu et al., 2024) introduced a fully automated prompt-driven research pipeline.",
+          "text": "The AI Scientist project (Lu et al., 2024) introduced a fully automated prompt-driven research pipeline.",
           "importance": 2,
           "topic_id": "GTopic1",
           "citations": [
@@ -2384,36 +2414,44 @@
         {
           "id": "GPoint7",
           "type": "limitation",
-          "text": "Prompt-based methods often fail to generate ideas that are both diverse and practical.",
-          "importance": 3,
+          "text": "Prompt-based methods fail to generate ideas that are both diverse and practical.",
+          "importance": 1,
           "topic_id": "GTopic1",
-          "citations": []
+          "citations": [
+            "arxiv:2404.07738",
+            "arxiv:2309.02726",
+            "arxiv:2409.04109",
+            "arxiv:2406.10252",
+            "huang-2024",
+            "arxiv:2305.14259",
+            "arxiv:2408.06292"
+          ]
         },
         {
           "id": "GPoint8",
-          "type": "method",
-          "text": "The authors developed an iterative self-rewarding framework to refine ideas, enhancing diversity and practicality.",
+          "type": "gap",
+          "text": "Need for a framework that enhances diversity and practicality in research proposal generation.",
           "importance": 1,
           "topic_id": "GTopic1",
           "citations": []
         },
         {
           "id": "GPoint9",
-          "type": "topic",
-          "text": "AI-assisted scientific discovery has a long history (Langley, 1987; 2024).",
+          "type": "method",
+          "text": "Iterative self-rewarding framework enables LLM to refine ideas continuously.",
           "importance": 2,
-          "topic_id": "GTopic2",
-          "citations": [
-            "langley-1987"
-          ]
+          "topic_id": "GTopic1",
+          "citations": []
         },
         {
           "id": "GPoint10",
           "type": "topic",
-          "text": "AI has been applied in chemistry, synthetic biology, material discovery, and mathematics.",
-          "importance": 2,
+          "text": "AI-assisted scientific discovery has a long tradition across domains (chemistry, biology, materials, math).",
+          "importance": 3,
           "topic_id": "GTopic2",
           "citations": [
+            "langley-1987",
+            "langley-2024",
             "buchanan-1981",
             "jumper-2021",
             "hayes-2024",
@@ -2424,9 +2462,9 @@
         },
         {
           "id": "GPoint11",
-          "type": "topic",
-          "text": "With neural networks, researchers have focused on AI4Science.",
-          "importance": 2,
+          "type": "comparison",
+          "text": "With neural networks, more researchers focus on AI4Science.",
+          "importance": 3,
           "topic_id": "GTopic2",
           "citations": [
             "lecun-2015",
@@ -2438,7 +2476,7 @@
         {
           "id": "GPoint12",
           "type": "limitation",
-          "text": "AI is mainly used for data analysis within a single domain, playing a passive role without driving discovery.",
+          "text": "AI is mainly used for passive data analysis within a single domain.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": []
@@ -2446,23 +2484,23 @@
         {
           "id": "GPoint13",
           "type": "gap",
-          "text": "The key challenge is enabling AI to go beyond analysis and actively contribute to generating new research ideas.",
-          "importance": 3,
+          "text": "Key challenge is enabling AI to actively generate new research ideas with advanced reasoning and creativity.",
+          "importance": 1,
           "topic_id": "GTopic2",
           "citations": []
         },
         {
           "id": "GPoint14",
-          "type": "method",
-          "text": "This work aims to shift AI from a supporting tool to a leader in scientific discovery.",
-          "importance": 1,
+          "type": "comparison",
+          "text": "The work aims to shift AI from supporting tool to leader in scientific discovery.",
+          "importance": 2,
           "topic_id": "GTopic2",
           "citations": []
         },
         {
           "id": "GPoint15",
           "type": "topic",
-          "text": "AI tools are used in scientific publishing for summarizing content, detecting inaccuracies, and identifying fairness disparities.",
+          "text": "AI tools are used in scientific publishing for summarizing, detecting inaccuracies, and identifying fairness disparities.",
           "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
@@ -2478,27 +2516,39 @@
         {
           "id": "GPoint16",
           "type": "method",
-          "text": "Hosseini & Horbach (2023) and Robertson (2023) conducted small-scale experiments evaluating ChatGPT and GPT-4 in peer review.",
+          "text": "Hosseini & Horbach (2023) conducted small-scale qualitative experiments on ChatGPT's peer review effectiveness.",
           "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
-            "horbach-2023",
-            "arxiv:2307.05492"
+            "horbach-2023"
           ]
         },
         {
           "id": "GPoint17",
           "type": "method",
-          "text": "Lu et al. (2024) and Tyser et al. (2024) used GPT-4 to evaluate full-text PDFs of scientific papers.",
+          "text": "Robertson (2023) assessed GPT-4's benefits in peer review with 10 participants.",
           "importance": 2,
           "topic_id": "GTopic3",
-          "citations": []
+          "citations": [
+            "arxiv:2307.05492"
+          ]
         },
         {
           "id": "GPoint18",
+          "type": "method",
+          "text": "Lu et al. (2024) and Tyser et al. (2024) used GPT-4 to evaluate full-text PDFs of scientific papers.",
+          "importance": 2,
+          "topic_id": "GTopic3",
+          "citations": [
+            "arxiv:2408.06292",
+            "arxiv:2408.10365"
+          ]
+        },
+        {
+          "id": "GPoint19",
           "type": "comparison",
-          "text": "When LLMs act as judges, even advanced models like GPT-4 and Gemini lag behind reward models trained for the task (RewardBench).",
-          "importance": 3,
+          "text": "Even advanced LLMs like GPT-4 and Gemini lag behind reward models trained for evaluation tasks.",
+          "importance": 1,
           "topic_id": "GTopic3",
           "citations": [
             "arxiv:2303.08774",
@@ -2507,157 +2557,106 @@
           ]
         },
         {
-          "id": "GPoint19",
+          "id": "GPoint20",
           "type": "gap",
-          "text": "The gap highlights the challenge of achieving human-level judgment and reasoning in AI-driven peer reviews.",
-          "importance": 3,
+          "text": "Achieving human-level judgment and reasoning in AI-driven peer reviews remains a challenge.",
+          "importance": 1,
           "topic_id": "GTopic3",
-          "citations": []
+          "citations": [
+            "arxiv:2403.13787"
+          ]
         },
         {
-          "id": "GPoint20",
+          "id": "GPoint21",
           "type": "method",
-          "text": "The authors train a Generative Reward Model to simulate comprehensive peer review.",
-          "importance": 1,
+          "text": "Train a Generative Reward Model (Zhang et al., 2024) to simulate comprehensive peer review.",
+          "importance": 2,
           "topic_id": "GTopic3",
           "citations": [
             "arxiv:2408.15240"
           ]
         },
         {
-          "id": "GPoint21",
+          "id": "GPoint22",
           "type": "method",
-          "text": "CycleReviewer simulates reviewers with varying perspectives and a primary reviewer consolidates final decision.",
-          "importance": 1,
+          "text": "CycleReviewer simulates reviewers with varying perspectives, documenting summaries, strengths, weaknesses, and consolidates final decision.",
+          "importance": 2,
           "topic_id": "GTopic3",
-          "citations": []
+          "citations": [
+            "arxiv:2408.15240"
+          ]
         }
       ],
       "key_references": [
         {
+          "reference_key": "arxiv:2409.04109",
+          "importance": 1,
+          "reason": "Comprehensive human evaluation of idea generation by LLMs, directly relevant to evaluating LLM creativity."
+        },
+        {
+          "reference_key": "arxiv:2403.13787",
+          "importance": 1,
+          "reason": "RewardBench shows that even top LLMs lag behind trained reward models, highlighting a key gap in automated evaluation."
+        },
+        {
+          "reference_key": "arxiv:2408.15240",
+          "importance": 2,
+          "reason": "Generative Reward Model used as core method for peer review simulation, key to the paper's contribution."
+        },
+        {
+          "reference_key": "arxiv:2303.08774",
+          "importance": 2,
+          "reason": "GPT-4 technical report, used as baseline in comparisons of LLM judges."
+        },
+        {
+          "reference_key": "arxiv:2403.05530",
+          "importance": 2,
+          "reason": "Gemini 1.5 technical report, used as baseline in comparisons of LLM judges."
+        },
+        {
           "reference_key": "arxiv:2404.07738",
           "importance": 2,
-          "reason": "Multi-agent collaborative writing for idea generation."
+          "reason": "Multi-agent collaborative writing for idea generation, representative of creative LLM applications."
         },
         {
           "reference_key": "arxiv:2309.02726",
           "importance": 2,
-          "reason": "Multi-module retrieval for idea generation."
+          "reason": "Multi-module retrieval for idea generation, representative of creative LLM applications."
+        },
+        {
+          "reference_key": "arxiv:2406.10252",
+          "importance": 2,
+          "reason": "LLMs for automatic survey writing, relevant to automated research tasks."
+        },
+        {
+          "reference_key": "huang-2024",
+          "importance": 2,
+          "reason": "Benchmark for evaluating LLMs in ML coding, relevant to automating the research process."
+        },
+        {
+          "reference_key": "arxiv:2305.14259",
+          "importance": 2,
+          "reason": "Method for scientific literature retrieval using LLMs, relevant to automation."
         },
         {
           "reference_key": "arxiv:2408.06292",
           "importance": 2,
-          "reason": "Fully automated prompt-driven research pipeline."
+          "reason": "AI Scientist project exemplifying fully automated prompt-driven research pipeline."
         },
         {
-          "reference_key": "langley-1987",
-          "importance": 3,
-          "reason": "Historical work on AI-assisted scientific discovery."
-        },
-        {
-          "reference_key": "buchanan-1981",
-          "importance": 3,
-          "reason": "Early AI application in chemistry."
-        },
-        {
-          "reference_key": "jumper-2021",
+          "reference_key": "arxiv:2408.10365",
           "importance": 2,
-          "reason": "AlphaFold for synthetic biology."
+          "reason": "Evaluation of GPT-4 on full-text PDFs, relevant to automated peer review."
         },
         {
-          "reference_key": "hayes-2024",
+          "reference_key": "horbach-2023",
           "importance": 3,
-          "reason": "Evolution simulation with language models."
-        },
-        {
-          "reference_key": "pyzer-knapp-2022",
-          "importance": 3,
-          "reason": "Accelerating materials discovery."
-        },
-        {
-          "reference_key": "merchant-2023",
-          "importance": 3,
-          "reason": "Deep learning for materials discovery."
-        },
-        {
-          "reference_key": "romera-paredes-2024",
-          "importance": 3,
-          "reason": "AI for mathematics."
-        },
-        {
-          "reference_key": "lecun-2015",
-          "importance": 3,
-          "reason": "Overview of deep learning."
-        },
-        {
-          "reference_key": "li-2024",
-          "importance": 3,
-          "reason": "AI4R paradigm."
-        },
-        {
-          "reference_key": "arxiv:2310.18852",
-          "importance": 3,
-          "reason": "AI for Open Science."
-        },
-        {
-          "reference_key": "bao-2021",
-          "importance": 3,
-          "reason": "Predicting paper acceptance."
-        },
-        {
-          "reference_key": "arxiv:2306.00622",
-          "importance": 3,
-          "reason": "ReviewerGPT study."
-        },
-        {
-          "reference_key": "liang-2024",
-          "importance": 3,
-          "reason": "LLM feedback on papers."
-        },
-        {
-          "reference_key": "arxiv:1706.03946",
-          "importance": 3,
-          "reason": "Summarization of scientific papers."
-        },
-        {
-          "reference_key": "nuijten-2016",
-          "importance": 3,
-          "reason": "Detection of inaccuracies."
-        },
-        {
-          "reference_key": "arxiv:2211.06398",
-          "importance": 3,
-          "reason": "Fairness disparities in peer review."
-        },
-        {
-          "reference_key": "hosseini-2023",
-          "importance": 2,
-          "reason": "Evaluating ChatGPT in peer review."
+          "reason": "Small-scale ChatGPT peer review experiment, provides early evidence."
         },
         {
           "reference_key": "arxiv:2307.05492",
-          "importance": 2,
-          "reason": "GPT-4 assistance for peer review."
-        },
-        {
-          "reference_key": "arxiv:2303.08774",
           "importance": 3,
-          "reason": "GPT-4 technical report."
-        },
-        {
-          "reference_key": "arxiv:2403.05530",
-          "importance": 3,
-          "reason": "Gemini model."
-        },
-        {
-          "reference_key": "arxiv:2403.13787",
-          "importance": 3,
-          "reason": "RewardBench evaluation."
-        },
-        {
-          "reference_key": "arxiv:2408.15240",
-          "importance": 1,
-          "reason": "Generative Reward Model for peer review."
+          "reason": "Small-scale GPT-4 peer review assistance study, provides early evidence."
         }
       ]
     },
@@ -2666,7 +2665,7 @@
         {
           "id": "STopic1",
           "label": "LLMs for Research and Scientific Discovery",
-          "summary": "Recent advances in large language models have led to automated scientific discovery pipelines, multi-agent frameworks, automated survey generation, research ideation, and benchmarks that reveal gaps in planning and generalization.",
+          "summary": "This topic covers recent advances in using large language models to automate scientific research, including fully automated pipelines, multi-agent frameworks, automated survey generation, benchmarks, idea generation, and iterative self-improvement mechanisms.",
           "paragraph_ids": [
             "S1"
           ],
@@ -2683,7 +2682,7 @@
         {
           "id": "STopic2",
           "label": "AI for Science and Autonomous Discovery",
-          "summary": "AI has evolved from passive data analysis to autonomous scientific agents capable of planning, experimentation, and iterative refinement, with a unified framework for agentic science.",
+          "summary": "This topic discusses the evolution of AI from passive analytical tools to autonomous scientific agents capable of planning, experimentation, and iterative refinement, highlighting core capabilities for research agency.",
           "paragraph_ids": [
             "S2"
           ],
@@ -2696,7 +2695,7 @@
         {
           "id": "STopic3",
           "label": "Automated Evaluation of Research Papers and LLM-as-a-Judge",
-          "summary": "AI-based evaluation of research papers includes automated summarization, error detection, and bias analysis; LLM-as-a-Judge paradigms show reliability issues, motivating specialized generative reward models.",
+          "summary": "This topic covers the application of AI to scientific evaluation, including automated peer review, LLM-based judging, structured frameworks, benchmarks, and generative reward models for improved verification.",
           "paragraph_ids": [
             "S3"
           ],
@@ -2714,14 +2713,14 @@
         {
           "id": "SClaim1",
           "paragraph_id": "S1",
-          "text": "**LLMs for Research and Scientific Discovery.** Recent advances in large language models have prompted growing interest in automating scientific research.",
-          "is_factual": false,
+          "text": "Recent advances in large language models have prompted growing interest in automating scientific research.",
+          "is_factual": true,
           "citations": []
         },
         {
           "id": "SClaim2",
           "paragraph_id": "S1",
-          "text": "The AI Scientist introduced a fully automated, prompt-driven pipeline for open-ended machine learning discovery, generating ideas, executing experiments, and writing papers [1].",
+          "text": "The AI Scientist introduced a fully automated, prompt-driven pipeline for open-ended machine learning discovery.",
           "is_factual": true,
           "citations": [
             "arxiv:2408.06292"
@@ -2730,7 +2729,7 @@
         {
           "id": "SClaim3",
           "paragraph_id": "S1",
-          "text": "Building on this direction, multi-agent frameworks have been proposed to coordinate the full research lifecycle through modular collaboration, spanning literature review, experimentation, and peer review [2].",
+          "text": "Multi-agent frameworks have been proposed to coordinate the full research lifecycle through modular collaboration.",
           "is_factual": true,
           "citations": [
             "arxiv:2504.18765"
@@ -2739,147 +2738,155 @@
         {
           "id": "SClaim4",
           "paragraph_id": "S1",
-          "text": "Complementary efforts have explored automated survey generation, where retrieval-augmented pipelines synthesize comprehensive literature reviews from large corpora [3], and multi-agent dialogue designs that improve research ideation through iterative critique and revision loops [4].",
+          "text": "Automated survey generation uses retrieval-augmented pipelines to synthesize comprehensive literature reviews.",
           "is_factual": true,
           "citations": [
-            "arxiv:2406.10252",
-            "arxiv:2507.08350"
+            "arxiv:2406.10252"
           ]
         },
         {
           "id": "SClaim5",
           "paragraph_id": "S1",
-          "text": "Benchmarks such as MLAgentBench evaluate language agents on machine learning experimentation tasks, revealing gaps in long-horizon planning and generalization to novel research settings [5].",
+          "text": "Multi-agent dialogue designs improve research ideation through iterative critique and revision loops.",
+          "is_factual": true,
+          "citations": [
+            "arxiv:2507.08350"
+          ]
+        },
+        {
+          "id": "SClaim6",
+          "paragraph_id": "S1",
+          "text": "MLAgentBench evaluates language agents on ML experimentation tasks, revealing gaps in long-horizon planning and generalization.",
           "is_factual": true,
           "citations": [
             "arxiv:2310.03302"
           ]
         },
         {
-          "id": "SClaim6",
+          "id": "SClaim7",
           "paragraph_id": "S1",
-          "text": "Other work has examined LLM-driven idea generation through structured profiling and quantitative scoring frameworks [6].",
+          "text": "LLM-driven idea generation has been examined through structured profiling and quantitative scoring frameworks.",
           "is_factual": true,
           "citations": [
             "arxiv:2411.02429"
           ]
         },
         {
-          "id": "SClaim7",
+          "id": "SClaim8",
           "paragraph_id": "S1",
-          "text": "Despite these advances, prompt-based and single-pass methods often struggle to produce ideas that are both diverse and practically grounded, motivating iterative self-improvement mechanisms that continuously refine research outputs through feedback [7].",
+          "text": "Prompt-based and single-pass methods often struggle to produce diverse and practically grounded ideas, motivating iterative self-improvement mechanisms.",
           "is_factual": true,
           "citations": [
             "arxiv:2604.20548"
           ]
         },
         {
-          "id": "SClaim8",
+          "id": "SClaim9",
           "paragraph_id": "S2",
-          "text": "**AI for Science and Autonomous Discovery.** The use of artificial intelligence to accelerate scientific discovery has a long history across chemistry, biology, materials science, and mathematics.",
-          "is_factual": false,
+          "text": "AI has been used to accelerate scientific discovery across chemistry, biology, materials science, and mathematics.",
+          "is_factual": true,
           "citations": []
         },
         {
-          "id": "SClaim9",
+          "id": "SClaim10",
           "paragraph_id": "S2",
-          "text": "Early applications treated AI primarily as a passive analytical tool for data processing within single domains [8].",
+          "text": "Early applications treated AI as a passive analytical tool for data processing within single domains.",
           "is_factual": true,
           "citations": [
             "arxiv:2412.11427"
           ]
         },
         {
-          "id": "SClaim10",
+          "id": "SClaim11",
           "paragraph_id": "S2",
-          "text": "More recent surveys have charted the evolution from task-specific automation toward autonomous scientific agents capable of planning, experimentation, and iterative refinement [9].",
+          "text": "Recent surveys chart the evolution from task-specific automation toward autonomous scientific agents capable of planning, experimentation, and iterative refinement.",
           "is_factual": true,
           "citations": [
             "arxiv:2505.13259"
           ]
         },
         {
-          "id": "SClaim11",
+          "id": "SClaim12",
           "paragraph_id": "S2",
-          "text": "A unified framework for agentic science identifies core capabilities including planning, tool use, memory, and collaboration as essential for full research agency [10].",
+          "text": "A unified framework for agentic science identifies planning, tool use, memory, and collaboration as essential for full research agency.",
           "is_factual": true,
           "citations": [
             "arxiv:2508.14111"
           ]
         },
         {
-          "id": "SClaim12",
-          "paragraph_id": "S2",
-          "text": "These perspectives highlight the broader challenge of shifting AI from a supporting analytical role to an active participant in generating new scientific knowledge, which demands advanced reasoning, creativity, and the ability to operate across the complete discovery loop.",
-          "is_factual": false,
-          "citations": []
-        },
-        {
           "id": "SClaim13",
-          "paragraph_id": "S3",
-          "text": "**Automated Evaluation of Research Papers and LLM-as-a-Judge.** The application of AI to scientific evaluation has attracted significant attention, including automated summarization, error detection, and fairness analysis in peer review.",
-          "is_factual": false,
+          "paragraph_id": "S2",
+          "text": "The broader challenge is shifting AI from a supporting role to an active participant in generating new scientific knowledge, requiring advanced reasoning, creativity, and full discovery loop operation.",
+          "is_factual": true,
           "citations": []
         },
         {
           "id": "SClaim14",
           "paragraph_id": "S3",
-          "text": "Pilot studies have investigated the effectiveness of general-purpose LLMs in assisting peer review, finding that while generated reviews can achieve comparable surface-level helpfulness, they exhibit higher variance and limited sensitivity to subtle content changes [11].",
+          "text": "AI has been applied to scientific evaluation including automated summarization, error detection, and fairness analysis in peer review.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim15",
+          "paragraph_id": "S3",
+          "text": "General-purpose LLMs in peer review can achieve comparable surface-level helpfulness but exhibit higher variance and limited sensitivity to subtle content changes.",
           "is_factual": true,
           "citations": [
             "arxiv:2307.05492"
           ]
         },
         {
-          "id": "SClaim15",
+          "id": "SClaim16",
           "paragraph_id": "S3",
-          "text": "Other work has examined whether ChatGPT can evaluate research quality according to established academic criteria, revealing weak individual correlation with expert judgments and limitations in fine-grained assessment [12].",
+          "text": "ChatGPT's evaluation of research quality shows weak individual correlation with expert judgments and limitations in fine-grained assessment.",
           "is_factual": true,
           "citations": [
             "arxiv:2402.05519"
           ]
         },
         {
-          "id": "SClaim16",
+          "id": "SClaim17",
           "paragraph_id": "S3",
-          "text": "Systematic efforts to standardize and evaluate automated reviewing have introduced structured frameworks for generating constructive feedback and measuring content consistency [13].",
+          "text": "Structured frameworks for automated reviewing have been introduced to generate constructive feedback and measure content consistency.",
           "is_factual": true,
           "citations": [
             "arxiv:2407.12857"
           ]
         },
         {
-          "id": "SClaim17",
+          "id": "SClaim18",
           "paragraph_id": "S3",
-          "text": "The broader LLM-as-a-Judge paradigm has been formalized through taxonomies of evaluation scope, reasoning mechanism, and reliability challenges such as consistency and bias [14].",
+          "text": "The LLM-as-a-Judge paradigm is formalized through taxonomies of evaluation scope, reasoning mechanism, and reliability challenges.",
           "is_factual": true,
           "citations": [
             "arxiv:2411.15594"
           ]
         },
         {
-          "id": "SClaim18",
+          "id": "SClaim19",
           "paragraph_id": "S3",
-          "text": "Benchmarks like JudgeBench reveal that even advanced models struggle to distinguish factually correct responses from subtly flawed ones [15].",
+          "text": "JudgeBench reveals that advanced models struggle to distinguish factually correct responses from subtly flawed ones.",
           "is_factual": true,
           "citations": [
             "arxiv:2410.12784"
           ]
         },
         {
-          "id": "SClaim19",
+          "id": "SClaim20",
           "paragraph_id": "S3",
-          "text": "Generative reward models trained via next-token prediction have been proposed as an alternative to discriminative scoring, leveraging chain-of-thought reasoning to improve verification accuracy [16].",
+          "text": "Generative reward models trained via next-token prediction are proposed as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy.",
           "is_factual": true,
           "citations": [
             "arxiv:2408.15240"
           ]
         },
         {
-          "id": "SClaim20",
+          "id": "SClaim21",
           "paragraph_id": "S3",
-          "text": "These developments underscore the difficulty of achieving reliable, human-level judgment in automated evaluation, motivating the development of specialized generative reward models trained specifically for the peer review task.",
-          "is_factual": false,
+          "text": "Achieving reliable human-level judgment in automated evaluation is difficult, motivating specialized generative reward models for peer review.",
+          "is_factual": true,
           "citations": []
         }
       ]
@@ -2889,41 +2896,41 @@
         {
           "gold_point_id": "GPoint1",
           "best_claim_ids": [
-            "SClaim4"
+            "SClaim5"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "Covers multi-agent dialogue and retrieval-augmented pipelines for idea generation but omits reference to multiple studies."
+          "rationale": "SClaim5 covers multi-agent dialogue for research ideation but does not explicitly mention multi-module retrieval."
         },
         {
           "gold_point_id": "GPoint2",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim mentions Si et al. (2024) or human evaluation of idea generation by LLMs."
+          "rationale": "No candidate claim mentions Si et al.'s human evaluation of idea generation."
         },
         {
           "gold_point_id": "GPoint3",
           "best_claim_ids": [
             "SClaim4"
           ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim4 mentions automated survey generation but does not specify Wang et al. (2024b) or LLMs writing survey papers."
+          "match_score": 1.0,
+          "status": "complete",
+          "rationale": "SClaim4 explicitly describes automated survey generation using retrieval-augmented pipelines and cites the same paper."
         },
         {
           "gold_point_id": "GPoint4",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim mentions a benchmark for coding solutions for ML problems as in Huang et al. (2024)."
+          "rationale": "No candidate claim mentions Huang et al.'s benchmark for coding ML problems."
         },
         {
           "gold_point_id": "GPoint5",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim specifically addresses scientific literature retrieval as proposed by Wang et al. (2023b)."
+          "rationale": "No candidate claim describes Wang et al.'s method for scientific literature retrieval."
         },
         {
           "gold_point_id": "GPoint6",
@@ -2932,136 +2939,141 @@
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim2 directly describes the AI Scientist project with a fully automated pipeline, matching the gold point exactly."
+          "rationale": "SClaim2 directly states that the AI Scientist introduced a fully automated, prompt-driven pipeline and cites the same paper."
         },
         {
           "gold_point_id": "GPoint7",
           "best_claim_ids": [
-            "SClaim7"
+            "SClaim8"
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim7 states that prompt-based methods struggle to produce diverse and practical ideas, mirroring the gold point."
+          "rationale": "SClaim8 explicitly states that prompt-based methods struggle to produce diverse and practical ideas."
         },
         {
           "gold_point_id": "GPoint8",
           "best_claim_ids": [
-            "SClaim7"
+            "SClaim8"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "SClaim7 mentions iterative self-improvement mechanisms but does not specify a self-rewarding framework."
+          "rationale": "SClaim8 mentions the struggle and motivation for iterative self-improvement, implying a framework need, but does not explicitly state the need for a framework."
         },
         {
           "gold_point_id": "GPoint9",
           "best_claim_ids": [
-            "SClaim8"
+            "SClaim5"
           ],
-          "match_score": 1.0,
-          "status": "complete",
-          "rationale": "SClaim8 states that AI has a long history in scientific discovery across domains, covering the topic of GPoint9."
+          "match_score": 0.5,
+          "status": "partial",
+          "rationale": "SClaim5 describes iterative critique and revision loops but does not mention a self-rewarding mechanism."
         },
         {
           "gold_point_id": "GPoint10",
           "best_claim_ids": [
-            "SClaim8"
+            "SClaim9"
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim8 enumerates the same application domains (chemistry, biology, materials science, mathematics) as the gold point."
+          "rationale": "SClaim9 directly lists the same domains (chemistry, biology, materials science, mathematics) where AI has been used."
         },
         {
           "gold_point_id": "GPoint11",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim mentions neural networks or AI4Science specifically."
+          "rationale": "No candidate claim mentions the shift to AI4Science driven by neural networks."
         },
         {
           "gold_point_id": "GPoint12",
           "best_claim_ids": [
-            "SClaim9"
+            "SClaim10"
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim9 matches the description of AI as a passive analytical tool for data processing within single domains."
+          "rationale": "SClaim10 explicitly states that early applications treated AI as a passive analytical tool for data processing within single domains."
         },
         {
           "gold_point_id": "GPoint13",
-          "best_claim_ids": [
-            "SClaim12"
-          ],
-          "match_score": 1.0,
-          "status": "complete",
-          "rationale": "SClaim12 identifies the challenge of shifting AI from analysis to active generation of ideas, aligning with the gold point."
-        },
-        {
-          "gold_point_id": "GPoint14",
-          "best_claim_ids": [
-            "SClaim12"
-          ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim12 describes shifting AI to an active participant but lacks the emphasis on AI as a 'leader' in scientific discovery."
-        },
-        {
-          "gold_point_id": "GPoint15",
           "best_claim_ids": [
             "SClaim13"
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim13 explicitly mentions automated summarization, error detection, and fairness analysis in peer review, covering the uses listed in GPoint15."
+          "rationale": "SClaim13 directly states the challenge of enabling AI to actively generate new scientific knowledge with advanced reasoning and creativity."
         },
         {
-          "gold_point_id": "GPoint16",
+          "gold_point_id": "GPoint14",
+          "best_claim_ids": [
+            "SClaim13"
+          ],
+          "match_score": 1.0,
+          "status": "complete",
+          "rationale": "SClaim13 describes shifting AI from supporting role to active participant, which aligns with the aim to make AI a leader in discovery."
+        },
+        {
+          "gold_point_id": "GPoint15",
           "best_claim_ids": [
             "SClaim14"
           ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim14 discusses pilot studies of LLMs in peer review but does not name Hosseini & Horbach (2023) or Robertson (2023)."
+          "match_score": 1.0,
+          "status": "complete",
+          "rationale": "SClaim14 explicitly covers AI applications in scientific evaluation including summarization, error detection, and fairness analysis."
         },
         {
-          "gold_point_id": "GPoint17",
+          "gold_point_id": "GPoint16",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim refers to using GPT-4 to evaluate full-text PDFs as done by Lu et al. (2024) and Tyser et al. (2024)."
+          "rationale": "No candidate claim mentions Hosseini & Horbach's experiments on ChatGPT peer review."
+        },
+        {
+          "gold_point_id": "GPoint17",
+          "best_claim_ids": [
+            "SClaim15"
+          ],
+          "match_score": 1.0,
+          "status": "complete",
+          "rationale": "SClaim15 describes findings about GPT-4's peer review performance and cites the same paper by Robertson, covering the assessment."
         },
         {
           "gold_point_id": "GPoint18",
-          "best_claim_ids": [
-            "SClaim18"
-          ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim18 mentions that advanced models struggle as judges, but does not compare them to reward models or reference RewardBench."
+          "best_claim_ids": [],
+          "match_score": 0.0,
+          "status": "missing",
+          "rationale": "No candidate claim mentions Lu et al. or Tyser et al.'s work on evaluating full-text PDFs with GPT-4."
         },
         {
           "gold_point_id": "GPoint19",
+          "best_claim_ids": [],
+          "match_score": 0.0,
+          "status": "missing",
+          "rationale": "No candidate claim compares GPT-4 and Gemini to reward models in evaluation tasks."
+        },
+        {
+          "gold_point_id": "GPoint20",
+          "best_claim_ids": [
+            "SClaim21"
+          ],
+          "match_score": 1.0,
+          "status": "complete",
+          "rationale": "SClaim21 directly states the difficulty of achieving human-level judgment and motivates specialized generative reward models."
+        },
+        {
+          "gold_point_id": "GPoint21",
           "best_claim_ids": [
             "SClaim20"
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim20 explicitly discusses the challenge of achieving human-level judgment in automated evaluation, matching GPoint19."
+          "rationale": "SClaim20 describes training generative reward models for verification and cites the same paper."
         },
         {
-          "gold_point_id": "GPoint20",
-          "best_claim_ids": [
-            "SClaim20"
-          ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim20 mentions specialized generative reward models for peer review but does not state that the authors train one."
-        },
-        {
-          "gold_point_id": "GPoint21",
+          "gold_point_id": "GPoint22",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No claim mentions CycleReviewer or simulates multiple reviewer perspectives."
+          "rationale": "No candidate claim mentions CycleReviewer or its features."
         }
       ]
     },
@@ -3069,103 +3081,108 @@
       "claim_judgments": [
         {
           "claim_id": "SClaim1",
-          "relevance_score": 1.0,
-          "rationale": "General introduction to LLMs for research and scientific discovery, directly relevant to ground truth topics Topic1 and Topic2."
+          "relevance_score": 0.5,
+          "rationale": "General claim about growing interest in automating scientific research, sets context but does not directly overlap with any specific ground truth point."
         },
         {
           "claim_id": "SClaim2",
           "relevance_score": 1.0,
-          "rationale": "Specifically matches ground truth point GPoint6: AI Scientist project."
+          "rationale": "Directly matches GPoint6 about the AI Scientist project and its automated pipeline."
         },
         {
           "claim_id": "SClaim3",
-          "relevance_score": 1.0,
-          "rationale": "Discusses multi-agent frameworks for full research lifecycle, relevant to GPoint1 and general theme of automation in research."
+          "relevance_score": 0.5,
+          "rationale": "Relates to GPoint1 on multi-agent frameworks but is more general about the full research lifecycle rather than specifically idea generation."
         },
         {
           "claim_id": "SClaim4",
           "relevance_score": 1.0,
-          "rationale": "Covers automated survey generation (GPoint3) and multi-agent ideation (GPoint1)."
+          "rationale": "Directly matches GPoint3 about automated survey generation using retrieval-augmented pipelines."
         },
         {
           "claim_id": "SClaim5",
-          "relevance_score": 0.5,
-          "rationale": "References a benchmark for ML experimentation tasks, partially related to GPoint4 (benchmark for coding solutions) but not a direct match."
+          "relevance_score": 1.0,
+          "rationale": "Matches GPoint1 on multi-agent dialogue improving research ideation and GPoint9 on iterative refinement."
         },
         {
           "claim_id": "SClaim6",
-          "relevance_score": 1.0,
-          "rationale": "Focuses on LLM-driven idea generation and benchmarking, directly relevant to GPoint1 and GPoint2."
+          "relevance_score": 0.0,
+          "rationale": "MLAgentBench is not mentioned in the ground truth; no direct or indirect relevance to any key point."
         },
         {
           "claim_id": "SClaim7",
-          "relevance_score": 1.0,
-          "rationale": "States limitation of prompt-based methods (GPoint7) and motivates iterative self-improvement (GPoint8)."
+          "relevance_score": 0.5,
+          "rationale": "Relates to evaluation of LLM-driven idea generation, which is a theme in ground truth (e.g., GPoint2, GPoint7), but no specific ground truth point covers IdeaBench or structured profiling."
         },
         {
           "claim_id": "SClaim8",
           "relevance_score": 1.0,
-          "rationale": "Broad claim about AI history across domains, matches GPoint9 and GPoint10."
+          "rationale": "Directly matches GPoint7 on limitations of prompt-based methods and GPoint9 on iterative self-improvement."
         },
         {
           "claim_id": "SClaim9",
           "relevance_score": 1.0,
-          "rationale": "Directly matches GPoint12: AI as passive analytical tool in single domains."
+          "rationale": "Matches GPoint10 about AI-assisted scientific discovery across chemistry, biology, materials, and mathematics."
         },
         {
           "claim_id": "SClaim10",
           "relevance_score": 1.0,
-          "rationale": "Discusses evolution to autonomous agents, aligns with GPoint13 and GPoint14."
+          "rationale": "Matches GPoint12 about AI mainly used for passive data analysis within a single domain."
         },
         {
           "claim_id": "SClaim11",
-          "relevance_score": 1.0,
-          "rationale": "Introduces framework for agentic science, directly relevant to Topic2's themes of autonomy and discovery."
+          "relevance_score": 0.5,
+          "rationale": "Relates to evolution toward autonomous agents (GPoint11, GPoint14) but is a general survey claim without matching a specific ground truth point."
         },
         {
           "claim_id": "SClaim12",
-          "relevance_score": 1.0,
-          "rationale": "Summarizes challenge of shifting AI role, directly relevant to GPoint13 and GPoint14."
+          "relevance_score": 0.0,
+          "rationale": "Specific unified framework not referenced in ground truth; no direct relevance to any key point."
         },
         {
           "claim_id": "SClaim13",
           "relevance_score": 1.0,
-          "rationale": "Introduces automated evaluation topic, matches GPoint15 and general theme of Topic3."
+          "rationale": "Matches GPoint13 on the challenge of enabling active AI idea generation and GPoint14 on shifting AI to a leading role."
         },
         {
           "claim_id": "SClaim14",
           "relevance_score": 1.0,
-          "rationale": "Describes pilot study with GPT-4, directly matches GPoint16."
+          "rationale": "Matches GPoint15 on AI tools for summarization, error detection, and fairness analysis in scientific publishing."
         },
         {
           "claim_id": "SClaim15",
-          "relevance_score": 1.0,
-          "rationale": "Examines ChatGPT for research quality evaluation, relevant to GPoint16 and limitations of LLM judges."
+          "relevance_score": 0.5,
+          "rationale": "Relates to limitations of general-purpose LLMs in peer review (GPoint19, GPoint20) but is not a direct match to any specific ground truth point."
         },
         {
           "claim_id": "SClaim16",
           "relevance_score": 0.5,
-          "rationale": "Describes a framework for automated reviewing, relevant to Topic3 but not explicitly listed in ground truth points."
+          "rationale": "Concerns ChatGPT's evaluation quality, tangentially related to GPoint20 on achieving human-level judgment, but no direct match in ground truth."
         },
         {
           "claim_id": "SClaim17",
-          "relevance_score": 1.0,
-          "rationale": "Formalizes LLM-as-a-Judge paradigm, directly relevant to GPoint18 and Topic3."
+          "relevance_score": 0.0,
+          "rationale": "General claim about structured frameworks for automated reviewing; ground truth does not include such a generic point."
         },
         {
           "claim_id": "SClaim18",
-          "relevance_score": 1.0,
-          "rationale": "References JudgeBench, matches GPoint18 about limitations of advanced LLM judges."
+          "relevance_score": 0.0,
+          "rationale": "LLM-as-a-Judge taxonomy not present in ground truth; no direct relevance to the listed methods or gaps."
         },
         {
           "claim_id": "SClaim19",
-          "relevance_score": 1.0,
-          "rationale": "Proposes generative reward models, directly matches GPoint20."
+          "relevance_score": 0.0,
+          "rationale": "JudgeBench benchmark not referenced in ground truth; irrelevant to the provided key points."
         },
         {
           "claim_id": "SClaim20",
           "relevance_score": 1.0,
-          "rationale": "Concludes with challenge of human-level judgment, matches GPoint19 and motivation for GPoint20."
+          "rationale": "Directly matches GPoint21 about training a Generative Reward Model for peer review via next-token prediction."
+        },
+        {
+          "claim_id": "SClaim21",
+          "relevance_score": 1.0,
+          "rationale": "Matches GPoint20 on the challenge of achieving human-level judgment in automated peer review."
         }
       ]
     },
@@ -3176,82 +3193,79 @@
           "s_topic_ids": [
             "STopic1"
           ],
-          "match_score": 9.0,
-          "rationale": "STopic1 directly covers LLMs for research tasks as in GTopic1, including automated survey generation, research ideation, and multi-agent frameworks. The overlap in topics is strong."
+          "match_score": 8,
+          "rationale": "STopic1 covers LLMs for research with idea generation, surveys, and iterative self-improvement, aligning closely with GTopic1's focus on LLMs in creative research tasks."
         },
         {
           "g_topic_id": "GTopic2",
           "s_topic_ids": [
-            "STopic1",
             "STopic2"
           ],
-          "match_score": 8.0,
-          "rationale": "GTopic2's theme of AI in scientific discovery and active idea generation is partially captured by STopic1's reference to automated scientific discovery pipelines, and more specifically by STopic2's focus on autonomous scientific agents with planning and iterative refinement. The pair provides good but not perfect coverage."
+          "match_score": 6,
+          "rationale": "STopic2 discusses the evolution of AI to autonomous scientific agents, which thematically matches GTopic2's emphasis on AI for science discovery. However, STopic2 lacks the historical depth and broader citation coverage of GTopic2."
         },
         {
           "g_topic_id": "GTopic3",
           "s_topic_ids": [
             "STopic3"
           ],
-          "match_score": 10.0,
-          "rationale": "STopic3 closely matches GTopic3, covering automated evaluation of research papers, LLM-as-a-Judge paradigms, and the motivation for generative reward models. The alignment is nearly exact."
+          "match_score": 9,
+          "rationale": "STopic3 explicitly covers automated evaluation of research papers and LLM-as-a-judge, directly matching GTopic3's focus on AI tools in peer review and generative reward models."
         }
       ],
       "paragraph_scores": [
         {
           "paragraph_id": "S1",
-          "topic_purity": 6.0,
-          "topic_coherence": 8.0,
-          "citation_topic_consistency": 8.0,
+          "topic_purity": 7,
+          "topic_coherence": 8,
+          "citation_topic_consistency": 8,
           "issues": [
-            "Combines content from two gold topics (LLMs for Research and Science Discovery), reducing purity."
+            "Combines aspects of GTopic1 and GTopic2, which reduces purity; some citations (e.g., arxiv:2310.03302) are not present in any gold topic, but are topically relevant."
           ]
         },
         {
           "paragraph_id": "S2",
-          "topic_purity": 9.0,
-          "topic_coherence": 9.0,
-          "citation_topic_consistency": 9.0,
+          "topic_purity": 9,
+          "topic_coherence": 8,
+          "citation_topic_consistency": 7,
           "issues": [
-            "None"
+            "Citations are very recent and do not cover the historical AI discovery works (e.g., Langley, Buchanan) emphasized in GTopic2."
           ]
         },
         {
           "paragraph_id": "S3",
-          "topic_purity": 9.0,
-          "topic_coherence": 8.0,
-          "citation_topic_consistency": 8.0,
-          "issues": [
-            "Minor: includes some citations that are tangentially related to evaluation (e.g., bias analysis), but overall consistent."
-          ]
+          "topic_purity": 10,
+          "topic_coherence": 9,
+          "citation_topic_consistency": 9,
+          "issues": []
         }
       ],
       "topic_granularity": {
-        "score": 6.5,
-        "rationale": "Candidate topics are broader than gold topics; STopic1 merges GTopic1 and GTopic2 into one paragraph, losing the distinction between LLMs for research tasks and the broader AI-for-science paradigm. STopic2 and STopic3 align more finely, but the overall granularity is coarser than the gold standard."
+        "score": 7,
+        "rationale": "Candidate has three topics, matching gold count, but STopic1 overlaps with STopic2 by including 'Scientific Discovery' in its label, and STopic2 is narrower (autonomous agents) compared to GTopic2's broader historical context. Granularity is reasonable but has some overlap and imbalance."
       },
       "topic_ordering": {
-        "score": 8.0,
-        "rationale": "The order of candidate topics flows logically from a combined general view of LLMs in research and science (S1), to a focused treatment of autonomous discovery (S2), and finally to evaluation (S3). This is a sensible progression, though it deviates from the gold ordering that separates research and science explicitly."
+        "score": 9,
+        "rationale": "Candidate ordering (LLM research, AI for science, evaluation) mirrors gold ordering (LLMs for research, AI science discovery, evaluation) and follows a logical progression from broader automation to specific evaluation."
       }
     },
     "synthesis_writing_judgment": {
       "synthesis_quality": {
-        "score": 7.5,
-        "rationale": "The candidate constructs a coherent landscape across three relevant sub-areas (LLMs for research, AI for science, automated evaluation), summarizing key contributions and identifying limitations and gaps. The narrative flows well from advances to challenges, and the gap motivation is present (e.g., need for iterative self-improvement, shifting AI to active role, specialized reward models). However, the synthesis lacks explicit comparative analysis between methods (e.g., performance trade-offs, how one approach improves on another) and misses several gold-standard references (e.g., Si et al. human evaluation, specific benchmark details, historical AI4Science works like Langley 1987). The limitations are acknowledged but could be more precisely tied to specific methodological shortcomings. Overall, good landscape coverage but limited depth of comparison.",
+        "score": 8.0,
+        "rationale": "The candidate effectively covers all three major topics from the gold standard, providing a coherent landscape that includes recent methods (AI Scientist, multi-agent frameworks, automated surveys, benchmarks, LLM-as-a-Judge systems, generative reward models) and identifies key limitations (e.g., prompt methods struggling with diversity/practicality, AI's passive role in science, variance and weak correlation in automated evaluation). The text goes beyond simple paper listing by motivating iterative self-improvement mechanisms and specialized reward models, aligning with the gold gaps. However, explicit methodological comparisons (e.g., contrasting multi-agent vs. single-pass, or LLM judges vs. trained reward models) are mostly implicit and could be strengthened. The gap motivation, while present, is somewhat generic and could be more directly tied to the candidate's own proposed framework.",
         "issues": [
-          "Lacks explicit comparative analysis between different methods (e.g., comparing performance or suitability).",
-          "Misses several key gold-standard references (e.g., human evaluation study, AlphaFold, earlier AI4Science works).",
-          "Gap motivation is somewhat generic; could be more specific about what existing methods fail to do concretely."
+          "Method comparisons are largely implicit; explicit contrasts between approaches would improve synthesis.",
+          "Gap motivation at paragraph ends is generic rather than specifically pointing to the paper's contribution.",
+          "First and third paragraphs have a somewhat enumerative structure, bordering on paper listing rather than integrated discussion."
         ]
       },
       "writing_quality": {
-        "score": 8.5,
-        "rationale": "The writing maintains a clear academic tone with good sentence flow and logical organization. Paragraphs are well-structured, each focusing on a distinct sub-topic. Terminology is consistent and appropriate (e.g., 'prompt-driven pipeline', 'multi-agent frameworks', 'retrieval-augmented pipelines', 'LLM-as-a-Judge paradigm'). Conciseness is largely achieved, though some sentences are dense with multiple cited concepts. The use of transition phrases ('Building on this direction', 'Complementary efforts', 'These perspectives highlight') effectively guides the reader. Minor issues include occasional lengthy sentences that could be split for clarity, and some introductory phrases (e.g., 'The application of AI to scientific evaluation has attracted significant attention') are slightly verbose.",
+        "score": 8.0,
+        "rationale": "The writing maintains a formal academic tone throughout, with consistent terminology (e.g., 'prompt-driven pipeline', 'multi-agent frameworks', 'generative reward models'). Clarity is high: each paragraph has a clear thematic focus, and sentence flow is generally smooth, with appropriate transitions. However, the first and third paragraphs exhibit a somewhat repetitive syntactic pattern ('The AI Scientist introduced...', 'Building on this direction...', 'Complementary efforts...'), which reduces conciseness and integration. Some sentences are long and could be split for better readability. Terminology is consistent, and the use of citations appears accurate.",
         "issues": [
-          "A few sentences are overly long and could be split for improved readability.",
-          "Some introductory phrases are slightly verbose and could be trimmed.",
-          "No major clarity or terminology issues, but minor redundancy in phrasing across paragraphs."
+          "First and third paragraphs have a repetitive, list-like structure that detracts from narrative flow.",
+          "Several sentences are overly long and could be broken into shorter, more readable units.",
+          "Minor: the transition 'Despite these advances' in the first paragraph feels slightly abrupt; a more connective phrase would improve flow."
         ]
       }
     },
@@ -3264,10 +3278,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The paper 'The AI Scientist' directly describes a fully automated, prompt-driven pipeline for open-ended machine learning discovery that generates ideas, executes experiments, and writes papers, exactly as stated in the claim.",
+          "support_rationale": "The paper 'The AI Scientist' explicitly introduces the first fully automated, prompt-driven pipeline for open-ended machine learning discovery, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The paper 'The AI Scientist' directly describes a fully automated, prompt-driven pipeline for open-ended machine learning discovery that generates ideas, executes experiments, and writes papers, exactly as stated in the claim."
+          "rationale": "The paper 'The AI Scientist' explicitly introduces the first fully automated, prompt-driven pipeline for open-ended machine learning discovery, directly supporting the claim."
         },
         {
           "claim_id": "SClaim3",
@@ -3276,10 +3290,10 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle including literature review, experimentation, and peer review, directly supporting the claim.",
+          "support_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle through modular LLM-powered agents collaborating in structured workflows, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle including literature review, experimentation, and peer review, directly supporting the claim."
+          "rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle through modular LLM-powered agents collaborating in structured workflows, directly supporting the claim."
         },
         {
           "claim_id": "SClaim4",
@@ -3288,70 +3302,70 @@
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "AutoSurvey introduces a retrieval-augmented pipeline for automated survey generation, aligning with the claim's description of automated survey generation.",
+          "support_rationale": "The AutoSurvey paper introduces a retrieval-augmented pipeline (RAG) for automated literature survey generation, matching the claim exactly.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "AutoSurvey introduces a retrieval-augmented pipeline for automated survey generation, aligning with the claim's description of automated survey generation."
+          "rationale": "The AutoSurvey paper introduces a retrieval-augmented pipeline (RAG) for automated literature survey generation, matching the claim exactly."
         },
         {
-          "claim_id": "SClaim4",
+          "claim_id": "SClaim5",
           "reference_key": "arxiv:2507.08350",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The paper studies multi-agent dialogue configurations for research ideation, specifically iterative critique and revision loops, matching the claim.",
+          "support_rationale": "The paper experimentally demonstrates that multi-agent dialogue with iterative critique-revision loops improves research ideation in diversity and feasibility.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The paper studies multi-agent dialogue configurations for research ideation, specifically iterative critique and revision loops, matching the claim."
+          "rationale": "The paper experimentally demonstrates that multi-agent dialogue with iterative critique-revision loops improves research ideation in diversity and feasibility."
         },
         {
-          "claim_id": "SClaim5",
+          "claim_id": "SClaim6",
           "reference_key": "arxiv:2310.03302",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "MLAgentBench evaluates language agents on ML experimentation and identifies gaps in long-horizon planning and generalization to novel settings, as claimed.",
+          "support_rationale": "MLAgentBench evaluates language agents on ML experimentation and finds gaps in long-term planning and generalization, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "MLAgentBench evaluates language agents on ML experimentation and identifies gaps in long-horizon planning and generalization to novel settings, as claimed."
+          "rationale": "MLAgentBench evaluates language agents on ML experimentation and finds gaps in long-term planning and generalization, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim6",
+          "claim_id": "SClaim7",
           "reference_key": "arxiv:2411.02429",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "IdeaBench examines LLM-driven idea generation using structured profiling and quantitative scoring, directly supporting the claim.",
+          "support_rationale": "IdeaBench examines LLM-driven idea generation using domain-specific profiling and a quantitative scoring framework (Insight Score), matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "IdeaBench examines LLM-driven idea generation using structured profiling and quantitative scoring, directly supporting the claim."
+          "rationale": "IdeaBench examines LLM-driven idea generation using domain-specific profiling and a quantitative scoring framework (Insight Score), matching the claim."
         },
         {
-          "claim_id": "SClaim7",
+          "claim_id": "SClaim8",
           "reference_key": "arxiv:2604.20548",
-          "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "The paper proposes a multi-agent iterative search framework for generating diverse and novel research ideas through iterative refinements, matching the claim's description of iterative self-improvement.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "The paper proposes a multi-agent iterative search framework for generating diverse and novel research ideas through iterative refinements, matching the claim's description of iterative self-improvement."
+          "support": "partial",
+          "appropriateness_score": 8.0,
+          "placement_score": 8.0,
+          "topic_consistency_score": 8.0,
+          "support_rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial.",
+          "overclaim_status": "mild",
+          "overclaim_rationale": "The claim attributes a general limitation to prompt-based/single-pass methods based on one paper's comparative results, which may overstate the evidence.",
+          "rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial."
         },
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim10",
           "reference_key": "arxiv:2412.11427",
-          "support": "no",
+          "support": "unknown",
           "appropriateness_score": 2.0,
-          "placement_score": 3.0,
+          "placement_score": 2.0,
           "topic_consistency_score": 3.0,
-          "support_rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+          "support_rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+          "rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
           "retrieval_used": true,
           "retrieved_evidence": [
             {
@@ -3368,105 +3382,105 @@
           "second_pass_used": true
         },
         {
-          "claim_id": "SClaim10",
+          "claim_id": "SClaim11",
           "reference_key": "arxiv:2505.13259",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The survey introduces a taxonomy charting evolution from task-specific automation to autonomous scientific agents, exactly as claimed.",
+          "support_rationale": "The survey introduces a taxonomy from task-specific automation (Level 1) to autonomous scientific agents (Level 3) capable of planning, experimentation, and iterative refinement, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The survey introduces a taxonomy charting evolution from task-specific automation to autonomous scientific agents, exactly as claimed."
+          "rationale": "The survey introduces a taxonomy from task-specific automation (Level 1) to autonomous scientific agents (Level 3) capable of planning, experimentation, and iterative refinement, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim11",
+          "claim_id": "SClaim12",
           "reference_key": "arxiv:2508.14111",
-          "support": "yes",
-          "appropriateness_score": 10.0,
+          "support": "partial",
+          "appropriateness_score": 9.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The survey identifies planning, tool use, memory, collaboration, and optimization as core capabilities for agentic science, directly supporting the claim's list of capabilities.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "The survey identifies planning, tool use, memory, collaboration, and optimization as core capabilities for agentic science, directly supporting the claim's list of capabilities."
+          "support_rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported.",
+          "overclaim_status": "mild",
+          "overclaim_rationale": "The claim omits 'optimization' from the paper's list, slightly misrepresenting the full set of capabilities identified.",
+          "rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported."
         },
         {
-          "claim_id": "SClaim14",
+          "claim_id": "SClaim15",
           "reference_key": "arxiv:2307.05492",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The pilot study finds GPT-4 reviews have comparable helpfulness but higher variance and limited sensitivity to subtle changes, matching the claim.",
+          "support_rationale": "The pilot study shows GPT-4 achieves comparable helpfulness to human reviewers but with higher variance and limited sensitivity to subtle content changes, exactly matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The pilot study finds GPT-4 reviews have comparable helpfulness but higher variance and limited sensitivity to subtle changes, matching the claim."
+          "rationale": "The pilot study shows GPT-4 achieves comparable helpfulness to human reviewers but with higher variance and limited sensitivity to subtle content changes, exactly matching the claim."
         },
         {
-          "claim_id": "SClaim15",
+          "claim_id": "SClaim16",
           "reference_key": "arxiv:2402.05519",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The paper reports weak individual correlation with experts and limitations in fine-grained assessment, exactly as claimed.",
+          "support_rationale": "The research finds weak correlation (r=0.281) between ChatGPT-4 evaluations and expert judgments, along with limitations in fine-grained assessment, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The paper reports weak individual correlation with experts and limitations in fine-grained assessment, exactly as claimed."
+          "rationale": "The research finds weak correlation (r=0.281) between ChatGPT-4 evaluations and expert judgments, along with limitations in fine-grained assessment, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim16",
+          "claim_id": "SClaim17",
           "reference_key": "arxiv:2407.12857",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "SEA provides a structured framework for generating constructive feedback and measuring content consistency, directly supporting the claim.",
+          "support_rationale": "The SEA framework provides a structured approach for automated peer reviewing, generating constructive feedback and quantifying content consistency via a mismatch score, supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "SEA provides a structured framework for generating constructive feedback and measuring content consistency, directly supporting the claim."
+          "rationale": "The SEA framework provides a structured approach for automated peer reviewing, generating constructive feedback and quantifying content consistency via a mismatch score, supporting the claim."
         },
         {
-          "claim_id": "SClaim17",
+          "claim_id": "SClaim18",
           "reference_key": "arxiv:2411.15594",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The survey formalizes LLM-as-a-Judge with taxonomies of evaluation scope, reasoning mechanism, and challenges like consistency and bias, as claimed.",
+          "support_rationale": "The survey formalizes the LLM-as-a-Judge paradigm with taxonomies of evaluation scope, reasoning mechanism, and reliability challenges, directly matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The survey formalizes LLM-as-a-Judge with taxonomies of evaluation scope, reasoning mechanism, and challenges like consistency and bias, as claimed."
+          "rationale": "The survey formalizes the LLM-as-a-Judge paradigm with taxonomies of evaluation scope, reasoning mechanism, and reliability challenges, directly matching the claim."
         },
         {
-          "claim_id": "SClaim18",
+          "claim_id": "SClaim19",
           "reference_key": "arxiv:2410.12784",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "JudgeBench reveals that even advanced models struggle to distinguish correct from subtly incorrect responses, matching the claim.",
+          "support_rationale": "JudgeBench reveals that advanced models like GPT-4o perform only slightly above random at distinguishing factually correct responses from subtly flawed ones, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "JudgeBench reveals that even advanced models struggle to distinguish correct from subtly incorrect responses, matching the claim."
+          "rationale": "JudgeBench reveals that advanced models like GPT-4o perform only slightly above random at distinguishing factually correct responses from subtly flawed ones, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim19",
+          "claim_id": "SClaim20",
           "reference_key": "arxiv:2408.15240",
           "support": "yes",
           "appropriateness_score": 10.0,
           "placement_score": 10.0,
           "topic_consistency_score": 10.0,
-          "support_rationale": "The paper proposes generative reward models trained via next-token prediction with chain-of-thought reasoning to improve verification accuracy, directly supporting the claim.",
+          "support_rationale": "The paper proposes generative reward models trained via next-token prediction as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy, exactly matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The paper proposes generative reward models trained via next-token prediction with chain-of-thought reasoning to improve verification accuracy, directly supporting the claim."
+          "rationale": "The paper proposes generative reward models trained via next-token prediction as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy, exactly matching the claim."
         }
       ],
       "retrieval_events": [
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim10",
           "reference_key": "arxiv:2412.11427",
           "query": "2412.11427",
           "snippet_count": 2,
@@ -3478,7 +3492,7 @@
           "claim_id": "SClaim2",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The paper 'The AI Scientist' directly describes a fully automated, prompt-driven pipeline for open-ended machine learning discovery that generates ideas, executes experiments, and writes papers, exactly as stated in the claim.",
+          "group_rationale": "The paper 'The AI Scientist' explicitly introduces the first fully automated, prompt-driven pipeline for open-ended machine learning discovery, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3490,7 +3504,7 @@
           "claim_id": "SClaim3",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle including literature review, experimentation, and peer review, directly supporting the claim.",
+          "group_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle through modular LLM-powered agents collaborating in structured workflows, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3500,25 +3514,33 @@
         },
         {
           "claim_id": "SClaim4",
-          "citation_count": 2,
+          "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Both components of the claim are fully supported by the cited sources: AutoSurvey covers automated survey generation, and the multi-agent dialogue paper covers iterative critique and revision loops for research ideation.",
-          "covered_aspects": [
-            "automated survey generation via retrieval-augmented pipelines",
-            "multi-agent dialogue designs for research ideation through iterative critique and revision loops"
-          ],
+          "group_rationale": "The AutoSurvey paper introduces a retrieval-augmented pipeline (RAG) for automated literature survey generation, matching the claim exactly.",
+          "covered_aspects": [],
           "missing_aspects": [],
-          "derived_from_single_pair": false,
+          "derived_from_single_pair": true,
           "reference_keys": [
-            "arxiv:2406.10252",
-            "arxiv:2507.08350"
+            "arxiv:2406.10252"
           ]
         },
         {
           "claim_id": "SClaim5",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "MLAgentBench evaluates language agents on ML experimentation and identifies gaps in long-horizon planning and generalization to novel settings, as claimed.",
+          "group_rationale": "The paper experimentally demonstrates that multi-agent dialogue with iterative critique-revision loops improves research ideation in diversity and feasibility.",
+          "covered_aspects": [],
+          "missing_aspects": [],
+          "derived_from_single_pair": true,
+          "reference_keys": [
+            "arxiv:2507.08350"
+          ]
+        },
+        {
+          "claim_id": "SClaim6",
+          "citation_count": 1,
+          "group_support": "yes",
+          "group_rationale": "MLAgentBench evaluates language agents on ML experimentation and finds gaps in long-term planning and generalization, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3527,10 +3549,10 @@
           ]
         },
         {
-          "claim_id": "SClaim6",
+          "claim_id": "SClaim7",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "IdeaBench examines LLM-driven idea generation using structured profiling and quantitative scoring, directly supporting the claim.",
+          "group_rationale": "IdeaBench examines LLM-driven idea generation using domain-specific profiling and a quantitative scoring framework (Insight Score), matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3539,10 +3561,10 @@
           ]
         },
         {
-          "claim_id": "SClaim7",
+          "claim_id": "SClaim8",
           "citation_count": 1,
-          "group_support": "yes",
-          "group_rationale": "The paper proposes a multi-agent iterative search framework for generating diverse and novel research ideas through iterative refinements, matching the claim's description of iterative self-improvement.",
+          "group_support": "partial",
+          "group_rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3551,10 +3573,10 @@
           ]
         },
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim10",
           "citation_count": 1,
-          "group_support": "no",
-          "group_rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+          "group_support": "unknown",
+          "group_rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3563,10 +3585,10 @@
           ]
         },
         {
-          "claim_id": "SClaim10",
+          "claim_id": "SClaim11",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The survey introduces a taxonomy charting evolution from task-specific automation to autonomous scientific agents, exactly as claimed.",
+          "group_rationale": "The survey introduces a taxonomy from task-specific automation (Level 1) to autonomous scientific agents (Level 3) capable of planning, experimentation, and iterative refinement, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3575,10 +3597,10 @@
           ]
         },
         {
-          "claim_id": "SClaim11",
+          "claim_id": "SClaim12",
           "citation_count": 1,
-          "group_support": "yes",
-          "group_rationale": "The survey identifies planning, tool use, memory, collaboration, and optimization as core capabilities for agentic science, directly supporting the claim's list of capabilities.",
+          "group_support": "partial",
+          "group_rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3587,10 +3609,10 @@
           ]
         },
         {
-          "claim_id": "SClaim14",
+          "claim_id": "SClaim15",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The pilot study finds GPT-4 reviews have comparable helpfulness but higher variance and limited sensitivity to subtle changes, matching the claim.",
+          "group_rationale": "The pilot study shows GPT-4 achieves comparable helpfulness to human reviewers but with higher variance and limited sensitivity to subtle content changes, exactly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3599,10 +3621,10 @@
           ]
         },
         {
-          "claim_id": "SClaim15",
+          "claim_id": "SClaim16",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The paper reports weak individual correlation with experts and limitations in fine-grained assessment, exactly as claimed.",
+          "group_rationale": "The research finds weak correlation (r=0.281) between ChatGPT-4 evaluations and expert judgments, along with limitations in fine-grained assessment, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3611,10 +3633,10 @@
           ]
         },
         {
-          "claim_id": "SClaim16",
+          "claim_id": "SClaim17",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "SEA provides a structured framework for generating constructive feedback and measuring content consistency, directly supporting the claim.",
+          "group_rationale": "The SEA framework provides a structured approach for automated peer reviewing, generating constructive feedback and quantifying content consistency via a mismatch score, supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3623,10 +3645,10 @@
           ]
         },
         {
-          "claim_id": "SClaim17",
+          "claim_id": "SClaim18",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The survey formalizes LLM-as-a-Judge with taxonomies of evaluation scope, reasoning mechanism, and challenges like consistency and bias, as claimed.",
+          "group_rationale": "The survey formalizes the LLM-as-a-Judge paradigm with taxonomies of evaluation scope, reasoning mechanism, and reliability challenges, directly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3635,10 +3657,10 @@
           ]
         },
         {
-          "claim_id": "SClaim18",
+          "claim_id": "SClaim19",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "JudgeBench reveals that even advanced models struggle to distinguish correct from subtly incorrect responses, matching the claim.",
+          "group_rationale": "JudgeBench reveals that advanced models like GPT-4o perform only slightly above random at distinguishing factually correct responses from subtly flawed ones, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3647,10 +3669,10 @@
           ]
         },
         {
-          "claim_id": "SClaim19",
+          "claim_id": "SClaim20",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The paper proposes generative reward models trained via next-token prediction with chain-of-thought reasoning to improve verification accuracy, directly supporting the claim.",
+          "group_rationale": "The paper proposes generative reward models trained via next-token prediction as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy, exactly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -3664,77 +3686,67 @@
   "metric_details": {
     "content_coverage": {
       "name": "content_coverage",
-      "score": 5.95,
+      "score": 5.62,
       "details": {
-        "matched_weight": 25.0,
-        "total_weight": 42.0,
+        "matched_weight": 22.5,
+        "total_weight": 40.0,
         "missing_points": [
           {
             "gold_point_id": "GPoint2",
-            "text": "Si et al. (2024) conducted human evaluation of idea generation by LLMs.",
-            "rationale": "No claim mentions Si et al. (2024) or human evaluation of idea generation by LLMs."
+            "text": "Si et al. (2024) conducted comprehensive human evaluation of idea generation by LLMs.",
+            "rationale": "No candidate claim mentions Si et al.'s human evaluation of idea generation."
           },
           {
             "gold_point_id": "GPoint4",
-            "text": "Huang et al. (2024) introduced a benchmark for evaluating LLMs in coding solutions for ML problems.",
-            "rationale": "No claim mentions a benchmark for coding solutions for ML problems as in Huang et al. (2024)."
+            "text": "Huang et al. (2024) introduced a benchmark for evaluating LLMs in coding ML problems.",
+            "rationale": "No candidate claim mentions Huang et al.'s benchmark for coding ML problems."
           },
           {
             "gold_point_id": "GPoint5",
-            "text": "Wang et al. (2023b) proposed LLMs for scientific literature retrieval.",
-            "rationale": "No claim specifically addresses scientific literature retrieval as proposed by Wang et al. (2023b)."
+            "text": "Wang et al. (2023b) proposed a method for scientific literature retrieval.",
+            "rationale": "No candidate claim describes Wang et al.'s method for scientific literature retrieval."
           },
           {
             "gold_point_id": "GPoint11",
-            "text": "With neural networks, researchers have focused on AI4Science.",
-            "rationale": "No claim mentions neural networks or AI4Science specifically."
+            "text": "With neural networks, more researchers focus on AI4Science.",
+            "rationale": "No candidate claim mentions the shift to AI4Science driven by neural networks."
           },
           {
-            "gold_point_id": "GPoint17",
+            "gold_point_id": "GPoint16",
+            "text": "Hosseini & Horbach (2023) conducted small-scale qualitative experiments on ChatGPT's peer review effectiveness.",
+            "rationale": "No candidate claim mentions Hosseini & Horbach's experiments on ChatGPT peer review."
+          },
+          {
+            "gold_point_id": "GPoint18",
             "text": "Lu et al. (2024) and Tyser et al. (2024) used GPT-4 to evaluate full-text PDFs of scientific papers.",
-            "rationale": "No claim refers to using GPT-4 to evaluate full-text PDFs as done by Lu et al. (2024) and Tyser et al. (2024)."
+            "rationale": "No candidate claim mentions Lu et al. or Tyser et al.'s work on evaluating full-text PDFs with GPT-4."
           },
           {
-            "gold_point_id": "GPoint21",
-            "text": "CycleReviewer simulates reviewers with varying perspectives and a primary reviewer consolidates final decision.",
-            "rationale": "No claim mentions CycleReviewer or simulates multiple reviewer perspectives."
+            "gold_point_id": "GPoint19",
+            "text": "Even advanced LLMs like GPT-4 and Gemini lag behind reward models trained for evaluation tasks.",
+            "rationale": "No candidate claim compares GPT-4 and Gemini to reward models in evaluation tasks."
+          },
+          {
+            "gold_point_id": "GPoint22",
+            "text": "CycleReviewer simulates reviewers with varying perspectives, documenting summaries, strengths, weaknesses, and consolidates final decision.",
+            "rationale": "No candidate claim mentions CycleReviewer or its features."
           }
         ],
         "partial_points": [
           {
             "gold_point_id": "GPoint1",
-            "text": "Several studies explore LLMs for creative research tasks like multi-agent collaborative writing and multi-module retrieval to improve idea generation.",
-            "rationale": "Covers multi-agent dialogue and retrieval-augmented pipelines for idea generation but omits reference to multiple studies."
-          },
-          {
-            "gold_point_id": "GPoint3",
-            "text": "Wang et al. (2024b) used LLMs to automatically write survey papers.",
-            "rationale": "SClaim4 mentions automated survey generation but does not specify Wang et al. (2024b) or LLMs writing survey papers."
+            "text": "Multi-agent collaborative writing and multi-module retrieval improve research idea generation.",
+            "rationale": "SClaim5 covers multi-agent dialogue for research ideation but does not explicitly mention multi-module retrieval."
           },
           {
             "gold_point_id": "GPoint8",
-            "text": "The authors developed an iterative self-rewarding framework to refine ideas, enhancing diversity and practicality.",
-            "rationale": "SClaim7 mentions iterative self-improvement mechanisms but does not specify a self-rewarding framework."
+            "text": "Need for a framework that enhances diversity and practicality in research proposal generation.",
+            "rationale": "SClaim8 mentions the struggle and motivation for iterative self-improvement, implying a framework need, but does not explicitly state the need for a framework."
           },
           {
-            "gold_point_id": "GPoint14",
-            "text": "This work aims to shift AI from a supporting tool to a leader in scientific discovery.",
-            "rationale": "SClaim12 describes shifting AI to an active participant but lacks the emphasis on AI as a 'leader' in scientific discovery."
-          },
-          {
-            "gold_point_id": "GPoint16",
-            "text": "Hosseini & Horbach (2023) and Robertson (2023) conducted small-scale experiments evaluating ChatGPT and GPT-4 in peer review.",
-            "rationale": "SClaim14 discusses pilot studies of LLMs in peer review but does not name Hosseini & Horbach (2023) or Robertson (2023)."
-          },
-          {
-            "gold_point_id": "GPoint18",
-            "text": "When LLMs act as judges, even advanced models like GPT-4 and Gemini lag behind reward models trained for the task (RewardBench).",
-            "rationale": "SClaim18 mentions that advanced models struggle as judges, but does not compare them to reward models or reference RewardBench."
-          },
-          {
-            "gold_point_id": "GPoint20",
-            "text": "The authors train a Generative Reward Model to simulate comprehensive peer review.",
-            "rationale": "SClaim20 mentions specialized generative reward models for peer review but does not state that the authors train one."
+            "gold_point_id": "GPoint9",
+            "text": "Iterative self-rewarding framework enables LLM to refine ideas continuously.",
+            "rationale": "SClaim5 describes iterative critique and revision loops but does not mention a self-rewarding mechanism."
           }
         ],
         "incorrect_points": []
@@ -3742,14 +3754,14 @@
     },
     "citation_quality": {
       "name": "citation_quality",
-      "score": 9.05,
+      "score": 8.78,
       "details": {
         "sub_scores": {
           "citation_validity": 10.0,
-          "citation_appropriateness": 9.5,
-          "citation_coverage": 6.567164179104478,
-          "citation_placement": 9.5625,
-          "citation_topic_consistency": 9.5625
+          "citation_appropriateness": 9.3125,
+          "citation_coverage": 5.714285714285714,
+          "citation_placement": 9.375,
+          "citation_topic_consistency": 9.4375
         },
         "validity": {
           "reference_count": 16,
@@ -3889,63 +3901,53 @@
           ]
         },
         "coverage": {
-          "matched_weight": 44.0,
-          "total_weight": 67.0,
+          "matched_weight": 16.0,
+          "total_weight": 28.0,
           "missing_key_references": [
             {
-              "reference_key": "arxiv:2309.02726",
-              "importance": 2,
-              "reason": "Multi-module retrieval for idea generation."
-            },
-            {
-              "reference_key": "pyzer-knapp-2022",
-              "importance": 3,
-              "reason": "Accelerating materials discovery."
-            },
-            {
-              "reference_key": "merchant-2023",
-              "importance": 3,
-              "reason": "Deep learning for materials discovery."
-            },
-            {
-              "reference_key": "romera-paredes-2024",
-              "importance": 3,
-              "reason": "AI for mathematics."
-            },
-            {
-              "reference_key": "arxiv:2310.18852",
-              "importance": 3,
-              "reason": "AI for Open Science."
-            },
-            {
-              "reference_key": "nuijten-2016",
-              "importance": 3,
-              "reason": "Detection of inaccuracies."
-            },
-            {
-              "reference_key": "arxiv:2211.06398",
-              "importance": 3,
-              "reason": "Fairness disparities in peer review."
+              "reference_key": "arxiv:2409.04109",
+              "importance": 1,
+              "reason": "Comprehensive human evaluation of idea generation by LLMs, directly relevant to evaluating LLM creativity."
             },
             {
               "reference_key": "arxiv:2403.05530",
+              "importance": 2,
+              "reason": "Gemini 1.5 technical report, used as baseline in comparisons of LLM judges."
+            },
+            {
+              "reference_key": "arxiv:2309.02726",
+              "importance": 2,
+              "reason": "Multi-module retrieval for idea generation, representative of creative LLM applications."
+            },
+            {
+              "reference_key": "arxiv:2305.14259",
+              "importance": 2,
+              "reason": "Method for scientific literature retrieval using LLMs, relevant to automation."
+            },
+            {
+              "reference_key": "arxiv:2408.10365",
+              "importance": 2,
+              "reason": "Evaluation of GPT-4 on full-text PDFs, relevant to automated peer review."
+            },
+            {
+              "reference_key": "horbach-2023",
               "importance": 3,
-              "reason": "Gemini model."
+              "reason": "Small-scale ChatGPT peer review experiment, provides early evidence."
             }
           ]
         },
         "problematic_citation_claim_pairs": [
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim10",
             "reference_key": "arxiv:2412.11427",
-            "support": "no",
+            "support": "unknown",
             "appropriateness_score": 2.0,
-            "placement_score": 3.0,
+            "placement_score": 2.0,
             "topic_consistency_score": 3.0,
-            "support_rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+            "support_rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+            "rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
             "retrieval_used": true,
             "retrieved_evidence": [
               {
@@ -3962,13 +3964,38 @@
             "second_pass_used": true
           }
         ],
-        "overclaim_citation_claim_pairs": [],
+        "overclaim_citation_claim_pairs": [
+          {
+            "claim_id": "SClaim8",
+            "reference_key": "arxiv:2604.20548",
+            "support": "partial",
+            "appropriateness_score": 8.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim attributes a general limitation to prompt-based/single-pass methods based on one paper's comparative results, which may overstate the evidence.",
+            "rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial."
+          },
+          {
+            "claim_id": "SClaim12",
+            "reference_key": "arxiv:2508.14111",
+            "support": "partial",
+            "appropriateness_score": 9.0,
+            "placement_score": 10.0,
+            "topic_consistency_score": 10.0,
+            "support_rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim omits 'optimization' from the paper's list, slightly misrepresenting the full set of capabilities identified.",
+            "rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported."
+          }
+        ],
         "citation_group_judgments": [
           {
             "claim_id": "SClaim2",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The paper 'The AI Scientist' directly describes a fully automated, prompt-driven pipeline for open-ended machine learning discovery that generates ideas, executes experiments, and writes papers, exactly as stated in the claim.",
+            "group_rationale": "The paper 'The AI Scientist' explicitly introduces the first fully automated, prompt-driven pipeline for open-ended machine learning discovery, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -3980,7 +4007,7 @@
             "claim_id": "SClaim3",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle including literature review, experimentation, and peer review, directly supporting the claim.",
+            "group_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle through modular LLM-powered agents collaborating in structured workflows, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -3990,25 +4017,33 @@
           },
           {
             "claim_id": "SClaim4",
-            "citation_count": 2,
+            "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Both components of the claim are fully supported by the cited sources: AutoSurvey covers automated survey generation, and the multi-agent dialogue paper covers iterative critique and revision loops for research ideation.",
-            "covered_aspects": [
-              "automated survey generation via retrieval-augmented pipelines",
-              "multi-agent dialogue designs for research ideation through iterative critique and revision loops"
-            ],
+            "group_rationale": "The AutoSurvey paper introduces a retrieval-augmented pipeline (RAG) for automated literature survey generation, matching the claim exactly.",
+            "covered_aspects": [],
             "missing_aspects": [],
-            "derived_from_single_pair": false,
+            "derived_from_single_pair": true,
             "reference_keys": [
-              "arxiv:2406.10252",
-              "arxiv:2507.08350"
+              "arxiv:2406.10252"
             ]
           },
           {
             "claim_id": "SClaim5",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "MLAgentBench evaluates language agents on ML experimentation and identifies gaps in long-horizon planning and generalization to novel settings, as claimed.",
+            "group_rationale": "The paper experimentally demonstrates that multi-agent dialogue with iterative critique-revision loops improves research ideation in diversity and feasibility.",
+            "covered_aspects": [],
+            "missing_aspects": [],
+            "derived_from_single_pair": true,
+            "reference_keys": [
+              "arxiv:2507.08350"
+            ]
+          },
+          {
+            "claim_id": "SClaim6",
+            "citation_count": 1,
+            "group_support": "yes",
+            "group_rationale": "MLAgentBench evaluates language agents on ML experimentation and finds gaps in long-term planning and generalization, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4017,10 +4052,10 @@
             ]
           },
           {
-            "claim_id": "SClaim6",
+            "claim_id": "SClaim7",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "IdeaBench examines LLM-driven idea generation using structured profiling and quantitative scoring, directly supporting the claim.",
+            "group_rationale": "IdeaBench examines LLM-driven idea generation using domain-specific profiling and a quantitative scoring framework (Insight Score), matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4029,10 +4064,10 @@
             ]
           },
           {
-            "claim_id": "SClaim7",
+            "claim_id": "SClaim8",
             "citation_count": 1,
-            "group_support": "yes",
-            "group_rationale": "The paper proposes a multi-agent iterative search framework for generating diverse and novel research ideas through iterative refinements, matching the claim's description of iterative self-improvement.",
+            "group_support": "partial",
+            "group_rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4041,10 +4076,10 @@
             ]
           },
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim10",
             "citation_count": 1,
-            "group_support": "no",
-            "group_rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+            "group_support": "unknown",
+            "group_rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4053,10 +4088,10 @@
             ]
           },
           {
-            "claim_id": "SClaim10",
+            "claim_id": "SClaim11",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The survey introduces a taxonomy charting evolution from task-specific automation to autonomous scientific agents, exactly as claimed.",
+            "group_rationale": "The survey introduces a taxonomy from task-specific automation (Level 1) to autonomous scientific agents (Level 3) capable of planning, experimentation, and iterative refinement, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4065,10 +4100,10 @@
             ]
           },
           {
-            "claim_id": "SClaim11",
+            "claim_id": "SClaim12",
             "citation_count": 1,
-            "group_support": "yes",
-            "group_rationale": "The survey identifies planning, tool use, memory, collaboration, and optimization as core capabilities for agentic science, directly supporting the claim's list of capabilities.",
+            "group_support": "partial",
+            "group_rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4077,10 +4112,10 @@
             ]
           },
           {
-            "claim_id": "SClaim14",
+            "claim_id": "SClaim15",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The pilot study finds GPT-4 reviews have comparable helpfulness but higher variance and limited sensitivity to subtle changes, matching the claim.",
+            "group_rationale": "The pilot study shows GPT-4 achieves comparable helpfulness to human reviewers but with higher variance and limited sensitivity to subtle content changes, exactly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4089,10 +4124,10 @@
             ]
           },
           {
-            "claim_id": "SClaim15",
+            "claim_id": "SClaim16",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The paper reports weak individual correlation with experts and limitations in fine-grained assessment, exactly as claimed.",
+            "group_rationale": "The research finds weak correlation (r=0.281) between ChatGPT-4 evaluations and expert judgments, along with limitations in fine-grained assessment, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4101,10 +4136,10 @@
             ]
           },
           {
-            "claim_id": "SClaim16",
+            "claim_id": "SClaim17",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "SEA provides a structured framework for generating constructive feedback and measuring content consistency, directly supporting the claim.",
+            "group_rationale": "The SEA framework provides a structured approach for automated peer reviewing, generating constructive feedback and quantifying content consistency via a mismatch score, supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4113,10 +4148,10 @@
             ]
           },
           {
-            "claim_id": "SClaim17",
+            "claim_id": "SClaim18",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The survey formalizes LLM-as-a-Judge with taxonomies of evaluation scope, reasoning mechanism, and challenges like consistency and bias, as claimed.",
+            "group_rationale": "The survey formalizes the LLM-as-a-Judge paradigm with taxonomies of evaluation scope, reasoning mechanism, and reliability challenges, directly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4125,10 +4160,10 @@
             ]
           },
           {
-            "claim_id": "SClaim18",
+            "claim_id": "SClaim19",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "JudgeBench reveals that even advanced models struggle to distinguish correct from subtly incorrect responses, matching the claim.",
+            "group_rationale": "JudgeBench reveals that advanced models like GPT-4o perform only slightly above random at distinguishing factually correct responses from subtly flawed ones, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4137,10 +4172,10 @@
             ]
           },
           {
-            "claim_id": "SClaim19",
+            "claim_id": "SClaim20",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The paper proposes generative reward models trained via next-token prediction with chain-of-thought reasoning to improve verification accuracy, directly supporting the claim.",
+            "group_rationale": "The paper proposes generative reward models trained via next-token prediction as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy, exactly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -4157,10 +4192,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The paper 'The AI Scientist' directly describes a fully automated, prompt-driven pipeline for open-ended machine learning discovery that generates ideas, executes experiments, and writes papers, exactly as stated in the claim.",
+            "support_rationale": "The paper 'The AI Scientist' explicitly introduces the first fully automated, prompt-driven pipeline for open-ended machine learning discovery, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The paper 'The AI Scientist' directly describes a fully automated, prompt-driven pipeline for open-ended machine learning discovery that generates ideas, executes experiments, and writes papers, exactly as stated in the claim."
+            "rationale": "The paper 'The AI Scientist' explicitly introduces the first fully automated, prompt-driven pipeline for open-ended machine learning discovery, directly supporting the claim."
           },
           {
             "claim_id": "SClaim3",
@@ -4169,10 +4204,10 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle including literature review, experimentation, and peer review, directly supporting the claim.",
+            "support_rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle through modular LLM-powered agents collaborating in structured workflows, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle including literature review, experimentation, and peer review, directly supporting the claim."
+            "rationale": "The paper proposes a multi-agent framework for automating the full research lifecycle through modular LLM-powered agents collaborating in structured workflows, directly supporting the claim."
           },
           {
             "claim_id": "SClaim4",
@@ -4181,70 +4216,70 @@
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "AutoSurvey introduces a retrieval-augmented pipeline for automated survey generation, aligning with the claim's description of automated survey generation.",
+            "support_rationale": "The AutoSurvey paper introduces a retrieval-augmented pipeline (RAG) for automated literature survey generation, matching the claim exactly.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "AutoSurvey introduces a retrieval-augmented pipeline for automated survey generation, aligning with the claim's description of automated survey generation."
+            "rationale": "The AutoSurvey paper introduces a retrieval-augmented pipeline (RAG) for automated literature survey generation, matching the claim exactly."
           },
           {
-            "claim_id": "SClaim4",
+            "claim_id": "SClaim5",
             "reference_key": "arxiv:2507.08350",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The paper studies multi-agent dialogue configurations for research ideation, specifically iterative critique and revision loops, matching the claim.",
+            "support_rationale": "The paper experimentally demonstrates that multi-agent dialogue with iterative critique-revision loops improves research ideation in diversity and feasibility.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The paper studies multi-agent dialogue configurations for research ideation, specifically iterative critique and revision loops, matching the claim."
+            "rationale": "The paper experimentally demonstrates that multi-agent dialogue with iterative critique-revision loops improves research ideation in diversity and feasibility."
           },
           {
-            "claim_id": "SClaim5",
+            "claim_id": "SClaim6",
             "reference_key": "arxiv:2310.03302",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "MLAgentBench evaluates language agents on ML experimentation and identifies gaps in long-horizon planning and generalization to novel settings, as claimed.",
+            "support_rationale": "MLAgentBench evaluates language agents on ML experimentation and finds gaps in long-term planning and generalization, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "MLAgentBench evaluates language agents on ML experimentation and identifies gaps in long-horizon planning and generalization to novel settings, as claimed."
+            "rationale": "MLAgentBench evaluates language agents on ML experimentation and finds gaps in long-term planning and generalization, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim6",
+            "claim_id": "SClaim7",
             "reference_key": "arxiv:2411.02429",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "IdeaBench examines LLM-driven idea generation using structured profiling and quantitative scoring, directly supporting the claim.",
+            "support_rationale": "IdeaBench examines LLM-driven idea generation using domain-specific profiling and a quantitative scoring framework (Insight Score), matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "IdeaBench examines LLM-driven idea generation using structured profiling and quantitative scoring, directly supporting the claim."
+            "rationale": "IdeaBench examines LLM-driven idea generation using domain-specific profiling and a quantitative scoring framework (Insight Score), matching the claim."
           },
           {
-            "claim_id": "SClaim7",
+            "claim_id": "SClaim8",
             "reference_key": "arxiv:2604.20548",
-            "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "The paper proposes a multi-agent iterative search framework for generating diverse and novel research ideas through iterative refinements, matching the claim's description of iterative self-improvement.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "The paper proposes a multi-agent iterative search framework for generating diverse and novel research ideas through iterative refinements, matching the claim's description of iterative self-improvement."
+            "support": "partial",
+            "appropriateness_score": 8.0,
+            "placement_score": 8.0,
+            "topic_consistency_score": 8.0,
+            "support_rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim attributes a general limitation to prompt-based/single-pass methods based on one paper's comparative results, which may overstate the evidence.",
+            "rationale": "The paper proposes a multi-agent iterative method and shows it outperforms baselines in diversity, novelty, and quality, implying that simpler prompt-based methods struggle. However, the claim is a broad generalization, and the paper does not explicitly state that all such methods struggle, so support is partial."
           },
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim10",
             "reference_key": "arxiv:2412.11427",
-            "support": "no",
+            "support": "unknown",
             "appropriateness_score": 2.0,
-            "placement_score": 3.0,
+            "placement_score": 2.0,
             "topic_consistency_score": 3.0,
-            "support_rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+            "support_rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The retrieved evidence from the cited paper focuses on recent generative AI for scientific discovery and does not discuss early applications of AI as passive analytical tools for single domains. No relevant supporting content found.",
+            "rationale": "The retrieved evidence from the cited paper does not mention early applications of AI, nor does it describe AI as a passive analytical tool for data processing within single domains. The paper focuses on recent advances in generative AI for scientific discovery, not historical AI applications. Therefore, support cannot be determined.",
             "retrieval_used": true,
             "retrieved_evidence": [
               {
@@ -4261,100 +4296,100 @@
             "second_pass_used": true
           },
           {
-            "claim_id": "SClaim10",
+            "claim_id": "SClaim11",
             "reference_key": "arxiv:2505.13259",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The survey introduces a taxonomy charting evolution from task-specific automation to autonomous scientific agents, exactly as claimed.",
+            "support_rationale": "The survey introduces a taxonomy from task-specific automation (Level 1) to autonomous scientific agents (Level 3) capable of planning, experimentation, and iterative refinement, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The survey introduces a taxonomy charting evolution from task-specific automation to autonomous scientific agents, exactly as claimed."
+            "rationale": "The survey introduces a taxonomy from task-specific automation (Level 1) to autonomous scientific agents (Level 3) capable of planning, experimentation, and iterative refinement, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim11",
+            "claim_id": "SClaim12",
             "reference_key": "arxiv:2508.14111",
-            "support": "yes",
-            "appropriateness_score": 10.0,
+            "support": "partial",
+            "appropriateness_score": 9.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The survey identifies planning, tool use, memory, collaboration, and optimization as core capabilities for agentic science, directly supporting the claim's list of capabilities.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "The survey identifies planning, tool use, memory, collaboration, and optimization as core capabilities for agentic science, directly supporting the claim's list of capabilities."
+            "support_rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported.",
+            "overclaim_status": "mild",
+            "overclaim_rationale": "The claim omits 'optimization' from the paper's list, slightly misrepresenting the full set of capabilities identified.",
+            "rationale": "The paper identifies five core capabilities (planning, tool use, memory, collaboration, optimization) essential for agentic science, while the claim lists only four (missing optimization). Thus the claim is partially supported."
           },
           {
-            "claim_id": "SClaim14",
+            "claim_id": "SClaim15",
             "reference_key": "arxiv:2307.05492",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The pilot study finds GPT-4 reviews have comparable helpfulness but higher variance and limited sensitivity to subtle changes, matching the claim.",
+            "support_rationale": "The pilot study shows GPT-4 achieves comparable helpfulness to human reviewers but with higher variance and limited sensitivity to subtle content changes, exactly matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The pilot study finds GPT-4 reviews have comparable helpfulness but higher variance and limited sensitivity to subtle changes, matching the claim."
+            "rationale": "The pilot study shows GPT-4 achieves comparable helpfulness to human reviewers but with higher variance and limited sensitivity to subtle content changes, exactly matching the claim."
           },
           {
-            "claim_id": "SClaim15",
+            "claim_id": "SClaim16",
             "reference_key": "arxiv:2402.05519",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The paper reports weak individual correlation with experts and limitations in fine-grained assessment, exactly as claimed.",
+            "support_rationale": "The research finds weak correlation (r=0.281) between ChatGPT-4 evaluations and expert judgments, along with limitations in fine-grained assessment, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The paper reports weak individual correlation with experts and limitations in fine-grained assessment, exactly as claimed."
+            "rationale": "The research finds weak correlation (r=0.281) between ChatGPT-4 evaluations and expert judgments, along with limitations in fine-grained assessment, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim16",
+            "claim_id": "SClaim17",
             "reference_key": "arxiv:2407.12857",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "SEA provides a structured framework for generating constructive feedback and measuring content consistency, directly supporting the claim.",
+            "support_rationale": "The SEA framework provides a structured approach for automated peer reviewing, generating constructive feedback and quantifying content consistency via a mismatch score, supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "SEA provides a structured framework for generating constructive feedback and measuring content consistency, directly supporting the claim."
+            "rationale": "The SEA framework provides a structured approach for automated peer reviewing, generating constructive feedback and quantifying content consistency via a mismatch score, supporting the claim."
           },
           {
-            "claim_id": "SClaim17",
+            "claim_id": "SClaim18",
             "reference_key": "arxiv:2411.15594",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The survey formalizes LLM-as-a-Judge with taxonomies of evaluation scope, reasoning mechanism, and challenges like consistency and bias, as claimed.",
+            "support_rationale": "The survey formalizes the LLM-as-a-Judge paradigm with taxonomies of evaluation scope, reasoning mechanism, and reliability challenges, directly matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The survey formalizes LLM-as-a-Judge with taxonomies of evaluation scope, reasoning mechanism, and challenges like consistency and bias, as claimed."
+            "rationale": "The survey formalizes the LLM-as-a-Judge paradigm with taxonomies of evaluation scope, reasoning mechanism, and reliability challenges, directly matching the claim."
           },
           {
-            "claim_id": "SClaim18",
+            "claim_id": "SClaim19",
             "reference_key": "arxiv:2410.12784",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "JudgeBench reveals that even advanced models struggle to distinguish correct from subtly incorrect responses, matching the claim.",
+            "support_rationale": "JudgeBench reveals that advanced models like GPT-4o perform only slightly above random at distinguishing factually correct responses from subtly flawed ones, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "JudgeBench reveals that even advanced models struggle to distinguish correct from subtly incorrect responses, matching the claim."
+            "rationale": "JudgeBench reveals that advanced models like GPT-4o perform only slightly above random at distinguishing factually correct responses from subtly flawed ones, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim19",
+            "claim_id": "SClaim20",
             "reference_key": "arxiv:2408.15240",
             "support": "yes",
             "appropriateness_score": 10.0,
             "placement_score": 10.0,
             "topic_consistency_score": 10.0,
-            "support_rationale": "The paper proposes generative reward models trained via next-token prediction with chain-of-thought reasoning to improve verification accuracy, directly supporting the claim.",
+            "support_rationale": "The paper proposes generative reward models trained via next-token prediction as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy, exactly matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The paper proposes generative reward models trained via next-token prediction with chain-of-thought reasoning to improve verification accuracy, directly supporting the claim."
+            "rationale": "The paper proposes generative reward models trained via next-token prediction as an alternative to discriminative scoring, using chain-of-thought reasoning to improve verification accuracy, exactly matching the claim."
           }
         ],
         "applied_caps": []
@@ -4362,34 +4397,80 @@
     },
     "relevance": {
       "name": "relevance",
-      "score": 9.5,
+      "score": 6.19,
       "details": {
-        "irrelevant_claims": [],
+        "irrelevant_claims": [
+          {
+            "claim_id": "SClaim6",
+            "relevance_score": 0.0,
+            "rationale": "MLAgentBench is not mentioned in the ground truth; no direct or indirect relevance to any key point."
+          },
+          {
+            "claim_id": "SClaim12",
+            "relevance_score": 0.0,
+            "rationale": "Specific unified framework not referenced in ground truth; no direct relevance to any key point."
+          },
+          {
+            "claim_id": "SClaim17",
+            "relevance_score": 0.0,
+            "rationale": "General claim about structured frameworks for automated reviewing; ground truth does not include such a generic point."
+          },
+          {
+            "claim_id": "SClaim18",
+            "relevance_score": 0.0,
+            "rationale": "LLM-as-a-Judge taxonomy not present in ground truth; no direct relevance to the listed methods or gaps."
+          },
+          {
+            "claim_id": "SClaim19",
+            "relevance_score": 0.0,
+            "rationale": "JudgeBench benchmark not referenced in ground truth; irrelevant to the provided key points."
+          }
+        ],
         "weakly_relevant_claims": [
           {
-            "claim_id": "SClaim5",
+            "claim_id": "SClaim1",
             "relevance_score": 0.5,
-            "rationale": "References a benchmark for ML experimentation tasks, partially related to GPoint4 (benchmark for coding solutions) but not a direct match."
+            "rationale": "General claim about growing interest in automating scientific research, sets context but does not directly overlap with any specific ground truth point."
+          },
+          {
+            "claim_id": "SClaim3",
+            "relevance_score": 0.5,
+            "rationale": "Relates to GPoint1 on multi-agent frameworks but is more general about the full research lifecycle rather than specifically idea generation."
+          },
+          {
+            "claim_id": "SClaim7",
+            "relevance_score": 0.5,
+            "rationale": "Relates to evaluation of LLM-driven idea generation, which is a theme in ground truth (e.g., GPoint2, GPoint7), but no specific ground truth point covers IdeaBench or structured profiling."
+          },
+          {
+            "claim_id": "SClaim11",
+            "relevance_score": 0.5,
+            "rationale": "Relates to evolution toward autonomous agents (GPoint11, GPoint14) but is a general survey claim without matching a specific ground truth point."
+          },
+          {
+            "claim_id": "SClaim15",
+            "relevance_score": 0.5,
+            "rationale": "Relates to limitations of general-purpose LLMs in peer review (GPoint19, GPoint20) but is not a direct match to any specific ground truth point."
           },
           {
             "claim_id": "SClaim16",
             "relevance_score": 0.5,
-            "rationale": "Describes a framework for automated reviewing, relevant to Topic3 but not explicitly listed in ground truth points."
+            "rationale": "Concerns ChatGPT's evaluation quality, tangentially related to GPoint20 on achieving human-level judgment, but no direct match in ground truth."
           }
         ],
-        "claim_count": 20
+        "claim_count": 21
       }
     },
     "thematic_structure": {
       "name": "thematic_structure",
-      "score": 8.14,
+      "score": 8.08,
       "details": {
         "sub_scores": {
-          "topic_coverage": 9.0,
-          "topic_purity": 8.0,
+          "topic_coverage": 7.666666666666667,
+          "topic_purity": 8.666666666666666,
           "topic_coherence": 8.333333333333334,
-          "topic_granularity": 6.5,
-          "topic_ordering": 8.0
+          "topic_granularity": 7.0,
+          "topic_ordering": 9.0
         },
         "topic_alignment": [
           {
@@ -4397,114 +4478,107 @@
             "s_topic_ids": [
               "STopic1"
             ],
-            "match_score": 9.0,
-            "rationale": "STopic1 directly covers LLMs for research tasks as in GTopic1, including automated survey generation, research ideation, and multi-agent frameworks. The overlap in topics is strong."
+            "match_score": 8,
+            "rationale": "STopic1 covers LLMs for research with idea generation, surveys, and iterative self-improvement, aligning closely with GTopic1's focus on LLMs in creative research tasks."
           },
           {
             "g_topic_id": "GTopic2",
             "s_topic_ids": [
-              "STopic1",
               "STopic2"
             ],
-            "match_score": 8.0,
-            "rationale": "GTopic2's theme of AI in scientific discovery and active idea generation is partially captured by STopic1's reference to automated scientific discovery pipelines, and more specifically by STopic2's focus on autonomous scientific agents with planning and iterative refinement. The pair provides good but not perfect coverage."
+            "match_score": 6,
+            "rationale": "STopic2 discusses the evolution of AI to autonomous scientific agents, which thematically matches GTopic2's emphasis on AI for science discovery. However, STopic2 lacks the historical depth and broader citation coverage of GTopic2."
           },
           {
             "g_topic_id": "GTopic3",
             "s_topic_ids": [
               "STopic3"
             ],
-            "match_score": 10.0,
-            "rationale": "STopic3 closely matches GTopic3, covering automated evaluation of research papers, LLM-as-a-Judge paradigms, and the motivation for generative reward models. The alignment is nearly exact."
+            "match_score": 9,
+            "rationale": "STopic3 explicitly covers automated evaluation of research papers and LLM-as-a-judge, directly matching GTopic3's focus on AI tools in peer review and generative reward models."
           }
         ],
         "paragraph_scores": [
           {
             "paragraph_id": "S1",
-            "topic_purity": 6.0,
-            "topic_coherence": 8.0,
-            "citation_topic_consistency": 8.0,
+            "topic_purity": 7,
+            "topic_coherence": 8,
+            "citation_topic_consistency": 8,
             "issues": [
-              "Combines content from two gold topics (LLMs for Research and Science Discovery), reducing purity."
+              "Combines aspects of GTopic1 and GTopic2, which reduces purity; some citations (e.g., arxiv:2310.03302) are not present in any gold topic, but are topically relevant."
             ]
           },
           {
             "paragraph_id": "S2",
-            "topic_purity": 9.0,
-            "topic_coherence": 9.0,
-            "citation_topic_consistency": 9.0,
+            "topic_purity": 9,
+            "topic_coherence": 8,
+            "citation_topic_consistency": 7,
             "issues": [
-              "None"
+              "Citations are very recent and do not cover the historical AI discovery works (e.g., Langley, Buchanan) emphasized in GTopic2."
             ]
           },
           {
             "paragraph_id": "S3",
-            "topic_purity": 9.0,
-            "topic_coherence": 8.0,
-            "citation_topic_consistency": 8.0,
-            "issues": [
-              "Minor: includes some citations that are tangentially related to evaluation (e.g., bias analysis), but overall consistent."
-            ]
+            "topic_purity": 10,
+            "topic_coherence": 9,
+            "citation_topic_consistency": 9,
+            "issues": []
           }
         ],
         "issues": [
           {
             "paragraph_id": "S1",
-            "issue": "Combines content from two gold topics (LLMs for Research and Science Discovery), reducing purity."
+            "issue": "Combines aspects of GTopic1 and GTopic2, which reduces purity; some citations (e.g., arxiv:2310.03302) are not present in any gold topic, but are topically relevant."
           },
           {
             "paragraph_id": "S2",
-            "issue": "None"
-          },
-          {
-            "paragraph_id": "S3",
-            "issue": "Minor: includes some citations that are tangentially related to evaluation (e.g., bias analysis), but overall consistent."
+            "issue": "Citations are very recent and do not cover the historical AI discovery works (e.g., Langley, Buchanan) emphasized in GTopic2."
           }
         ],
         "granularity": {
-          "score": 6.5,
-          "rationale": "Candidate topics are broader than gold topics; STopic1 merges GTopic1 and GTopic2 into one paragraph, losing the distinction between LLMs for research tasks and the broader AI-for-science paradigm. STopic2 and STopic3 align more finely, but the overall granularity is coarser than the gold standard."
+          "score": 7,
+          "rationale": "Candidate has three topics, matching gold count, but STopic1 overlaps with STopic2 by including 'Scientific Discovery' in its label, and STopic2 is narrower (autonomous agents) compared to GTopic2's broader historical context. Granularity is reasonable but has some overlap and imbalance."
         },
         "ordering": {
-          "score": 8.0,
-          "rationale": "The order of candidate topics flows logically from a combined general view of LLMs in research and science (S1), to a focused treatment of autonomous discovery (S2), and finally to evaluation (S3). This is a sensible progression, though it deviates from the gold ordering that separates research and science explicitly."
+          "score": 9,
+          "rationale": "Candidate ordering (LLM research, AI for science, evaluation) mirrors gold ordering (LLMs for research, AI science discovery, evaluation) and follows a logical progression from broader automation to specific evaluation."
         }
       }
     },
     "synthesis_quality": {
       "name": "synthesis_quality",
-      "score": 7.5,
+      "score": 8.0,
       "details": {
-        "rationale": "The candidate constructs a coherent landscape across three relevant sub-areas (LLMs for research, AI for science, automated evaluation), summarizing key contributions and identifying limitations and gaps. The narrative flows well from advances to challenges, and the gap motivation is present (e.g., need for iterative self-improvement, shifting AI to active role, specialized reward models). However, the synthesis lacks explicit comparative analysis between methods (e.g., performance trade-offs, how one approach improves on another) and misses several gold-standard references (e.g., Si et al. human evaluation, specific benchmark details, historical AI4Science works like Langley 1987). The limitations are acknowledged but could be more precisely tied to specific methodological shortcomings. Overall, good landscape coverage but limited depth of comparison.",
+        "rationale": "The candidate effectively covers all three major topics from the gold standard, providing a coherent landscape that includes recent methods (AI Scientist, multi-agent frameworks, automated surveys, benchmarks, LLM-as-a-Judge systems, generative reward models) and identifies key limitations (e.g., prompt methods struggling with diversity/practicality, AI's passive role in science, variance and weak correlation in automated evaluation). The text goes beyond simple paper listing by motivating iterative self-improvement mechanisms and specialized reward models, aligning with the gold gaps. However, explicit methodological comparisons (e.g., contrasting multi-agent vs. single-pass, or LLM judges vs. trained reward models) are mostly implicit and could be strengthened. The gap motivation, while present, is somewhat generic and could be more directly tied to the candidate's own proposed framework.",
         "issues": [
-          "Lacks explicit comparative analysis between different methods (e.g., comparing performance or suitability).",
-          "Misses several key gold-standard references (e.g., human evaluation study, AlphaFold, earlier AI4Science works).",
-          "Gap motivation is somewhat generic; could be more specific about what existing methods fail to do concretely."
+          "Method comparisons are largely implicit; explicit contrasts between approaches would improve synthesis.",
+          "Gap motivation at paragraph ends is generic rather than specifically pointing to the paper's contribution.",
+          "First and third paragraphs have a somewhat enumerative structure, bordering on paper listing rather than integrated discussion."
         ]
       }
     },
     "writing_quality": {
       "name": "writing_quality",
-      "score": 8.5,
+      "score": 8.0,
       "details": {
-        "rationale": "The writing maintains a clear academic tone with good sentence flow and logical organization. Paragraphs are well-structured, each focusing on a distinct sub-topic. Terminology is consistent and appropriate (e.g., 'prompt-driven pipeline', 'multi-agent frameworks', 'retrieval-augmented pipelines', 'LLM-as-a-Judge paradigm'). Conciseness is largely achieved, though some sentences are dense with multiple cited concepts. The use of transition phrases ('Building on this direction', 'Complementary efforts', 'These perspectives highlight') effectively guides the reader. Minor issues include occasional lengthy sentences that could be split for clarity, and some introductory phrases (e.g., 'The application of AI to scientific evaluation has attracted significant attention') are slightly verbose.",
+        "rationale": "The writing maintains a formal academic tone throughout, with consistent terminology (e.g., 'prompt-driven pipeline', 'multi-agent frameworks', 'generative reward models'). Clarity is high: each paragraph has a clear thematic focus, and sentence flow is generally smooth, with appropriate transitions. However, the first and third paragraphs exhibit a somewhat repetitive syntactic pattern ('The AI Scientist introduced...', 'Building on this direction...', 'Complementary efforts...'), which reduces conciseness and integration. Some sentences are long and could be split for better readability. Terminology is consistent, and the use of citations appears accurate.",
         "issues": [
-          "A few sentences are overly long and could be split for improved readability.",
-          "Some introductory phrases are slightly verbose and could be trimmed.",
-          "No major clarity or terminology issues, but minor redundancy in phrasing across paragraphs."
+          "First and third paragraphs have a repetitive, list-like structure that detracts from narrative flow.",
+          "Several sentences are overly long and could be broken into shorter, more readable units.",
+          "Minor: the transition 'Despite these advances' in the first paragraph feels slightly abrupt; a more connective phrase would improve flow."
         ]
       }
     },
     "length_conciseness": {
       "name": "length_conciseness",
-      "score": 9.16,
+      "score": 8.75,
       "details": {
         "s_word_count": 528,
         "g_word_count": 564,
         "length_ratio": 0.9361702127659575,
         "sub_scores": {
           "relative_length_score": 10.0,
-          "information_density_score": 7.1925,
+          "information_density_score": 5.8195,
           "redundancy_score": 10.0
         },
         "redundancy": {

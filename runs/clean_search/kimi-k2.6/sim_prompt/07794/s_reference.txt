@@ -1,0 +1,41 @@
+[1] P. Lewis et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." NeurIPS, 2020.
+
+[2] V. Karpukhin et al. "Dense Passage Retrieval for Open-Domain Question Answering." EMNLP, 2020.
+
+[3] H. Trivedi et al. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." arXiv:2212.10509, 2022.
+
+[4] S. Yao et al. "ReAct: Synergizing Reasoning and Acting in Language Models." ICLR, 2023.
+
+[5] J. Jin et al. "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning." arXiv:2503.09516, 2025.
+
+[6] J. Zhang et al. "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." arXiv:2503.05592, 2025.
+
+[7] J. Zhang et al. "R1-Searcher++: Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning." arXiv:2505.17005, 2025.
+
+[8] J. Schulman et al. "Proximal Policy Optimization Algorithms." arXiv:1707.06347, 2017.
+
+[9] J. Uesato et al. "Solving Math Word Problems with Process- and Outcome-Based Feedback." arXiv:2211.14275, 2022.
+
+[10] Z. Yuan et al. "Process Reinforcement through Implicit Rewards." arXiv:2502.01456, 2025.
+
+[11] J. Chen et al. "Beyond Correctness: Rewarding Faithful Reasoning in Retrieval-Augmented Generation." arXiv:2510.13272, 2025.
+
+[12] Y. Li et al. "Search-P1: Path-Centric Reward Shaping for Stable and Efficient Agentic RAG Training." arXiv:2602.22576, 2026.
+
+[13] M. Zhang et al. "Search Wisely: Mitigating Sub-optimal Agentic Searches By Reducing Uncertainty." arXiv:2505.17281, 2025.
+
+[14] B. Sun et al. "AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning." arXiv:2604.17337, 2026.
+
+[15] X. Guo et al. "DeepRAG: Thinking to Retrieve Step by Step for Large Language Models." arXiv:2502.01142, 2025.
+
+[16] J. Dong et al. "Investigating the Factual Knowledge Boundary of Large Language Models with Retrieval Augmentation." arXiv:2307.11019, 2023.
+
+[17] Y. Yang et al. "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering." EMNLP, 2018.
+
+[18] P. Trivedi et al. "MuSiQue: Multihop Questions via Single-hop Question Composition." ACL, 2022.
+
+[19] M. Joshi et al. "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension." ACL, 2017.
+
+[20] T. Kwiatkowski et al. "Natural Questions: A Benchmark for Question Answering Research." TACL, 2019.
+
+[21] L. Wang et al. "Text Embeddings by Weakly-Supervised Contrastive Pre-training." arXiv:2212.03533, 2022.

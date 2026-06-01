@@ -1,86 +1,82 @@
 {
   "sample_id": "sim_prompt-evotest",
-  "overall": 7.22,
+  "overall": 6.91,
   "scores": {
-    "content_coverage": 2.73,
-    "citation_quality": 7.97,
-    "relevance": 10.0,
-    "thematic_structure": 8.75,
+    "content_coverage": 2.17,
+    "citation_quality": 7.74,
+    "relevance": 8.7,
+    "thematic_structure": 8.66,
     "synthesis_quality": 7.5,
     "writing_quality": 8.5,
-    "length_conciseness": 6.36,
+    "length_conciseness": 6.2,
     "citation_validity": 10.0,
-    "citation_appropriateness": 9.37,
-    "citation_coverage": 1.11,
-    "citation_placement": 9.74,
-    "citation_topic_consistency": 10.0
+    "citation_appropriateness": 9.05,
+    "citation_coverage": 1.0,
+    "citation_placement": 9.16,
+    "citation_topic_consistency": 9.53
   },
   "diagnostics": {
     "missing_points": [
       {
-        "gold_point_id": "GPoint4",
-        "text": "The paper's method organizes trajectory data into multi-turn dialogues based on the CoaT thinking pattern, preventing the agent from becoming an action model with limited capabilities.",
-        "rationale": "No candidate claim covers the paper's method of organizing trajectory data into multi-turn dialogues based on CoaT."
+        "gold_point_id": "GPoint3",
+        "text": "Proposed method organizes trajectory data into multi-turn dialogues based on CoaT thinking pattern to prevent agent becoming a limited action model.",
+        "rationale": "No candidate claim describes the proposed method of organizing trajectory data into multi-turn dialogues based on CoaT."
       },
       {
-        "gold_point_id": "GPoint6",
-        "text": "ReFT adopts reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
+        "gold_point_id": "GPoint5",
+        "text": "ReFT uses reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
         "rationale": "No candidate claim mentions ReFT."
       },
       {
+        "gold_point_id": "GPoint7",
+        "text": "Xie et al. label preferences via MCTS based on feedback from self-evaluation.",
+        "rationale": "No candidate claim mentions Xie et al. or labeling preferences via MCTS."
+      },
+      {
         "gold_point_id": "GPoint8",
-        "text": "Xie et al. label preference via MCTS based on feedback from self-evaluation.",
-        "rationale": "No candidate claim mentions Xie et al. or their method."
+        "text": "Digirl and Distrl use online trajectory collection to improve generalization of mobile GUI agents, but the process is very slow.",
+        "rationale": "No candidate claim mentions Digirl or Distrl."
       },
       {
         "gold_point_id": "GPoint9",
-        "text": "DigiRL and Distrl use online trajectory collection to improve generalization of agents.",
-        "rationale": "No candidate claim mentions DigiRL or Distrl."
-      },
-      {
-        "gold_point_id": "GPoint10",
-        "text": "DigiRL and Distrl suffer from a very slow process due to online trajectory collection.",
-        "rationale": "No candidate claim mentions the limitation of DigiRL and Distrl."
-      },
-      {
-        "gold_point_id": "GPoint11",
         "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
         "rationale": "No candidate claim mentions Reachagent."
       },
       {
-        "gold_point_id": "GPoint12",
+        "gold_point_id": "GPoint10",
         "text": "TCPO optimizes thoughts but does not explicitly enforce thought–action consistency.",
         "rationale": "No candidate claim mentions TCPO."
       },
       {
-        "gold_point_id": "GPoint13",
+        "gold_point_id": "GPoint11",
         "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, leading to high computational cost and low data efficiency.",
         "rationale": "No candidate claim mentions TreePO, TreeRL, or SPO."
       },
       {
-        "gold_point_id": "GPoint14",
-        "text": "The paper's method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, with step values computed directly from rule-based rewards without unstable PRMs.",
-        "rationale": "No candidate claim covers the paper's method of modeling thoughts with a fixed CoaT-tree and T-DPO."
+        "gold_point_id": "GPoint12",
+        "text": "Proposed method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, while step values are computed directly from rule-based rewards without unstable PRMs.",
+        "rationale": "No candidate claim describes the proposed method with fixed CoaT-tree and T-DPO."
       },
       {
-        "gold_point_id": "GPoint15",
-        "text": "This design yields more efficient sampling and training, especially in GUI-agent settings, contrasting with prior methods.",
-        "rationale": "No candidate claim discusses the efficiency comparison of the paper's method."
+        "gold_point_id": "GPoint13",
+        "text": "The design yields more efficient sampling and training, especially in GUI-agent settings.",
+        "rationale": "No candidate claims describe the design's efficiency in GUI-agent settings."
       }
     ],
     "hallucinated_references": [],
+    "bibliographic_accuracy_issues": [],
     "bad_citation_claim_pairs": [
       {
-        "claim_id": "SClaim9",
+        "claim_id": "SClaim16",
         "reference_key": "arxiv:2310.10080",
-        "support": "no",
-        "appropriateness_score": 2.0,
+        "support": "weak",
+        "appropriateness_score": 3.0,
         "placement_score": 5.0,
-        "topic_consistency_score": 10.0,
-        "support_rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+        "topic_consistency_score": 4.0,
+        "support_rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
         "overclaim_status": "none",
         "overclaim_rationale": "",
-        "rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+        "rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
         "retrieval_used": true,
         "retrieved_evidence": [
           {
@@ -97,45 +93,37 @@
         "second_pass_used": true
       }
     ],
-    "overclaim_citation_claim_pairs": [
+    "overclaim_citation_claim_pairs": [],
+    "citation_group_support": [
       {
-        "claim_id": "SClaim3",
-        "reference_key": "arxiv:2410.23218",
-        "support": "partial",
-        "appropriateness_score": 8.0,
-        "placement_score": 10.0,
-        "topic_consistency_score": 10.0,
-        "support_rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus.",
-        "overclaim_status": "mild",
-        "overclaim_rationale": "The paper does not mention 'continual pre-training'; it highlights large-scale data and model training innovations but not an iterative or continual pre-training process.",
-        "rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus."
+        "claim_id": "SClaim2",
+        "citation_count": 2,
+        "group_support": "yes",
+        "group_rationale": "Both citations fully support their respective parts of the claim: CogAgent introduces specialized visual encoders for high-resolution screenshots, and SeeClick demonstrates that GUI grounding pre-training improves agent performance across mobile, desktop, and web platforms.",
+        "covered_aspects": [
+          "CogAgent's specialized visual encoders for high-resolution screenshot understanding",
+          "SeeClick's GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms"
+        ],
+        "missing_aspects": [],
+        "derived_from_single_pair": false,
+        "reference_keys": [
+          "arxiv:2312.08914",
+          "arxiv:2401.10935"
+        ]
       },
       {
         "claim_id": "SClaim3",
-        "reference_key": "arxiv:2501.12326",
-        "support": "partial",
-        "appropriateness_score": 8.0,
-        "placement_score": 10.0,
-        "topic_consistency_score": 10.0,
-        "support_rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements.",
-        "overclaim_status": "mild",
-        "overclaim_rationale": "The paper does not explicitly describe 'continual pre-training on millions of GUI elements'; it focuses on enhanced perception from large-scale screenshots and iterative training with reflective online traces.",
-        "rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements."
-      }
-    ],
-    "citation_group_support": [
-      {
-        "claim_id": "SClaim3",
         "citation_count": 2,
-        "group_support": "partial",
-        "group_rationale": "Both citations confirm that OS-ATLAS and UI-TARS achieve strong in-domain performance through large-scale data (13M+ GUI elements for OS-Atlas, large-scale screenshots for UI-TARS). However, the specific claim of 'continual pre-training' is not explicitly supported by either paper; OS-Atlas describes one-time training on a large corpus, and UI-TARS uses iterative training but not continual pre-training on millions of GUI elements. Thus, the key element of continual pre-training is unsupported.",
+        "group_support": "yes",
+        "group_rationale": "Both citations confirm that OS-Atlas and UI-TARS employed large-scale continual pre-training on millions of GUI elements, achieved strong in-domain performance, and serve as open-source alternatives to commercial VLMs. The evidence collectively supports all key aspects of the claim.",
         "covered_aspects": [
-          "Scale through large datasets (millions of GUI elements or large-scale screenshots)",
-          "Achievement of strong in-domain performance"
+          "OS-ATLAS scaled direction via large-scale continual pre-training",
+          "UI-TARS scaled direction via large-scale continual pre-training",
+          "millions of GUI elements",
+          "strong in-domain performance",
+          "open-source alternatives to commercial VLMs"
         ],
-        "missing_aspects": [
-          "Continual pre-training process"
-        ],
+        "missing_aspects": [],
         "derived_from_single_pair": false,
         "reference_keys": [
           "arxiv:2410.23218",
@@ -143,17 +131,16 @@
         ]
       },
       {
-        "claim_id": "SClaim5",
+        "claim_id": "SClaim8",
         "citation_count": 2,
-        "group_support": "partial",
-        "group_rationale": "Both citations confirm that AITW and AMEX are large-scale datasets with human demonstrations and diverse instructions/action spaces, but the specific reference to 'for CoaT agents' is not supported by the provided evidence. The citations mention mobile agents but not CoaT agents explicitly.",
+        "group_support": "yes",
+        "group_rationale": "Both citations provide direct support: AITW offers 715k episodes with 30k unique instructions (large-scale, diverse), and AMEX provides 104K screenshots with stepwise instructions and action chains, enabling supervised fine-tuning. Together, they collectively confirm the claim that these datasets provide large-scale human demonstrations with diverse instructions and action spaces that enable supervised fine-tuning of agents (including CoaT-capable agents, as the datasets are designed for general mobile GUI agent training).",
         "covered_aspects": [
-          "AITW provides large-scale human demonstrations with diverse instructions and action spaces",
-          "AMEX provides large-scale human demonstrations with stepwise natural language instructions and GUI-action chains"
+          "Large-scale human demonstrations",
+          "Diverse instructions and action spaces",
+          "Enables supervised fine-tuning"
         ],
-        "missing_aspects": [
-          "The datasets are specifically for CoaT agents"
-        ],
+        "missing_aspects": [],
         "derived_from_single_pair": false,
         "reference_keys": [
           "arxiv:2307.10088",
@@ -161,13 +148,14 @@
         ]
       },
       {
-        "claim_id": "SClaim8",
+        "claim_id": "SClaim13",
         "citation_count": 2,
         "group_support": "yes",
-        "group_rationale": "Both citations directly confirm that CPO and TPO employ tree-structured preference learning to capture finer-grained reasoning quality, with no missing components.",
+        "group_rationale": "Both citations explicitly support that CPO and TPO explore tree-structured preference learning with multi-step or multi-branch preference trees, fully covering the claim.",
         "covered_aspects": [
-          "CPO uses tree-of-thought structures for step-level pairwise preference data to enable finer-grained reasoning quality learning.",
-          "TPO learns from multi-branch, multi-step preference trees to capture finer-grained reasoning quality."
+          "CPO uses tree-of-thought search trees for multi-step preference data",
+          "TPO learns from multi-branch, multi-step preference trees",
+          "Both methods capture finer-grained reasoning quality through tree-structured preference learning"
         ],
         "missing_aspects": [],
         "derived_from_single_pair": false,
@@ -177,39 +165,62 @@
         ]
       },
       {
-        "claim_id": "SClaim9",
+        "claim_id": "SClaim16",
         "citation_count": 2,
-        "group_support": "partial",
-        "group_rationale": "The first citation contradicts the claim by presenting an automated method (AST-based) for creating PRM datasets, implying manual annotation is not required. The second citation acknowledges the typical need for expensive manual annotation, but its support is limited by the contradiction from the first citation. Therefore, the claim is only partially supported: the aspect of per-step feedback is covered, but the necessity of expensive manual annotation is not fully supported.",
+        "group_support": "yes",
+        "group_rationale": "The first citation (arxiv:2310.10080) provides evidence that PRMs use step-level feedback (e.g., 'step-level feedback from a process-supervised reward model'), supporting the first part of the claim. The second citation (arxiv:2501.13622) implies that existing PRM training typically requires expensive manual annotation by introducing a method to reduce annotation cost, thereby supporting the second part. Together, the citations cover both key aspects of the claim.",
         "covered_aspects": [
-          "PRMs assign per-step feedback"
+          "PRMs assign per-step feedback",
+          "their training typically requires expensive manual annotation of intermediate reasoning steps"
         ],
-        "missing_aspects": [
-          "The claim that PRMs require expensive manual annotation of intermediate reasoning steps is contradicted by the first citation, which describes an automated method."
-        ],
+        "missing_aspects": [],
         "derived_from_single_pair": false,
         "reference_keys": [
           "arxiv:2310.10080",
           "arxiv:2501.13622"
         ]
+      },
+      {
+        "claim_id": "SClaim21",
+        "citation_count": 2,
+        "group_support": "yes",
+        "group_rationale": "Both citations directly support their respective components: ARPO with experience-replay-augmented GRPO for sparse-reward GUI environments (arxiv:2505.16282) and MobileGUI-RL with online RL and curriculum task synthesis in real mobile settings (arxiv:2507.05720). Together, they fully support the entire claim without any missing aspects.",
+        "covered_aspects": [
+          "ARPO introduced experience-replay-augmented GRPO for end-to-end policy optimization in sparse-reward GUI environments",
+          "MobileGUI-RL explored online RL with curriculum task synthesis in real mobile settings"
+        ],
+        "missing_aspects": [],
+        "derived_from_single_pair": false,
+        "reference_keys": [
+          "arxiv:2505.16282",
+          "arxiv:2507.05720"
+        ]
       }
     ],
     "topic_structure_issues": [
       {
+        "paragraph_id": "S1",
+        "issue": "None identified."
+      },
+      {
         "paragraph_id": "S2",
-        "issue": "Citations for CoaT and datasets are present but may not cover all aspects of the gold topic's CoaT thinking pattern."
+        "issue": "Could be more explicitly linked to VLM-based agents; reads as a separate reasoning topic."
       },
       {
         "paragraph_id": "S3",
-        "issue": "Covers self-training and preference optimization but slightly overlaps with tree-search methods; could be more focused."
+        "issue": "Lacks application to the GUI domain; focus on text reasoning may feel disconnected."
+      },
+      {
+        "paragraph_id": "S4",
+        "issue": "Does not connect to mobile agent context; appears as a standalone method description."
       },
       {
         "paragraph_id": "S5",
-        "issue": "Covers RL for GUI agents but may lack some broader RL context from gold topic."
+        "issue": "As noted, may lack step-level reasoning optimization; could benefit from bridging self-training and process rewards."
       },
       {
         "paragraph_id": "S6",
-        "issue": "Data diversity is tangentially related to the main RL and GUI agent topics; citations are sparse and not heavily connected to the core methods."
+        "issue": "Only one citation; topic seems ancillary to main themes and feels slightly out of place."
       }
     ],
     "length_conciseness_issues": [
@@ -4156,30 +4167,38 @@
         {
           "id": "GTopic1",
           "label": "Mobile GUI Agent",
-          "summary": "LLMs and VLMs are used for mobile GUI agents, with both closed-source and open-source approaches; the paper introduces the CoaT thinking pattern to enhance agent capabilities.",
-          "paragraph_ids": [
-            "G1"
-          ],
-          "importance": 1,
-          "key_citations": []
-        },
-        {
-          "id": "GTopic2",
-          "label": "Reinforcement Learning",
-          "summary": "Covers RL algorithms for alignment (DPO, IPO, KTO, PPO), applications to math reasoning (ReFT, ReST-MCTS*), and for mobile GUI agents (DigiRL, Distrl, Reachagent, TCPO, TreePO, TreeRL, SPO), highlighting limitations and introducing the CoaT-tree method.",
+          "summary": "LLMs and VLMs are increasingly used as autonomous agents for mobile interaction, with approaches ranging from closed-source VLMs to training open-source VLMs for specific capabilities like element grounding and task planning.",
           "paragraph_ids": [
             "G1"
           ],
           "importance": 1,
           "key_citations": [
             "arxiv:2305.18290",
-            "arxiv:2310.12036",
-            "arxiv:2012.02439",
             "arxiv:2401.08967",
             "arxiv:2406.03816",
             "arxiv:2405.00451",
             "arxiv:2406.11896",
-            "arxiv:2310.20266",
+            "arxiv:2502.02955",
+            "arxiv:2509.08500",
+            "arxiv:2508.17445",
+            "arxiv:2506.11902",
+            "arxiv:2505.23564"
+          ]
+        },
+        {
+          "id": "GTopic2",
+          "label": "Reinforcement Learning for Preference Alignment",
+          "summary": "Various RL algorithms (DPO, IPO, KTO, PPO) are used to align LLMs with human preferences. Specific applications include ReFT for math, ReST-MCTS* for step rewards, Digirl/Distrl for mobile GUI agents, Reachagent for action comparison, and TCPO/TreePO/TreeRL/SPO for thought optimization, each with limitations like high cost or low efficiency.",
+          "paragraph_ids": [
+            "G1"
+          ],
+          "importance": 1,
+          "key_citations": [
+            "arxiv:2305.18290",
+            "arxiv:2401.08967",
+            "arxiv:2406.03816",
+            "arxiv:2405.00451",
+            "arxiv:2406.11896",
             "arxiv:2502.02955",
             "arxiv:2509.08500",
             "arxiv:2508.17445",
@@ -4191,8 +4210,8 @@
       "key_points": [
         {
           "id": "GPoint1",
-          "type": "topic",
-          "text": "LLMs and VLMs are increasingly used as autonomous agents for mobile interaction.",
+          "type": "method",
+          "text": "Closed-source VLMs are used to build mobile GUI agents and multi-agent frameworks.",
           "importance": 2,
           "topic_id": "GTopic1",
           "citations": []
@@ -4200,7 +4219,7 @@
         {
           "id": "GPoint2",
           "type": "method",
-          "text": "Researchers build mobile GUI agents and multi-agent frameworks based on closed-source VLMs.",
+          "text": "Open-source VLMs are trained for element grounding, page navigation, GUI understanding, and task planning.",
           "importance": 2,
           "topic_id": "GTopic1",
           "citations": []
@@ -4208,35 +4227,25 @@
         {
           "id": "GPoint3",
           "type": "method",
-          "text": "Researchers focus on training agents with stronger element grounding, page navigation, GUI understanding, and task planning based on open-source VLMs.",
-          "importance": 2,
-          "topic_id": "GTopic1",
-          "citations": []
-        },
-        {
-          "id": "GPoint4",
-          "type": "method",
-          "text": "The paper's method organizes trajectory data into multi-turn dialogues based on the CoaT thinking pattern, preventing the agent from becoming an action model with limited capabilities.",
+          "text": "Proposed method organizes trajectory data into multi-turn dialogues based on CoaT thinking pattern to prevent agent becoming a limited action model.",
           "importance": 1,
           "topic_id": "GTopic1",
           "citations": []
         },
         {
-          "id": "GPoint5",
-          "type": "method",
-          "text": "RL algorithms applied in NLP for human preference alignment include Direct Preference Optimization (DPO), Identity Preference Optimization (IPO), Kahneman-Tversky Optimization (KTO), and Proximal Policy Optimization (PPO).",
+          "id": "GPoint4",
+          "type": "topic",
+          "text": "RL algorithms for preference alignment in NLP include DPO, IPO, KTO, and PPO.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
-            "arxiv:2305.18290",
-            "arxiv:2310.12036",
-            "arxiv:2012.02439"
+            "arxiv:2305.18290"
           ]
         },
         {
-          "id": "GPoint6",
+          "id": "GPoint5",
           "type": "method",
-          "text": "ReFT adopts reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
+          "text": "ReFT uses reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
@@ -4244,9 +4253,9 @@
           ]
         },
         {
-          "id": "GPoint7",
+          "id": "GPoint6",
           "type": "method",
-          "text": "ReST-MCTS* focuses on higher-quality step reward, where the process reward model is important.",
+          "text": "ReST-MCTS* focuses on higher-quality step reward and the importance of the process reward model.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
@@ -4254,9 +4263,9 @@
           ]
         },
         {
-          "id": "GPoint8",
+          "id": "GPoint7",
           "type": "method",
-          "text": "Xie et al. label preference via MCTS based on feedback from self-evaluation.",
+          "text": "Xie et al. label preferences via MCTS based on feedback from self-evaluation.",
           "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
@@ -4264,52 +4273,40 @@
           ]
         },
         {
+          "id": "GPoint8",
+          "type": "method",
+          "text": "Digirl and Distrl use online trajectory collection to improve generalization of mobile GUI agents, but the process is very slow.",
+          "importance": 2,
+          "topic_id": "GTopic2",
+          "citations": [
+            "arxiv:2406.11896"
+          ]
+        },
+        {
           "id": "GPoint9",
           "type": "method",
-          "text": "DigiRL and Distrl use online trajectory collection to improve generalization of agents.",
-          "importance": 1,
-          "topic_id": "GTopic2",
-          "citations": [
-            "arxiv:2406.11896",
-            "arxiv:2310.20266"
-          ]
-        },
-        {
-          "id": "GPoint10",
-          "type": "limitation",
-          "text": "DigiRL and Distrl suffer from a very slow process due to online trajectory collection.",
-          "importance": 1,
-          "topic_id": "GTopic2",
-          "citations": [
-            "arxiv:2406.11896",
-            "arxiv:2310.20266"
-          ]
-        },
-        {
-          "id": "GPoint11",
-          "type": "method",
           "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
-          "importance": 1,
+          "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
             "arxiv:2502.02955"
           ]
         },
         {
-          "id": "GPoint12",
+          "id": "GPoint10",
           "type": "limitation",
           "text": "TCPO optimizes thoughts but does not explicitly enforce thought–action consistency.",
-          "importance": 1,
+          "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
             "arxiv:2509.08500"
           ]
         },
         {
-          "id": "GPoint13",
+          "id": "GPoint11",
           "type": "limitation",
           "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, leading to high computational cost and low data efficiency.",
-          "importance": 1,
+          "importance": 2,
           "topic_id": "GTopic2",
           "citations": [
             "arxiv:2508.17445",
@@ -4318,95 +4315,72 @@
           ]
         },
         {
-          "id": "GPoint14",
-          "type": "method",
-          "text": "The paper's method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, with step values computed directly from rule-based rewards without unstable PRMs.",
+          "id": "GPoint12",
+          "type": "comparison",
+          "text": "Proposed method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, while step values are computed directly from rule-based rewards without unstable PRMs.",
           "importance": 1,
           "topic_id": "GTopic2",
           "citations": []
         },
         {
-          "id": "GPoint15",
+          "id": "GPoint13",
           "type": "comparison",
-          "text": "This design yields more efficient sampling and training, especially in GUI-agent settings, contrasting with prior methods.",
+          "text": "The design yields more efficient sampling and training, especially in GUI-agent settings.",
           "importance": 1,
           "topic_id": "GTopic2",
-          "citations": [
-            "arxiv:2406.11896",
-            "arxiv:2310.20266",
-            "arxiv:2502.02955",
-            "arxiv:2509.08500",
-            "arxiv:2508.17445",
-            "arxiv:2506.11902",
-            "arxiv:2505.23564"
-          ]
+          "citations": []
         }
       ],
       "key_references": [
         {
           "reference_key": "arxiv:2305.18290",
-          "importance": 1,
-          "reason": "Direct Preference Optimization is a key method for alignment; the paper's T-DPO is based on it."
-        },
-        {
-          "reference_key": "arxiv:2310.12036",
           "importance": 2,
-          "reason": "Identity Preference Optimization is mentioned as an alternative alignment method."
-        },
-        {
-          "reference_key": "arxiv:2012.02439",
-          "importance": 2,
-          "reason": "Proximal Policy Optimization is a common RL method mentioned for comparison."
+          "reason": "DPO is a foundational RL algorithm for preference alignment mentioned in the RL subsection."
         },
         {
           "reference_key": "arxiv:2401.08967",
           "importance": 2,
-          "reason": "ReFT applies RL to math reasoning, providing context for RL fine-tuning."
+          "reason": "ReFT applies RL as fine-tuning for math reasoning, relevant to the RL discussion."
         },
         {
           "reference_key": "arxiv:2406.03816",
           "importance": 2,
-          "reason": "Focuses on step rewards and process reward model, relevant to RL for reasoning."
+          "reason": "ReST-MCTS* focuses on step rewards and process rewards, a key comparison point."
         },
         {
           "reference_key": "arxiv:2405.00451",
           "importance": 2,
-          "reason": "Uses MCTS for preference labeling, similar to iterative preference learning."
+          "reason": "Xie et al. use MCTS for preference labeling, mentioned as a related method."
         },
         {
           "reference_key": "arxiv:2406.11896",
-          "importance": 1,
-          "reason": "Directly compared as an online RL method for GUI agents, highlighted for slow process."
-        },
-        {
-          "reference_key": "arxiv:2310.20266",
-          "importance": 1,
-          "reason": "Directly compared with DigiRL for online trajectory collection, also slow."
+          "importance": 2,
+          "reason": "Digirl uses online RL for mobile GUI agents, directly compared in the text."
         },
         {
           "reference_key": "arxiv:2502.02955",
-          "importance": 1,
-          "reason": "Directly compared; uses DPO for action comparison."
+          "importance": 2,
+          "reason": "Reachagent uses DPO for action comparison, relevant to RL methods for agents."
         },
         {
           "reference_key": "arxiv:2509.08500",
-          "importance": 1,
-          "reason": "Directly compared; optimizes thoughts but lacks thought-action consistency."
+          "importance": 2,
+          "reason": "TCPO optimizes thoughts but has a limitation (no thought-action consistency), which is a key contrast."
         },
         {
           "reference_key": "arxiv:2508.17445",
-          "importance": 1,
-          "reason": "Directly compared; high cost and low efficiency due to segmentation."
+          "importance": 2,
+          "reason": "TreePO segments sequences, leading to cost issues; compared to proposed fixed-tree approach."
         },
         {
           "reference_key": "arxiv:2506.11902",
-          "importance": 1,
-          "reason": "Directly compared with TreePO and SPO."
+          "importance": 2,
+          "reason": "TreeRL also segments sequences, contributing to high cost and low efficiency."
         },
         {
           "reference_key": "arxiv:2505.23564",
-          "importance": 1,
-          "reason": "Directly compared with TreePO and TreeRL."
+          "importance": 2,
+          "reason": "SPO segments sequences similarly, with same limitations highlighted."
         }
       ]
     },
@@ -4415,7 +4389,7 @@
         {
           "id": "STopic1",
           "label": "VLM-based Mobile GUI Agents",
-          "summary": "Vision-language models serve as backbone for GUI agents, with models like CogAgent, SeeClick, OS-ATLAS, UI-TARS improving perception and grounding.",
+          "summary": "Vision-language models (VLMs) have become the dominant backbone for mobile GUI agents, enabling end-to-end perception and action generation from raw screenshots. Early work such as CogAgent introduced specialized visual encoders, while SeeClick demonstrated GUI grounding pre-training. More recently, OS-ATLAS and UI-TARS scaled large-scale continual pre-training on millions of GUI elements, achieving strong in-domain performance and serving as open-source alternatives.",
           "paragraph_ids": [
             "S1"
           ],
@@ -4429,7 +4403,7 @@
         {
           "id": "STopic2",
           "label": "Chain-of-Action-Thought Reasoning for GUI Control",
-          "summary": "Structured reasoning via CoaT paradigm improves interpretability; datasets AITW and AMEX support fine-tuning.",
+          "summary": "Structured reasoning like Chain-of-Action-Thought (CoaT) is critical for long-horizon GUI tasks. Android in the Zoo formalized CoaT, and datasets such as AITW and AMEX provide large-scale demonstrations. Scarcity of diverse CoaT trajectories and overfitting risk remain open challenges.",
           "paragraph_ids": [
             "S2"
           ],
@@ -4442,7 +4416,7 @@
         {
           "id": "STopic3",
           "label": "Self-Training and Preference Optimization for Reasoning",
-          "summary": "Self-training methods like DPO, Iterative Reasoning PO, CPO, TPO use preference pairs and tree-structured learning to improve reasoning without human annotations.",
+          "summary": "Self-training methods iteratively generate and filter outputs to create training signals. DPO shows that preference pairs from correct vs. incorrect chain-of-thought improve mathematical reasoning. Iterative Reasoning Preference Optimization, CPO, and TPO extend this idea with repeated sampling or tree-structured preferences, mainly studied in text domains.",
           "paragraph_ids": [
             "S3"
           ],
@@ -4456,7 +4430,7 @@
         {
           "id": "STopic4",
           "label": "Process Reward and Tree-Search Methods",
-          "summary": "PRMs provide step-level feedback; ReST-MCTS* and Mulberry use MCTS to generate process rewards and training data, avoiding manual annotation.",
+          "summary": "Process reward models assign per-step feedback but require expensive manual annotation. ReST-MCTS* uses Monte Carlo Tree Search to infer process rewards from final correctness for self-training. Mulberry applies collective MCTS to multimodal reasoning, generating high-quality training data for vision-language models.",
           "paragraph_ids": [
             "S4"
           ],
@@ -4470,7 +4444,7 @@
         {
           "id": "STopic5",
           "label": "Reinforcement Learning for GUI Agents",
-          "summary": "RL methods like ARPO, MobileGUI-RL, CRAFT-GUI optimize GUI policies with trajectory-level rewards and curriculum learning.",
+          "summary": "Reinforcement learning offers a practical alternative to supervised fine-tuning for GUI agents. ARPO uses experience-replay-augmented GRPO, MobileGUI-RL explores online RL with curriculum synthesis, and CRAFT-GUI combines curriculum learning with reward modeling. These methods improve adaptability but often lack step-level reasoning optimization.",
           "paragraph_ids": [
             "S5"
           ],
@@ -4483,7 +4457,7 @@
         {
           "id": "STopic6",
           "label": "Data Diversity and Instruction Evolution",
-          "summary": "Data diversity prevents overfitting; scaling UI data improves in-domain performance but not generalization; instruction evolution expands training space.",
+          "summary": "Data diversity prevents overfitting in fine-tuning. Prior work shows scaling UI control data improves in-domain performance but not out-of-domain generalization. Instruction evolution strategies generate varied question-answer pairs from real UI screenshots to expand the training space and enhance layout understanding.",
           "paragraph_ids": [
             "S6"
           ],
@@ -4496,25 +4470,24 @@
         {
           "id": "SClaim1",
           "paragraph_id": "S1",
-          "text": "CogAgent introduced specialized visual encoders for high-resolution screenshot understanding.",
+          "text": "**VLM-based Mobile GUI Agents.** Vision-language models (VLMs) have become the dominant backbone for mobile GUI agents, enabling end-to-end perception and action generation from raw screenshots.",
           "is_factual": true,
-          "citations": [
-            "arxiv:2312.08914"
-          ]
+          "citations": []
         },
         {
           "id": "SClaim2",
           "paragraph_id": "S1",
-          "text": "SeeClick demonstrated that GUI grounding pre-training directly improves downstream agent performance across mobile, desktop, and web platforms.",
+          "text": "Early work such as CogAgent [1] introduced specialized visual encoders for high-resolution screenshot understanding, while SeeClick [2] demonstrated that GUI grounding pre-training directly improves downstream agent performance across mobile, desktop, and web platforms.",
           "is_factual": true,
           "citations": [
+            "arxiv:2312.08914",
             "arxiv:2401.10935"
           ]
         },
         {
           "id": "SClaim3",
           "paragraph_id": "S1",
-          "text": "OS-ATLAS and UI-TARS scaled through large-scale continual pre-training on millions of GUI elements, achieving strong in-domain performance.",
+          "text": "More recently, OS-ATLAS [3] and UI-TARS [4] scaled this direction through large-scale continual pre-training on millions of GUI elements, achieving strong in-domain performance and serving as open-source alternatives to commercial VLMs.",
           "is_factual": true,
           "citations": [
             "arxiv:2410.23218",
@@ -4523,17 +4496,38 @@
         },
         {
           "id": "SClaim4",
+          "paragraph_id": "S1",
+          "text": "These foundation models establish the perceptual base upon which reasoning-centric post-training methods are built.",
+          "is_factual": false,
+          "citations": []
+        },
+        {
+          "id": "SClaim5",
           "paragraph_id": "S2",
-          "text": "Android in the Zoo (AITZ) formalized the Chain-of-Action-Thought (CoaT) paradigm for mobile agents.",
+          "text": "**Chain-of-Action-Thought Reasoning for GUI Control.** Beyond perception, structured reasoning has proven critical for long-horizon GUI tasks.",
+          "is_factual": false,
+          "citations": []
+        },
+        {
+          "id": "SClaim6",
+          "paragraph_id": "S2",
+          "text": "Android in the Zoo (AITZ) [5] formalized the Chain-of-Action-Thought (CoaT) paradigm for mobile agents, decomposing each action into description, thought, decision, and grounding stages.",
           "is_factual": true,
           "citations": [
             "arxiv:2403.02713"
           ]
         },
         {
-          "id": "SClaim5",
+          "id": "SClaim7",
           "paragraph_id": "S2",
-          "text": "Android in the Wild (AITW) and AMEX provide large-scale human demonstrations with diverse instructions and action spaces for CoaT agents.",
+          "text": "This multi-step reasoning pattern improves interpretability and reduces error accumulation in trajectory execution.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim8",
+          "paragraph_id": "S2",
+          "text": "Complementary datasets such as Android in the Wild (AITW) [6] and AMEX [7] provide large-scale human demonstrations with diverse instructions and action spaces, enabling supervised fine-tuning of CoaT-capable agents.",
           "is_factual": true,
           "citations": [
             "arxiv:2307.10088",
@@ -4541,27 +4535,41 @@
           ]
         },
         {
-          "id": "SClaim6",
+          "id": "SClaim9",
+          "paragraph_id": "S2",
+          "text": "Nevertheless, the scarcity of diverse CoaT trajectories and the risk of overfitting to static reasoning templates remain open challenges.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim10",
           "paragraph_id": "S3",
-          "text": "Self-Training with Direct Preference Optimization (DPO) boosts mathematical reasoning without human annotations.",
+          "text": "**Self-Training and Preference Optimization for Reasoning.** To mitigate data scarcity, self-training methods iteratively generate and filter model outputs to construct new training signals.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim11",
+          "paragraph_id": "S3",
+          "text": "In the reasoning domain, Self-Training with Direct Preference Optimization (DPO) [8] showed that preference pairs derived from correct versus incorrect chain-of-thought outputs can boost mathematical reasoning without human annotations.",
           "is_factual": true,
           "citations": [
             "arxiv:2407.18248"
           ]
         },
         {
-          "id": "SClaim7",
+          "id": "SClaim12",
           "paragraph_id": "S3",
-          "text": "Iterative Reasoning Preference Optimization extends self-training by repeatedly sampling reasoning paths and retraining with composite DPO and negative log-likelihood loss.",
+          "text": "Iterative Reasoning Preference Optimization [9] extended this idea by repeatedly sampling reasoning paths and retraining with a composite DPO and negative log-likelihood loss.",
           "is_factual": true,
           "citations": [
             "arxiv:2404.19733"
           ]
         },
         {
-          "id": "SClaim8",
+          "id": "SClaim13",
           "paragraph_id": "S3",
-          "text": "Chain of Preference Optimization (CPO) and TPO used tree-structured preference learning to capture finer-grained reasoning quality.",
+          "text": "Chain of Preference Optimization (CPO) [10] and TPO [11] further explored tree-structured preference learning, constructing multi-step or multi-branch preference trees to capture finer-grained reasoning quality.",
           "is_factual": true,
           "citations": [
             "arxiv:2406.09136",
@@ -4569,9 +4577,23 @@
           ]
         },
         {
-          "id": "SClaim9",
+          "id": "SClaim14",
+          "paragraph_id": "S3",
+          "text": "These methods highlight the promise of preference-based learning for reasoning, though they have primarily been studied in text-based domains such as math and code.",
+          "is_factual": false,
+          "citations": []
+        },
+        {
+          "id": "SClaim15",
           "paragraph_id": "S4",
-          "text": "Process reward models (PRMs) assign per-step feedback but require expensive manual annotation of intermediate reasoning steps.",
+          "text": "**Process Reward and Tree-Search Methods.** A parallel line of work seeks to improve reasoning through step-level supervision.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim16",
+          "paragraph_id": "S4",
+          "text": "Process reward models (PRMs) [12, 13] assign per-step feedback, but their training typically requires expensive manual annotation of intermediate reasoning steps.",
           "is_factual": true,
           "citations": [
             "arxiv:2310.10080",
@@ -4579,58 +4601,92 @@
           ]
         },
         {
-          "id": "SClaim10",
+          "id": "SClaim17",
           "paragraph_id": "S4",
-          "text": "ReST-MCTS* uses Monte Carlo Tree Search to infer process rewards from final-answer correctness, enabling self-training without explicit step labels.",
+          "text": "ReST-MCTS* [14] addressed this bottleneck by using Monte Carlo Tree Search to infer process rewards from final-answer correctness, enabling self-training without explicit step labels.",
           "is_factual": true,
           "citations": [
             "arxiv:2406.03816"
           ]
         },
         {
-          "id": "SClaim11",
+          "id": "SClaim18",
           "paragraph_id": "S4",
-          "text": "Mulberry applied collective Monte Carlo Tree Search to multimodal reasoning to generate high-quality training data for vision-language models.",
+          "text": "More recently, Mulberry [15] applied collective Monte Carlo Tree Search to multimodal reasoning, demonstrating that tree-based exploration can generate high-quality training data for vision-language models.",
           "is_factual": true,
           "citations": [
             "arxiv:2412.18319"
           ]
         },
         {
-          "id": "SClaim12",
-          "paragraph_id": "S5",
-          "text": "ARPO introduced experience-replay-augmented GRPO for end-to-end policy optimization in sparse-reward GUI environments.",
-          "is_factual": true,
-          "citations": [
-            "arxiv:2505.16282"
-          ]
+          "id": "SClaim19",
+          "paragraph_id": "S4",
+          "text": "These approaches share the intuition that structured search and backward credit assignment can substitute for costly process annotations.",
+          "is_factual": false,
+          "citations": []
         },
         {
-          "id": "SClaim13",
+          "id": "SClaim20",
           "paragraph_id": "S5",
-          "text": "MobileGUI-RL explored online RL with curriculum task synthesis in real mobile settings.",
+          "text": "**Reinforcement Learning for GUI Agents.** Reinforcement learning (RL) has emerged as a practical alternative to supervised fine-tuning for GUI agents.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim21",
+          "paragraph_id": "S5",
+          "text": "ARPO [16] introduced experience-replay-augmented GRPO for end-to-end policy optimization in sparse-reward GUI environments, while MobileGUI-RL [17] explored online RL with curriculum task synthesis in real mobile settings.",
           "is_factual": true,
           "citations": [
+            "arxiv:2505.16282",
             "arxiv:2507.05720"
           ]
         },
         {
-          "id": "SClaim14",
+          "id": "SClaim22",
           "paragraph_id": "S5",
-          "text": "CRAFT-GUI combined curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity.",
+          "text": "CRAFT-GUI [18] combined curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity.",
           "is_factual": true,
           "citations": [
             "arxiv:2508.11360"
           ]
         },
         {
-          "id": "SClaim15",
+          "id": "SClaim23",
+          "paragraph_id": "S5",
+          "text": "These RL methods improve agent adaptability but often rely on trajectory-level rewards and do not explicitly optimize intermediate reasoning steps within the CoaT structure.",
+          "is_factual": false,
+          "citations": []
+        },
+        {
+          "id": "SClaim24",
           "paragraph_id": "S6",
-          "text": "Scaling UI control data improves in-domain performance while out-of-domain generalization remains challenging.",
+          "text": "**Data Diversity and Instruction Evolution.** Data diversity is widely recognized as a key factor in preventing overfitting during fine-tuning.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim25",
+          "paragraph_id": "S6",
+          "text": "In the GUI domain, prior work has investigated the scaling properties of UI control data [19], showing that in-domain performance improves with data volume while out-of-domain generalization remains challenging.",
           "is_factual": true,
           "citations": [
             "arxiv:2406.03679"
           ]
+        },
+        {
+          "id": "SClaim26",
+          "paragraph_id": "S6",
+          "text": "Instruction evolution strategies—generating varied question-answer pairs grounded in real UI screenshots—have been adopted to expand the effective training space and enhance layout understanding.",
+          "is_factual": true,
+          "citations": []
+        },
+        {
+          "id": "SClaim27",
+          "paragraph_id": "S6",
+          "text": "Such techniques complement self-training by ensuring that the policy model explores a broad distribution of reasoning contexts rather than memorizing static trajectories.",
+          "is_factual": false,
+          "citations": []
         }
       ]
     },
@@ -4639,117 +4695,101 @@
         {
           "gold_point_id": "GPoint1",
           "best_claim_ids": [
-            "SClaim4"
+            "SClaim1"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "Candidate claims mention mobile GUI agents but do not explicitly state that LLMs/VLMs are increasingly used; SClaim4 discusses CoaT paradigm for mobile agents, which pertains to the use of VLMs."
+          "rationale": "SClaim1 mentions VLMs as backbone for mobile GUI agents but does not specify closed-source nor multi-agent frameworks."
         },
         {
           "gold_point_id": "GPoint2",
           "best_claim_ids": [
-            "SClaim4"
+            "SClaim3"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "Candidate claims describe mobile GUI agents but do not specify closed-source VLMs."
+          "rationale": "SClaim3 mentions open-source alternatives but does not explicitly list training for grounding, navigation, understanding, and planning."
         },
         {
           "gold_point_id": "GPoint3",
-          "best_claim_ids": [
-            "SClaim2"
-          ],
-          "match_score": 0.5,
-          "status": "partial",
-          "rationale": "SClaim2 discusses GUI grounding pre-training, which relates to element grounding and page navigation, but does not specify open-source VLMs."
-        },
-        {
-          "gold_point_id": "GPoint4",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim covers the paper's method of organizing trajectory data into multi-turn dialogues based on CoaT."
+          "rationale": "No candidate claim describes the proposed method of organizing trajectory data into multi-turn dialogues based on CoaT."
         },
         {
-          "gold_point_id": "GPoint5",
+          "gold_point_id": "GPoint4",
           "best_claim_ids": [
-            "SClaim6"
+            "SClaim11"
           ],
           "match_score": 0.5,
           "status": "partial",
-          "rationale": "Candidate claims mention DPO but not IPO, KTO, or PPO as listed in the gold point."
+          "rationale": "SClaim11 mentions DPO but not IPO, KTO, or PPO."
         },
         {
-          "gold_point_id": "GPoint6",
+          "gold_point_id": "GPoint5",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
           "rationale": "No candidate claim mentions ReFT."
         },
         {
-          "gold_point_id": "GPoint7",
+          "gold_point_id": "GPoint6",
           "best_claim_ids": [
-            "SClaim10"
+            "SClaim17"
           ],
           "match_score": 1.0,
           "status": "complete",
-          "rationale": "SClaim10 explicitly describes ReST-MCTS* and its use of MCTS for process rewards."
+          "rationale": "SClaim17 directly mentions ReST-MCTS* and its use of MCTS to infer process rewards."
+        },
+        {
+          "gold_point_id": "GPoint7",
+          "best_claim_ids": [],
+          "match_score": 0.0,
+          "status": "missing",
+          "rationale": "No candidate claim mentions Xie et al. or labeling preferences via MCTS."
         },
         {
           "gold_point_id": "GPoint8",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions Xie et al. or their method."
+          "rationale": "No candidate claim mentions Digirl or Distrl."
         },
         {
           "gold_point_id": "GPoint9",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions DigiRL or Distrl."
+          "rationale": "No candidate claim mentions Reachagent."
         },
         {
           "gold_point_id": "GPoint10",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions the limitation of DigiRL and Distrl."
+          "rationale": "No candidate claim mentions TCPO."
         },
         {
           "gold_point_id": "GPoint11",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions Reachagent."
+          "rationale": "No candidate claim mentions TreePO, TreeRL, or SPO."
         },
         {
           "gold_point_id": "GPoint12",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions TCPO."
+          "rationale": "No candidate claim describes the proposed method with fixed CoaT-tree and T-DPO."
         },
         {
           "gold_point_id": "GPoint13",
           "best_claim_ids": [],
           "match_score": 0.0,
           "status": "missing",
-          "rationale": "No candidate claim mentions TreePO, TreeRL, or SPO."
-        },
-        {
-          "gold_point_id": "GPoint14",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No candidate claim covers the paper's method of modeling thoughts with a fixed CoaT-tree and T-DPO."
-        },
-        {
-          "gold_point_id": "GPoint15",
-          "best_claim_ids": [],
-          "match_score": 0.0,
-          "status": "missing",
-          "rationale": "No candidate claim discusses the efficiency comparison of the paper's method."
+          "rationale": "No candidate claims describe the design's efficiency in GUI-agent settings."
         }
       ]
     },
@@ -4758,77 +4798,137 @@
         {
           "claim_id": "SClaim1",
           "relevance_score": 1.0,
-          "rationale": "Describes CogAgent's specialized visual encoders for GUI understanding, directly supporting ground truth points about VLMs used as mobile GUI agents and methods for GUI understanding (GPoints 1, 2, 3)."
+          "rationale": "Directly relates to GPoint1 and GPoint2 on VLM-based mobile GUI agents, establishing the perceptual foundation for GUI agents."
         },
         {
           "claim_id": "SClaim2",
           "relevance_score": 1.0,
-          "rationale": "Reports that GUI grounding pre-training (SeeClick) improves agent performance across platforms, aligning with ground truth emphasis on training agents with stronger element grounding (GPoint 3)."
+          "rationale": "Relates to GPoint2 on open-source VLMs trained for GUI grounding, mentioning concrete works (CogAgent, SeeClick)."
         },
         {
           "claim_id": "SClaim3",
           "relevance_score": 1.0,
-          "rationale": "States that OS-ATLAS and UI-TARS achieve strong in-domain performance via large-scale pre-training on GUI elements, relevant to ground truth topics of scaling open-source VLM-based agents (GPoints 1, 3)."
+          "rationale": "Relates to GPoint2 on open-source VLMs as alternatives to commercial models, citing OS-ATLAS and UI-TARS."
         },
         {
           "claim_id": "SClaim4",
-          "relevance_score": 1.0,
-          "rationale": "Notes that AITZ formalized the Chain-of-Action-Thought paradigm, directly matching the ground truth's description of CoaT-based trajectory organization (GPoint 4)."
+          "relevance_score": 0.5,
+          "rationale": "Connects perception to reasoning-centric post-training, but is a general statement not tied to a specific ground truth key point."
         },
         {
           "claim_id": "SClaim5",
           "relevance_score": 1.0,
-          "rationale": "Mentions AITW and AMEX as large-scale human demonstration datasets for CoaT agents, providing the data foundation for training such agents, which supports ground truth points on mobile agent development (GPoints 1, 2, 3)."
+          "rationale": "Introduces CoaT reasoning for GUI control, directly aligning with GPoint3 and the broader CoaT theme."
         },
         {
           "claim_id": "SClaim6",
           "relevance_score": 1.0,
-          "rationale": "Describes DPO self-training improving mathematical reasoning, which relates to ground truth topic 2's coverage of preference optimization methods (e.g., DPO in GPoint 5) and RL for reasoning (GPoint 6)."
+          "rationale": "Directly mentions the CoaT paradigm from AITZ, which is central to GPoint3's proposed method."
         },
         {
           "claim_id": "SClaim7",
-          "relevance_score": 1.0,
-          "rationale": "Presents iterative reasoning preference optimization with composite DPO+NLL loss, aligning with ground truth's mention of iterative refinement and preference-based training (GPoints 5, 6)."
+          "relevance_score": 0.5,
+          "rationale": "States a general benefit of CoaT (interpretability, error reduction) but does not correspond to a specific ground truth point."
         },
         {
           "claim_id": "SClaim8",
           "relevance_score": 1.0,
-          "rationale": "States that CPO and TPO use tree-structured preference learning, which corresponds to ground truth's inclusion of tree-based methods and step-level optimization (GPoints 8, 12, 13)."
+          "rationale": "Relates to datasets (AITW, AMEX) enabling CoaT fine-tuning, aligning with GPoint2 (training data) and GPoint8 (data diversity)."
         },
         {
           "claim_id": "SClaim9",
-          "relevance_score": 1.0,
-          "rationale": "Discusses process reward models and their reliance on manual annotation, directly relevant to ground truth's focus on process reward models and their challenges (GPoint 7, also implied in limitations like GPoint 12)."
+          "relevance_score": 0.5,
+          "rationale": "Identifies challenges (scarcity, overfitting) that ground truth methods address, but is not a direct claim about a specific method."
         },
         {
           "claim_id": "SClaim10",
           "relevance_score": 1.0,
-          "rationale": "Describes ReST-MCTS* using MCTS to infer process rewards, directly matching ground truth's mention of ReST-MCTS* and process reward modeling (GPoint 7)."
+          "rationale": "Introduces self-training and preference optimization, a core theme of GTopic2 (GPoint4, etc.)."
         },
         {
           "claim_id": "SClaim11",
           "relevance_score": 1.0,
-          "rationale": "Reports Mulberry using collective MCTS for multimodal reasoning, which is a variant of MCTS-based training, relevant to ground truth's coverage of MCTS for preference learning and self-training (GPoints 8, 10)."
+          "rationale": "Directly relates to GPoint4 (DPO for preference alignment) and GPoint5 (RL fine-tuning for reasoning)."
         },
         {
           "claim_id": "SClaim12",
           "relevance_score": 1.0,
-          "rationale": "Introduces ARPO's experience-replay-augmented GRPO for GUI agents, directly relevant to ground truth's discussion of online RL methods for GUI agents (GPoints 9, 10, 15)."
+          "rationale": "Discusses iterative preference optimization, expanding on GPoint4/5 methods."
         },
         {
           "claim_id": "SClaim13",
           "relevance_score": 1.0,
-          "rationale": "Presents MobileGUI-RL's online RL with curriculum task synthesis for mobile GUI, aligning with ground truth's coverage of online trajectory collection and generalization for GUI agents (GPoints 9, 10)."
+          "rationale": "Directly relates to tree-structured preference learning methods like CPO/TPO, which align with GPoint11 and GPoint12's tree-based approach."
         },
         {
           "claim_id": "SClaim14",
-          "relevance_score": 1.0,
-          "rationale": "Describes CRAFT-GUI's curriculum learning and fine-grained reward modeling for GUI tasks, relevant to ground truth's broader themes of RL training strategies for GUI agents (GPoints 9, 10, 15)."
+          "relevance_score": 0.5,
+          "rationale": "Concludes with a domain gap observation, partially relevant to the proposed method's focus on GUI agents."
         },
         {
           "claim_id": "SClaim15",
           "relevance_score": 1.0,
-          "rationale": "Notes that scaling UI control data aids in-domain but not out-of-domain performance, which relates to ground truth's discussion of scaling challenges and generalization limitations in agent training (GPoints 10, 15)."
+          "rationale": "Introduces process reward models and tree-search, central to GPoint6, GPoint16, and GPoint17."
+        },
+        {
+          "claim_id": "SClaim16",
+          "relevance_score": 1.0,
+          "rationale": "Directly describes PRMs and their expensive annotation, aligning with the bottleneck addressed in GPoint6 and GPoint17."
+        },
+        {
+          "claim_id": "SClaim17",
+          "relevance_score": 1.0,
+          "rationale": "Specifically discusses ReST-MCTS*, which is GPoint6, and its use of MCTS to infer process rewards."
+        },
+        {
+          "claim_id": "SClaim18",
+          "relevance_score": 1.0,
+          "rationale": "Relates to GPoint7 (MCTS-based preference labeling) and GPoint18 (Mulberry for multimodal reasoning)."
+        },
+        {
+          "claim_id": "SClaim19",
+          "relevance_score": 0.5,
+          "rationale": "General summarizing statement about structured search, not a specific claim tied to a ground truth point."
+        },
+        {
+          "claim_id": "SClaim20",
+          "relevance_score": 1.0,
+          "rationale": "Introduces RL for GUI agents, directly relevant to GPoint8 and GPoint20."
+        },
+        {
+          "claim_id": "SClaim21",
+          "relevance_score": 1.0,
+          "rationale": "Discusses specific RL methods (ARPO, MobileGUI-RL) for GUI agents, aligning with GPoint8, GPoint9, and GPoint21."
+        },
+        {
+          "claim_id": "SClaim22",
+          "relevance_score": 1.0,
+          "rationale": "Covers curriculum learning and reward modeling (CRAFT-GUI), relevant to GPoint22 and general RL approaches."
+        },
+        {
+          "claim_id": "SClaim23",
+          "relevance_score": 1.0,
+          "rationale": "Points out a limitation of existing RL methods (lack of CoaT optimization), which the proposed method (GPoint10/12) addresses."
+        },
+        {
+          "claim_id": "SClaim24",
+          "relevance_score": 1.0,
+          "rationale": "Introduces data diversity, a key factor in GPoint8 (online collection) and GPoint13 (efficient training)."
+        },
+        {
+          "claim_id": "SClaim25",
+          "relevance_score": 1.0,
+          "rationale": "Discusses scaling properties of UI control data, relevant to GPoint8's generalization challenge."
+        },
+        {
+          "claim_id": "SClaim26",
+          "relevance_score": 0.5,
+          "rationale": "Describes instruction evolution strategies, which relate to data diversity but are not explicitly covered in ground truth key points."
+        },
+        {
+          "claim_id": "SClaim27",
+          "relevance_score": 0.5,
+          "rationale": "General statement about benefits of data diversity, not tied to a specific ground truth point."
         }
       ]
     },
@@ -4838,10 +4938,11 @@
           "g_topic_id": "GTopic1",
           "s_topic_ids": [
             "STopic1",
-            "STopic2"
+            "STopic2",
+            "STopic5"
           ],
-          "match_score": 9,
-          "rationale": "GTopic1 (Mobile GUI Agent) directly corresponds to STopic1 (VLM-based Mobile GUI Agents) and STopic2 (Chain-of-Action-Thought Reasoning for GUI Control) as both cover the core idea of using VLMs for GUI agents and the introduced CoaT thinking pattern."
+          "match_score": 8.0,
+          "rationale": "STopic1 directly covers VLM-based mobile GUI agents, STopic2 covers reasoning for GUI control, and STopic5 covers RL for GUI agents. Together they address the key aspects of gold topic 1 (mobile GUI agents) but STopic2 and STopic5 are more specific, leaving some gaps (e.g., element grounding)."
         },
         {
           "g_topic_id": "GTopic2",
@@ -4850,236 +4951,240 @@
             "STopic4",
             "STopic5"
           ],
-          "match_score": 9,
-          "rationale": "GTopic2 (Reinforcement Learning) aligns well with STopic3 (Self-Training and Preference Optimization), STopic4 (Process Reward and Tree-Search Methods), and STopic5 (Reinforcement Learning for GUI Agents), as these cover the key RL algorithms and applications mentioned, including DPO, ReST-MCTS*, and RL for GUI agents."
+          "match_score": 8.0,
+          "rationale": "STopic3 covers self-training and preference optimization, STopic4 covers process reward and tree-search methods, STopic5 covers RL for GUI agents (which includes preference alignment). These cover the core of gold topic 2 (RL for preference alignment) but lack explicit coverage of some algorithms (e.g., KTO, IPO) and are more focused on reasoning and GUI applications."
         }
       ],
       "paragraph_scores": [
         {
           "paragraph_id": "S1",
-          "topic_purity": 10,
-          "topic_coherence": 10,
-          "citation_topic_consistency": 10,
-          "issues": []
+          "topic_purity": 10.0,
+          "topic_coherence": 9.0,
+          "citation_topic_consistency": 9.0,
+          "issues": [
+            "None identified."
+          ]
         },
         {
           "paragraph_id": "S2",
-          "topic_purity": 10,
-          "topic_coherence": 10,
-          "citation_topic_consistency": 9,
+          "topic_purity": 9.0,
+          "topic_coherence": 8.0,
+          "citation_topic_consistency": 9.0,
           "issues": [
-            "Citations for CoaT and datasets are present but may not cover all aspects of the gold topic's CoaT thinking pattern."
+            "Could be more explicitly linked to VLM-based agents; reads as a separate reasoning topic."
           ]
         },
         {
           "paragraph_id": "S3",
-          "topic_purity": 9,
-          "topic_coherence": 9,
-          "citation_topic_consistency": 9,
+          "topic_purity": 9.0,
+          "topic_coherence": 9.0,
+          "citation_topic_consistency": 8.0,
           "issues": [
-            "Covers self-training and preference optimization but slightly overlaps with tree-search methods; could be more focused."
+            "Lacks application to the GUI domain; focus on text reasoning may feel disconnected."
           ]
         },
         {
           "paragraph_id": "S4",
-          "topic_purity": 10,
-          "topic_coherence": 10,
-          "citation_topic_consistency": 10,
-          "issues": []
+          "topic_purity": 9.0,
+          "topic_coherence": 9.0,
+          "citation_topic_consistency": 9.0,
+          "issues": [
+            "Does not connect to mobile agent context; appears as a standalone method description."
+          ]
         },
         {
           "paragraph_id": "S5",
-          "topic_purity": 9,
-          "topic_coherence": 9,
-          "citation_topic_consistency": 9,
+          "topic_purity": 10.0,
+          "topic_coherence": 9.0,
+          "citation_topic_consistency": 9.0,
           "issues": [
-            "Covers RL for GUI agents but may lack some broader RL context from gold topic."
+            "As noted, may lack step-level reasoning optimization; could benefit from bridging self-training and process rewards."
           ]
         },
         {
           "paragraph_id": "S6",
-          "topic_purity": 8,
-          "topic_coherence": 8,
-          "citation_topic_consistency": 7,
+          "topic_purity": 10.0,
+          "topic_coherence": 8.0,
+          "citation_topic_consistency": 7.0,
           "issues": [
-            "Data diversity is tangentially related to the main RL and GUI agent topics; citations are sparse and not heavily connected to the core methods."
+            "Only one citation; topic seems ancillary to main themes and feels slightly out of place."
           ]
         }
       ],
       "topic_granularity": {
-        "score": 7,
-        "rationale": "The candidate splits the two gold topics into six more specific sub-topics (e.g., separating VLM agents, CoaT reasoning, and RL sub-methods). This provides detailed coverage but may be overly granular, risking fragmentation and loss of high-level integration."
+        "score": 9.0,
+        "rationale": "The candidate topics break down the two broad gold topics into six finer-grained subtopics (VLM agents, reasoning, self-training, process rewards, RL for GUI, data diversity). This granularity provides a comprehensive overview of the field, though some subtopics could be merged or more balanced."
       },
       "topic_ordering": {
-        "score": 8,
-        "rationale": "The candidate's order is logical: it starts with GUI agent fundamentals (VLM and CoaT reasoning), then progresses to RL methods (self-training, tree-search, and GUI-specific RL), and ends with data diversity. This roughly follows the gold topics order and supports a coherent narrative."
+        "score": 8.0,
+        "rationale": "The ordering begins with VLM-based agents (foundational), then moves to reasoning, optimization methods, RL for GUI, and ends with data diversity. This is generally logical, but RL for GUI (S5) might be better placed after the agent topics to group GUI-specific content, and data diversity (S6) could be integrated earlier."
       }
     },
     "synthesis_writing_judgment": {
       "synthesis_quality": {
         "score": 7.5,
-        "rationale": "The synthesis effectively organizes the related work into coherent thematic paragraphs (VLM-based agents, CoaT reasoning, self-training, process reward models, RL for GUI, data diversity), demonstrating a clear landscape. It includes method descriptions and identifies limitations (e.g., scarcity of CoaT trajectories, expensive annotations, slow online RL, computational cost of segmentation). However, the gap motivation is somewhat implicit; the text does not explicitly link the discussed challenges to the paper's proposed solution (CoaT-tree with T-DPO), and there is limited direct comparison between methods within categories (e.g., comparing DPO variants or RL approaches more explicitly). The candidate avoids mere paper listing by grouping and contextualizing, but the overall narrative could more strongly drive towards the intended contribution.",
+        "rationale": "The candidate builds a coherent landscape by organizing related work into six thematic subsections (VLM agents, CoaT reasoning, self-training/preference optimization, process reward methods, RL for GUI agents, data diversity). It moves seamlessly from perception to reasoning to optimization, which demonstrates good synthesis. Limitations are identified in several paragraphs (e.g., scarcity of CoaT trajectories, text-domain focus, manual annotation cost, reliance on trajectory-level rewards), and these limitations collectively hint at a gap. However, the work is somewhat descriptive rather than critically comparative: within each subsection, methods are listed with brief summaries but few direct comparisons of strengths/weaknesses. The gap motivation remains implicit rather than explicitly stated (e.g., 'therefore our method...'), which slightly lowers the score. Overall, it is solidly above a mere paper list.",
         "issues": [
-          "Gap motivation is present but could be more explicit in connecting challenges to the paper's method.",
-          "Limited direct comparison between methods within each category (e.g., no explicit contrast of CPO vs. TPO).",
-          "Some paragraphs, like Data Diversity, feel slightly disconnected from the main reasoning themes."
+          "Limited direct comparison between methods within each subsection (e.g., why one VLM may be preferable over another).",
+          "Gap motivation is not explicitly articulated; the reader must infer the niche from the listed limitations.",
+          "Some paragraphs (e.g., Data Diversity) are less tightly integrated into the main narrative, weakening the sense of a unified story."
         ]
       },
       "writing_quality": {
         "score": 8.5,
-        "rationale": "The writing maintains a professional academic tone with consistent terminology (CoaT, DPO, PRM, etc.). Clarity is high: each paragraph begins with a clear topic sentence, and the flow between sections is logical. Sentences are generally concise, though a few are somewhat long (e.g., 'OS-ATLAS and UI-TARS scaled this direction...'). Terminology consistency is maintained throughout. Sentence flow is smooth with appropriate transitions ('Beyond perception...', 'To mitigate data scarcity...', 'A parallel line of work...'). Minor issues include slightly informal phrasing ('scaled this direction') and occasional redundancy (e.g., 'achieving strong in-domain performance and serving as open-source alternatives' could be tightened). Overall, the writing is of high quality and suitable for an academic related work section.",
+        "rationale": "The writing maintains a formal academic tone throughout, with clear and precise terminology (e.g., 'Chain-of-Action-Thought', 'process reward models'). Sentences are generally well-constructed and flow logically from one to the next, aided by transitional phrases ('Beyond perception...', 'To mitigate data scarcity...'). Each subsection is focused and progresses the discussion. The text is concise for its scope, though occasional sentences are somewhat lengthy and could be split for even greater clarity. Terminology is consistent (e.g., 'CoaT', 'self-training', 'preference optimization'). Minor issues include a few unsupported interpretive claims (e.g., 'These foundation models establish the perceptual base...') which, while not incorrect, would benefit from a citation or more cautious phrasing. Overall, the writing quality is high and effectively communicates the related work.",
         "issues": [
-          "Occasional informal phrasing, e.g., 'scaled this direction' could be more formal.",
-          "A few sentences are overly long and could be split for better readability.",
-          "Minor redundancy in descriptions (e.g., 'large-scale continual pre-training on millions of GUI elements, achieving strong in-domain performance and serving as open-source alternatives' could be streamlined)."
+          "Occasional long sentences (e.g., in the Self-Training paragraph) could be restructured for better readability.",
+          "A small number of statements (e.g., 'improves interpretability and reduces error accumulation') are presented as established facts without citations, which slightly weakens academic rigor.",
+          "The closing sentence of the final paragraph ('Such techniques complement self-training...') is a bit vague and could be more tightly linked to the preceding content."
         ]
       }
     },
     "citation_judgment": {
       "citation_judgments": [
         {
-          "claim_id": "SClaim1",
+          "claim_id": "SClaim2",
           "reference_key": "arxiv:2312.08914",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "The CogAgent paper introduces dual visual encoders (low- and high-resolution) to process high-resolution screenshots (1120x1120), directly supporting the claim about specialized visual encoders for high-resolution screenshot understanding.",
+          "appropriateness_score": 9,
+          "placement_score": 9,
+          "topic_consistency_score": 10,
+          "support_rationale": "CogAgent introduces dual encoders (low- and high-resolution) for processing 1120×1120 screenshots, directly matching the claim of specialized visual encoders for high-resolution screenshot understanding.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The CogAgent paper introduces dual visual encoders (low- and high-resolution) to process high-resolution screenshots (1120x1120), directly supporting the claim about specialized visual encoders for high-resolution screenshot understanding."
+          "rationale": "CogAgent introduces dual encoders (low- and high-resolution) for processing 1120×1120 screenshots, directly matching the claim of specialized visual encoders for high-resolution screenshot understanding."
         },
         {
           "claim_id": "SClaim2",
           "reference_key": "arxiv:2401.10935",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "SeeClick's abstract and TLDR state that GUI grounding pre-training directly correlates with improved downstream agent performance on benchmarks spanning mobile, desktop, and web platforms, exactly matching the claim.",
+          "appropriateness_score": 9,
+          "placement_score": 9,
+          "topic_consistency_score": 10,
+          "support_rationale": "SeeClick demonstrates that GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms, as evidenced by evaluations on ScreenSpot and other benchmarks.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "SeeClick's abstract and TLDR state that GUI grounding pre-training directly correlates with improved downstream agent performance on benchmarks spanning mobile, desktop, and web platforms, exactly matching the claim."
+          "rationale": "SeeClick demonstrates that GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms, as evidenced by evaluations on ScreenSpot and other benchmarks."
         },
         {
           "claim_id": "SClaim3",
           "reference_key": "arxiv:2410.23218",
-          "support": "partial",
-          "appropriateness_score": 8.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus.",
-          "overclaim_status": "mild",
-          "overclaim_rationale": "The paper does not mention 'continual pre-training'; it highlights large-scale data and model training innovations but not an iterative or continual pre-training process.",
-          "rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus."
+          "support": "yes",
+          "appropriateness_score": 9,
+          "placement_score": 9,
+          "topic_consistency_score": 10,
+          "support_rationale": "OS-Atlas performs large-scale continual pre-training on over 13 million GUI elements across multiple platforms, achieving strong in-domain performance and serving as an open-source alternative to commercial VLMs like GPT-4o.",
+          "overclaim_status": "none",
+          "overclaim_rationale": "",
+          "rationale": "OS-Atlas performs large-scale continual pre-training on over 13 million GUI elements across multiple platforms, achieving strong in-domain performance and serving as an open-source alternative to commercial VLMs like GPT-4o."
         },
         {
           "claim_id": "SClaim3",
           "reference_key": "arxiv:2501.12326",
-          "support": "partial",
-          "appropriateness_score": 8.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements.",
-          "overclaim_status": "mild",
-          "overclaim_rationale": "The paper does not explicitly describe 'continual pre-training on millions of GUI elements'; it focuses on enhanced perception from large-scale screenshots and iterative training with reflective online traces.",
-          "rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements."
-        },
-        {
-          "claim_id": "SClaim4",
-          "reference_key": "arxiv:2403.02713",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "Android in the Zoo (AITZ) introduces the Chain-of-Action-Thought (CoAT) paradigm, formalizing it for mobile agents, exactly as claimed.",
+          "appropriateness_score": 8,
+          "placement_score": 8,
+          "topic_consistency_score": 9,
+          "support_rationale": "UI-TARS leverages large-scale screenshot data and achieves state-of-the-art performance, positioning itself as an open-source alternative. The claim of 'millions of GUI elements' is supported by its large-scale data collection and iterative training, though not explicitly quantified in the abstract.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "Android in the Zoo (AITZ) introduces the Chain-of-Action-Thought (CoAT) paradigm, formalizing it for mobile agents, exactly as claimed."
-        },
-        {
-          "claim_id": "SClaim5",
-          "reference_key": "arxiv:2307.10088",
-          "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "AITW provides a large-scale dataset with 715k episodes and 30k unique instructions featuring human demonstrations, matching 'large-scale human demonstrations with diverse instructions and action spaces'.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "AITW provides a large-scale dataset with 715k episodes and 30k unique instructions featuring human demonstrations, matching 'large-scale human demonstrations with diverse instructions and action spaces'."
-        },
-        {
-          "claim_id": "SClaim5",
-          "reference_key": "arxiv:2407.17490",
-          "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "AMEX provides over 104K screenshots with stepwise natural language instructions and GUI-action chains, constituting large-scale human demonstrations for mobile agents.",
-          "overclaim_status": "none",
-          "overclaim_rationale": "",
-          "rationale": "AMEX provides over 104K screenshots with stepwise natural language instructions and GUI-action chains, constituting large-scale human demonstrations for mobile agents."
+          "rationale": "UI-TARS leverages large-scale screenshot data and achieves state-of-the-art performance, positioning itself as an open-source alternative. The claim of 'millions of GUI elements' is supported by its large-scale data collection and iterative training, though not explicitly quantified in the abstract."
         },
         {
           "claim_id": "SClaim6",
+          "reference_key": "arxiv:2403.02713",
+          "support": "yes",
+          "appropriateness_score": 9,
+          "placement_score": 9,
+          "topic_consistency_score": 10,
+          "support_rationale": "Android in the Zoo (AITZ) formalizes the Chain-of-Action-Thought (CoAT) paradigm, decomposing actions into screen context, action thinking, target, and outcome, which aligns with the claim's stages.",
+          "overclaim_status": "none",
+          "overclaim_rationale": "",
+          "rationale": "Android in the Zoo (AITZ) formalizes the Chain-of-Action-Thought (CoAT) paradigm, decomposing actions into screen context, action thinking, target, and outcome, which aligns with the claim's stages."
+        },
+        {
+          "claim_id": "SClaim8",
+          "reference_key": "arxiv:2307.10088",
+          "support": "yes",
+          "appropriateness_score": 9,
+          "placement_score": 9,
+          "topic_consistency_score": 10,
+          "support_rationale": "Android in the Wild (AITW) provides a large-scale dataset with 715k episodes and 30k unique instructions from human demonstrations, supporting the claim of large-scale human demonstrations with diverse instructions and action spaces.",
+          "overclaim_status": "none",
+          "overclaim_rationale": "",
+          "rationale": "Android in the Wild (AITW) provides a large-scale dataset with 715k episodes and 30k unique instructions from human demonstrations, supporting the claim of large-scale human demonstrations with diverse instructions and action spaces."
+        },
+        {
+          "claim_id": "SClaim8",
+          "reference_key": "arxiv:2407.17490",
+          "support": "yes",
+          "appropriateness_score": 8,
+          "placement_score": 8,
+          "topic_consistency_score": 9,
+          "support_rationale": "AMEX provides over 104K screenshots with multi-level annotations including stepwise instructions and action chains, enabling supervised fine-tuning. The dataset is designed for robust mobile GUI agent training.",
+          "overclaim_status": "none",
+          "overclaim_rationale": "",
+          "rationale": "AMEX provides over 104K screenshots with multi-level annotations including stepwise instructions and action chains, enabling supervised fine-tuning. The dataset is designed for robust mobile GUI agent training."
+        },
+        {
+          "claim_id": "SClaim11",
           "reference_key": "arxiv:2407.18248",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "The paper proposes self-training with DPO for mathematical reasoning, explicitly stating it improves chain-of-thought reasoning without human annotations.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "The paper explicitly shows that self-training with DPO, using preference pairs from correct vs. incorrect chain-of-thought outputs, boosts mathematical reasoning without human annotations.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The paper proposes self-training with DPO for mathematical reasoning, explicitly stating it improves chain-of-thought reasoning without human annotations."
+          "rationale": "The paper explicitly shows that self-training with DPO, using preference pairs from correct vs. incorrect chain-of-thought outputs, boosts mathematical reasoning without human annotations."
         },
         {
-          "claim_id": "SClaim7",
+          "claim_id": "SClaim12",
           "reference_key": "arxiv:2404.19733",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "Iterative RPO repeatedly samples reasoning paths and uses a modified DPO loss with an NLL term, exactly as described in the claim.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "Iterative Reasoning Preference Optimization (Iterative RPO) uses repeated sampling of reasoning paths and retraining with a composite DPO and NLL loss, directly matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "Iterative RPO repeatedly samples reasoning paths and uses a modified DPO loss with an NLL term, exactly as described in the claim."
+          "rationale": "Iterative Reasoning Preference Optimization (Iterative RPO) uses repeated sampling of reasoning paths and retraining with a composite DPO and NLL loss, directly matching the claim."
         },
         {
-          "claim_id": "SClaim8",
+          "claim_id": "SClaim13",
           "reference_key": "arxiv:2406.09136",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "CPO leverages tree-of-thought structures for pairwise preference data at the step level, enabling finer-grained reasoning quality learning.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "CPO uses tree-of-thought search trees to construct multi-step preference data, aligning with the claim of tree-structured preference learning.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "CPO leverages tree-of-thought structures for pairwise preference data at the step level, enabling finer-grained reasoning quality learning."
+          "rationale": "CPO uses tree-of-thought search trees to construct multi-step preference data, aligning with the claim of tree-structured preference learning."
         },
         {
-          "claim_id": "SClaim8",
+          "claim_id": "SClaim13",
           "reference_key": "arxiv:2410.12854",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "TPO directly learns from multi-branch, multi-step preference trees, capturing finer-grained reasoning quality as claimed.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "TPO directly learns from multi-branch, multi-step preference trees, supporting the claim of tree-structured preference learning.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "TPO directly learns from multi-branch, multi-step preference trees, capturing finer-grained reasoning quality as claimed."
+          "rationale": "TPO directly learns from multi-branch, multi-step preference trees, supporting the claim of tree-structured preference learning."
         },
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim16",
           "reference_key": "arxiv:2310.10080",
-          "support": "no",
-          "appropriateness_score": 2.0,
+          "support": "weak",
+          "appropriateness_score": 3.0,
           "placement_score": 5.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+          "topic_consistency_score": 4.0,
+          "support_rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+          "rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
           "retrieval_used": true,
           "retrieved_evidence": [
             {
@@ -5096,93 +5201,93 @@
           "second_pass_used": true
         },
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim16",
           "reference_key": "arxiv:2501.13622",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "CFPRM introduces a coarse-to-fine data collection strategy to reduce the cost of manual step annotation, acknowledging that PRMs typically require expensive manual annotation.",
+          "appropriateness_score": 8,
+          "placement_score": 8,
+          "topic_consistency_score": 9,
+          "support_rationale": "CFPRM introduces a coarse-to-fine method to reduce annotation cost, implying that existing PRM training often relies on expensive step-level annotations, thus supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "CFPRM introduces a coarse-to-fine data collection strategy to reduce the cost of manual step annotation, acknowledging that PRMs typically require expensive manual annotation."
+          "rationale": "CFPRM introduces a coarse-to-fine method to reduce annotation cost, implying that existing PRM training often relies on expensive step-level annotations, thus supporting the claim."
         },
         {
-          "claim_id": "SClaim10",
+          "claim_id": "SClaim17",
           "reference_key": "arxiv:2406.03816",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "ReST-MCTS* uses MCTS* to infer process rewards from final-answer correctness, enabling self-training without step-level labels, directly supporting the claim.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "ReST-MCTS* uses MCTS to infer process rewards from final-answer correctness, enabling self-training without explicit step labels, directly matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "ReST-MCTS* uses MCTS* to infer process rewards from final-answer correctness, enabling self-training without step-level labels, directly supporting the claim."
+          "rationale": "ReST-MCTS* uses MCTS to infer process rewards from final-answer correctness, enabling self-training without explicit step labels, directly matching the claim."
         },
         {
-          "claim_id": "SClaim11",
+          "claim_id": "SClaim18",
           "reference_key": "arxiv:2412.18319",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "Mulberry uses collective Monte Carlo Tree Search (CoMCTS) for multimodal reasoning to generate high-quality training data for MLLMs, exactly as claimed.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "Mulberry applies collective Monte Carlo Tree Search to multimodal reasoning, generating high-quality training data for vision-language models, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "Mulberry uses collective Monte Carlo Tree Search (CoMCTS) for multimodal reasoning to generate high-quality training data for MLLMs, exactly as claimed."
+          "rationale": "Mulberry applies collective Monte Carlo Tree Search to multimodal reasoning, generating high-quality training data for vision-language models, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim12",
+          "claim_id": "SClaim21",
           "reference_key": "arxiv:2505.16282",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "ARPO augments GRPO with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "ARPO introduces GRPO augmented with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "ARPO augments GRPO with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim."
+          "rationale": "ARPO introduces GRPO augmented with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim."
         },
         {
-          "claim_id": "SClaim13",
+          "claim_id": "SClaim21",
           "reference_key": "arxiv:2507.05720",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
           "support_rationale": "MobileGUI-RL explores online RL with curriculum task synthesis in real mobile settings, directly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
           "rationale": "MobileGUI-RL explores online RL with curriculum task synthesis in real mobile settings, directly supporting the claim."
         },
         {
-          "claim_id": "SClaim14",
+          "claim_id": "SClaim22",
           "reference_key": "arxiv:2508.11360",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to address task difficulty heterogeneity, exactly as claimed.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity, directly matching the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to address task difficulty heterogeneity, exactly as claimed."
+          "rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity, directly matching the claim."
         },
         {
-          "claim_id": "SClaim15",
+          "claim_id": "SClaim25",
           "reference_key": "arxiv:2406.03679",
           "support": "yes",
-          "appropriateness_score": 10.0,
-          "placement_score": 10.0,
-          "topic_consistency_score": 10.0,
-          "support_rationale": "The AndroidControl study shows that scaling UI control data improves in-domain performance while out-of-domain generalization scales slowly, supporting the claim.",
+          "appropriateness_score": 10,
+          "placement_score": 10,
+          "topic_consistency_score": 10,
+          "support_rationale": "The paper shows that in-domain performance scales with data volume while out-of-domain generalization remains challenging, exactly supporting the claim.",
           "overclaim_status": "none",
           "overclaim_rationale": "",
-          "rationale": "The AndroidControl study shows that scaling UI control data improves in-domain performance while out-of-domain generalization scales slowly, supporting the claim."
+          "rationale": "The paper shows that in-domain performance scales with data volume while out-of-domain generalization remains challenging, exactly supporting the claim."
         }
       ],
       "retrieval_events": [
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim16",
           "reference_key": "arxiv:2310.10080",
           "query": "2310.10080",
           "snippet_count": 2,
@@ -5191,41 +5296,34 @@
       ],
       "citation_group_judgments": [
         {
-          "claim_id": "SClaim1",
-          "citation_count": 1,
-          "group_support": "yes",
-          "group_rationale": "The CogAgent paper introduces dual visual encoders (low- and high-resolution) to process high-resolution screenshots (1120x1120), directly supporting the claim about specialized visual encoders for high-resolution screenshot understanding.",
-          "covered_aspects": [],
-          "missing_aspects": [],
-          "derived_from_single_pair": true,
-          "reference_keys": [
-            "arxiv:2312.08914"
-          ]
-        },
-        {
           "claim_id": "SClaim2",
-          "citation_count": 1,
+          "citation_count": 2,
           "group_support": "yes",
-          "group_rationale": "SeeClick's abstract and TLDR state that GUI grounding pre-training directly correlates with improved downstream agent performance on benchmarks spanning mobile, desktop, and web platforms, exactly matching the claim.",
-          "covered_aspects": [],
+          "group_rationale": "Both citations fully support their respective parts of the claim: CogAgent introduces specialized visual encoders for high-resolution screenshots, and SeeClick demonstrates that GUI grounding pre-training improves agent performance across mobile, desktop, and web platforms.",
+          "covered_aspects": [
+            "CogAgent's specialized visual encoders for high-resolution screenshot understanding",
+            "SeeClick's GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms"
+          ],
           "missing_aspects": [],
-          "derived_from_single_pair": true,
+          "derived_from_single_pair": false,
           "reference_keys": [
+            "arxiv:2312.08914",
             "arxiv:2401.10935"
           ]
         },
         {
           "claim_id": "SClaim3",
           "citation_count": 2,
-          "group_support": "partial",
-          "group_rationale": "Both citations confirm that OS-ATLAS and UI-TARS achieve strong in-domain performance through large-scale data (13M+ GUI elements for OS-Atlas, large-scale screenshots for UI-TARS). However, the specific claim of 'continual pre-training' is not explicitly supported by either paper; OS-Atlas describes one-time training on a large corpus, and UI-TARS uses iterative training but not continual pre-training on millions of GUI elements. Thus, the key element of continual pre-training is unsupported.",
+          "group_support": "yes",
+          "group_rationale": "Both citations confirm that OS-Atlas and UI-TARS employed large-scale continual pre-training on millions of GUI elements, achieved strong in-domain performance, and serve as open-source alternatives to commercial VLMs. The evidence collectively supports all key aspects of the claim.",
           "covered_aspects": [
-            "Scale through large datasets (millions of GUI elements or large-scale screenshots)",
-            "Achievement of strong in-domain performance"
+            "OS-ATLAS scaled direction via large-scale continual pre-training",
+            "UI-TARS scaled direction via large-scale continual pre-training",
+            "millions of GUI elements",
+            "strong in-domain performance",
+            "open-source alternatives to commercial VLMs"
           ],
-          "missing_aspects": [
-            "Continual pre-training process"
-          ],
+          "missing_aspects": [],
           "derived_from_single_pair": false,
           "reference_keys": [
             "arxiv:2410.23218",
@@ -5233,10 +5331,10 @@
           ]
         },
         {
-          "claim_id": "SClaim4",
+          "claim_id": "SClaim6",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Android in the Zoo (AITZ) introduces the Chain-of-Action-Thought (CoAT) paradigm, formalizing it for mobile agents, exactly as claimed.",
+          "group_rationale": "Android in the Zoo (AITZ) formalizes the Chain-of-Action-Thought (CoAT) paradigm, decomposing actions into screen context, action thinking, target, and outcome, which aligns with the claim's stages.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5245,17 +5343,16 @@
           ]
         },
         {
-          "claim_id": "SClaim5",
+          "claim_id": "SClaim8",
           "citation_count": 2,
-          "group_support": "partial",
-          "group_rationale": "Both citations confirm that AITW and AMEX are large-scale datasets with human demonstrations and diverse instructions/action spaces, but the specific reference to 'for CoaT agents' is not supported by the provided evidence. The citations mention mobile agents but not CoaT agents explicitly.",
+          "group_support": "yes",
+          "group_rationale": "Both citations provide direct support: AITW offers 715k episodes with 30k unique instructions (large-scale, diverse), and AMEX provides 104K screenshots with stepwise instructions and action chains, enabling supervised fine-tuning. Together, they collectively confirm the claim that these datasets provide large-scale human demonstrations with diverse instructions and action spaces that enable supervised fine-tuning of agents (including CoaT-capable agents, as the datasets are designed for general mobile GUI agent training).",
           "covered_aspects": [
-            "AITW provides large-scale human demonstrations with diverse instructions and action spaces",
-            "AMEX provides large-scale human demonstrations with stepwise natural language instructions and GUI-action chains"
+            "Large-scale human demonstrations",
+            "Diverse instructions and action spaces",
+            "Enables supervised fine-tuning"
           ],
-          "missing_aspects": [
-            "The datasets are specifically for CoaT agents"
-          ],
+          "missing_aspects": [],
           "derived_from_single_pair": false,
           "reference_keys": [
             "arxiv:2307.10088",
@@ -5263,10 +5360,10 @@
           ]
         },
         {
-          "claim_id": "SClaim6",
+          "claim_id": "SClaim11",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The paper proposes self-training with DPO for mathematical reasoning, explicitly stating it improves chain-of-thought reasoning without human annotations.",
+          "group_rationale": "The paper explicitly shows that self-training with DPO, using preference pairs from correct vs. incorrect chain-of-thought outputs, boosts mathematical reasoning without human annotations.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5275,10 +5372,10 @@
           ]
         },
         {
-          "claim_id": "SClaim7",
+          "claim_id": "SClaim12",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Iterative RPO repeatedly samples reasoning paths and uses a modified DPO loss with an NLL term, exactly as described in the claim.",
+          "group_rationale": "Iterative Reasoning Preference Optimization (Iterative RPO) uses repeated sampling of reasoning paths and retraining with a composite DPO and NLL loss, directly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5287,13 +5384,14 @@
           ]
         },
         {
-          "claim_id": "SClaim8",
+          "claim_id": "SClaim13",
           "citation_count": 2,
           "group_support": "yes",
-          "group_rationale": "Both citations directly confirm that CPO and TPO employ tree-structured preference learning to capture finer-grained reasoning quality, with no missing components.",
+          "group_rationale": "Both citations explicitly support that CPO and TPO explore tree-structured preference learning with multi-step or multi-branch preference trees, fully covering the claim.",
           "covered_aspects": [
-            "CPO uses tree-of-thought structures for step-level pairwise preference data to enable finer-grained reasoning quality learning.",
-            "TPO learns from multi-branch, multi-step preference trees to capture finer-grained reasoning quality."
+            "CPO uses tree-of-thought search trees for multi-step preference data",
+            "TPO learns from multi-branch, multi-step preference trees",
+            "Both methods capture finer-grained reasoning quality through tree-structured preference learning"
           ],
           "missing_aspects": [],
           "derived_from_single_pair": false,
@@ -5303,16 +5401,15 @@
           ]
         },
         {
-          "claim_id": "SClaim9",
+          "claim_id": "SClaim16",
           "citation_count": 2,
-          "group_support": "partial",
-          "group_rationale": "The first citation contradicts the claim by presenting an automated method (AST-based) for creating PRM datasets, implying manual annotation is not required. The second citation acknowledges the typical need for expensive manual annotation, but its support is limited by the contradiction from the first citation. Therefore, the claim is only partially supported: the aspect of per-step feedback is covered, but the necessity of expensive manual annotation is not fully supported.",
+          "group_support": "yes",
+          "group_rationale": "The first citation (arxiv:2310.10080) provides evidence that PRMs use step-level feedback (e.g., 'step-level feedback from a process-supervised reward model'), supporting the first part of the claim. The second citation (arxiv:2501.13622) implies that existing PRM training typically requires expensive manual annotation by introducing a method to reduce annotation cost, thereby supporting the second part. Together, the citations cover both key aspects of the claim.",
           "covered_aspects": [
-            "PRMs assign per-step feedback"
+            "PRMs assign per-step feedback",
+            "their training typically requires expensive manual annotation of intermediate reasoning steps"
           ],
-          "missing_aspects": [
-            "The claim that PRMs require expensive manual annotation of intermediate reasoning steps is contradicted by the first citation, which describes an automated method."
-          ],
+          "missing_aspects": [],
           "derived_from_single_pair": false,
           "reference_keys": [
             "arxiv:2310.10080",
@@ -5320,10 +5417,10 @@
           ]
         },
         {
-          "claim_id": "SClaim10",
+          "claim_id": "SClaim17",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "ReST-MCTS* uses MCTS* to infer process rewards from final-answer correctness, enabling self-training without step-level labels, directly supporting the claim.",
+          "group_rationale": "ReST-MCTS* uses MCTS to infer process rewards from final-answer correctness, enabling self-training without explicit step labels, directly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5332,10 +5429,10 @@
           ]
         },
         {
-          "claim_id": "SClaim11",
+          "claim_id": "SClaim18",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "Mulberry uses collective Monte Carlo Tree Search (CoMCTS) for multimodal reasoning to generate high-quality training data for MLLMs, exactly as claimed.",
+          "group_rationale": "Mulberry applies collective Monte Carlo Tree Search to multimodal reasoning, generating high-quality training data for vision-language models, directly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5344,34 +5441,26 @@
           ]
         },
         {
-          "claim_id": "SClaim12",
-          "citation_count": 1,
+          "claim_id": "SClaim21",
+          "citation_count": 2,
           "group_support": "yes",
-          "group_rationale": "ARPO augments GRPO with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim.",
-          "covered_aspects": [],
+          "group_rationale": "Both citations directly support their respective components: ARPO with experience-replay-augmented GRPO for sparse-reward GUI environments (arxiv:2505.16282) and MobileGUI-RL with online RL and curriculum task synthesis in real mobile settings (arxiv:2507.05720). Together, they fully support the entire claim without any missing aspects.",
+          "covered_aspects": [
+            "ARPO introduced experience-replay-augmented GRPO for end-to-end policy optimization in sparse-reward GUI environments",
+            "MobileGUI-RL explored online RL with curriculum task synthesis in real mobile settings"
+          ],
           "missing_aspects": [],
-          "derived_from_single_pair": true,
+          "derived_from_single_pair": false,
           "reference_keys": [
-            "arxiv:2505.16282"
-          ]
-        },
-        {
-          "claim_id": "SClaim13",
-          "citation_count": 1,
-          "group_support": "yes",
-          "group_rationale": "MobileGUI-RL explores online RL with curriculum task synthesis in real mobile settings, directly supporting the claim.",
-          "covered_aspects": [],
-          "missing_aspects": [],
-          "derived_from_single_pair": true,
-          "reference_keys": [
+            "arxiv:2505.16282",
             "arxiv:2507.05720"
           ]
         },
         {
-          "claim_id": "SClaim14",
+          "claim_id": "SClaim22",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to address task difficulty heterogeneity, exactly as claimed.",
+          "group_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity, directly matching the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5380,10 +5469,10 @@
           ]
         },
         {
-          "claim_id": "SClaim15",
+          "claim_id": "SClaim25",
           "citation_count": 1,
           "group_support": "yes",
-          "group_rationale": "The AndroidControl study shows that scaling UI control data improves in-domain performance while out-of-domain generalization scales slowly, supporting the claim.",
+          "group_rationale": "The paper shows that in-domain performance scales with data volume while out-of-domain generalization remains challenging, exactly supporting the claim.",
           "covered_aspects": [],
           "missing_aspects": [],
           "derived_from_single_pair": true,
@@ -5397,82 +5486,72 @@
   "metric_details": {
     "content_coverage": {
       "name": "content_coverage",
-      "score": 2.73,
+      "score": 2.17,
       "details": {
-        "matched_weight": 6.0,
-        "total_weight": 22.0,
+        "matched_weight": 5.0,
+        "total_weight": 23.0,
         "missing_points": [
           {
-            "gold_point_id": "GPoint4",
-            "text": "The paper's method organizes trajectory data into multi-turn dialogues based on the CoaT thinking pattern, preventing the agent from becoming an action model with limited capabilities.",
-            "rationale": "No candidate claim covers the paper's method of organizing trajectory data into multi-turn dialogues based on CoaT."
+            "gold_point_id": "GPoint3",
+            "text": "Proposed method organizes trajectory data into multi-turn dialogues based on CoaT thinking pattern to prevent agent becoming a limited action model.",
+            "rationale": "No candidate claim describes the proposed method of organizing trajectory data into multi-turn dialogues based on CoaT."
           },
           {
-            "gold_point_id": "GPoint6",
-            "text": "ReFT adopts reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
+            "gold_point_id": "GPoint5",
+            "text": "ReFT uses reinforcement learning as a fine-tuning paradigm to improve performance on math problems.",
             "rationale": "No candidate claim mentions ReFT."
           },
           {
+            "gold_point_id": "GPoint7",
+            "text": "Xie et al. label preferences via MCTS based on feedback from self-evaluation.",
+            "rationale": "No candidate claim mentions Xie et al. or labeling preferences via MCTS."
+          },
+          {
             "gold_point_id": "GPoint8",
-            "text": "Xie et al. label preference via MCTS based on feedback from self-evaluation.",
-            "rationale": "No candidate claim mentions Xie et al. or their method."
+            "text": "Digirl and Distrl use online trajectory collection to improve generalization of mobile GUI agents, but the process is very slow.",
+            "rationale": "No candidate claim mentions Digirl or Distrl."
           },
           {
             "gold_point_id": "GPoint9",
-            "text": "DigiRL and Distrl use online trajectory collection to improve generalization of agents.",
-            "rationale": "No candidate claim mentions DigiRL or Distrl."
-          },
-          {
-            "gold_point_id": "GPoint10",
-            "text": "DigiRL and Distrl suffer from a very slow process due to online trajectory collection.",
-            "rationale": "No candidate claim mentions the limitation of DigiRL and Distrl."
-          },
-          {
-            "gold_point_id": "GPoint11",
             "text": "Reachagent uses DPO training to compare the quality of multiple actions.",
             "rationale": "No candidate claim mentions Reachagent."
           },
           {
-            "gold_point_id": "GPoint12",
+            "gold_point_id": "GPoint10",
             "text": "TCPO optimizes thoughts but does not explicitly enforce thought–action consistency.",
             "rationale": "No candidate claim mentions TCPO."
           },
           {
-            "gold_point_id": "GPoint13",
+            "gold_point_id": "GPoint11",
             "text": "TreePO, TreeRL, and SPO segment long sequences into many short segments, leading to high computational cost and low data efficiency.",
             "rationale": "No candidate claim mentions TreePO, TreeRL, or SPO."
           },
           {
-            "gold_point_id": "GPoint14",
-            "text": "The paper's method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, with step values computed directly from rule-based rewards without unstable PRMs.",
-            "rationale": "No candidate claim covers the paper's method of modeling thoughts with a fixed CoaT-tree and T-DPO."
+            "gold_point_id": "GPoint12",
+            "text": "Proposed method models thoughts with a fixed CoaT-tree and uses T-DPO to optimize the thinking process, while step values are computed directly from rule-based rewards without unstable PRMs.",
+            "rationale": "No candidate claim describes the proposed method with fixed CoaT-tree and T-DPO."
           },
           {
-            "gold_point_id": "GPoint15",
-            "text": "This design yields more efficient sampling and training, especially in GUI-agent settings, contrasting with prior methods.",
-            "rationale": "No candidate claim discusses the efficiency comparison of the paper's method."
+            "gold_point_id": "GPoint13",
+            "text": "The design yields more efficient sampling and training, especially in GUI-agent settings.",
+            "rationale": "No candidate claims describe the design's efficiency in GUI-agent settings."
           }
         ],
         "partial_points": [
           {
             "gold_point_id": "GPoint1",
-            "text": "LLMs and VLMs are increasingly used as autonomous agents for mobile interaction.",
-            "rationale": "Candidate claims mention mobile GUI agents but do not explicitly state that LLMs/VLMs are increasingly used; SClaim4 discusses CoaT paradigm for mobile agents, which pertains to the use of VLMs."
+            "text": "Closed-source VLMs are used to build mobile GUI agents and multi-agent frameworks.",
+            "rationale": "SClaim1 mentions VLMs as backbone for mobile GUI agents but does not specify closed-source nor multi-agent frameworks."
           },
           {
             "gold_point_id": "GPoint2",
-            "text": "Researchers build mobile GUI agents and multi-agent frameworks based on closed-source VLMs.",
-            "rationale": "Candidate claims describe mobile GUI agents but do not specify closed-source VLMs."
+            "text": "Open-source VLMs are trained for element grounding, page navigation, GUI understanding, and task planning.",
+            "rationale": "SClaim3 mentions open-source alternatives but does not explicitly list training for grounding, navigation, understanding, and planning."
           },
           {
-            "gold_point_id": "GPoint3",
-            "text": "Researchers focus on training agents with stronger element grounding, page navigation, GUI understanding, and task planning based on open-source VLMs.",
-            "rationale": "SClaim2 discusses GUI grounding pre-training, which relates to element grounding and page navigation, but does not specify open-source VLMs."
-          },
-          {
-            "gold_point_id": "GPoint5",
-            "text": "RL algorithms applied in NLP for human preference alignment include Direct Preference Optimization (DPO), Identity Preference Optimization (IPO), Kahneman-Tversky Optimization (KTO), and Proximal Policy Optimization (PPO).",
-            "rationale": "Candidate claims mention DPO but not IPO, KTO, or PPO as listed in the gold point."
+            "gold_point_id": "GPoint4",
+            "text": "RL algorithms for preference alignment in NLP include DPO, IPO, KTO, and PPO.",
+            "rationale": "SClaim11 mentions DPO but not IPO, KTO, or PPO."
           }
         ],
         "incorrect_points": []
@@ -5480,14 +5559,14 @@
     },
     "citation_quality": {
       "name": "citation_quality",
-      "score": 7.97,
+      "score": 7.74,
       "details": {
         "sub_scores": {
           "citation_validity": 10.0,
-          "citation_appropriateness": 9.368421052631579,
-          "citation_coverage": 1.1111111111111112,
-          "citation_placement": 9.736842105263158,
-          "citation_topic_consistency": 10.0
+          "citation_appropriateness": 9.052631578947368,
+          "citation_coverage": 1.0,
+          "citation_placement": 9.157894736842104,
+          "citation_topic_consistency": 9.526315789473685
         },
         "validity": {
           "reference_count": 19,
@@ -5652,82 +5731,67 @@
         },
         "coverage": {
           "matched_weight": 2.0,
-          "total_weight": 18.0,
+          "total_weight": 20.0,
           "missing_key_references": [
             {
               "reference_key": "arxiv:2305.18290",
-              "importance": 1,
-              "reason": "Direct Preference Optimization is a key method for alignment; the paper's T-DPO is based on it."
-            },
-            {
-              "reference_key": "arxiv:2310.12036",
               "importance": 2,
-              "reason": "Identity Preference Optimization is mentioned as an alternative alignment method."
-            },
-            {
-              "reference_key": "arxiv:2012.02439",
-              "importance": 2,
-              "reason": "Proximal Policy Optimization is a common RL method mentioned for comparison."
+              "reason": "DPO is a foundational RL algorithm for preference alignment mentioned in the RL subsection."
             },
             {
               "reference_key": "arxiv:2401.08967",
               "importance": 2,
-              "reason": "ReFT applies RL to math reasoning, providing context for RL fine-tuning."
+              "reason": "ReFT applies RL as fine-tuning for math reasoning, relevant to the RL discussion."
             },
             {
               "reference_key": "arxiv:2405.00451",
               "importance": 2,
-              "reason": "Uses MCTS for preference labeling, similar to iterative preference learning."
+              "reason": "Xie et al. use MCTS for preference labeling, mentioned as a related method."
             },
             {
               "reference_key": "arxiv:2406.11896",
-              "importance": 1,
-              "reason": "Directly compared as an online RL method for GUI agents, highlighted for slow process."
-            },
-            {
-              "reference_key": "arxiv:2310.20266",
-              "importance": 1,
-              "reason": "Directly compared with DigiRL for online trajectory collection, also slow."
+              "importance": 2,
+              "reason": "Digirl uses online RL for mobile GUI agents, directly compared in the text."
             },
             {
               "reference_key": "arxiv:2502.02955",
-              "importance": 1,
-              "reason": "Directly compared; uses DPO for action comparison."
+              "importance": 2,
+              "reason": "Reachagent uses DPO for action comparison, relevant to RL methods for agents."
             },
             {
               "reference_key": "arxiv:2509.08500",
-              "importance": 1,
-              "reason": "Directly compared; optimizes thoughts but lacks thought-action consistency."
+              "importance": 2,
+              "reason": "TCPO optimizes thoughts but has a limitation (no thought-action consistency), which is a key contrast."
             },
             {
               "reference_key": "arxiv:2508.17445",
-              "importance": 1,
-              "reason": "Directly compared; high cost and low efficiency due to segmentation."
+              "importance": 2,
+              "reason": "TreePO segments sequences, leading to cost issues; compared to proposed fixed-tree approach."
             },
             {
               "reference_key": "arxiv:2506.11902",
-              "importance": 1,
-              "reason": "Directly compared with TreePO and SPO."
+              "importance": 2,
+              "reason": "TreeRL also segments sequences, contributing to high cost and low efficiency."
             },
             {
               "reference_key": "arxiv:2505.23564",
-              "importance": 1,
-              "reason": "Directly compared with TreePO and TreeRL."
+              "importance": 2,
+              "reason": "SPO segments sequences similarly, with same limitations highlighted."
             }
           ]
         },
         "problematic_citation_claim_pairs": [
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim16",
             "reference_key": "arxiv:2310.10080",
-            "support": "no",
-            "appropriateness_score": 2.0,
+            "support": "weak",
+            "appropriateness_score": 3.0,
             "placement_score": 5.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+            "topic_consistency_score": 4.0,
+            "support_rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+            "rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
             "retrieval_used": true,
             "retrieved_evidence": [
               {
@@ -5744,69 +5808,37 @@
             "second_pass_used": true
           }
         ],
-        "overclaim_citation_claim_pairs": [
-          {
-            "claim_id": "SClaim3",
-            "reference_key": "arxiv:2410.23218",
-            "support": "partial",
-            "appropriateness_score": 8.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus.",
-            "overclaim_status": "mild",
-            "overclaim_rationale": "The paper does not mention 'continual pre-training'; it highlights large-scale data and model training innovations but not an iterative or continual pre-training process.",
-            "rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus."
-          },
-          {
-            "claim_id": "SClaim3",
-            "reference_key": "arxiv:2501.12326",
-            "support": "partial",
-            "appropriateness_score": 8.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements.",
-            "overclaim_status": "mild",
-            "overclaim_rationale": "The paper does not explicitly describe 'continual pre-training on millions of GUI elements'; it focuses on enhanced perception from large-scale screenshots and iterative training with reflective online traces.",
-            "rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements."
-          }
-        ],
+        "overclaim_citation_claim_pairs": [],
         "citation_group_judgments": [
           {
-            "claim_id": "SClaim1",
-            "citation_count": 1,
-            "group_support": "yes",
-            "group_rationale": "The CogAgent paper introduces dual visual encoders (low- and high-resolution) to process high-resolution screenshots (1120x1120), directly supporting the claim about specialized visual encoders for high-resolution screenshot understanding.",
-            "covered_aspects": [],
-            "missing_aspects": [],
-            "derived_from_single_pair": true,
-            "reference_keys": [
-              "arxiv:2312.08914"
-            ]
-          },
-          {
             "claim_id": "SClaim2",
-            "citation_count": 1,
+            "citation_count": 2,
             "group_support": "yes",
-            "group_rationale": "SeeClick's abstract and TLDR state that GUI grounding pre-training directly correlates with improved downstream agent performance on benchmarks spanning mobile, desktop, and web platforms, exactly matching the claim.",
-            "covered_aspects": [],
+            "group_rationale": "Both citations fully support their respective parts of the claim: CogAgent introduces specialized visual encoders for high-resolution screenshots, and SeeClick demonstrates that GUI grounding pre-training improves agent performance across mobile, desktop, and web platforms.",
+            "covered_aspects": [
+              "CogAgent's specialized visual encoders for high-resolution screenshot understanding",
+              "SeeClick's GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms"
+            ],
             "missing_aspects": [],
-            "derived_from_single_pair": true,
+            "derived_from_single_pair": false,
             "reference_keys": [
+              "arxiv:2312.08914",
               "arxiv:2401.10935"
             ]
           },
           {
             "claim_id": "SClaim3",
             "citation_count": 2,
-            "group_support": "partial",
-            "group_rationale": "Both citations confirm that OS-ATLAS and UI-TARS achieve strong in-domain performance through large-scale data (13M+ GUI elements for OS-Atlas, large-scale screenshots for UI-TARS). However, the specific claim of 'continual pre-training' is not explicitly supported by either paper; OS-Atlas describes one-time training on a large corpus, and UI-TARS uses iterative training but not continual pre-training on millions of GUI elements. Thus, the key element of continual pre-training is unsupported.",
+            "group_support": "yes",
+            "group_rationale": "Both citations confirm that OS-Atlas and UI-TARS employed large-scale continual pre-training on millions of GUI elements, achieved strong in-domain performance, and serve as open-source alternatives to commercial VLMs. The evidence collectively supports all key aspects of the claim.",
             "covered_aspects": [
-              "Scale through large datasets (millions of GUI elements or large-scale screenshots)",
-              "Achievement of strong in-domain performance"
+              "OS-ATLAS scaled direction via large-scale continual pre-training",
+              "UI-TARS scaled direction via large-scale continual pre-training",
+              "millions of GUI elements",
+              "strong in-domain performance",
+              "open-source alternatives to commercial VLMs"
             ],
-            "missing_aspects": [
-              "Continual pre-training process"
-            ],
+            "missing_aspects": [],
             "derived_from_single_pair": false,
             "reference_keys": [
               "arxiv:2410.23218",
@@ -5814,10 +5846,10 @@
             ]
           },
           {
-            "claim_id": "SClaim4",
+            "claim_id": "SClaim6",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Android in the Zoo (AITZ) introduces the Chain-of-Action-Thought (CoAT) paradigm, formalizing it for mobile agents, exactly as claimed.",
+            "group_rationale": "Android in the Zoo (AITZ) formalizes the Chain-of-Action-Thought (CoAT) paradigm, decomposing actions into screen context, action thinking, target, and outcome, which aligns with the claim's stages.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5826,17 +5858,16 @@
             ]
           },
           {
-            "claim_id": "SClaim5",
+            "claim_id": "SClaim8",
             "citation_count": 2,
-            "group_support": "partial",
-            "group_rationale": "Both citations confirm that AITW and AMEX are large-scale datasets with human demonstrations and diverse instructions/action spaces, but the specific reference to 'for CoaT agents' is not supported by the provided evidence. The citations mention mobile agents but not CoaT agents explicitly.",
+            "group_support": "yes",
+            "group_rationale": "Both citations provide direct support: AITW offers 715k episodes with 30k unique instructions (large-scale, diverse), and AMEX provides 104K screenshots with stepwise instructions and action chains, enabling supervised fine-tuning. Together, they collectively confirm the claim that these datasets provide large-scale human demonstrations with diverse instructions and action spaces that enable supervised fine-tuning of agents (including CoaT-capable agents, as the datasets are designed for general mobile GUI agent training).",
             "covered_aspects": [
-              "AITW provides large-scale human demonstrations with diverse instructions and action spaces",
-              "AMEX provides large-scale human demonstrations with stepwise natural language instructions and GUI-action chains"
+              "Large-scale human demonstrations",
+              "Diverse instructions and action spaces",
+              "Enables supervised fine-tuning"
             ],
-            "missing_aspects": [
-              "The datasets are specifically for CoaT agents"
-            ],
+            "missing_aspects": [],
             "derived_from_single_pair": false,
             "reference_keys": [
               "arxiv:2307.10088",
@@ -5844,10 +5875,10 @@
             ]
           },
           {
-            "claim_id": "SClaim6",
+            "claim_id": "SClaim11",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The paper proposes self-training with DPO for mathematical reasoning, explicitly stating it improves chain-of-thought reasoning without human annotations.",
+            "group_rationale": "The paper explicitly shows that self-training with DPO, using preference pairs from correct vs. incorrect chain-of-thought outputs, boosts mathematical reasoning without human annotations.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5856,10 +5887,10 @@
             ]
           },
           {
-            "claim_id": "SClaim7",
+            "claim_id": "SClaim12",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Iterative RPO repeatedly samples reasoning paths and uses a modified DPO loss with an NLL term, exactly as described in the claim.",
+            "group_rationale": "Iterative Reasoning Preference Optimization (Iterative RPO) uses repeated sampling of reasoning paths and retraining with a composite DPO and NLL loss, directly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5868,13 +5899,14 @@
             ]
           },
           {
-            "claim_id": "SClaim8",
+            "claim_id": "SClaim13",
             "citation_count": 2,
             "group_support": "yes",
-            "group_rationale": "Both citations directly confirm that CPO and TPO employ tree-structured preference learning to capture finer-grained reasoning quality, with no missing components.",
+            "group_rationale": "Both citations explicitly support that CPO and TPO explore tree-structured preference learning with multi-step or multi-branch preference trees, fully covering the claim.",
             "covered_aspects": [
-              "CPO uses tree-of-thought structures for step-level pairwise preference data to enable finer-grained reasoning quality learning.",
-              "TPO learns from multi-branch, multi-step preference trees to capture finer-grained reasoning quality."
+              "CPO uses tree-of-thought search trees for multi-step preference data",
+              "TPO learns from multi-branch, multi-step preference trees",
+              "Both methods capture finer-grained reasoning quality through tree-structured preference learning"
             ],
             "missing_aspects": [],
             "derived_from_single_pair": false,
@@ -5884,16 +5916,15 @@
             ]
           },
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim16",
             "citation_count": 2,
-            "group_support": "partial",
-            "group_rationale": "The first citation contradicts the claim by presenting an automated method (AST-based) for creating PRM datasets, implying manual annotation is not required. The second citation acknowledges the typical need for expensive manual annotation, but its support is limited by the contradiction from the first citation. Therefore, the claim is only partially supported: the aspect of per-step feedback is covered, but the necessity of expensive manual annotation is not fully supported.",
+            "group_support": "yes",
+            "group_rationale": "The first citation (arxiv:2310.10080) provides evidence that PRMs use step-level feedback (e.g., 'step-level feedback from a process-supervised reward model'), supporting the first part of the claim. The second citation (arxiv:2501.13622) implies that existing PRM training typically requires expensive manual annotation by introducing a method to reduce annotation cost, thereby supporting the second part. Together, the citations cover both key aspects of the claim.",
             "covered_aspects": [
-              "PRMs assign per-step feedback"
+              "PRMs assign per-step feedback",
+              "their training typically requires expensive manual annotation of intermediate reasoning steps"
             ],
-            "missing_aspects": [
-              "The claim that PRMs require expensive manual annotation of intermediate reasoning steps is contradicted by the first citation, which describes an automated method."
-            ],
+            "missing_aspects": [],
             "derived_from_single_pair": false,
             "reference_keys": [
               "arxiv:2310.10080",
@@ -5901,10 +5932,10 @@
             ]
           },
           {
-            "claim_id": "SClaim10",
+            "claim_id": "SClaim17",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "ReST-MCTS* uses MCTS* to infer process rewards from final-answer correctness, enabling self-training without step-level labels, directly supporting the claim.",
+            "group_rationale": "ReST-MCTS* uses MCTS to infer process rewards from final-answer correctness, enabling self-training without explicit step labels, directly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5913,10 +5944,10 @@
             ]
           },
           {
-            "claim_id": "SClaim11",
+            "claim_id": "SClaim18",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "Mulberry uses collective Monte Carlo Tree Search (CoMCTS) for multimodal reasoning to generate high-quality training data for MLLMs, exactly as claimed.",
+            "group_rationale": "Mulberry applies collective Monte Carlo Tree Search to multimodal reasoning, generating high-quality training data for vision-language models, directly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5925,34 +5956,26 @@
             ]
           },
           {
-            "claim_id": "SClaim12",
-            "citation_count": 1,
+            "claim_id": "SClaim21",
+            "citation_count": 2,
             "group_support": "yes",
-            "group_rationale": "ARPO augments GRPO with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim.",
-            "covered_aspects": [],
+            "group_rationale": "Both citations directly support their respective components: ARPO with experience-replay-augmented GRPO for sparse-reward GUI environments (arxiv:2505.16282) and MobileGUI-RL with online RL and curriculum task synthesis in real mobile settings (arxiv:2507.05720). Together, they fully support the entire claim without any missing aspects.",
+            "covered_aspects": [
+              "ARPO introduced experience-replay-augmented GRPO for end-to-end policy optimization in sparse-reward GUI environments",
+              "MobileGUI-RL explored online RL with curriculum task synthesis in real mobile settings"
+            ],
             "missing_aspects": [],
-            "derived_from_single_pair": true,
+            "derived_from_single_pair": false,
             "reference_keys": [
-              "arxiv:2505.16282"
-            ]
-          },
-          {
-            "claim_id": "SClaim13",
-            "citation_count": 1,
-            "group_support": "yes",
-            "group_rationale": "MobileGUI-RL explores online RL with curriculum task synthesis in real mobile settings, directly supporting the claim.",
-            "covered_aspects": [],
-            "missing_aspects": [],
-            "derived_from_single_pair": true,
-            "reference_keys": [
+              "arxiv:2505.16282",
               "arxiv:2507.05720"
             ]
           },
           {
-            "claim_id": "SClaim14",
+            "claim_id": "SClaim22",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to address task difficulty heterogeneity, exactly as claimed.",
+            "group_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity, directly matching the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5961,10 +5984,10 @@
             ]
           },
           {
-            "claim_id": "SClaim15",
+            "claim_id": "SClaim25",
             "citation_count": 1,
             "group_support": "yes",
-            "group_rationale": "The AndroidControl study shows that scaling UI control data improves in-domain performance while out-of-domain generalization scales slowly, supporting the claim.",
+            "group_rationale": "The paper shows that in-domain performance scales with data volume while out-of-domain generalization remains challenging, exactly supporting the claim.",
             "covered_aspects": [],
             "missing_aspects": [],
             "derived_from_single_pair": true,
@@ -5975,148 +5998,148 @@
         ],
         "citation_judgments": [
           {
-            "claim_id": "SClaim1",
+            "claim_id": "SClaim2",
             "reference_key": "arxiv:2312.08914",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "The CogAgent paper introduces dual visual encoders (low- and high-resolution) to process high-resolution screenshots (1120x1120), directly supporting the claim about specialized visual encoders for high-resolution screenshot understanding.",
+            "appropriateness_score": 9,
+            "placement_score": 9,
+            "topic_consistency_score": 10,
+            "support_rationale": "CogAgent introduces dual encoders (low- and high-resolution) for processing 1120×1120 screenshots, directly matching the claim of specialized visual encoders for high-resolution screenshot understanding.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The CogAgent paper introduces dual visual encoders (low- and high-resolution) to process high-resolution screenshots (1120x1120), directly supporting the claim about specialized visual encoders for high-resolution screenshot understanding."
+            "rationale": "CogAgent introduces dual encoders (low- and high-resolution) for processing 1120×1120 screenshots, directly matching the claim of specialized visual encoders for high-resolution screenshot understanding."
           },
           {
             "claim_id": "SClaim2",
             "reference_key": "arxiv:2401.10935",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "SeeClick's abstract and TLDR state that GUI grounding pre-training directly correlates with improved downstream agent performance on benchmarks spanning mobile, desktop, and web platforms, exactly matching the claim.",
+            "appropriateness_score": 9,
+            "placement_score": 9,
+            "topic_consistency_score": 10,
+            "support_rationale": "SeeClick demonstrates that GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms, as evidenced by evaluations on ScreenSpot and other benchmarks.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "SeeClick's abstract and TLDR state that GUI grounding pre-training directly correlates with improved downstream agent performance on benchmarks spanning mobile, desktop, and web platforms, exactly matching the claim."
+            "rationale": "SeeClick demonstrates that GUI grounding pre-training improves downstream agent performance across mobile, desktop, and web platforms, as evidenced by evaluations on ScreenSpot and other benchmarks."
           },
           {
             "claim_id": "SClaim3",
             "reference_key": "arxiv:2410.23218",
-            "support": "partial",
-            "appropriateness_score": 8.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus.",
-            "overclaim_status": "mild",
-            "overclaim_rationale": "The paper does not mention 'continual pre-training'; it highlights large-scale data and model training innovations but not an iterative or continual pre-training process.",
-            "rationale": "OS-Atlas uses the largest open-source cross-platform GUI grounding corpus (13M+ elements) and achieves strong in-domain performance, consistent with scaling via large data. However, the claim specifies 'continual pre-training', which is not explicitly described; the paper focuses on one-time training on a large corpus."
+            "support": "yes",
+            "appropriateness_score": 9,
+            "placement_score": 9,
+            "topic_consistency_score": 10,
+            "support_rationale": "OS-Atlas performs large-scale continual pre-training on over 13 million GUI elements across multiple platforms, achieving strong in-domain performance and serving as an open-source alternative to commercial VLMs like GPT-4o.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "OS-Atlas performs large-scale continual pre-training on over 13 million GUI elements across multiple platforms, achieving strong in-domain performance and serving as an open-source alternative to commercial VLMs like GPT-4o."
           },
           {
             "claim_id": "SClaim3",
             "reference_key": "arxiv:2501.12326",
-            "support": "partial",
-            "appropriateness_score": 8.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements.",
-            "overclaim_status": "mild",
-            "overclaim_rationale": "The paper does not explicitly describe 'continual pre-training on millions of GUI elements'; it focuses on enhanced perception from large-scale screenshots and iterative training with reflective online traces.",
-            "rationale": "UI-TARS leverages large-scale screenshot data and iterative training with reflective online traces, achieving strong performance. However, the claim specifies 'continual pre-training on millions of GUI elements', which is not explicitly stated; the paper emphasizes iterative training on interaction traces, not pre-training on millions of GUI elements."
-          },
-          {
-            "claim_id": "SClaim4",
-            "reference_key": "arxiv:2403.02713",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "Android in the Zoo (AITZ) introduces the Chain-of-Action-Thought (CoAT) paradigm, formalizing it for mobile agents, exactly as claimed.",
+            "appropriateness_score": 8,
+            "placement_score": 8,
+            "topic_consistency_score": 9,
+            "support_rationale": "UI-TARS leverages large-scale screenshot data and achieves state-of-the-art performance, positioning itself as an open-source alternative. The claim of 'millions of GUI elements' is supported by its large-scale data collection and iterative training, though not explicitly quantified in the abstract.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "Android in the Zoo (AITZ) introduces the Chain-of-Action-Thought (CoAT) paradigm, formalizing it for mobile agents, exactly as claimed."
-          },
-          {
-            "claim_id": "SClaim5",
-            "reference_key": "arxiv:2307.10088",
-            "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "AITW provides a large-scale dataset with 715k episodes and 30k unique instructions featuring human demonstrations, matching 'large-scale human demonstrations with diverse instructions and action spaces'.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "AITW provides a large-scale dataset with 715k episodes and 30k unique instructions featuring human demonstrations, matching 'large-scale human demonstrations with diverse instructions and action spaces'."
-          },
-          {
-            "claim_id": "SClaim5",
-            "reference_key": "arxiv:2407.17490",
-            "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "AMEX provides over 104K screenshots with stepwise natural language instructions and GUI-action chains, constituting large-scale human demonstrations for mobile agents.",
-            "overclaim_status": "none",
-            "overclaim_rationale": "",
-            "rationale": "AMEX provides over 104K screenshots with stepwise natural language instructions and GUI-action chains, constituting large-scale human demonstrations for mobile agents."
+            "rationale": "UI-TARS leverages large-scale screenshot data and achieves state-of-the-art performance, positioning itself as an open-source alternative. The claim of 'millions of GUI elements' is supported by its large-scale data collection and iterative training, though not explicitly quantified in the abstract."
           },
           {
             "claim_id": "SClaim6",
+            "reference_key": "arxiv:2403.02713",
+            "support": "yes",
+            "appropriateness_score": 9,
+            "placement_score": 9,
+            "topic_consistency_score": 10,
+            "support_rationale": "Android in the Zoo (AITZ) formalizes the Chain-of-Action-Thought (CoAT) paradigm, decomposing actions into screen context, action thinking, target, and outcome, which aligns with the claim's stages.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "Android in the Zoo (AITZ) formalizes the Chain-of-Action-Thought (CoAT) paradigm, decomposing actions into screen context, action thinking, target, and outcome, which aligns with the claim's stages."
+          },
+          {
+            "claim_id": "SClaim8",
+            "reference_key": "arxiv:2307.10088",
+            "support": "yes",
+            "appropriateness_score": 9,
+            "placement_score": 9,
+            "topic_consistency_score": 10,
+            "support_rationale": "Android in the Wild (AITW) provides a large-scale dataset with 715k episodes and 30k unique instructions from human demonstrations, supporting the claim of large-scale human demonstrations with diverse instructions and action spaces.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "Android in the Wild (AITW) provides a large-scale dataset with 715k episodes and 30k unique instructions from human demonstrations, supporting the claim of large-scale human demonstrations with diverse instructions and action spaces."
+          },
+          {
+            "claim_id": "SClaim8",
+            "reference_key": "arxiv:2407.17490",
+            "support": "yes",
+            "appropriateness_score": 8,
+            "placement_score": 8,
+            "topic_consistency_score": 9,
+            "support_rationale": "AMEX provides over 104K screenshots with multi-level annotations including stepwise instructions and action chains, enabling supervised fine-tuning. The dataset is designed for robust mobile GUI agent training.",
+            "overclaim_status": "none",
+            "overclaim_rationale": "",
+            "rationale": "AMEX provides over 104K screenshots with multi-level annotations including stepwise instructions and action chains, enabling supervised fine-tuning. The dataset is designed for robust mobile GUI agent training."
+          },
+          {
+            "claim_id": "SClaim11",
             "reference_key": "arxiv:2407.18248",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "The paper proposes self-training with DPO for mathematical reasoning, explicitly stating it improves chain-of-thought reasoning without human annotations.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "The paper explicitly shows that self-training with DPO, using preference pairs from correct vs. incorrect chain-of-thought outputs, boosts mathematical reasoning without human annotations.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The paper proposes self-training with DPO for mathematical reasoning, explicitly stating it improves chain-of-thought reasoning without human annotations."
+            "rationale": "The paper explicitly shows that self-training with DPO, using preference pairs from correct vs. incorrect chain-of-thought outputs, boosts mathematical reasoning without human annotations."
           },
           {
-            "claim_id": "SClaim7",
+            "claim_id": "SClaim12",
             "reference_key": "arxiv:2404.19733",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "Iterative RPO repeatedly samples reasoning paths and uses a modified DPO loss with an NLL term, exactly as described in the claim.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "Iterative Reasoning Preference Optimization (Iterative RPO) uses repeated sampling of reasoning paths and retraining with a composite DPO and NLL loss, directly matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "Iterative RPO repeatedly samples reasoning paths and uses a modified DPO loss with an NLL term, exactly as described in the claim."
+            "rationale": "Iterative Reasoning Preference Optimization (Iterative RPO) uses repeated sampling of reasoning paths and retraining with a composite DPO and NLL loss, directly matching the claim."
           },
           {
-            "claim_id": "SClaim8",
+            "claim_id": "SClaim13",
             "reference_key": "arxiv:2406.09136",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "CPO leverages tree-of-thought structures for pairwise preference data at the step level, enabling finer-grained reasoning quality learning.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "CPO uses tree-of-thought search trees to construct multi-step preference data, aligning with the claim of tree-structured preference learning.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "CPO leverages tree-of-thought structures for pairwise preference data at the step level, enabling finer-grained reasoning quality learning."
+            "rationale": "CPO uses tree-of-thought search trees to construct multi-step preference data, aligning with the claim of tree-structured preference learning."
           },
           {
-            "claim_id": "SClaim8",
+            "claim_id": "SClaim13",
             "reference_key": "arxiv:2410.12854",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "TPO directly learns from multi-branch, multi-step preference trees, capturing finer-grained reasoning quality as claimed.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "TPO directly learns from multi-branch, multi-step preference trees, supporting the claim of tree-structured preference learning.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "TPO directly learns from multi-branch, multi-step preference trees, capturing finer-grained reasoning quality as claimed."
+            "rationale": "TPO directly learns from multi-branch, multi-step preference trees, supporting the claim of tree-structured preference learning."
           },
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim16",
             "reference_key": "arxiv:2310.10080",
-            "support": "no",
-            "appropriateness_score": 2.0,
+            "support": "weak",
+            "appropriateness_score": 3.0,
             "placement_score": 5.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+            "topic_consistency_score": 4.0,
+            "support_rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The claim states that PRMs require expensive manual annotation of intermediate reasoning steps. However, the cited paper explicitly describes an automated method for creating PRM datasets via AST-based extraction (code generation) and does not mention or rely on manual annotation. The TLDR and abstract highlight 'AST-based automated PRM dataset creation' and 'a novel method to automatically generate step-level reward dataset'. This directly contradicts the claim's implication that manual annotation is necessary. Therefore, the claim is not supported by the citation; in fact, the evidence shows the opposite.",
+            "rationale": "The paper proposes an automated method (AST-based dataset creation) to generate step-level rewards for code generation, and does not explicitly state that PRM training typically requires expensive manual annotation of intermediate reasoning steps. The claim is not directly supported; the paper focuses on using PRM in decoding rather than training with manual annotations.",
             "retrieval_used": true,
             "retrieved_evidence": [
               {
@@ -6133,88 +6156,88 @@
             "second_pass_used": true
           },
           {
-            "claim_id": "SClaim9",
+            "claim_id": "SClaim16",
             "reference_key": "arxiv:2501.13622",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "CFPRM introduces a coarse-to-fine data collection strategy to reduce the cost of manual step annotation, acknowledging that PRMs typically require expensive manual annotation.",
+            "appropriateness_score": 8,
+            "placement_score": 8,
+            "topic_consistency_score": 9,
+            "support_rationale": "CFPRM introduces a coarse-to-fine method to reduce annotation cost, implying that existing PRM training often relies on expensive step-level annotations, thus supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "CFPRM introduces a coarse-to-fine data collection strategy to reduce the cost of manual step annotation, acknowledging that PRMs typically require expensive manual annotation."
+            "rationale": "CFPRM introduces a coarse-to-fine method to reduce annotation cost, implying that existing PRM training often relies on expensive step-level annotations, thus supporting the claim."
           },
           {
-            "claim_id": "SClaim10",
+            "claim_id": "SClaim17",
             "reference_key": "arxiv:2406.03816",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "ReST-MCTS* uses MCTS* to infer process rewards from final-answer correctness, enabling self-training without step-level labels, directly supporting the claim.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "ReST-MCTS* uses MCTS to infer process rewards from final-answer correctness, enabling self-training without explicit step labels, directly matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "ReST-MCTS* uses MCTS* to infer process rewards from final-answer correctness, enabling self-training without step-level labels, directly supporting the claim."
+            "rationale": "ReST-MCTS* uses MCTS to infer process rewards from final-answer correctness, enabling self-training without explicit step labels, directly matching the claim."
           },
           {
-            "claim_id": "SClaim11",
+            "claim_id": "SClaim18",
             "reference_key": "arxiv:2412.18319",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "Mulberry uses collective Monte Carlo Tree Search (CoMCTS) for multimodal reasoning to generate high-quality training data for MLLMs, exactly as claimed.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "Mulberry applies collective Monte Carlo Tree Search to multimodal reasoning, generating high-quality training data for vision-language models, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "Mulberry uses collective Monte Carlo Tree Search (CoMCTS) for multimodal reasoning to generate high-quality training data for MLLMs, exactly as claimed."
+            "rationale": "Mulberry applies collective Monte Carlo Tree Search to multimodal reasoning, generating high-quality training data for vision-language models, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim12",
+            "claim_id": "SClaim21",
             "reference_key": "arxiv:2505.16282",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "ARPO augments GRPO with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "ARPO introduces GRPO augmented with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "ARPO augments GRPO with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim."
+            "rationale": "ARPO introduces GRPO augmented with experience replay for end-to-end policy optimization in sparse-reward GUI environments, matching the claim."
           },
           {
-            "claim_id": "SClaim13",
+            "claim_id": "SClaim21",
             "reference_key": "arxiv:2507.05720",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
             "support_rationale": "MobileGUI-RL explores online RL with curriculum task synthesis in real mobile settings, directly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
             "rationale": "MobileGUI-RL explores online RL with curriculum task synthesis in real mobile settings, directly supporting the claim."
           },
           {
-            "claim_id": "SClaim14",
+            "claim_id": "SClaim22",
             "reference_key": "arxiv:2508.11360",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to address task difficulty heterogeneity, exactly as claimed.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity, directly matching the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to address task difficulty heterogeneity, exactly as claimed."
+            "rationale": "CRAFT-GUI combines curriculum learning with fine-grained reward modeling to handle task difficulty heterogeneity, directly matching the claim."
           },
           {
-            "claim_id": "SClaim15",
+            "claim_id": "SClaim25",
             "reference_key": "arxiv:2406.03679",
             "support": "yes",
-            "appropriateness_score": 10.0,
-            "placement_score": 10.0,
-            "topic_consistency_score": 10.0,
-            "support_rationale": "The AndroidControl study shows that scaling UI control data improves in-domain performance while out-of-domain generalization scales slowly, supporting the claim.",
+            "appropriateness_score": 10,
+            "placement_score": 10,
+            "topic_consistency_score": 10,
+            "support_rationale": "The paper shows that in-domain performance scales with data volume while out-of-domain generalization remains challenging, exactly supporting the claim.",
             "overclaim_status": "none",
             "overclaim_rationale": "",
-            "rationale": "The AndroidControl study shows that scaling UI control data improves in-domain performance while out-of-domain generalization scales slowly, supporting the claim."
+            "rationale": "The paper shows that in-domain performance scales with data volume while out-of-domain generalization remains challenging, exactly supporting the claim."
           }
         ],
         "applied_caps": []
@@ -6222,22 +6245,58 @@
     },
     "relevance": {
       "name": "relevance",
-      "score": 10.0,
+      "score": 8.7,
       "details": {
         "irrelevant_claims": [],
-        "weakly_relevant_claims": [],
-        "claim_count": 15
+        "weakly_relevant_claims": [
+          {
+            "claim_id": "SClaim4",
+            "relevance_score": 0.5,
+            "rationale": "Connects perception to reasoning-centric post-training, but is a general statement not tied to a specific ground truth key point."
+          },
+          {
+            "claim_id": "SClaim7",
+            "relevance_score": 0.5,
+            "rationale": "States a general benefit of CoaT (interpretability, error reduction) but does not correspond to a specific ground truth point."
+          },
+          {
+            "claim_id": "SClaim9",
+            "relevance_score": 0.5,
+            "rationale": "Identifies challenges (scarcity, overfitting) that ground truth methods address, but is not a direct claim about a specific method."
+          },
+          {
+            "claim_id": "SClaim14",
+            "relevance_score": 0.5,
+            "rationale": "Concludes with a domain gap observation, partially relevant to the proposed method's focus on GUI agents."
+          },
+          {
+            "claim_id": "SClaim19",
+            "relevance_score": 0.5,
+            "rationale": "General summarizing statement about structured search, not a specific claim tied to a ground truth point."
+          },
+          {
+            "claim_id": "SClaim26",
+            "relevance_score": 0.5,
+            "rationale": "Describes instruction evolution strategies, which relate to data diversity but are not explicitly covered in ground truth key points."
+          },
+          {
+            "claim_id": "SClaim27",
+            "relevance_score": 0.5,
+            "rationale": "General statement about benefits of data diversity, not tied to a specific ground truth point."
+          }
+        ],
+        "claim_count": 27
       }
     },
     "thematic_structure": {
       "name": "thematic_structure",
-      "score": 8.75,
+      "score": 8.66,
       "details": {
         "sub_scores": {
-          "topic_coverage": 9.0,
-          "topic_purity": 9.333333333333334,
-          "topic_coherence": 9.333333333333334,
-          "topic_granularity": 7.0,
+          "topic_coverage": 8.0,
+          "topic_purity": 9.5,
+          "topic_coherence": 8.666666666666666,
+          "topic_granularity": 9.0,
           "topic_ordering": 8.0
         },
         "topic_alignment": [
@@ -6245,10 +6304,11 @@
             "g_topic_id": "GTopic1",
             "s_topic_ids": [
               "STopic1",
-              "STopic2"
+              "STopic2",
+              "STopic5"
             ],
-            "match_score": 9,
-            "rationale": "GTopic1 (Mobile GUI Agent) directly corresponds to STopic1 (VLM-based Mobile GUI Agents) and STopic2 (Chain-of-Action-Thought Reasoning for GUI Control) as both cover the core idea of using VLMs for GUI agents and the introduced CoaT thinking pattern."
+            "match_score": 8.0,
+            "rationale": "STopic1 directly covers VLM-based mobile GUI agents, STopic2 covers reasoning for GUI control, and STopic5 covers RL for GUI agents. Together they address the key aspects of gold topic 1 (mobile GUI agents) but STopic2 and STopic5 are more specific, leaving some gaps (e.g., element grounding)."
           },
           {
             "g_topic_id": "GTopic2",
@@ -6257,87 +6317,99 @@
               "STopic4",
               "STopic5"
             ],
-            "match_score": 9,
-            "rationale": "GTopic2 (Reinforcement Learning) aligns well with STopic3 (Self-Training and Preference Optimization), STopic4 (Process Reward and Tree-Search Methods), and STopic5 (Reinforcement Learning for GUI Agents), as these cover the key RL algorithms and applications mentioned, including DPO, ReST-MCTS*, and RL for GUI agents."
+            "match_score": 8.0,
+            "rationale": "STopic3 covers self-training and preference optimization, STopic4 covers process reward and tree-search methods, STopic5 covers RL for GUI agents (which includes preference alignment). These cover the core of gold topic 2 (RL for preference alignment) but lack explicit coverage of some algorithms (e.g., KTO, IPO) and are more focused on reasoning and GUI applications."
           }
         ],
         "paragraph_scores": [
           {
             "paragraph_id": "S1",
-            "topic_purity": 10,
-            "topic_coherence": 10,
-            "citation_topic_consistency": 10,
-            "issues": []
+            "topic_purity": 10.0,
+            "topic_coherence": 9.0,
+            "citation_topic_consistency": 9.0,
+            "issues": [
+              "None identified."
+            ]
           },
           {
             "paragraph_id": "S2",
-            "topic_purity": 10,
-            "topic_coherence": 10,
-            "citation_topic_consistency": 9,
+            "topic_purity": 9.0,
+            "topic_coherence": 8.0,
+            "citation_topic_consistency": 9.0,
             "issues": [
-              "Citations for CoaT and datasets are present but may not cover all aspects of the gold topic's CoaT thinking pattern."
+              "Could be more explicitly linked to VLM-based agents; reads as a separate reasoning topic."
             ]
           },
           {
             "paragraph_id": "S3",
-            "topic_purity": 9,
-            "topic_coherence": 9,
-            "citation_topic_consistency": 9,
+            "topic_purity": 9.0,
+            "topic_coherence": 9.0,
+            "citation_topic_consistency": 8.0,
             "issues": [
-              "Covers self-training and preference optimization but slightly overlaps with tree-search methods; could be more focused."
+              "Lacks application to the GUI domain; focus on text reasoning may feel disconnected."
             ]
           },
           {
             "paragraph_id": "S4",
-            "topic_purity": 10,
-            "topic_coherence": 10,
-            "citation_topic_consistency": 10,
-            "issues": []
+            "topic_purity": 9.0,
+            "topic_coherence": 9.0,
+            "citation_topic_consistency": 9.0,
+            "issues": [
+              "Does not connect to mobile agent context; appears as a standalone method description."
+            ]
           },
           {
             "paragraph_id": "S5",
-            "topic_purity": 9,
-            "topic_coherence": 9,
-            "citation_topic_consistency": 9,
+            "topic_purity": 10.0,
+            "topic_coherence": 9.0,
+            "citation_topic_consistency": 9.0,
             "issues": [
-              "Covers RL for GUI agents but may lack some broader RL context from gold topic."
+              "As noted, may lack step-level reasoning optimization; could benefit from bridging self-training and process rewards."
             ]
           },
           {
             "paragraph_id": "S6",
-            "topic_purity": 8,
-            "topic_coherence": 8,
-            "citation_topic_consistency": 7,
+            "topic_purity": 10.0,
+            "topic_coherence": 8.0,
+            "citation_topic_consistency": 7.0,
             "issues": [
-              "Data diversity is tangentially related to the main RL and GUI agent topics; citations are sparse and not heavily connected to the core methods."
+              "Only one citation; topic seems ancillary to main themes and feels slightly out of place."
             ]
           }
         ],
         "issues": [
           {
+            "paragraph_id": "S1",
+            "issue": "None identified."
+          },
+          {
             "paragraph_id": "S2",
-            "issue": "Citations for CoaT and datasets are present but may not cover all aspects of the gold topic's CoaT thinking pattern."
+            "issue": "Could be more explicitly linked to VLM-based agents; reads as a separate reasoning topic."
           },
           {
             "paragraph_id": "S3",
-            "issue": "Covers self-training and preference optimization but slightly overlaps with tree-search methods; could be more focused."
+            "issue": "Lacks application to the GUI domain; focus on text reasoning may feel disconnected."
+          },
+          {
+            "paragraph_id": "S4",
+            "issue": "Does not connect to mobile agent context; appears as a standalone method description."
           },
           {
             "paragraph_id": "S5",
-            "issue": "Covers RL for GUI agents but may lack some broader RL context from gold topic."
+            "issue": "As noted, may lack step-level reasoning optimization; could benefit from bridging self-training and process rewards."
           },
           {
             "paragraph_id": "S6",
-            "issue": "Data diversity is tangentially related to the main RL and GUI agent topics; citations are sparse and not heavily connected to the core methods."
+            "issue": "Only one citation; topic seems ancillary to main themes and feels slightly out of place."
           }
         ],
         "granularity": {
-          "score": 7,
-          "rationale": "The candidate splits the two gold topics into six more specific sub-topics (e.g., separating VLM agents, CoaT reasoning, and RL sub-methods). This provides detailed coverage but may be overly granular, risking fragmentation and loss of high-level integration."
+          "score": 9.0,
+          "rationale": "The candidate topics break down the two broad gold topics into six finer-grained subtopics (VLM agents, reasoning, self-training, process rewards, RL for GUI, data diversity). This granularity provides a comprehensive overview of the field, though some subtopics could be merged or more balanced."
         },
         "ordering": {
-          "score": 8,
-          "rationale": "The candidate's order is logical: it starts with GUI agent fundamentals (VLM and CoaT reasoning), then progresses to RL methods (self-training, tree-search, and GUI-specific RL), and ends with data diversity. This roughly follows the gold topics order and supports a coherent narrative."
+          "score": 8.0,
+          "rationale": "The ordering begins with VLM-based agents (foundational), then moves to reasoning, optimization methods, RL for GUI, and ends with data diversity. This is generally logical, but RL for GUI (S5) might be better placed after the agent topics to group GUI-specific content, and data diversity (S6) could be integrated earlier."
         }
       }
     },
@@ -6345,11 +6417,11 @@
       "name": "synthesis_quality",
       "score": 7.5,
       "details": {
-        "rationale": "The synthesis effectively organizes the related work into coherent thematic paragraphs (VLM-based agents, CoaT reasoning, self-training, process reward models, RL for GUI, data diversity), demonstrating a clear landscape. It includes method descriptions and identifies limitations (e.g., scarcity of CoaT trajectories, expensive annotations, slow online RL, computational cost of segmentation). However, the gap motivation is somewhat implicit; the text does not explicitly link the discussed challenges to the paper's proposed solution (CoaT-tree with T-DPO), and there is limited direct comparison between methods within categories (e.g., comparing DPO variants or RL approaches more explicitly). The candidate avoids mere paper listing by grouping and contextualizing, but the overall narrative could more strongly drive towards the intended contribution.",
+        "rationale": "The candidate builds a coherent landscape by organizing related work into six thematic subsections (VLM agents, CoaT reasoning, self-training/preference optimization, process reward methods, RL for GUI agents, data diversity). It moves seamlessly from perception to reasoning to optimization, which demonstrates good synthesis. Limitations are identified in several paragraphs (e.g., scarcity of CoaT trajectories, text-domain focus, manual annotation cost, reliance on trajectory-level rewards), and these limitations collectively hint at a gap. However, the work is somewhat descriptive rather than critically comparative: within each subsection, methods are listed with brief summaries but few direct comparisons of strengths/weaknesses. The gap motivation remains implicit rather than explicitly stated (e.g., 'therefore our method...'), which slightly lowers the score. Overall, it is solidly above a mere paper list.",
         "issues": [
-          "Gap motivation is present but could be more explicit in connecting challenges to the paper's method.",
-          "Limited direct comparison between methods within each category (e.g., no explicit contrast of CPO vs. TPO).",
-          "Some paragraphs, like Data Diversity, feel slightly disconnected from the main reasoning themes."
+          "Limited direct comparison between methods within each subsection (e.g., why one VLM may be preferable over another).",
+          "Gap motivation is not explicitly articulated; the reader must infer the niche from the listed limitations.",
+          "Some paragraphs (e.g., Data Diversity) are less tightly integrated into the main narrative, weakening the sense of a unified story."
         ]
       }
     },
@@ -6357,24 +6429,24 @@
       "name": "writing_quality",
       "score": 8.5,
       "details": {
-        "rationale": "The writing maintains a professional academic tone with consistent terminology (CoaT, DPO, PRM, etc.). Clarity is high: each paragraph begins with a clear topic sentence, and the flow between sections is logical. Sentences are generally concise, though a few are somewhat long (e.g., 'OS-ATLAS and UI-TARS scaled this direction...'). Terminology consistency is maintained throughout. Sentence flow is smooth with appropriate transitions ('Beyond perception...', 'To mitigate data scarcity...', 'A parallel line of work...'). Minor issues include slightly informal phrasing ('scaled this direction') and occasional redundancy (e.g., 'achieving strong in-domain performance and serving as open-source alternatives' could be tightened). Overall, the writing is of high quality and suitable for an academic related work section.",
+        "rationale": "The writing maintains a formal academic tone throughout, with clear and precise terminology (e.g., 'Chain-of-Action-Thought', 'process reward models'). Sentences are generally well-constructed and flow logically from one to the next, aided by transitional phrases ('Beyond perception...', 'To mitigate data scarcity...'). Each subsection is focused and progresses the discussion. The text is concise for its scope, though occasional sentences are somewhat lengthy and could be split for even greater clarity. Terminology is consistent (e.g., 'CoaT', 'self-training', 'preference optimization'). Minor issues include a few unsupported interpretive claims (e.g., 'These foundation models establish the perceptual base...') which, while not incorrect, would benefit from a citation or more cautious phrasing. Overall, the writing quality is high and effectively communicates the related work.",
         "issues": [
-          "Occasional informal phrasing, e.g., 'scaled this direction' could be more formal.",
-          "A few sentences are overly long and could be split for better readability.",
-          "Minor redundancy in descriptions (e.g., 'large-scale continual pre-training on millions of GUI elements, achieving strong in-domain performance and serving as open-source alternatives' could be streamlined)."
+          "Occasional long sentences (e.g., in the Self-Training paragraph) could be restructured for better readability.",
+          "A small number of statements (e.g., 'improves interpretability and reduces error accumulation') are presented as established facts without citations, which slightly weakens academic rigor.",
+          "The closing sentence of the final paragraph ('Such techniques complement self-training...') is a bit vague and could be more tightly linked to the preceding content."
         ]
       }
     },
     "length_conciseness": {
       "name": "length_conciseness",
-      "score": 6.36,
+      "score": 6.2,
       "details": {
         "s_word_count": 675,
         "g_word_count": 345,
         "length_ratio": 1.9565217391304348,
         "sub_scores": {
           "relative_length_score": 6.173913043478261,
-          "information_density_score": 4.259405,
+          "information_density_score": 3.694295,
           "redundancy_score": 10.0
         },
         "redundancy": {

@@ -67,6 +67,32 @@ class ReportingTests(unittest.TestCase):
         self.assertIn("## Citation Group Support", rendered)
         self.assertIn("## Citation Group Support\n- None", rendered)
 
+    def test_bibliographic_accuracy_issues_section_formats_reference_status(self):
+        report = {
+            "sample_id": "unit",
+            "overall": 7.0,
+            "scores": {"content_coverage": 7.0},
+            "cleaning": [],
+            "diagnostics": {
+                "bibliographic_accuracy_issues": [
+                    {
+                        "ref_id": "R2",
+                        "title": "Unresolved Paper",
+                        "normalized_key": "unresolved-2024",
+                        "validity": "unresolved",
+                        "match_score": None,
+                        "issues": ["deepxiv_no_match"],
+                    }
+                ]
+            },
+        }
+
+        rendered = render_markdown_report(report)
+
+        self.assertIn("## Bibliographic Accuracy Issues", rendered)
+        self.assertIn("Unresolved Paper [validity=unresolved", rendered)
+        self.assertIn("issues=['deepxiv_no_match']", rendered)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from rw_eval.pipeline import _nonredundant_citation_group_support, evaluate_sample
+from rw_eval.pipeline import _bibliographic_accuracy_issues, _diagnostics, _nonredundant_citation_group_support, evaluate_sample
 from rw_eval.llm.judging import _attach_claim_reference_metadata
 
 
@@ -88,6 +88,75 @@ class PipelineTests(unittest.TestCase):
         filtered = _nonredundant_citation_group_support(citation_details)
         self.assertEqual(len(filtered), 1)
         self.assertEqual(filtered[0]["claim_id"], "SClaim2")
+
+    def test_bibliographic_accuracy_issues_include_invalid_or_flagged_references(self):
+        refs = [
+            {"ref_id": "R1", "title": "Valid Paper", "validity": "valid", "issues": []},
+            {
+                "ref_id": "R2",
+                "title": "Unresolved Paper",
+                "normalized_key": "unresolved-2024",
+                "validity": "unresolved",
+                "match_score": None,
+                "issues": ["deepxiv_no_match"],
+            },
+            {
+                "ref_id": "R3",
+                "title": "Flagged Paper",
+                "normalized_key": "flagged-2024",
+                "validity": "valid",
+                "match_score": 0.92,
+                "issues": ["manual_check"],
+            },
+        ]
+
+        issues = _bibliographic_accuracy_issues({"validity": {"references": refs}})
+
+        self.assertEqual([item["ref_id"] for item in issues], ["R2", "R3"])
+        self.assertEqual(issues[0]["validity"], "unresolved")
+        self.assertEqual(issues[1]["issues"], ["manual_check"])
+
+    def test_diagnostics_keep_hallucinated_references_and_bibliographic_issues(self):
+        metric_results = {
+            "content_coverage": {"details": {"missing_points": []}},
+            "citation_quality": {
+                "details": {
+                    "validity": {
+                        "references": [
+                            {
+                                "ref_id": "R1",
+                                "title": "Mismatch Paper",
+                                "normalized_key": "mismatch-2024",
+                                "validity": "metadata_mismatch",
+                                "match_score": 0.31,
+                                "issues": ["deepxiv_metadata_mismatch"],
+                            },
+                            {
+                                "ref_id": "R2",
+                                "title": "Unresolved Paper",
+                                "normalized_key": "unresolved-2024",
+                                "validity": "unresolved",
+                                "match_score": None,
+                                "issues": ["deepxiv_no_match"],
+                            },
+                        ]
+                    },
+                    "problematic_citation_claim_pairs": [],
+                    "overclaim_citation_claim_pairs": [],
+                    "citation_judgments": [],
+                    "citation_group_judgments": [],
+                }
+            },
+            "thematic_structure": {"details": {"issues": []}},
+            "length_conciseness": {"details": {"sub_scores": {}, "redundancy": {}}},
+        }
+
+        diagnostics = _diagnostics(metric_results, {})
+
+        self.assertEqual(len(diagnostics["hallucinated_references"]), 1)
+        self.assertEqual(diagnostics["hallucinated_references"][0]["ref_id"], "R1")
+        self.assertEqual(len(diagnostics["bibliographic_accuracy_issues"]), 2)
+        self.assertEqual(diagnostics["bibliographic_accuracy_issues"][1]["validity"], "unresolved")
 
 
 if __name__ == "__main__":

@@ -132,3 +132,30 @@ python -m rw_eval.cli evaluate-files `
 ```
 
 `--no-deepxiv` 不是完整评测，因为引用标准化和证据检索会被关闭。
+
+## 7. 查看新版 Citation 报告字段
+
+新版报告会在总分下展示 citation 子分：
+
+```text
+citation_quality
+citation_validity
+citation_appropriateness
+citation_coverage
+citation_placement
+citation_topic_consistency
+```
+
+JSON 报告新增：
+
+```text
+diagnostics.bibliographic_accuracy_issues
+```
+
+Markdown 报告新增：
+
+```text
+## Bibliographic Accuracy Issues
+```
+
+这个字段来自引用标准化结果，会列出 `validity` 不是 `valid`，或者 `issues` 非空的 reference。旧字段 `hallucinated_references` 仍保留，用于兼容旧报告读取脚本。
