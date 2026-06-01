@@ -1,0 +1,43 @@
+[1] Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena." NeurIPS, 2023.
+
+[2] Arjun Panickssery, Samuel R. Bowman, and Shi Feng. "LLM Evaluators Recognize and Favor Their Own Generations." NeurIPS, 2024.
+
+[3] Jiayi Pan, Yichi Zhang, Nicholas Tomlin, et al. "Autonomous Evaluation and Refinement of Digital Agents." arXiv:2404.06474, 2024.
+
+[4] Xing Han Lu, Amirhossein Kazemnejad, Nicholas Meade, et al. "AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories." arXiv:2504.08942, 2025.
+
+[5] Corby Rosset, Pratyusha Sharma, Andrew Zhao, et al. "The Art of Building Verifiers for Computer Use Agents." arXiv:2604.06240, 2026.
+
+[6] Shuyan Zhou, Frank F. Xu, Hao Zhu, et al. "WebArena: A Realistic Web Environment for Building Autonomous Agents." ICLR, 2023.
+
+[7] Jing Yu Koh, Robert Lo, Lawrence Jang, et al. "VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks." arXiv:2401.13649, 2024.
+
+[8] Tianbao Xie, Danyang Zhang, Jixuan Chen, et al. "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments." NeurIPS, 2024.
+
+[9] Ajay Mandlekar, Danfei Xu, Josiah Wong, et al. "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation." CoRL, 2021.
+
+[10] Noah Shinn, Federico Cassano, Edward Berman, et al. "Reflexion: Language Agents with Verbal Reinforcement Learning." NeurIPS, 2023.
+
+[11] Jing Yu Koh, Stephen McAleer, Daniel Fried, and Ruslan Salakhutdinov. "Tree Search for Language Model Agents." TMLR, 2024.
+
+[12] Zora Zhiruo Wang, Jiayuan Mao, Daniel Fried, and Graham Neubig. "Agent Workflow Memory." ICML, 2024.
+
+[13] Hao Bai, Yifei Zhou, Mert Cemri, et al. "DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning." NeurIPS, 2024.
+
+[14] Jason Wei, Xuezhi Wang, Dale Schuurmans, et al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models." NeurIPS, 2022.
+
+[15] Takeshi Kojima, Shixiang Shane Gu, Rachel Reid, et al. "Large Language Models are Zero-Shot Reasoners." NeurIPS, 2022.
+
+[16] Zhuosheng Zhang, Aston Zhang, Mu Li, et al. "Multimodal Chain-of-Thought Reasoning in Language Models." TMLR, 2023.
+
+[17] Shunyu Yao, Jeffrey Zhao, Dian Yu, et al. "ReAct: Synergizing Reasoning and Acting in Language Models." ICLR, 2022.
+
+[18] Xuezhi Wang, Jason Wei, Dale Schuurmans, et al. "Self-Consistency Improves Chain of Thought Reasoning in Language Models." ICLR, 2022.
+
+[19] Shunyu Yao, Dian Yu, Jeffrey Zhao, et al. "Tree of Thoughts: Deliberate Problem Solving with Large Language Models." NeurIPS, 2023.
+
+[20] Jianwei Yang, Hao Zhang, Feng Li, et al. "Set-of-Mark Prompting Unleashes Extraordinary Visual Grounding in GPT-4V." arXiv:2310.11441, 2023.
+
+[21] Hunter Lightman, Vineet Kosaraju, Yura Burda, et al. "Let's Verify Step by Step." ICLR, 2023.
+
+[22] DeepSeek-AI. "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." arXiv:2501.12948, 2025.

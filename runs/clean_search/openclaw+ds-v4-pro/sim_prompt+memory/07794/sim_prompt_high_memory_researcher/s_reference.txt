@@ -1,0 +1,15 @@
+[1] H. Trivedi, N. Balasubramanian, A. Khot, and A. Sabharwal. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." In Proceedings of ACL, 2023.
+
+[2] X. Li, Z. Shao, S. Cao, P. Wang, and Y. Li. "Search-o1: Agentic Search-Enhanced Large Reasoning Models." arXiv:2501.05366, 2025.
+
+[3] Z. Feng, Z. Chen, W. X. Zhao, J. Wen, et al. "Search-R1: Training Language Models with Reinforcement Learning for Search." 2025.
+
+[4] AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning. arXiv:2604.17337, 2025.
+
+[5] H. Song, J. Jiang, Y. Min, J. Chen, Z. Chen, W. X. Zhao, L. Fang, and J.-R. Wen. "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." arXiv:2503.05592, 2025.
+
+[6] H. Song, J. Jiang, W. Tian, Z. Chen, Y. Wu, J. Zhao, Y. Min, W. X. Zhao, L. Fang, and J.-R. Wen. "R1-Searcher++: Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning." arXiv:2505.17005, 2025.
+
+[7] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov. "Proximal Policy Optimization Algorithms." arXiv:1707.06347, 2017.
+
+[8] Z. Shao, P. Wang, Q. Zhu, R. Xu, J. Song, X. Bi, H. Zhang, M. Zhang, Y. K. Li, Y. Wu, and D. Guo. "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models." arXiv:2402.03300, 2024.

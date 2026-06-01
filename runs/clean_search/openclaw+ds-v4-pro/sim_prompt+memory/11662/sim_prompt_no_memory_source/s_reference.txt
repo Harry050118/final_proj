@@ -1,0 +1,23 @@
+[1] L. Zheng, W.-L. Chiang, Y. Sheng, S. Zhuang, Z. Wu, et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena." NeurIPS, 2023.
+
+[2] Y. Liu, D. Iter, Y. Xu, S. Wang, R. Xu, et al. "G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment." arXiv:2303.16634, 2023.
+
+[3] X. H. Lù, A. Kazemnejad, N. Meade, A. Patel, D. Shin, et al. "AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories." arXiv:2504.08942, 2025.
+
+[4] M. Kwon, S. M. Xie, K. Bullard, and D. Sadigh. "Reward Design with Language Models." ICLR, 2023.
+
+[5] S. Zhou, F. F. Xu, H. Zhu, X. Zhou, R. Lo, et al. "WebArena: A Realistic Web Environment for Building Autonomous Agents." arXiv:2307.13854, 2023.
+
+[6] J. Y. Koh, R. Lo, L. Jang, V. Duvvur, M. C. Lim, et al. "VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks." arXiv:2401.13649, 2024.
+
+[7] T. Xie, D. Zhang, J. Chen, X. Li, S. Zhao, et al. "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments." arXiv:2404.07972, 2024.
+
+[8] A. Mandlekar, D. Xu, J. Wong, S. Nasiriany, C. Wang, et al. "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation." CoRL, 2021.
+
+[9] N. Shinn, F. Cassano, E. Berman, A. Gopinath, K. Narasimhan, and S. Yao. "Reflexion: Language Agents with Verbal Reinforcement Learning." NeurIPS, 2023.
+
+[10] W. Yuan, R. Y. Pang, K. Cho, X. Li, S. Sukhbaatar, J. Xu, and J. Weston. "Self-Rewarding Language Models." arXiv:2401.10020, 2024.
+
+[11] L. Shi, C. Ma, W. Liang, X. Diao, W. Ma, and S. Vosoughi. "Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge." arXiv:2406.07791, 2024.
+
+[12] E. Spiliopoulou, R. Fogliato, H. Burnsky, T. Soliman, J. Ma, G. Horwood, and M. Ballesteros. "Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge." arXiv:2508.06709, 2025.

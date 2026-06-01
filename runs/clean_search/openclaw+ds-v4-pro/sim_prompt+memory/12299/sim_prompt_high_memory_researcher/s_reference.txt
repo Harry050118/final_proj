@@ -1,0 +1,29 @@
+[1] An Yan, Zhengyuan Yang, Wanrong Zhu, Kevin Lin, Linjie Li, Jianfeng Wang, Jianwei Yang, Yiwu Zhong, Julian McAuley, Jianfeng Gao. "GPT-4V in Wonderland: Large Multimodal Models for Zero-Shot Smartphone GUI Navigation." arXiv:2311.07562, 2023.
+
+[2] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, Junhui Ji, Yan Wang, Zihan Wang, Yuxuan Zhang, Juanzi Li, Bin Xu, Yuxiao Dong, Ming Ding, Jie Tang. "CogAgent: A Visual Language Model for GUI Agents." CVPR, 2024.
+
+[3] Kanzhi Cheng, Qiushi Sun, Yougang Chu, Fangzhi Xu, Yantao Li, Jianbing Zhang, Zhiyong Wu. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." ACL, 2024.
+
+[4] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, Yian Wang, Qiushi Sun, Chengyou Jia, Kanzhi Cheng, Zichen Ding, Liheng Chen, Paul Pu Liang, Yu Qiao. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
+
+[5] Yujia Qin, Yining Ye, Junjie Fang, Haoming Wang, Shihao Liang, Shizuo Tian, Junda Zhang, Jiahao Li, Yunxin Li, Shijue Huang, Wanjun Zhong, Kuanye Li, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
+
+[6] Jiwen Zhang, Jihao Wu, Yihua Teng, Minghui Liao, Nuo Xu, Xiao Xiao, Zhongyu Wei, Duyu Tang. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." EMNLP, 2024.
+
+[7] Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, Chelsea Finn. "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." NeurIPS, 2023.
+
+[8] Trung Quoc Luong, Xinbo Zhang, Zhanming Jie, Peng Sun, Xiaoran Jin, Hang Li. "ReFT: Reasoning with Reinforced Fine-Tuning." ACL, 2024.
+
+[9] Dan Zhang, Sining Zhoubian, Ziniu Hu, Yisong Yue, Yuxiao Dong, Jie Tang. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." NeurIPS, 2024.
+
+[10] Yuxi Xie, Anirudh Goyal, Wenyue Zheng, Min-Yen Kan, Timothy Lillicrap, Kenji Kawaguchi, Michael Shieh. "Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning." arXiv:2405.00451, 2024.
+
+[11] Xin Lai, Zhuotao Tian, Yukang Chen, Senqiao Yang, Xiangru Peng, Jiaya Jia. "Step-DPO: Step-wise Preference Optimization for Long-chain Reasoning of LLMs." arXiv:2406.18629, 2024.
+
+[12] Weibin Liao, Xu Chu, Yasha Wang. "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees." ICLR, 2025.
+
+[13] Zhenyu Hou, Ziniu Hu, Yujiang Li, Rui Lu, Jie Tang, Yuxiao Dong. "TreeRL: LLM Reinforcement Learning with On-Policy Tree Search." ACL, 2025.
+
+[14] Qinzhuo Wu, Wei Liu, Jian Luan, Bin Wang. "ReachAgent: Enhancing Mobile Agent via Page Reaching and Operation." NAACL, 2025.
+
+[15] Kechen Jiao, Zhirui Fang, Jiahao Liu, Bei Li, Qifan Wang, Xinyu Liu, Junhao Ruan, Zhongjian Qiao, Yifan Zhu, Yaxin Xu, Jingang Wang, Xiu Li. "TCPO: Thought-Centric Preference Optimization for Effective Embodied Decision-making." EMNLP, 2025.
