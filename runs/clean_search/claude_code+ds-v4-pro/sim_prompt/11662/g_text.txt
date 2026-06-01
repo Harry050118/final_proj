@@ -1,0 +1,29 @@
+\section{Related Work} \label{sec:related}
+\looseness=-1
+\textbf{MLLMs as Evaluators.}
+(M)LLMs have been employed as evaluators of model outputs in various scenarios under various names---(M)LLMs as judges, critics, reward models, value functions.
+This work focuses on multimodal and environment-interaction scenarios.
+MLLMs have been used to score and filter agent trajectories for subsequent use in finetuning~, and test-time refinements such as to induce prompts, reflections, and tools~.
+They have also served as a source of real-time feedback by producing natural language ``critiques''~, scores to rank action proposals in search~, and rewards for training~.
+
+\looseness=-1
+\textbf{AI Agents.}
+There is growing interest in building AI agents to act in various environments, including the web~, mobile phones~, and computers~.
+In this field, the work most closely related to ours is~, which uses a GPT-4V-based evaluator, prompted with benchmark-specific rubrics, to evaluate trajectories for Reflexion~ and behavior cloning.
+Following works employ a similar evaluator to guide tree search~, filter trajectories to generate text-based memories or tools~ to boost agent performance in (Visual)WebArena~, and for RL training in simpler environments~.
+
+\looseness=-1
+\textbf{Test-time scaling} (TTS) is a major paradigm to improve model performance without increasing parameters~.
+Early work~ shows that prompting LLMs to generate ``chains-of-thought'' yields substantial gains in reasoning-oriented tasks.
+This idea has been extended to several settings, including multimodal~ and environment-interaction~.
+Orthogonal approaches scale test-time compute via sampling and search~, where multiple generations are selected through heuristics~ or verifiers~.
+Recent work leverages sampling, RL, and formal verifiers to train (M)LLMs that autonomously generate reasoning traces~.
+Extending these methods to open-ended problems requires flexible and multimodal verification, for which MLLMs offer an appealing solution.
+
+Compared to this body of work, we
+\textbf{(1)} consolidate disparate applications of MLLM evaluators under a shared framework based on multimodal rewards derived from MLLM verifiers.
+\textbf{(2)} Evaluate MLLM verifiers across a broader range of models, multimodal benchmarks, agents, TTS techniques, evaluation templates, and applications.
+\textbf{(3)} Dissect MLLM verifier performance over fine-grained metrics, offering guidance on how to measure the quality of their evaluations and artifacts derived from them.
+\textbf{(4)} Identify agreement bias, show its resilience to TTS techniques, and the risks it poses for downstream applications.
+\textbf{(5)} Discuss several design choices for building MLLM verifiers and introduce SGV, a lightweight method easy to integrate into pipelines involving MLLM verifiers.
+\textbf{(6)} Improve MLLM verification with benefits extending to downstream applications such as online supervision and self-improvement, achieving a new state of the art on VisualWebArena.

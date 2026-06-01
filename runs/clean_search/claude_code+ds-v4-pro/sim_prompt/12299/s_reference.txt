@@ -1,0 +1,39 @@
+[1] Wenyi Hong, Weihan Wang, Qingsong Lv, et al. "CogAgent: A Visual Language Model for GUI Agents." arXiv:2312.08914, 2023.
+
+[2] Junyang Wang, Haiyang Xu, Jiabo Ye, et al. "Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception." arXiv:2401.16158, 2024.
+
+[3] Zhuosheng Zhang and Aston Zhang. "You Only Look at Screens: Multimodal Chain-of-Action Agents." arXiv:2309.11436, 2023.
+
+[4] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, et al. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
+
+[5] Yujia Qin, Yining Ye, Junjie Fang, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
+
+[6] Huawen Shen, Chang Liu, Gengluo Li, et al. "Falcon-UI: Understanding GUI Before Following User Instructions." arXiv:2412.09362, 2024.
+
+[7] Boyu Gou, Ruohan Wang, Boyuan Zheng, et al. "Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents." arXiv:2410.05243, 2024.
+
+[8] Jiwen Zhang, Jihao Wu, Yihua Teng, et al. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." arXiv:2403.02713, 2024.
+
+[9] Li Zhang, Longxi Gao, Mengwei Xu, et al. "Does Chain-of-Thought Reasoning Help Mobile GUI Agent? An Empirical Study." arXiv:2503.16788, 2025.
+
+[10] Rafael Rafailov, Archit Sharma, Eric Mitchell, et al. "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." NeurIPS, 2023.
+
+[11] Yuxi Xie, Anirudh Goyal, Wenyue Zheng, et al. "Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning." arXiv:2405.00451, 2024.
+
+[12] Dan Zhang, Sining Zhoubian, Ziniu Hu, et al. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." arXiv:2406.03816, 2024.
+
+[13] Tianduo Wang, Shichen Li, and Wei Lu. "Self-Training with Direct Preference Optimization Improves Chain-of-Thought Reasoning." arXiv:2407.18248, 2024.
+
+[14] DeepSeek-AI. "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." arXiv:2501.12948, 2025.
+
+[15] "Full-Step-DPO: Self-Supervised Preference Optimization with Step-wise Rewards for Mathematical Reasoning." arXiv:2502.14356, 2025.
+
+[16] Can Xu, Qingfeng Sun, Kai Zheng, et al. "WizardLM: Empowering Large Language Models to Follow Complex Instructions." arXiv:2304.12244, 2023.
+
+[17] Christopher Rawles, Alice Li, Daniel Rodriguez, et al. "Android in the Wild: A Large-Scale Dataset for Android Device Control." NeurIPS, 2023.
+
+[18] Yuxiang Chai, Siyuan Huang, Yazhe Niu, et al. "AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents." arXiv:2407.17490, 2024.
+
+[19] Wei Li, William Bishop, Alice Li, et al. "On the Effects of Data Scale on UI Control Agents." arXiv:2406.03679, 2024.
+
+[20] Peng Wang, Shuai Bai, Sinan Tan, et al. "Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution." arXiv:2409.12191, 2024.
