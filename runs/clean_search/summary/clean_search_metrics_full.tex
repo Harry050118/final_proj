@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.7in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\begin{document}
+\section*{Detailed clean\_search Scores}
+\begin{table*}[t]
+\centering
+\caption{Detailed clean\_search scores. Main-comparison rows use no-memory results for OpenClaw + DS-v4-Pro.}
+\label{tab:clean-search-full-metrics}
+\scriptsize
+\begin{tabular}{lllrrrrrr}
+\toprule
+Method & Task & Memory & Overall & Content & Citation Q. & Relevance & Synthesis & Citation Cov. \\
+\midrule
+Claude Code + DS-v4-Pro & PaperA & -- & 7.33 & 4.73 & 9.63 & 8.71 & 9.00 & 8.42 \\
+Claude Code + DS-v4-Pro & PaperB & -- & 5.89 & 3.80 & 5.00 & 6.86 & 7.00 & 8.18 \\
+Claude Code + DS-v4-Pro & PaperC & -- & 6.14 & 3.81 & 5.00 & 8.33 & 6.50 & 2.00 \\
+Claude Code + DS-v4-Pro & PaperD & -- & 6.92 & 1.52 & 8.29 & 5.26 & 8.50 & 5.88 \\
+Claude Code + DS-v4-Pro & PaperE & -- & 5.41 & 2.74 & 5.00 & 8.64 & 5.00 & 4.44 \\
+OpenClaw + Kimi-K2.6 & PaperA & -- & 6.37 & 5.00 & 5.00 & 6.15 & 7.50 & 7.00 \\
+OpenClaw + Kimi-K2.6 & PaperB & -- & 6.98 & 3.33 & 8.52 & 9.66 & 5.50 & 2.73 \\
+OpenClaw + Kimi-K2.6 & PaperC & -- & 6.74 & 2.17 & 7.74 & 8.70 & 7.50 & 1.00 \\
+OpenClaw + Kimi-K2.6 & PaperD & -- & 7.07 & 5.62 & 8.78 & 6.19 & 8.00 & 5.71 \\
+OpenClaw + Kimi-K2.6 & PaperE & -- & 6.85 & 3.41 & 8.30 & 9.06 & 6.50 & 3.50 \\
+OpenClaw + DS-v4-Pro & PaperA & no & 6.96 & 4.61 & 6.10 & 10.00 & 7.50 & 5.88 \\
+OpenClaw + DS-v4-Pro & PaperB & no & 6.43 & 2.57 & 8.43 & 7.69 & 6.50 & 4.84 \\
+OpenClaw + DS-v4-Pro & PaperC & no & 6.89 & 4.38 & 8.31 & 9.48 & 2.50 & 2.40 \\
+OpenClaw + DS-v4-Pro & PaperD & no & 6.17 & 3.71 & 5.00 & 7.22 & 7.50 & 6.25 \\
+OpenClaw + DS-v4-Pro & PaperE & no & 6.24 & 0.53 & 8.88 & 7.50 & 3.50 & 4.62 \\
+OpenClaw + DS-v4-Pro + Skill & PaperA & -- & 7.75 & 4.71 & 8.79 & 8.61 & 7.50 & 4.33 \\
+OpenClaw + DS-v4-Pro + Skill & PaperB & -- & 7.36 & 4.32 & 8.77 & 8.70 & 6.50 & 5.33 \\
+OpenClaw + DS-v4-Pro + Skill & PaperC & -- & 7.59 & 3.18 & 8.39 & 9.52 & 8.50 & 2.61 \\
+OpenClaw + DS-v4-Pro + Skill & PaperD & -- & 8.00 & 4.12 & 9.93 & 6.67 & 7.50 & 10.00 \\
+OpenClaw + DS-v4-Pro + Skill & PaperE & -- & 7.80 & 5.42 & 9.04 & 8.50 & 9.00 & 7.14 \\
+OpenClaw + DS-v4-Pro + Low Memory & PaperA & low & 7.77 & 6.79 & 8.85 & 9.76 & 9.00 & 6.00 \\
+OpenClaw + DS-v4-Pro + Low Memory & PaperB & low & 7.20 & 4.40 & 9.38 & 6.79 & 5.00 & 6.92 \\
+OpenClaw + DS-v4-Pro + Low Memory & PaperC & low & 6.73 & 5.00 & 8.36 & 9.52 & 8.00 & 4.00 \\
+OpenClaw + DS-v4-Pro + Low Memory & PaperD & low & 6.85 & 5.85 & 5.00 & 6.61 & 8.50 & 8.24 \\
+OpenClaw + DS-v4-Pro + Low Memory & PaperE & low & 7.83 & 4.81 & 8.96 & 8.75 & 6.00 & 4.81 \\
+OpenClaw + DS-v4-Pro + High Memory & PaperA & high & 7.11 & 2.69 & 7.31 & 8.21 & 9.00 & 2.67 \\
+OpenClaw + DS-v4-Pro + High Memory & PaperB & high & 7.95 & 7.27 & 9.33 & 7.50 & 9.00 & 8.82 \\
+OpenClaw + DS-v4-Pro + High Memory & PaperC & high & 8.37 & 7.11 & 8.03 & 10.00 & 8.50 & 4.74 \\
+OpenClaw + DS-v4-Pro + High Memory & PaperD & high & 7.28 & 7.26 & 5.00 & 9.05 & 9.00 & 7.08 \\
+OpenClaw + DS-v4-Pro + High Memory & PaperE & high & 8.48 & 6.39 & 9.62 & 7.50 & 7.00 & 8.95 \\
+OpenClaw + DS-v4-Pro (legacy sim\_prompt) & PaperA & -- & 7.88 & 3.64 & 9.11 & 8.33 & 8.00 & 6.67 \\
+OpenClaw + DS-v4-Pro (legacy sim\_prompt) & PaperB & -- & 6.40 & 4.68 & 5.00 & 8.59 & 9.00 & 10.00 \\
+OpenClaw + DS-v4-Pro (legacy sim\_prompt) & PaperC & -- & 7.04 & 4.20 & 7.79 & 8.09 & 8.00 & 2.17 \\
+OpenClaw + DS-v4-Pro (legacy sim\_prompt) & PaperD & -- & 6.34 & 4.58 & 5.00 & 7.50 & 7.50 & 7.50 \\
+OpenClaw + DS-v4-Pro (legacy sim\_prompt) & PaperE & -- & 7.05 & 3.33 & 8.28 & 8.24 & 7.00 & 6.00 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\end{document}
