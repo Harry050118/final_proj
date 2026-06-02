@@ -1,23 +1,35 @@
-[1] Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, et al. "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models." arXiv, 2024.
+[1] Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foerster, and Jeff Clune. "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery." arXiv:2408.06292, 2024.
 
-[2] Qingyun Wang, Doug Downey, Heng Ji, et al. "SciMON: Scientific Inspiration Machines Optimized for Novelty." arXiv, 2023.
+[2] Jiabin Tang, Lianghao Xia, Zhonghang Li, and Chao Huang. "AI-Researcher: Autonomous Scientific Innovation." arXiv:2505.18705, 2025.
 
-[3] Qian Huang, Jian Vora, Percy Liang, et al. "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation." arXiv, 2023.
+[3] Yuxuan Li, et al. "MLR-Copilot: Autonomous Machine Learning Research based on Large Language Models Agents." arXiv:2408.14033, 2024.
 
-[4] Chris Lu, Cong Lu, Robert Tjarko Lange, et al. "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery." arXiv, 2024.
+[4] Steffen Eger, Yong Cao, Jennifer D'Souza, Andreas Geiger, Christian Greisinger, Stephanie Gross, Yufang Hou, Brigitte Krenn, Anne Lauscher, Yizhi Li, Chenghua Lin, Nafise Sadat Moosavi, Wei Zhao, and Tristan Miller. "Transforming Science with Large Language Models: A Survey on AI-assisted Scientific Discovery, Experimentation, Content Generation, and Evaluation." arXiv:2502.05151, 2025.
 
-[5] Yidong Wang, Qi Guo, Wenjin Yao, et al. "AutoSurvey: Large Language Models Can Automatically Write Surveys." arXiv, 2024.
+[5] Chenglei Si, Diyi Yang, and Tatsunori Hashimoto. "Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers." arXiv:2409.04109, 2024.
 
-[6] Stefan Kramer, Mattia Cerrato, Saso Dzeroski, et al. "Automated Scientific Discovery: From Equation Discovery to Autonomous Discovery Systems." arXiv, 2023.
+[6] Zekun Li, et al. "IdeaBench: Benchmarking Large Language Models for Research Idea Generation." arXiv:2411.02429, 2024.
 
-[7] Abdullah Khalili, Abdelhamid Bouchachia. "Toward Building Science Discovery Machines." arXiv, 2021.
+[7] Yidong Wang, Qi Guo, Wenjin Yao, Hongbo Zhang, Xinyu Zhang, Zhenran Xu, Yaohui Jin, and Yue Zhang. "AutoSurvey: Large Language Models Can Automatically Write Surveys." NeurIPS, 2024.
 
-[8] Weixin Liang, Yuhui Zhang, Hancheng Cao, et al. "Can large language models provide useful feedback on research papers? A large-scale empirical analysis." arXiv, 2023.
+[8] Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, and Christopher D. Manning. "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." NeurIPS, 2023.
 
-[9] Mike D'Arcy, Tom Hope, Larry Birnbaum, et al. "MARG: Multi-Agent Review Generation for Scientific Papers." arXiv, 2024.
+[9] Yu Meng, Mengzhou Xia, and Danqi Chen. "SimPO: Simple Preference Optimization with a Reference-Free Reward." NeurIPS, 2024.
 
-[10] Keith Tyser, Ben Segev, Gaston Longhitano, et al. "AI-Driven Review Systems: Evaluating LLMs in Scalable and Bias-Aware Academic Reviews." arXiv, 2024.
+[10] Weizhe Yuan, Richard Yuanzhe Pang, Kyunghyun Cho, Xian Li, and Sainbayar Sukhbaatar. "Self-Rewarding Language Models." ICML, 2024.
 
-[11] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, et al. "RewardBench: Evaluating Reward Models for Language Modeling." arXiv, 2024.
+[11] Jie Ren, et al. "Iterative Length-Regularized Direct Preference Optimization: A Case Study on Improving 7B Language Models to GPT-4 Level." arXiv:2406.11817, 2024.
 
-[12] Lunjun Zhang, Arian Hosseini, Hritik Bansal, et al. "Generative Verifiers: Reward Modeling as Next-Token Prediction." arXiv, 2024.
+[12] Zachary Robertson. "GPT4 is Slightly Helpful for Peer-Review Assistance: A Pilot Study." arXiv:2307.05492, 2023.
+
+[13] Dongyeop Kang, Waleed Ammar, Bhavana Dalvi, Madeleine van Zuylen, Sebastian Kohlmeier, Eduard Hovy, and Roy Schwartz. "A Dataset of Peer Reviews (PeerRead): Collection, Insights and NLP Applications." NAACL, 2018.
+
+[14] Jianxiang Yu, et al. "Automated Peer Reviewing in Paper SEA: Standardization, Evaluation, and Analysis." arXiv:2407.12857, 2024.
+
+[15] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, Lester James V. Miranda, Bill Yuchen Lin, Khyathi Chandu, Nouha Dziri, Sachin Kumar, Tom Zick, Yejin Choi, Noah A. Smith, and Hannaneh Hajishirzi. "RewardBench: Evaluating Reward Models for Language Modeling." arXiv:2403.13787, 2024.
+
+[16] Eric Mitchell, Yoonho Lee, Alexander Khazatsky, Christopher D. Manning, and Chelsea Finn. "DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature." ICML, 2023.
+
+[17] Guangsheng Bao, Yan Zhao, Zhiyang Teng, Linyi Yang, and Yue Zhang. "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature." ICLR, 2024.
+
+[18] Yu Zhang, et al. "A Comprehensive Survey of Scientific Large Language Models and Their Applications in Scientific Discovery." EMNLP, 2024.

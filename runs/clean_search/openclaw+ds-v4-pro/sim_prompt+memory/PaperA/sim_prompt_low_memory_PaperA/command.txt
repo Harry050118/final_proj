@@ -3,9 +3,9 @@ The paper title, reference list, figures, tables, figure captions, and table cap
 
 Input paper: papers/07794.txt
 Candidate papers: none
-Output directory: runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_low_memory_researcher
+Output directory: runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_no_memory_researcher
 
-Please extract previous experience from memory and use it to complete this task better.
+
 Use DeepXiv as the only academic retrieval source. DeepXiv token is store in .env.
 Do not use general web search, arXiv search, Semantic Scholar, Google Scholar, publisher search, DBLP, ACL Anthology, PubMed, ACM, IEEE, or memory-only citation discovery as substitutes.
 
@@ -57,18 +57,18 @@ Output formatting requirements:
 7. Do not wrap either file in Markdown code fences.
 
 Please write:
-- runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_low_memory_researcher/s_text.txt with only the generated Related Work section.
-- runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_low_memory_researcher/s_reference.txt with the final cited paper list, one reference per entry.
-- Optionally write runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_low_memory_researcher/trace.md with search queries, main candidate papers, final cited papers, and any uncertainty.
+- runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_no_memory_researcher/s_text.txt with only the generated Related Work section.
+- runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_no_memory_researcher/s_reference.txt with the final cited paper list, one reference per entry.
+- Optionally write runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_no_memory_researcher/trace.md with search queries, main candidate papers, final cited papers, and any uncertainty.
 
 Do not read papers/ground_truth_related_work or any ground-truth Related Work file.
-Do not read runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_low_memory_researcher/g_text.txt or runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_low_memory_researcher/g_reference.txt if those files already exist.
+Do not read runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_no_memory_researcher/g_text.txt or runs/clean_search/openclaw+ds-v4-pro/sim_prompt+memory/sim_prompt_no_memory_researcher/g_reference.txt if those files already exist.
 
 python -m rw_eval.cli evaluate-files `
-   --directory ..\..\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_low_memory_researcher `
+   --directory ..\..\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_no_memory_researcher `
    --sample-id sim_prompt+memory-evotest `
-   --output ..\..\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_low_memory_researcher\report.json `
-   --markdown-output ..\..\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_low_memory_researcher\report.md `
+   --output ..\..\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_no_memory_researcher\report.json `
+   --markdown-output ..\..\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_no_memory_researcher\report.md `
    --env ..\..\.env
 
-I have provided `report.md` and `report.json` based on the task you completed. They are located in `D:\final_project_pipeline\final_proj\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_low_memory_researcher`. The `report.md` file contains my score for the related work you supplemented and points out the issues. Please carefully summarize your writing process and the problems that occurred. Please record every problem you encounter in detail and ensure that you do not make the same mistake again. Then write them into memory. Note that this memory must not overwrite the previous memory. Write this memory as a separate `.md` file.
+I have provided `report.md` and `report.json` based on the task you completed. They are located in `D:\final_project_pipeline\final_proj\runs\clean_search\openclaw+ds-v4-pro\sim_prompt+memory\sim_prompt_no_memory_researcher`. The `report.md` file contains my score for the related work you supplemented and points out the issues. Please carefully summarize your writing process and the problems that occurred. Please record every problem you encounter in detail and ensure that you do not make the same mistake again. Then write them into memory. Note that this memory must not overwrite the previous memory. Write this memory as a separate `.md` file.

@@ -1,31 +1,47 @@
-[1] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, Junhui Ji, Yan Wang, et al. "CogAgent: A Visual Language Model for GUI Agents." Computer Vision and Pattern Recognition (CVPR), 2023.
+[1] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, et al. "CogAgent: A Visual Language Model for GUI Agents." Computer Vision and Pattern Recognition (CVPR), 2023.
 
-[2] Kanzhi Cheng, Qiushi Sun, Yougang Chu, et al. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." Annual Meeting of the Association for Computational Linguistics (ACL), 2024.
+[2] Kanzhi Cheng, Qiushi Sun, Yougang Chu, Fangzhi Xu, Yantao Li, et al. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." Annual Meeting of the Association for Computational Linguistics (ACL), 2024.
 
-[3] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, et al. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
+[3] Chi Zhang, Zhao Yang, Jiaxuan Liu, Yucheng Han, Xin Chen, et al. "AppAgent: Multimodal Agents as Smartphone Users." International Conference on Human Factors in Computing Systems (CHI), 2024.
 
-[4] Yujia Qin, Yining Ye, Junjie Fang, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
+[4] Junyang Wang, Haiyang Xu, Jiabo Ye, Ming Yan, Weizhou Shen, et al. "Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception." arXiv:2401.16158, 2024.
 
-[5] Huawen Shen, Chang Liu, Gengluo Li, et al. "Falcon-UI: Understanding GUI Before Following User Instructions." arXiv:2412.09362, 2024.
+[5] Zhuosheng Zhang and Aston Zhang. "You Only Look at Screens: Multimodal Chain-of-Action Agents." Annual Meeting of the Association for Computational Linguistics (ACL), 2023.
 
-[6] Jiwen Zhang, Jihao Wu, Yihua Teng, et al. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." Conference on Empirical Methods in Natural Language Processing (EMNLP), 2024.
+[6] Yiheng Xu, Zekun Wang, Junli Wang, Dunjie Lu, Tianbao Xie, et al. "Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction." International Conference on Machine Learning (ICML), 2024.
 
-[7] An Yan, Zhengyuan Yang, Wanrong Zhu, et al. "GPT-4V in Wonderland: Large Multimodal Models for Zero-Shot Smartphone GUI Navigation." arXiv:2311.07562, 2023.
+[7] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, Yian Wang, Qiushi Sun, et al. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
 
-[8] Li Zhang, Longxi Gao, Mengwei Xu. "Does Chain-of-Thought Reasoning Help Mobile GUI Agent? An Empirical Study." arXiv:2503.16788, 2025.
+[8] Yujia Qin, Yining Ye, Junjie Fang, Haoming Wang, Shihao Liang, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
 
-[9] Dan Zhang, Sining Zhoubian, Ziniu Hu, et al. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." Neural Information Processing Systems (NeurIPS), 2024.
+[9] Hao Bai, Yifei Zhou, Mert Cemri, Jiayi Pan, Alane Suhr, et al. "DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning." Neural Information Processing Systems (NeurIPS), 2024.
 
-[10] Xin Lai, Zhuotao Tian, Yukang Chen, et al. "Step-DPO: Step-wise Preference Optimization for Long-chain Reasoning of LLMs." arXiv:2406.18629, 2024.
+[10] Huawen Shen, Chang Liu, Gengluo Li, Xinlong Wang, Yu Zhou, et al. "Falcon-UI: Understanding GUI Before Following User Instructions." arXiv:2412.09362, 2024.
 
-[11] Yiran Guo, Lijie Xu, Jie Liu, et al. "Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models." arXiv:2505.23564, 2025.
+[11] Jiwen Zhang, Jihao Wu, Yihua Teng, Minghui Liao, Nuo Xu, et al. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." Conference on Empirical Methods in Natural Language Processing (EMNLP), 2024.
 
-[12] Zhenyu Hou, Ziniu Hu, Yujiang Li, et al. "TreeRL: LLM Reinforcement Learning with On-Policy Tree Search." Annual Meeting of the Association for Computational Linguistics (ACL), 2025.
+[12] Xinbei Ma, Zhuosheng Zhang, and Hai Zhao. "CoCo-Agent: A Comprehensive Cognitive MLLM Agent for Smartphone GUI Automation." Annual Meeting of the Association for Computational Linguistics (ACL), 2024.
 
-[13] Zhengxi Lu, Yuxiang Chai, Yaxuan Guo, et al. "UI-R1: Enhancing Efficient Action Prediction of GUI Agents by Reinforcement Learning." AAAI Conference on Artificial Intelligence, 2025.
+[13] Yuhang Liu, Pengxiang Li, Congkai Xie, Xavier Hu, Xiaotian Han, et al. "InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners." arXiv:2504.14239, 2025.
 
-[14] Jihao Gu, Qihang Ai, Yingyao Wang, et al. "Mobile-R1: Towards Interactive Reinforcement Learning for VLM-Based Mobile Agent via Task-Level Rewards." arXiv:2506.20332, 2025.
+[14] Dan Zhang, Sining Zhoubian, Ziniu Hu, Yisong Yue, Yuxiao Dong, et al. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." Neural Information Processing Systems (NeurIPS), 2024.
 
-[15] Qinzhuo Wu, Wei Liu, Jian Luan, et al. "ReachAgent: Enhancing Mobile Agent via Page Reaching and Operation." North American Chapter of the Association for Computational Linguistics (NAACL), 2025.
+[15] Yuxi Xie, Anirudh Goyal, Wenyue Zheng, Min-Yen Kan, Timothy Lillicrap, et al. "Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning." arXiv:2405.00451, 2024.
 
-[16] Kechen Jiao, Zhirui Fang, Jiahao Liu, et al. "TCPO: Thought-Centric Preference Optimization for Effective Embodied Decision-making." Conference on Empirical Methods in Natural Language Processing (EMNLP), 2025.
+[16] Xin Lai, Zhuotao Tian, Yukang Chen, Senqiao Yang, Xiangru Peng, et al. "Step-DPO: Step-wise Preference Optimization for Long-chain Reasoning of LLMs." arXiv:2406.18629, 2024.
+
+[17] Richard Yuanzhe Pang, Weizhe Yuan, Kyunghyun Cho, He He, Sainbayar Sukhbaatar, et al. "Iterative Reasoning Preference Optimization." Neural Information Processing Systems (NeurIPS), 2024.
+
+[18] Xuan Zhang, Chao Du, Tianyu Pang, Qian Liu, Wei Gao, et al. "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs." Neural Information Processing Systems (NeurIPS), 2024.
+
+[19] Guoxin Chen, Minpeng Liao, Chengxi Li, and Kai Fan. "Step-level Value Preference Optimization for Mathematical Reasoning." Conference on Empirical Methods in Natural Language Processing (EMNLP), 2024.
+
+[20] Tianduo Wang, Shichen Li, and Wei Lu. "Self-Training with Direct Preference Optimization Improves Chain-of-Thought Reasoning." Annual Meeting of the Association for Computational Linguistics (ACL), 2024.
+
+[21] Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, et al. "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models." arXiv:2402.03300, 2024.
+
+[22] Christopher Rawles, Alice Li, Daniel Rodriguez, Oriana Riva, and Timothy Lillicrap. "Android in the Wild: A Large-Scale Dataset for Android Device Control." Neural Information Processing Systems (NeurIPS), 2023.
+
+[23] Yuxiang Chai, Siyuan Huang, Yazhe Niu, Han Xiao, Liang Liu, et al. "AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents." Annual Meeting of the Association for Computational Linguistics (ACL), 2024.
+
+[24] Wei Li, William Bishop, Alice Li, Chris Rawles, Folawiyo Campbell-Ajala, et al. "On the Effects of Data Scale on UI Control Agents." Neural Information Processing Systems (NeurIPS), 2024.

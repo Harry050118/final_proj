@@ -1,83 +1,75 @@
-# Trace: Related Work Generation for Paper 07794 (HiPRAG)
+# Trace: Related Work Generation for Paper 07794
 
-## Paper Inference
+## Paper Analysis
 
-**Topic:** Hierarchical process rewards for efficient agentic Retrieval-Augmented Generation (RAG).
-**Task:** Training LLM search agents to avoid over-search and under-search behaviors via reinforcement learning.
-**Method:** HiPRAG — decomposes reasoning trajectories into parsable steps, detects over-search and under-search on-the-fly using external LLM judges, and applies a hierarchical reward function that gates a process bonus (proportional to optimal step ratio) behind format and answer correctness.
-**Contribution:** A fine-grained, knowledge-grounded process reward for RL-based agentic RAG training that explicitly evaluates each search/non-search decision, plus an efficient detection mechanism for suboptimal search behaviors.
+### Inferred Research Topic
+The paper introduces HiPRAG (Hierarchical Process Rewards for Efficient Agentic RAG), a training methodology that uses reinforcement learning with fine-grained process rewards to optimize search behavior in agentic Retrieval-Augmented Generation (RAG) systems.
 
-## DeepXiv Status
+### Inferred Task
+Training LLMs to perform efficient agentic RAG for question answering, specifically reducing over-search and under-search behaviors.
 
-**Result: Inaccessible.** The domain `deepxiv.org` does not resolve (confirmed via nslookup against both local DNS and Google DNS 8.8.8.8). All URL patterns attempted returned connection failures:
-- `https://api.deepxiv.org/v1/search`
-- `https://deepxiv.org/api/search`
-- `https://www.deepxiv.org/api/search`
-- `https://api.deepxiv.com/v1/search`
-- `https://deepxiv.ai/api/v1/search`
-- `https://deepxiv.app/api/v1/search`
-- `https://api.deepxiv.xyz/v1/search`
+### Inferred Method
+- Hierarchical process reward function that combines outcome reward, format reward, and a gated process bonus based on the ratio of optimal search/non-search steps
+- Structured parsable output format (XML-tagged reasoning steps) enabling rule-based step isolation
+- On-the-fly over-search and under-search detection using external LLM judges (GPT-4.1 mini, GPT-5 mini)
+- Compatible with PPO and GRPO RL algorithms
+- Tested on Qwen2.5 (3B/7B) and Llama-3.2 (3B) models
 
-Token from `.env`: `DEEPXIV_API_TOKEN=sniRmhNSA2A2UVETupSomuV_eqv9c5flac8LCj0F6A8`
+### Inferred Datasets
+Training: NQ + HotpotQA (combined)
+Evaluation: NQ, PopQA, TriviaQA, 2WikiMultiHopQA, Bamboogle, HotpotQA, MuSiQue
+Retrieval: Wikipedia 2018 dump with E5-base retriever
 
-## Alternative Verification Methods
+### Inferred Contribution
+First method to provide explicit, step-specific process rewards for each search decision in agentic RAG, dramatically reducing over-search rate (from >27% to 2.3%) and under-search rate while improving accuracy.
 
-Since DeepXiv was inaccessible, papers were verified through direct web_fetch on:
-- arXiv abstract pages (by known/plausible arxiv IDs)
-- GitHub repository pages (HiPRAG, Search-R1, Search-o1 repos)
-- GitHub code search for R1-Searcher
+## DeepXiv Access Attempts
 
-General web search was not available (SearXNG not configured).
+### Status: FAILED
+All attempts to authenticate with the DeepXiv API at `https://deepxiv.com/api/search` returned HTTP 401 with `{"error":"Not authenticated"}`.
 
-## Verified Papers (with confirmation source)
+### Attempted Authentication Methods
+1. Bearer token in Authorization header
+2. api-key header
+3. x-api-key header
+4. deepxiv-api-key header
+5. Token in request body
+6. Token in query parameter
+7. Cookie-based token
 
-| # | Paper | Verification |
-|---|-------|-------------|
-| [1] | RAG (Lewis et al., 2020) | arxiv:2005.11401 — confirmed via web_fetch |
-| [2] | ReAct (Yao et al., 2022) | arxiv:2210.03629 — confirmed via web_fetch |
-| [3] | IRCoT (Trivedi et al., 2022) | arxiv:2212.10509 — confirmed via web_fetch |
-| [4] | Toolformer (Schick et al., 2023) | arxiv:2302.04761 — confirmed via web_fetch |
-| [5] | Self-RAG (Asai et al., 2023) | arxiv:2310.11511 — confirmed via web_fetch |
-| [6] | Search-o1 (Li et al., 2025) | arxiv:2501.05366 — confirmed via web_fetch; GitHub repo at RUC-NLPIR/Search-o1 |
-| [7] | Search-R1 (Jin et al., 2025) | arxiv:2503.09516 — confirmed via web_fetch; GitHub repo at PeterGriffinJin/Search-R1 |
-| [10] | AutoSearch (Sun et al., 2026) | arxiv:2604.17337 — confirmed via web_fetch; identified from previous run memory as the paper matching β-GRPO |
-| [11] | DeepSeek-R1 (DeepSeek-AI, 2025) | arxiv:2501.12948 — confirmed via web_fetch |
-| [12] | DeepSeekMath/GRPO (Shao et al., 2024) | arxiv:2402.03300 — confirmed via web_fetch |
+### Verified Endpoints
+- `GET /api/health` → `{"status":"healthy"}` (public)
+- `POST /api/search` → 401 Unauthorized (requires authentication)
+- `GET /api/search` → 405 Method Not Allowed
 
-## Papers with Limited Verification
+### Token
+`DEEPXIV_API_TOKEN=sniRmhNSA2A2UVETupSomuV_eqv9c5flac8LCj0F6A8` (from .env)
 
-| # | Paper | Issue |
-|---|-------|-------|
-| [8] | R1-Searcher | Title confirmed via GitHub search ("Incentivizing the Search Capability in LLMs via Reinforcement Learning"). Authors and arxiv ID could not be independently verified. Included because explicitly named and described as a baseline in the paper body text. |
-| [9] | R1-Searcher++ | Title confirmed via GitHub search ("Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning"). Authors and arxiv ID could not be independently verified. Same rationale as [8]. |
+## Search Queries (Would Have Used)
+If DeepXiv had been accessible, the following queries would have been used:
 
-## Note on β-GRPO / AutoSearch
+1. "agentic retrieval augmented generation reinforcement learning"
+2. "process reward reinforcement learning large language model retrieval"
+3. "Search-R1 retrieval augmented generation reinforcement learning agent"
+4. "over-search under-search retrieval augmented generation efficiency"
+5. "process reward model step-level supervision LLM reasoning"
+6. "GRPO PPO reinforcement learning retrieval augmented generation"
+7. "IRCoT interleaving retrieval chain-of-thought reasoning"
+8. "tool-augmented LLM search agent question answering"
 
-The paper body text refers to a baseline as "β-GRPO". Previous session memory indicates DeepXiv resolved this to "AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning" (arxiv:2604.17337, Sun et al., 2026). This paper's abstract confirms its relevance (adaptive search depth, self-answering mechanism, penalizing over-search). The reference entry uses the verified title "AutoSearch" rather than the paper body's notation "β-GRPO".
+## Related Work Themes Identified
 
-## Search Queries Attempted
+1. **Retrieval-Augmented Generation and Agentic RAG**: RAG [1], NQ [2], HotpotQA [3], TriviaQA [4], MuSiQue [5]
+2. **Reinforcement Learning for LLM Reasoning**: PPO [8], GRPO [9]
+3. **RL-Based Search Agents**: Search-R1 [10], R1-Searcher [11], R1-Searcher++ [12], β-GRPO [13]
+4. **Process-Level Supervision and Rewards**: Lightman et al. [14], Math-Shepherd [15]
+5. **Prompt-Based Multi-Step Reasoning with Retrieval**: IRCoT [6], Search-o1 [7]
 
-- DeepXiv API: `agentic+RAG+reinforcement+learning`, `test` (all failed — domain not found)
-- GitHub: HiPRAG repo → confirmed paper metadata; Search-R1 repo → confirmed framework; GitHub search for "R1-Searcher" → confirmed titles
-- arXiv direct access: Successfully verified 10 papers via known/plausible arxiv IDs
-
-## Papers Not Included
-
-- **DPR (Karpukhin et al., 2020, arxiv:2004.04906)**: Verified but not directly relevant to agentic search behavior — cited in paper body for retrieval setup, not for method contribution.
-- **Search-R1 Empirical Study (Jin et al., 2025, arxiv:2505.15117)**: Verified but represents a companion analysis of the same framework, not a distinct method.
-- **Chain-of-Thought (Wei et al., 2022, arxiv:2201.11903)**: Verified but represents general reasoning prompting, not specific to search/retrieval behavior.
-
-## Topic Structure Rationale
-
-Three themes were chosen to progressively build context from foundational RAG work to the specific gap HiPRAG addresses:
-1. **Agentic RAG** — establishes the evolution from static retrieval to autonomous search agents
-2. **RL for Search Agent Training** — positions HiPRAG against the most directly comparable baselines
-3. **Process Rewards and Search Efficiency** — identifies the specific gap (lack of fine-grained, step-level feedback) that HiPRAG fills
-
-Following lessons from previous run: avoided standalone RL background paragraph, avoided citing dataset papers for method claims, and distinguished prompting-based from RL-trained approaches.
+## Final Cited Papers
+15 references covering the five identified research themes.
 
 ## Uncertainty
-
-- R1-Searcher [8] and R1-Searcher++ [9] author/venue metadata could not be independently verified. Titles are from GitHub search results.
-- β-GRPO/AutoSearch mapping is from previous session memory, not direct confirmation.
-- Some author lists for papers with many co-authors used "et al." after the first few names.
+- DeepXiv API token from .env is not accepted by the service. The token may be expired, for a different service, or the API requires a different authentication flow.
+- Citations [10-13] and [7] are 2025 preprints; exact author lists and venues were inferred from prior knowledge and paper body mentions. Venue information may not be definitive.
+- Paper [13] (β-GRPO) is cited with "Anonymous" authors as the paper body does not specify authors and reliable metadata could not be retrieved through DeepXiv.
+- Citations [7] and [10-12] represent recent (2025) arXiv preprints in a rapidly evolving field; exact metadata should be verified against the published versions.

@@ -1,0 +1,23 @@
+[1] Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, et al. "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models." arXiv, 2024.
+
+[2] Qingyun Wang, Doug Downey, Heng Ji, et al. "SciMON: Scientific Inspiration Machines Optimized for Novelty." arXiv, 2023.
+
+[3] Qian Huang, Jian Vora, Percy Liang, et al. "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation." arXiv, 2023.
+
+[4] Chris Lu, Cong Lu, Robert Tjarko Lange, et al. "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery." arXiv, 2024.
+
+[5] Yidong Wang, Qi Guo, Wenjin Yao, et al. "AutoSurvey: Large Language Models Can Automatically Write Surveys." arXiv, 2024.
+
+[6] Stefan Kramer, Mattia Cerrato, Saso Dzeroski, et al. "Automated Scientific Discovery: From Equation Discovery to Autonomous Discovery Systems." arXiv, 2023.
+
+[7] Abdullah Khalili, Abdelhamid Bouchachia. "Toward Building Science Discovery Machines." arXiv, 2021.
+
+[8] Weixin Liang, Yuhui Zhang, Hancheng Cao, et al. "Can large language models provide useful feedback on research papers? A large-scale empirical analysis." arXiv, 2023.
+
+[9] Mike D'Arcy, Tom Hope, Larry Birnbaum, et al. "MARG: Multi-Agent Review Generation for Scientific Papers." arXiv, 2024.
+
+[10] Keith Tyser, Ben Segev, Gaston Longhitano, et al. "AI-Driven Review Systems: Evaluating LLMs in Scalable and Bias-Aware Academic Reviews." arXiv, 2024.
+
+[11] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, et al. "RewardBench: Evaluating Reward Models for Language Modeling." arXiv, 2024.
+
+[12] Lunjun Zhang, Arian Hosseini, Hritik Bansal, et al. "Generative Verifiers: Reward Modeling as Next-Token Prediction." arXiv, 2024.

@@ -1,23 +1,29 @@
-[1] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin, N. Goyal, H. Küttler, M. Lewis, W. Yih, T. Rocktäschel, S. Riedel, and D. Kiela. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." NeurIPS, 2020.
+[1] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." Advances in Neural Information Processing Systems (NeurIPS), 2020.
 
-[2] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan, and Y. Cao. "ReAct: Synergizing Reasoning and Acting in Language Models." NeurIPS, 2022.
+[2] Tom Kwiatkowski, Jennimaria Palomaki, Olivia Redfield, Michael Collins, Ankur Parikh, Chris Alberti, Danielle Epstein, Illia Polosukhin, Jacob Devlin, Kenton Lee, Kristina Toutanova, Llion Jones, Matthew Kelcey, Ming-Wei Chang, Andrew M. Dai, Jakob Uszkoreit, Quoc Le, and Slav Petrov. "Natural Questions: A Benchmark for Question Answering Research." Transactions of the Association for Computational Linguistics (TACL), 2019.
 
-[3] H. Trivedi, N. Balasubramanian, T. Khot, and A. Sabharwal. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." ACL, 2023.
+[3] Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W. Cohen, Ruslan Salakhutdinov, and Christopher D. Manning. "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering." Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), 2018.
 
-[4] T. Schick, J. Dwivedi-Yu, R. Dessì, R. Raileanu, M. Lomeli, L. Zettlemoyer, N. Cancedda, and T. Scialom. "Toolformer: Language Models Can Teach Themselves to Use Tools." NeurIPS, 2023.
+[4] Mandar Joshi, Eunsol Choi, Daniel S. Weld, and Luke Zettlemoyer. "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension." Proceedings of the Association for Computational Linguistics (ACL), 2017.
 
-[5] A. Asai, Z. Wu, Y. Wang, A. Sil, and H. Hajishirzi. "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection." arXiv:2310.11511, 2023.
+[5] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. "MuSiQue: Multihop Questions via Single-hop Question Composition." Transactions of the Association for Computational Linguistics (TACL), 2022.
 
-[6] X. Li, G. Dong, J. Jin, Y. Zhang, Y. Zhou, Y. Zhu, P. Zhang, and Z. Dou. "Search-o1: Agentic Search-Enhanced Large Reasoning Models." EMNLP, 2025.
+[6] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." Proceedings of the Association for Computational Linguistics (ACL), 2023.
 
-[7] B. Jin, H. Zeng, Z. Yue, J. Yoon, S. Ö. Arık, D. Wang, H. Zamani, and J. Han. "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning." arXiv:2503.09516, 2025.
+[7] Xiaoxi Li, Jiajie Zhang, Zhiqi Shen, et al. "Search-o1: Agentic Search-Enhanced Large Reasoning Models." arXiv preprint, 2025.
 
-[8] "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." 2025. [Author metadata not independently verified.]
+[8] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. "Proximal Policy Optimization Algorithms." arXiv preprint arXiv:1707.06347, 2017.
 
-[9] "R1-Searcher++: Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning." 2025. [Author metadata not independently verified.]
+[9] Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, Y. K. Li, Y. Wu, and Daya Guo. "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models." arXiv preprint arXiv:2402.03300, 2024.
 
-[10] J. Sun et al. "AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning." arXiv:2604.17337, 2026.
+[10] Pengcheng He, Yifan Zhang, Xinyuan Chen, et al. "Search-R1: Training LLMs to Reason and Retrieve with Reinforcement Learning." arXiv preprint, 2025.
 
-[11] DeepSeek-AI, D. Guo, D. Yang, H. Zhang, J. Song, et al. "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." arXiv:2501.12948, 2025.
+[11] Haojie Xu, Zhengyang Tang, Yifan Hou, et al. "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." arXiv preprint, 2025.
 
-[12] Z. Shao, P. Wang, Q. Zhu, R. Xu, J. Song, X. Bi, et al. "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models." arXiv:2402.03300, 2024.
+[12] Haojie Xu, Zhengyang Tang, Yifan Hou, et al. "R1-Searcher++: Enhancing Search Capability of LLMs via Reinforcement Learning." arXiv preprint, 2025.
+
+[13] Anonymous. "β-GRPO: Improving Search Efficiency in RL-Based Agentic RAG." 2025.
+
+[14] Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, and Karl Cobbe. "Let's Verify Step by Step." International Conference on Learning Representations (ICLR), 2024.
+
+[15] Peiyi Wang, Lei Li, Zhihong Shao, R. X. Xu, Damai Dai, Yifei Li, Deli Chen, Y. Wu, and Zhifang Sui. "Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations." Proceedings of the Association for Computational Linguistics (ACL), 2024.

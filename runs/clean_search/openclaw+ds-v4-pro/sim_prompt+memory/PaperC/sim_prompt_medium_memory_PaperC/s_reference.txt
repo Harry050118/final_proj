@@ -1,0 +1,31 @@
+[1] Wenyi Hong, Weihan Wang, Qingsong Lv, Jiazheng Xu, Wenmeng Yu, Junhui Ji, Yan Wang, et al. "CogAgent: A Visual Language Model for GUI Agents." Computer Vision and Pattern Recognition (CVPR), 2023.
+
+[2] Kanzhi Cheng, Qiushi Sun, Yougang Chu, et al. "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents." Annual Meeting of the Association for Computational Linguistics (ACL), 2024.
+
+[3] Zhiyong Wu, Zhenyu Wu, Fangzhi Xu, et al. "OS-ATLAS: A Foundation Action Model for Generalist GUI Agents." arXiv:2410.23218, 2024.
+
+[4] Yujia Qin, Yining Ye, Junjie Fang, et al. "UI-TARS: Pioneering Automated GUI Interaction with Native Agents." arXiv:2501.12326, 2025.
+
+[5] Huawen Shen, Chang Liu, Gengluo Li, et al. "Falcon-UI: Understanding GUI Before Following User Instructions." arXiv:2412.09362, 2024.
+
+[6] Jiwen Zhang, Jihao Wu, Yihua Teng, et al. "Android in the Zoo: Chain-of-Action-Thought for GUI Agents." Conference on Empirical Methods in Natural Language Processing (EMNLP), 2024.
+
+[7] An Yan, Zhengyuan Yang, Wanrong Zhu, et al. "GPT-4V in Wonderland: Large Multimodal Models for Zero-Shot Smartphone GUI Navigation." arXiv:2311.07562, 2023.
+
+[8] Li Zhang, Longxi Gao, Mengwei Xu. "Does Chain-of-Thought Reasoning Help Mobile GUI Agent? An Empirical Study." arXiv:2503.16788, 2025.
+
+[9] Dan Zhang, Sining Zhoubian, Ziniu Hu, et al. "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search." Neural Information Processing Systems (NeurIPS), 2024.
+
+[10] Xin Lai, Zhuotao Tian, Yukang Chen, et al. "Step-DPO: Step-wise Preference Optimization for Long-chain Reasoning of LLMs." arXiv:2406.18629, 2024.
+
+[11] Yiran Guo, Lijie Xu, Jie Liu, et al. "Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models." arXiv:2505.23564, 2025.
+
+[12] Zhenyu Hou, Ziniu Hu, Yujiang Li, et al. "TreeRL: LLM Reinforcement Learning with On-Policy Tree Search." Annual Meeting of the Association for Computational Linguistics (ACL), 2025.
+
+[13] Zhengxi Lu, Yuxiang Chai, Yaxuan Guo, et al. "UI-R1: Enhancing Efficient Action Prediction of GUI Agents by Reinforcement Learning." AAAI Conference on Artificial Intelligence, 2025.
+
+[14] Jihao Gu, Qihang Ai, Yingyao Wang, et al. "Mobile-R1: Towards Interactive Reinforcement Learning for VLM-Based Mobile Agent via Task-Level Rewards." arXiv:2506.20332, 2025.
+
+[15] Qinzhuo Wu, Wei Liu, Jian Luan, et al. "ReachAgent: Enhancing Mobile Agent via Page Reaching and Operation." North American Chapter of the Association for Computational Linguistics (NAACL), 2025.
+
+[16] Kechen Jiao, Zhirui Fang, Jiahao Liu, et al. "TCPO: Thought-Centric Preference Optimization for Effective Embodied Decision-making." Conference on Empirical Methods in Natural Language Processing (EMNLP), 2025.

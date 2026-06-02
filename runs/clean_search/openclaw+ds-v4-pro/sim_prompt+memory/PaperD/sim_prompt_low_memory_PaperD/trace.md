@@ -1,87 +1,70 @@
-# Trace: Related Work Generation for CycleResearcher Paper
+# Trace: Related Work Generation
 
-## Paper Inference
+## Search Queries Used
 
-From the anonymized body text, the paper's core elements were inferred as:
-- **Topic**: Automating the full scientific research lifecycle using open-source LLMs
-- **Task**: Autonomous paper generation and peer review simulation with iterative preference optimization
-- **Method**: CycleResearcher (policy model) + CycleReviewer (generative reward model) + Iterative SimPO
-- **Datasets**: Review-5k (ICLR 2024 peer reviews) and Research-14k (ML conference papers 2022-2024)
-- **Contribution**: First open-source LLM framework for the complete research-review-refinement cycle with iterative preference training
+1. `AI scientist fully automated research paper generation open source large language model`
+2. `large language model automated peer review scientific paper evaluation scoring`
+3. `SimPO simple preference optimization direct preference optimization DPO language model alignment`
+4. `LLM as judge reward model evaluation generative reward model research paper assessment`
+5. `iterative self training reinforcement learning LLM research writing self improvement preference`
+6. `open source large language model research agent idea generation literature review writing`
+7. `Fast-DetectGPT LLM generated text detection academic paper scientific writing`
+8. `language model research idea generation novelty diversity automated hypothesis scientific`
+9. `SimPO Simple Preference Optimization with a Reference-Free Reward language model`
+10. `Direct Preference Optimization language model Rafailov`
+11. `GPT-4 automated scientific peer review evaluation consistency human reviewer`
+12. `self-rewarding language model self-play iterative training LLM alignment`
+13. `can language models generate novel research ideas human evaluation Si`
+14. `autonomous research agent language model end-to-end paper generation experiment`
+15. `peer review dataset ICLR NeurIPS review score prediction language model`
+16. `RLHF reinforcement learning from human feedback training language models survey`
+17. `large language model research assistant scientific literature review survey writing`
+18. `RewardBench evaluating reward models language model benchmark Lambert`
+19. `automated academic paper writing large language model manuscript generation LaTeX`
+20. `AI for science large language model scientific discovery survey review`
 
-## Search Queries Executed
+## Main Candidate Papers Found
 
-### Theme 1: LLMs for Research (11 queries)
-- "large language model automated scientific research paper generation"
-- "LLM multi-agent collaborative research idea generation"
-- "language model automated scientific discovery literature review"
-- "MLAgentBench LLM machine learning experiment benchmark"
-- "ResearchAgent multi-agent collaborative writing idea generation"
-- "SciMON scientific literature retrieval idea generation"
-- "LLM survey paper automatic writing generation"
-- "language model human evaluation research idea generation"
-- "AI scientist automated research pipeline"
-- "LLM coding machine learning experiment benchmark"
-- "large language model scientific research automation survey"
+| # | Paper | arXiv | Source |
+|---|-------|-------|--------|
+| 1 | The AI Scientist | 2408.06292 | DeepXiv search |
+| 2 | AI-Researcher | 2505.18705 | DeepXiv search |
+| 3 | MLR-Copilot | 2408.14033 | DeepXiv search |
+| 4 | Transforming Science with LLMs Survey | 2502.05151 | DeepXiv search |
+| 5 | Can LLMs Generate Novel Research Ideas? | 2409.04109 | DeepXiv search |
+| 6 | IdeaBench | 2411.02429 | DeepXiv search |
+| 7 | AutoSurvey | 2406.10252 | DeepXiv search |
+| 8 | DPO (Direct Preference Optimization) | 2305.18290 | DeepXiv search |
+| 9 | SimPO | 2405.14734 | DeepXiv search |
+| 10 | Self-Rewarding Language Models | 2401.10020 | DeepXiv search |
+| 11 | Iterative Length-Regularized DPO | 2406.11817 | DeepXiv search |
+| 12 | GPT4 Peer-Review Assistance | 2307.05492 | DeepXiv search |
+| 13 | PeerRead Dataset | 1804.09635 | DeepXiv search |
+| 14 | Automated Peer Reviewing SEA | 2407.12857 | DeepXiv search |
+| 15 | RewardBench | 2403.13787 | DeepXiv search |
+| 16 | DetectGPT | 2301.11305 | DeepXiv search |
+| 17 | Fast-DetectGPT | 2310.05130 | DeepXiv search |
+| 18 | Scientific LLMs Survey | 2406.10833 | DeepXiv search |
 
-### Theme 2: LLMs for Science Discovery (6 queries)
-- "AI for science discovery history survey review"
-- "artificial intelligence scientific discovery historical perspective"
-- "AlphaFold protein structure prediction deep learning"
-- "deep learning application scientific discovery nature"
-- "AI assisted scientific discovery automation survey"
-- "Langley scientific discovery computational"
+## Final Cited Papers (18 papers)
 
-### Theme 3: Automated Evaluation (10 queries)
-- "large language model automated peer review scientific papers"
-- "LLM judge evaluation research paper peer review"
-- "ChatGPT peer review scientific paper quality"
-- "GPT-4 evaluation review scientific papers peer review"
-- "RewardBench evaluating reward models"
-- "generative reward model LLM evaluation"
-- "multi-agent AI review system paper evaluation"
-- "LLM feedback research paper analysis"
-- "language model peer review assistant"
-- "AI driven review system academic papers"
+Organized into 5 themes:
+1. **LLMs for Automated Scientific Research** [1-7]
+2. **Preference Optimization for Language Models** [8-11]
+3. **Automated Peer Review and Scientific Evaluation** [12-15]
+4. **AI-Generated Text Detection and Ethical Safeguards** [16-17]
+5. **AI for Scientific Discovery** [4, 18]
 
-### Targeted Searches (10 additional)
-- "Si et al human evaluation idea generation LLM"
-- "Wang et al LLM write survey papers"
-- "Hosseini Horbach ChatGPT peer review"
-- "Tyser et al AI review system"
-- "MARG multi-agent review"
-- "Robertson GPT-4 peer review"
-- "Lu et al GPT-4 evaluate papers"
-- "ICLR 2025 LLM feedback review"
-- "DPO original paper" / "SimPO simple preference optimization" / "Self-Rewarding Yuan"
-- "Langley scientific discovery" / "Buchanan scientific discovery"
+## Verification Notes
 
-## Papers Verified via DeepXiv brief()/head()
+- All 18 cited papers were verified through DeepXiv `brief()` or `head()` API calls
+- Paper metadata (authors, titles, venues) confirmed through DeepXiv
+- No invented papers or citations
+- All papers are relevant to the inferred topic (automated scientific research with open-source LLMs, preference optimization, peer review automation, AI-generated text detection)
+- The existing Related Work section in the input paper was used only to identify themes, not to copy citations
 
-All 12 cited papers were verified through DeepXiv SDK:
-1. ResearchAgent (2404.07738) - Baek et al.
-2. SciMON (2305.14259) - Wang et al.
-3. MLAgentBench (2310.03302) - Huang et al.
-4. The AI Scientist (2408.06292) - Lu et al.
-5. AutoSurvey (2406.10252) - Wang et al.
-6. Automated Scientific Discovery survey (2305.02251) - Kramer et al.
-7. Toward Building Science Discovery Machines (2103.15551) - Khalili & Bouchachia
-8. LLM feedback on research papers (2310.01783) - Liang et al.
-9. MARG (2401.04259) - D'Arcy et al.
-10. AI-Driven Review Systems (2408.10365) - Tyser et al.
-11. RewardBench (2403.13787) - Lambert et al.
-12. Generative Verifiers (2408.15240) - Zhang et al.
+## Uncertainty
 
-## Uncertainty Notes
-
-1. **Hosseini & Horbach paper not found**: The paper's own Related Work mentions "Hosseini & Horbach conducted small-scale qualitative experiments to evaluate the effectiveness of ChatGPT in the peer review process." This paper could not be located through DeepXiv searches (likely published in a journal not indexed on arXiv). Not cited.
-
-2. **Robertson pilot study**: The paper mentions "Robertson invited 10 participants to assess the benefits of GPT-4 in assisting with peer review." The closest DeepXiv match was "GPT4 is Slightly Helpful for Peer-Review Assistance: A Pilot Study" (2307.05492), but authors differ. Not cited separately as it overlaps with Liang et al. [8] and Tyser et al. [10].
-
-3. **Historical AI4Science references (Langley 1987, Buchanan 1981)**: The paper's own Related Work references classical AI4Science works. These predate arXiv and were not found through DeepXiv. The automated discovery survey [6] and science discovery machines paper [7] serve as modern survey references covering this historical trajectory.
-
-4. **DPO and SimPO**: These are discussed in the paper's method section (Section 3.3) but are not included in my Related Work since they are methodology references rather than prior art in the research automation domain. The paper's own Related Work also does not discuss them as a separate theme.
-
-5. **Theme discipline**: Following lessons from prior work (score 6.17/10), I kept strictly to the 3 themes from the paper's own Related Work structure: LLMs for Research, LLMs for Science Discovery, and Automated Evaluation of Research Papers. Tangential themes (Preference Optimization, Text Detection) were deliberately excluded.
-
-6. **Overclaiming caution**: Claims are limited to what can be verified from DeepXiv metadata (titles, abstracts, keywords). No numeric comparisons or performance claims from cited papers are asserted.
+- Some author lists for multi-author papers (e.g., MLR-Copilot, SEA, Scientific LLMs Survey) use "et al." in the reference list as DeepXiv returned non-author metadata - these should be verified against the actual papers
+- Venue information from DeepXiv may reflect preprint status; accepted venue information was used where available
+- The AI Scientist paper (2408.06292) was confirmed as the correct reference for the automated research pipeline mentioned in the paper body

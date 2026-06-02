@@ -1,0 +1,23 @@
+[1] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin, N. Goyal, H. Küttler, M. Lewis, W. Yih, T. Rocktäschel, S. Riedel, and D. Kiela. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." NeurIPS, 2020.
+
+[2] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan, and Y. Cao. "ReAct: Synergizing Reasoning and Acting in Language Models." NeurIPS, 2022.
+
+[3] H. Trivedi, N. Balasubramanian, T. Khot, and A. Sabharwal. "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions." ACL, 2023.
+
+[4] T. Schick, J. Dwivedi-Yu, R. Dessì, R. Raileanu, M. Lomeli, L. Zettlemoyer, N. Cancedda, and T. Scialom. "Toolformer: Language Models Can Teach Themselves to Use Tools." NeurIPS, 2023.
+
+[5] A. Asai, Z. Wu, Y. Wang, A. Sil, and H. Hajishirzi. "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection." arXiv:2310.11511, 2023.
+
+[6] X. Li, G. Dong, J. Jin, Y. Zhang, Y. Zhou, Y. Zhu, P. Zhang, and Z. Dou. "Search-o1: Agentic Search-Enhanced Large Reasoning Models." EMNLP, 2025.
+
+[7] B. Jin, H. Zeng, Z. Yue, J. Yoon, S. Ö. Arık, D. Wang, H. Zamani, and J. Han. "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning." arXiv:2503.09516, 2025.
+
+[8] "R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning." 2025. [Author metadata not independently verified.]
+
+[9] "R1-Searcher++: Incentivizing the Dynamic Knowledge Acquisition of LLMs via Reinforcement Learning." 2025. [Author metadata not independently verified.]
+
+[10] J. Sun et al. "AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning." arXiv:2604.17337, 2026.
+
+[11] DeepSeek-AI, D. Guo, D. Yang, H. Zhang, J. Song, et al. "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning." arXiv:2501.12948, 2025.
+
+[12] Z. Shao, P. Wang, Q. Zhu, R. Xu, J. Song, X. Bi, et al. "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models." arXiv:2402.03300, 2024.

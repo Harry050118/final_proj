@@ -55,7 +55,7 @@ LEGACY_TASK_TO_LABEL = {
     "researcher": "PaperD",
     "source": "PaperE",
 }
-MEMORY_ORDER = ["no", "low", "high"]
+MEMORY_ORDER = ["low", "medium", "high"]
 
 MAIN_METHOD_ORDER = [
     "Claude Code + DS-v4-Pro",
@@ -63,6 +63,7 @@ MAIN_METHOD_ORDER = [
     "OpenClaw + DS-v4-Pro",
     "OpenClaw + DS-v4-Pro + Skill",
     "OpenClaw + DS-v4-Pro + Low Memory",
+    "OpenClaw + DS-v4-Pro + Medium Memory",
     "OpenClaw + DS-v4-Pro + High Memory",
 ]
 
@@ -72,18 +73,25 @@ FIG_LABELS = {
     "OpenClaw + DS-v4-Pro": "OC+DS",
     "OpenClaw + DS-v4-Pro + Skill": "OC+DS+Skill",
     "OpenClaw + DS-v4-Pro + Low Memory": "OC+DS+LowMem",
+    "OpenClaw + DS-v4-Pro + Medium Memory": "OC+DS+MediumMem",
     "OpenClaw + DS-v4-Pro + High Memory": "OC+DS+HighMem",
 }
 
 DISPLAY_MEAN_OVERRIDES: dict[str, float] = {}
 
 PALETTE = {
-    "Claude Code + DS-v4-Pro": "#4C78A8",
-    "OpenClaw + Kimi-K2.6": "#F58518",
-    "OpenClaw + DS-v4-Pro": "#54A24B",
-    "OpenClaw + DS-v4-Pro + Skill": "#B279A2",
-    "OpenClaw + DS-v4-Pro + Low Memory": "#72B7B2",
-    "OpenClaw + DS-v4-Pro + High Memory": "#E45756",
+    "Claude Code + DS-v4-Pro": "#8A929C",
+    "OpenClaw + Kimi-K2.6": "#B8A07E",
+    "OpenClaw + DS-v4-Pro": "#5F6F7A",
+    "OpenClaw + DS-v4-Pro + Skill": "#7B3294",
+    "OpenClaw + DS-v4-Pro + Low Memory": "#9DB7B5",
+    "OpenClaw + DS-v4-Pro + Medium Memory": "#5AA6A6",
+    "OpenClaw + DS-v4-Pro + High Memory": "#D55E00",
+}
+
+HIGHLIGHT_METHODS = {
+    "OpenClaw + DS-v4-Pro + Skill",
+    "OpenClaw + DS-v4-Pro + High Memory",
 }
 
 
@@ -95,10 +103,10 @@ def parse_row_identity(rel_dir: Path) -> tuple[str, str, str, str, str, str]:
     memory_level = ""
     task = leaf
 
-    if system.startswith("claude_code"):
+    if system.startswith("claude_code") or system.startswith("claudecode"):
         method_raw = "Claude Code + DS-v4-Pro"
         task = leaf
-    elif system.startswith("kimi"):
+    elif system.startswith("kimi") or system.startswith("openclaw+kimi"):
         method_raw = "OpenClaw + Kimi-K2.6"
         task = leaf
     elif condition == "sim_prompt":
@@ -114,10 +122,10 @@ def parse_row_identity(rel_dir: Path) -> tuple[str, str, str, str, str, str]:
         task = parts[2]
         if "high_memory" in leaf:
             memory_level = "high"
+        elif "medium_memory" in leaf:
+            memory_level = "medium"
         elif "low_memory" in leaf:
             memory_level = "low"
-        elif "no_memory" in leaf:
-            memory_level = "no"
         else:
             raise ValueError(f"Cannot parse memory level from: {rel_dir}")
     else:
@@ -167,12 +175,17 @@ def build_main_rows(rows: list[dict[str, object]]) -> list[dict[str, object]]:
             out["method"] = raw
             out["comparison_source"] = "direct"
             main_rows.append(out)
-        elif raw == "OpenClaw + DS-v4-Pro + Memory" and level in {"no", "low", "high"}:
+        elif raw == "OpenClaw + DS-v4-Pro (legacy sim_prompt)":
             out = dict(row)
-            if level == "no":
-                out["method"] = "OpenClaw + DS-v4-Pro"
-            elif level == "low":
+            out["method"] = "OpenClaw + DS-v4-Pro"
+            out["comparison_source"] = "legacy_sim_prompt"
+            main_rows.append(out)
+        elif raw == "OpenClaw + DS-v4-Pro + Memory" and level in {"low", "medium", "high"}:
+            out = dict(row)
+            if level == "low":
                 out["method"] = "OpenClaw + DS-v4-Pro + Low Memory"
+            elif level == "medium":
+                out["method"] = "OpenClaw + DS-v4-Pro + Medium Memory"
             else:
                 out["method"] = "OpenClaw + DS-v4-Pro + High Memory"
             out["comparison_source"] = f"{level}_memory"
@@ -312,8 +325,6 @@ def write_overall_task_tex(main_rows: list[dict[str, object]], out_dir: Path) ->
     table = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Overall scores on each clean\_search evaluation sample. Best scores in each task column are bolded.}",
-        r"\label{tab:clean-search-overall-by-task}",
         r"\small",
         r"\begin{tabular}{lrrrrrrr}",
         r"\toprule",
@@ -338,7 +349,14 @@ def write_overall_task_tex(main_rows: list[dict[str, object]], out_dir: Path) ->
             + " & ".join(cells)
             + f" & {display_mean(method, vals):.2f} & {population_sd(vals):.2f} \\\\"
         )
-    table.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}", ""])
+    table.extend([
+        r"\bottomrule",
+        r"\end{tabular}",
+        r"\caption{Overall scores by sample; best scores are bolded.}",
+        r"\label{tab:clean-search-overall-by-task}",
+        r"\end{table}",
+        "",
+    ])
     lines = standalone_tex_document("clean\\_search Overall Scores by Task", table)
     (out_dir / "clean_search_overall_by_task.tex").write_text("\n".join(lines), encoding="utf-8")
 
@@ -356,8 +374,6 @@ def write_metrics_tex(raw_rows: list[dict[str, object]], main_rows: list[dict[st
     table = [
         r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Detailed clean\_search scores. Main-comparison rows use no-memory results for OpenClaw + DS-v4-Pro.}",
-        r"\label{tab:clean-search-full-metrics}",
         r"\scriptsize",
         r"\begin{tabular}{lllrrrrrr}",
         r"\toprule",
@@ -388,7 +404,14 @@ def write_metrics_tex(raw_rows: list[dict[str, object]], main_rows: list[dict[st
             *[fmt_score(float(row[m])) for m in compact_metrics],
         ]
         table.append(" & ".join(cells) + r" \\")
-    table.extend([r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""])
+    table.extend([
+        r"\bottomrule",
+        r"\end{tabular}",
+        r"\caption{Detailed metric scores for all clean\_search runs.}",
+        r"\label{tab:clean-search-full-metrics}",
+        r"\end{table*}",
+        "",
+    ])
     lines = standalone_tex_document("Detailed clean\\_search Scores", table, landscape=True)
     (out_dir / "clean_search_metrics_full.tex").write_text("\n".join(lines), encoding="utf-8")
 
@@ -448,26 +471,56 @@ def plot_overall_by_task(main_rows: list[dict[str, object]], out_dir: Path) -> N
 
 
 def plot_group_summary(summary_rows: list[dict[str, object]], out_dir: Path) -> None:
-    labels = [str(r["figure_label"]) for r in summary_rows]
-    methods = [str(r["method"]) for r in summary_rows]
-    means = [float(r["overall_mean"]) for r in summary_rows]
-    sds = [float(r["overall_sd"]) for r in summary_rows]
-    x = np.arange(len(labels))
-    fig, ax = plt.subplots(figsize=(7.6, 3.4))
-    ax.bar(
-        x,
-        means,
-        yerr=sds,
-        capsize=3,
-        color=[PALETTE[m] for m in methods],
-        edgecolor="black",
-        linewidth=0.35,
-    )
-    ax.set_ylabel("Overall score")
-    ax.set_ylim(0, 10)
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels, rotation=20, ha="right")
-    ax.set_title("Method-level Overall Mean ± Std")
+    rows = sorted(summary_rows, key=lambda r: float(r["overall_mean"]))
+    labels = [str(r["figure_label"]) for r in rows]
+    methods = [str(r["method"]) for r in rows]
+    means = [float(r["overall_mean"]) for r in rows]
+    sds = [float(r["overall_sd"]) for r in rows]
+    y = np.arange(len(rows))
+
+    fig, ax = plt.subplots(figsize=(6.8, 3.4))
+    for i, (method, mean_value, sd_value) in enumerate(zip(methods, means, sds)):
+        is_highlight = method in HIGHLIGHT_METHODS
+        ax.errorbar(
+            mean_value,
+            y[i],
+            xerr=sd_value,
+            fmt="o",
+            color=PALETTE[method],
+            ecolor=PALETTE[method],
+            elinewidth=1.8 if is_highlight else 1.1,
+            capsize=3.0,
+            capthick=1.8 if is_highlight else 1.1,
+            markersize=7.2 if is_highlight else 5.2,
+            markeredgecolor="#1F1F1F",
+            markeredgewidth=0.45,
+            alpha=1.0 if is_highlight else 0.62,
+            zorder=3 if is_highlight else 2,
+        )
+        if is_highlight:
+            ax.text(
+                mean_value + sd_value + 0.10,
+                y[i],
+                f"{mean_value:.2f}",
+                va="center",
+                ha="left",
+                fontsize=8,
+                fontweight="bold",
+                color=PALETTE[method],
+            )
+
+    ax.set_xlabel("Overall score")
+    ax.set_xlim(5.4, 8.7)
+    ax.set_yticks(y)
+    ax.set_yticklabels(labels)
+    for tick, method in zip(ax.get_yticklabels(), methods):
+        if method in HIGHLIGHT_METHODS:
+            tick.set_fontweight("bold")
+            tick.set_color(PALETTE[method])
+    ax.grid(axis="x", alpha=0.22)
+    ax.grid(axis="y", visible=False)
+    ax.axvline(7.0, color="#D8D8D8", linewidth=0.8, zorder=1)
+    ax.set_title("Method-level Overall Score")
     save_figure(fig, out_dir, "clean_search_group_summary")
 
 
@@ -500,9 +553,9 @@ def plot_memory_ablation(raw_rows: list[dict[str, object]], out_dir: Path) -> No
     x = np.arange(len(TASK_ORDER))
     width = 0.22
     fig, ax = plt.subplots(figsize=(6.6, 3.4))
-    colors = {"no": "#54A24B", "low": "#72B7B2", "high": "#E45756"}
-    labels = {"no": "NoMem", "low": "LowMem", "high": "HighMem"}
-    offsets = (np.arange(len(MEMORY_ORDER)) - 1) * width
+    colors = {"low": "#72B7B2", "medium": "#59A14F", "high": "#E45756"}
+    labels = {"low": "LowMem", "medium": "MediumMem", "high": "HighMem"}
+    offsets = (np.arange(len(MEMORY_ORDER)) - (len(MEMORY_ORDER) - 1) / 2) * width
     for i, level in enumerate(MEMORY_ORDER):
         values = [pivot.get((level, task), np.nan) for task in TASK_ORDER]
         ax.bar(
@@ -530,6 +583,7 @@ def wrap_method_for_table(method: str) -> str:
         "OpenClaw + DS-v4-Pro": "OpenClaw\n+ DS-v4-Pro",
         "OpenClaw + DS-v4-Pro + Skill": "OpenClaw\n+ DS-v4-Pro+Skill",
         "OpenClaw + DS-v4-Pro + Low Memory": "OpenClaw\n+ DS-v4-Pro\n+ Low Memory",
+        "OpenClaw + DS-v4-Pro + Medium Memory": "OpenClaw\n+ DS-v4-Pro\n+ Medium Memory",
         "OpenClaw + DS-v4-Pro + High Memory": "OpenClaw\n+ DS-v4-Pro\n+ High Memory",
         "OpenClaw + DS-v4-Pro + Memory": "OpenClaw\n+ DS-v4-Pro\n+ Memory",
         "OpenClaw + DS-v4-Pro (legacy sim_prompt)": "OpenClaw legacy\nsim_prompt",
@@ -703,7 +757,7 @@ def write_summary_md(
 
 本次重新读取 `D:\\college\\llm\\final_proj\\runs\\clean_search` 下所有最后一级评测文件夹，共检查到 `{md_count}` 个 `report.md` 和 `{json_count}` 个 `report.json`，二者一一对应。分数提取以 `report.json` 为准。
 
-当前数据包含 35 个评测结果：原始主比较结果，以及 `sim_prompt+memory` 下 5 篇论文 × high/low/no memory 的 15 个结果。对于 memory 结果，task 使用外层目录名，memory level 从最后一级目录解析。原始 CSV 保留目录名，同时新增 `paper_label` 字段；图表和 Markdown 使用 Paper 标签展示。
+当前数据包含 35 个评测结果：原始主比较结果，以及 `sim_prompt+memory` 下 5 篇论文 × low/medium/high memory 的 15 个结果。对于 memory 结果，task 使用外层目录名，memory level 从最后一级目录解析。原始 CSV 保留目录名，同时新增 `paper_label` 字段；图表和 Markdown 使用 Paper 标签展示。
 
 ## 论文目录对应关系
 
@@ -717,7 +771,7 @@ def write_summary_md(
 
 ## 主比较规则
 
-`OpenClaw + DS-v4-Pro` 与 `OpenClaw + DS-v4-Pro + No Memory` 是同一配置。最终主比较中只使用 no-memory 的五篇结果，并将其显示为 `OpenClaw + DS-v4-Pro`。旧的 `openclaw+ds-v4-pro\\sim_prompt` 五行仍保留在 `clean_search_scores_full.csv` 中用于追溯，但不进入主图、主表、heatmap 或 group summary。
+`OpenClaw + DS-v4-Pro` 主基线使用旧的 `openclaw+ds-v4-pro\\sim_prompt` 五篇结果。`sim_prompt+memory` 结果按 low/medium/high memory 分开展示，三档都进入主图、主表、heatmap 和 group summary。
 
 `OpenClaw + Kimi-K2.6` 的展示均值根据当前五篇逐篇分数实时计算；逐篇原始分数仍保留在明细表中。
 
@@ -727,9 +781,10 @@ def write_summary_md(
 |---|---|
 | `CC+DS` | `Claude Code + DS-v4-Pro` |
 | `OC+Kimi` | `OpenClaw + Kimi-K2.6` |
-| `OC+DS` | `OpenClaw + DS-v4-Pro`，数据来自 no-memory 结果 |
+| `OC+DS` | `OpenClaw + DS-v4-Pro`，数据来自 legacy sim_prompt 结果 |
 | `OC+DS+Skill` | `OpenClaw + DS-v4-Pro + Skill` |
 | `OC+DS+LowMem` | `OpenClaw + DS-v4-Pro + Low Memory` |
+| `OC+DS+MediumMem` | `OpenClaw + DS-v4-Pro + Medium Memory` |
 | `OC+DS+HighMem` | `OpenClaw + DS-v4-Pro + High Memory` |
 
 其中 `CC` 表示 Claude Code 框架，`OC` 表示 OpenClaw 框架，`DS` 表示 DS-v4-Pro 模型，`Mem` 表示 memory 配置。
@@ -747,7 +802,7 @@ def write_summary_md(
 | `clean_search_overall_by_task.pdf/png` | 图 1：逐 task Overall 对比。 |
 | `clean_search_group_summary.pdf/png` | 图 2：主比较方法总体均值 ± 标准差。 |
 | `clean_search_metric_heatmap.pdf/png` | 图 3：主比较方法关键指标热力图。 |
-| `clean_search_memory_ablation.pdf/png` | 图 4：high/low/no memory 在五篇论文上的消融图。 |
+| `clean_search_memory_ablation.pdf/png` | 图 4：low/medium/high memory 在五篇论文上的消融图。 |
 
 ## 主结果表
 
@@ -765,7 +820,7 @@ def write_summary_md(
 
 - 主比较中，`{best['method']}` 的 Overall mean 最高，为 `{float(best['overall_mean']):.2f}`。
 - `{stable['method']}` 的 Overall std 最小，为 `{float(stable['overall_sd']):.2f}`，说明跨五篇论文波动最小。
-- Memory 消融现在覆盖五篇论文，因此可以进入主比较；但 no/low/high memory 应分开展示，不能合并成一个 `Memory` 条件。
+- Memory 消融现在覆盖五篇论文，因此可以进入主比较；但 low/medium/high memory 应分开展示，不能合并成一个 `Memory` 条件。
 - 逐 task 表格仍然比单一均值更重要，因为不同配置在不同论文样本上的优势并不完全一致。
 
 ## 使用建议
@@ -788,8 +843,8 @@ def validate_outputs(
         raise RuntimeError(f"report.md and report.json counts differ: {md_count} and {json_count}.")
     if len(raw_rows) != json_count:
         raise RuntimeError(f"Expected raw rows to match report.json count {json_count}, got {len(raw_rows)}.")
-    if len(summary_rows) != 6:
-        raise RuntimeError(f"Expected 6 main summary groups, got {len(summary_rows)}.")
+    if len(summary_rows) != 7:
+        raise RuntimeError(f"Expected 7 main summary groups, got {len(summary_rows)}.")
 
     for row in raw_rows:
         for metric in ["overall", *METRICS]:
@@ -803,23 +858,23 @@ def validate_outputs(
             for r in raw_rows
             if r["method_raw"] == "OpenClaw + DS-v4-Pro + Memory" and r["task"] == task
         }
-        if not levels.issubset({"no", "low", "high"}):
+        if not levels.issubset({"low", "medium", "high"}):
             raise RuntimeError(f"Unexpected memory levels for task {task}: {levels}.")
-        if not levels:
-            raise RuntimeError(f"No memory rows found for task {task}.")
+        if levels != {"low", "medium", "high"}:
+            raise RuntimeError(f"Expected low/medium/high memory rows for task {task}, got {levels}.")
 
-    no_memory_paths = {
+    legacy_paths = {
         str(r["path"])
         for r in raw_rows
-        if r["method_raw"] == "OpenClaw + DS-v4-Pro + Memory" and r["memory_level"] == "no"
+        if r["method_raw"] == "OpenClaw + DS-v4-Pro (legacy sim_prompt)"
     }
     openclaw_main_paths = {
         str(r["path"])
         for r in main_rows
         if r["method"] == "OpenClaw + DS-v4-Pro"
     }
-    if openclaw_main_paths != no_memory_paths:
-        raise RuntimeError("OpenClaw + DS-v4-Pro main rows are not exactly the no-memory rows.")
+    if openclaw_main_paths != legacy_paths:
+        raise RuntimeError("OpenClaw + DS-v4-Pro main rows are not exactly the legacy sim_prompt rows.")
 
     required = [
         "clean_search_scores_full.csv",
@@ -848,12 +903,22 @@ def validate_outputs(
     if r"\textbf{" not in tex:
         raise RuntimeError("Best-score bold markers were not written to the main LaTeX table.")
     md = (out_dir / "clean_search_summary_report.md").read_text(encoding="utf-8")
-    for label in ["CC+DS", "OC+Kimi", "OC+DS", "OC+DS+Skill", "OC+DS+LowMem", "OC+DS+HighMem"]:
+    for label in ["CC+DS", "OC+Kimi", "OC+DS", "OC+DS+Skill", "OC+DS+LowMem", "OC+DS+MediumMem", "OC+DS+HighMem"]:
         if label not in md:
             raise RuntimeError(f"Missing label mapping in Markdown: {label}")
-    for old_label in ["Claude |", "OC+Skill", "OC+LowMem", "OC+HighMem"]:
-        if old_label in md:
-            raise RuntimeError(f"Unexpected old or ambiguous label in Markdown: {old_label}")
+    generated_text = "\n".join(
+        (out_dir / name).read_text(encoding="utf-8-sig" if name.endswith(".csv") else "utf-8")
+        for name in [
+            "clean_search_scores_full.csv",
+            "clean_search_group_summary.csv",
+            "clean_search_overall_by_task.tex",
+            "clean_search_metrics_full.tex",
+            "clean_search_summary_report.md",
+        ]
+    )
+    for old_label in ["Claude |", "OC+Skill", "OC+LowMem", "OC+HighMem", "NoMem", "No Memory", "no-memory", "no_memory"]:
+        if old_label in generated_text:
+            raise RuntimeError(f"Unexpected old or ambiguous label in generated text outputs: {old_label}")
 
 
 def main() -> None:
