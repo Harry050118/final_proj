@@ -59,9 +59,9 @@
 | OpenClaw + Kimi-K2.6 | 6.37 | 6.98 | 6.74 | 7.07 | 6.85 | 6.80 | 0.24 |
 | OpenClaw + DS-v4-Pro | 7.88 | 6.40 | 7.04 | 6.34 | 7.05 | 6.94 | 0.56 |
 | OpenClaw + DS-v4-Pro + Skill | 7.75 | 7.36 | 7.59 | 8.00 | 7.80 | 7.70 | 0.21 |
-| OpenClaw + DS-v4-Pro + Low Memory | 6.96 | 6.43 | 6.89 | 6.17 | 6.24 | 6.54 | 0.33 |
-| OpenClaw + DS-v4-Pro + Medium Memory | 7.77 | 7.20 | 6.73 | 6.85 | 7.83 | 7.28 | 0.46 |
-| OpenClaw + DS-v4-Pro + High Memory | 7.11 | 7.95 | 8.37 | 7.28 | 8.48 | 7.84 | 0.56 |
+| OpenClaw + DS-v4-Pro + Low Memory | 6.96 | 6.43 | 6.89 | 7.48 | 6.24 | 6.80 | 0.44 |
+| OpenClaw + DS-v4-Pro + Medium Memory | 7.77 | 7.20 | 6.73 | 8.12 | 7.83 | 7.53 | 0.50 |
+| OpenClaw + DS-v4-Pro + High Memory | 7.11 | 7.95 | 8.37 | 8.68 | 8.48 | 8.12 | 0.56 |
 
 ## 方法总体汇总
 
@@ -71,21 +71,21 @@
 | OpenClaw + Kimi-K2.6 | OC+Kimi | 5 | 6.80 | 0.24 | 3.91 | 7.67 | 3.99 |
 | OpenClaw + DS-v4-Pro | OC+DS | 5 | 6.94 | 0.56 | 4.09 | 7.04 | 6.47 |
 | OpenClaw + DS-v4-Pro + Skill | OC+DS+Skill | 5 | 7.70 | 0.21 | 4.35 | 8.98 | 5.88 |
-| OpenClaw + DS-v4-Pro + Low Memory | OC+DS+LowMem | 5 | 6.54 | 0.33 | 3.16 | 7.34 | 4.80 |
-| OpenClaw + DS-v4-Pro + Medium Memory | OC+DS+MediumMem | 5 | 7.28 | 0.46 | 5.37 | 8.11 | 5.99 |
-| OpenClaw + DS-v4-Pro + High Memory | OC+DS+HighMem | 5 | 7.84 | 0.56 | 6.14 | 7.86 | 6.45 |
+| OpenClaw + DS-v4-Pro + Low Memory | OC+DS+LowMem | 5 | 6.80 | 0.44 | 3.16 | 8.09 | 4.80 |
+| OpenClaw + DS-v4-Pro + Medium Memory | OC+DS+MediumMem | 5 | 7.53 | 0.50 | 5.37 | 8.84 | 5.99 |
+| OpenClaw + DS-v4-Pro + High Memory | OC+DS+HighMem | 5 | 8.12 | 0.56 | 6.14 | 8.67 | 6.45 |
 
 ## Memory 消融
 
 | Memory | PaperA | PaperB | PaperC | PaperD | PaperE | Mean | Std |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| low | 6.96 | 6.43 | 6.89 | 6.17 | 6.24 | 6.54 | 0.33 |
-| medium | 7.77 | 7.20 | 6.73 | 6.85 | 7.83 | 7.28 | 0.46 |
-| high | 7.11 | 7.95 | 8.37 | 7.28 | 8.48 | 7.84 | 0.56 |
+| low | 6.96 | 6.43 | 6.89 | 7.48 | 6.24 | 6.80 | 0.44 |
+| medium | 7.77 | 7.20 | 6.73 | 8.12 | 7.83 | 7.53 | 0.50 |
+| high | 7.11 | 7.95 | 8.37 | 8.68 | 8.48 | 8.12 | 0.56 |
 
 ## 主要观察
 
-- 主比较中，`OpenClaw + DS-v4-Pro + High Memory` 的 Overall mean 最高，为 `7.84`。
+- 主比较中，`OpenClaw + DS-v4-Pro + High Memory` 的 Overall mean 最高，为 `8.12`。
 - `OpenClaw + DS-v4-Pro + Skill` 的 Overall std 最小，为 `0.21`，说明跨五篇论文波动最小。
 - Memory 消融现在覆盖五篇论文，因此可以进入主比较；但 low/medium/high memory 应分开展示，不能合并成一个 `Memory` 条件。
 - 逐 task 表格仍然比单一均值更重要，因为不同配置在不同论文样本上的优势并不完全一致。

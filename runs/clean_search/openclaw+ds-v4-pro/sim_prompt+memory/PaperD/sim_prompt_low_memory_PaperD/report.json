@@ -1,9 +1,9 @@
 {
   "sample_id": "sim_prompt+memory-evotest",
-  "overall": 6.17,
+  "overall": 7.48,
   "scores": {
     "content_coverage": 3.71,
-    "citation_quality": 5.0,
+    "citation_quality": 8.73,
     "relevance": 7.22,
     "thematic_structure": 8.2,
     "synthesis_quality": 7.5,
