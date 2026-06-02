@@ -1,9 +1,9 @@
 {
   "sample_id": "sim_prompt-evotest",
-  "overall": 5.41,
+  "overall": 6.44,
   "scores": {
     "content_coverage": 2.74,
-    "citation_quality": 5.0,
+    "citation_quality": 7.95,
     "relevance": 8.64,
     "thematic_structure": 7.43,
     "synthesis_quality": 5.0,
