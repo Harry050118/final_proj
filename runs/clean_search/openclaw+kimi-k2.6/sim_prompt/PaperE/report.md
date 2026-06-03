@@ -1,6 +1,6 @@
 # Related Work Evaluation: sim_prompt-evotest
 
-Overall: 7.05/10
+Overall: 6.85/10
 
 ## Metric Breakdown
 - content_coverage: 3.41/10
