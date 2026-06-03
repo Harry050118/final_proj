@@ -7,13 +7,13 @@
     "relevance": 8.33,
     "thematic_structure": 8.57,
     "synthesis_quality": 8.0,
-    "writing_quality": 9.0,
-    "length_conciseness": 8.58,
-    "citation_validity": 9.55,
-    "citation_appropriateness": 9.79,
+    "writing_quality": 8.0,
+    "length_conciseness": 7.58,
+    "citation_validity": 9.25,
+    "citation_appropriateness": 8.79,
     "citation_coverage": 6.67,
-    "citation_placement": 9.79,
-    "citation_topic_consistency": 9.86
+    "citation_placement": 9.39,
+    "citation_topic_consistency": 9.26
   },
   "diagnostics": {
     "missing_points": [

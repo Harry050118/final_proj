@@ -10,10 +10,10 @@
     "writing_quality": 8.0,
     "length_conciseness": 8.75,
     "citation_validity": 10.0,
-    "citation_appropriateness": 9.31,
+    "citation_appropriateness": 8.31,
     "citation_coverage": 5.71,
     "citation_placement": 9.38,
-    "citation_topic_consistency": 9.44
+    "citation_topic_consistency": 7.44
   },
   "diagnostics": {
     "missing_points": [

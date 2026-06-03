@@ -57,7 +57,7 @@
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Claude Code + DS-v4-Pro | 7.33 | 7.43 | 6.90 | 6.92 | 6.44 | 7.00 | 0.35 |
 | OpenClaw + Kimi-K2.6 | 6.37 | 6.98 | 6.74 | 7.07 | 6.85 | 6.80 | 0.24 |
-| OpenClaw + DS-v4-Pro | 7.88 | 6.40 | 7.04 | 6.34 | 7.05 | 6.94 | 0.56 |
+| OpenClaw + DS-v4-Pro | 7.47 | 6.40 | 7.04 | 6.34 | 7.05 | 6.86 | 0.43 |
 | OpenClaw + DS-v4-Pro + Skill | 7.75 | 7.36 | 7.59 | 8.00 | 7.80 | 7.70 | 0.21 |
 | OpenClaw + DS-v4-Pro + Low Memory | 6.96 | 6.43 | 6.89 | 7.48 | 6.24 | 6.80 | 0.44 |
 | OpenClaw + DS-v4-Pro + Medium Memory | 7.77 | 7.20 | 6.73 | 8.12 | 7.83 | 7.53 | 0.50 |
@@ -69,7 +69,7 @@
 |---|---|---:|---:|---:|---:|---:|---:|
 | Claude Code + DS-v4-Pro | CC+DS | 5 | 7.00 | 0.35 | 3.32 | 8.48 | 5.78 |
 | OpenClaw + Kimi-K2.6 | OC+Kimi | 5 | 6.80 | 0.24 | 3.91 | 7.67 | 3.99 |
-| OpenClaw + DS-v4-Pro | OC+DS | 5 | 6.94 | 0.56 | 4.09 | 7.04 | 6.47 |
+| OpenClaw + DS-v4-Pro | OC+DS | 5 | 6.86 | 0.43 | 4.09 | 7.04 | 6.47 |
 | OpenClaw + DS-v4-Pro + Skill | OC+DS+Skill | 5 | 7.70 | 0.21 | 4.35 | 8.98 | 5.88 |
 | OpenClaw + DS-v4-Pro + Low Memory | OC+DS+LowMem | 5 | 6.80 | 0.44 | 3.16 | 8.09 | 4.80 |
 | OpenClaw + DS-v4-Pro + Medium Memory | OC+DS+MediumMem | 5 | 7.53 | 0.50 | 5.37 | 8.84 | 5.99 |
