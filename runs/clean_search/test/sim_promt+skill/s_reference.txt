@@ -1,0 +1,12 @@
+[1] Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. "The Curious Case of Neural Text Degeneration." In International Conference on Learning Representations (ICLR), 2020. arXiv:1904.09751.
+[2] Nguyen Nhat Minh, Andrew Baker, Clement Neo, Allen Roush, Andreas Kirsch, and Rylan Schaeffer. "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs." arXiv preprint arXiv:2407.01082, 2024.
+[3] Yiming Zhang, Harshita Diddee, Susan Holm, Hanchen Liu, Xinyue Liu, et al. "NoveltyBench: Evaluating Language Models for Humanlike Diversity." arXiv preprint arXiv:2504.05228, 2025.
+[4] Yanzhu Guo, Guokan Shang, and Chloé Clavel. "Benchmarking Linguistic Diversity of Large Language Models." arXiv preprint arXiv:2412.10271, 2024.
+[5] Longfei Yun, Chenyang An, Zilong Wang, Letian Peng, and Jingbo Shang. "The Price of Format: Diversity Collapse in LLMs." arXiv preprint arXiv:2505.18949, 2025.
+[6] Martin Briesch, Dominik Sobania, and Franz Rothlauf. "Large Language Models Suffer From Their Own Output: An Analysis of the Self-Consuming Training Loop." arXiv preprint arXiv:2311.16822, 2023.
+[7] Wenting Zhao, Xiang Ren, Jack Hessel, Claire Cardie, Yejin Choi, and Yuntian Deng. "WildChat: 1M ChatGPT Interaction Logs in the Wild." arXiv preprint arXiv:2405.01470, 2024.
+[8] Jiayin Wang, Weizhi Ma, Peijie Sun, Min Zhang, and Jian-Yun Nie. "Understanding User Experience in Large Language Model Interactions." arXiv preprint arXiv:2401.08329, 2024.
+[9] Michael J.Q. Zhang, Zhilin Wang, Jena D. Hwang, Yi Dong, Olivier Delalleau, et al. "Diverging Preferences: When do Annotators Disagree and do Models Know?" arXiv preprint arXiv:2410.14632, 2024.
+[10] Daiwei Chen, Yi Chen, Aniket Rege, and Ramya Korlakai Vinayak. "PAL: Pluralistic Alignment Framework for Learning from Heterogeneous Preferences." arXiv preprint arXiv:2406.08469, 2024.
+[11] Dawei Li, Bohan Jiang, Liangjie Huang, Alimohammad Beigi, Chengshuai Zhao, et al. "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge." arXiv preprint arXiv:2411.16594, 2024.
+[12] Daniel Halpern, Evi Micha, Ariel D. Procaccia, and Itai Shapira. "Pairwise Calibrated Rewards for Pluralistic Alignment." arXiv preprint arXiv:2506.06298, 2025.
