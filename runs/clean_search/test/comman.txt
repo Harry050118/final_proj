@@ -16,8 +16,6 @@ Requirements:
 3. Cite only papers that are actually relevant to the inferred topic, task, method, and contribution.
 4. Do not cite papers only because they share keywords with the input paper.
 5. Do not invent papers, citations, datasets, numeric results, comparisons, or unsupported claims.
-6. Organize the Related Work section into coherent research themes.
-7. At the end, provide a list of all cited papers with title, authors, year, and source if available.
 
 Input condition: A1 Clean Search.
 

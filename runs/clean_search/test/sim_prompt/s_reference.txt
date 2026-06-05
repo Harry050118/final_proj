@@ -1,27 +1,47 @@
-[1] Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. "The Curious Case of Neural Text Degeneration." In International Conference on Learning Representations (ICLR), 2020. arXiv:1904.09751.
+[1] A. Holtzman, J. Buys, L. Du, M. Forbes, and Y. Choi. "The Curious Case of Neural Text Degeneration." ICLR, 2020.
 
-[2] Behnam Mohammadi. "Creativity Has Left the Chat: The Price of Debiasing Language Models." arXiv:2406.05587, 2024.
+[2] Y. Su, T. Lan, Y. Wang, D. Yogatama, L. Kong, and N. Collier. "A Contrastive Framework for Neural Text Generation." NeurIPS, 2022.
 
-[3] Yanzhu Guo, Guokan Shang, and Chloé Clavel. "Benchmarking Linguistic Diversity of Large Language Models." arXiv:2412.10271, 2024.
+[3] Y. Zhang, H. Diddee, S. Holm, H. Liu, X. Liu, et al. "NoveltyBench: Evaluating Language Models for Humanlike Diversity." arXiv:2504.05228, 2025.
 
-[4] Longfei Yun, Chenyang An, Zilong Wang, Letian Peng, and Jingbo Shang. "The Price of Format: Diversity Collapse in LLMs." arXiv:2505.18949, 2025.
+[4] F. Le Bronnec, A. Verine, B. Negrevergne, Y. Chevaleyre, and A. Allauzen. "Exploring Precision and Recall to assess the quality and diversity of LLMs." arXiv:2402.10693, 2024.
 
-[5] Yiming Zhang, Harshita Diddee, Susan Holm, Hanchen Liu, Xinyue Liu, et al. "NoveltyBench: Evaluating Language Models for Humanlike Diversity." arXiv:2504.05228, 2025.
+[5] Y. Guo, G. Shang, and C. Clavel. "Benchmarking Linguistic Diversity of Large Language Models." arXiv:2412.10271, 2024.
 
-[6] Nguyen Nhat Minh, Andrew Baker, Clement Neo, Allen Roush, Andreas Kirsch, et al. "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs." arXiv:2407.01082, 2024.
+[6] W. Zhao, X. Ren, J. Hessel, C. Cardie, Y. Choi, et al. "WildChat: 1M ChatGPT Interaction Logs in the Wild." arXiv:2405.01470, 2024.
 
-[7] Wenting Zhao, Xiang Ren, Jack Hessel, Claire Cardie, Yejin Choi, et al. "WildChat: 1M ChatGPT Interaction Logs in the Wild." arXiv:2405.01470, 2024.
+[7] Y. Wu, J. Mei, M. Yan, C. Li, S. Lai, et al. "WritingBench: A Comprehensive Benchmark for Generative Writing." arXiv:2503.05244, 2025.
 
-[8] Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Tianle Li, Siyuan Zhuang, et al. "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset." arXiv:2309.11998, 2023.
+[8] H. Zhang, D. Duckworth, D. Ippolito, and A. Neelakantan. "Trading Off Diversity and Quality in Natural Language Generation." arXiv:2004.10450, 2020.
 
-[9] Aida Mostafazadeh Davani, Mark Diaz, and Vinodkumar Prabhakaran. "Dealing with Disagreements: Looking Beyond the Majority Vote in Subjective Annotations." In Transactions of the Association for Computational Linguistics (TACL), 2022. arXiv:2110.05719.
+[9] N. N. Minh, A. Baker, C. Neo, A. Roush, A. Kirsch, et al. "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs." arXiv:2407.01082, 2024.
 
-[10] Michiel A. Bakker, Martin J. Chadwick, Hannah R. Sheahan, Michael Henry Tessler, Lucy Campbell-Gillingham, et al. "Fine-tuning language models to find agreement among humans with diverse preferences." In Advances in Neural Information Processing Systems (NeurIPS), 2022. arXiv:2211.15006.
+[10] V. Padmakumar and H. He. "Does Writing with Language Models Reduce Content Diversity?" arXiv:2309.05196, 2023.
 
-[11] Louis Castricato, Nathan Lile, Rafael Rafailov, Jan-Philipp Fränken, and Chelsea Finn. "PERSONA: A Reproducible Testbed for Pluralistic Alignment." arXiv:2407.17387, 2024.
+[11] M. Briesch, D. Sobania, and F. Rothlauf. "Large Language Models Suffer From Their Own Output: An Analysis of the Self-Consuming Training Loop." arXiv:2311.16822, 2023.
 
-[12] Michael J.Q. Zhang, Zhilin Wang, Jena D. Hwang, Yi Dong, Olivier Delalleau, et al. "Diverging Preferences: When do Annotators Disagree and do Models Know?" arXiv:2410.14632, 2024.
+[12] Y. Guo, G. Shang, M. Vazirgiannis, and C. Clavel. "The Curious Decline of Linguistic Diversity: Training Language Models on Synthetic Text." arXiv:2311.09807, 2023.
 
-[13] Zhouhang Xie, Junda Wu, Yiran Shen, Yu Xia, Xintong Li, et al. "A Survey on Personalized and Pluralistic Preference Alignment in Large Language Models." arXiv:2504.07070, 2025.
+[13] I. Rios-Sialer. "Structure-Aware Diversity Pursuit as an AI Safety Strategy against Homogenization." arXiv:2601.06116, 2026.
 
-[14] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, LJ Miranda, Bill Yuchen Lin, et al. "RewardBench: Evaluating Reward Models for Language Modeling." arXiv:2403.13787, 2024.
+[14] L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. L. Wainwright, P. Mishkin, C. Zhang, S. Agarwal, K. Slama, A. Ray, et al. "Training language models to follow instructions with human feedback." NeurIPS, 2022.
+
+[15] R. Rafailov, A. Sharma, E. Mitchell, S. Ermon, C. D. Manning, and C. Finn. "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." NeurIPS, 2023.
+
+[16] N. Lambert, V. Pyatkin, J. Morrison, L. Miranda, B. Y. Lin, et al. "RewardBench: Evaluating Reward Models for Language Modeling." arXiv:2403.13787, 2024.
+
+[17] Z. Wang, Y. Dong, O. Delalleau, J. Zeng, G. Shen, et al. "HelpSteer2: Open-source dataset for training top-performing reward models." arXiv:2406.08673, 2024.
+
+[18] Z. Wang, J. Zeng, O. Delalleau, H.-C. Shin, F. Soares, et al. "HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages." arXiv:2505.11475, 2025.
+
+[19] S. Kim, J. Shin, Y. Cho, J. Jang, S. Longpre, et al. "Prometheus: Inducing Fine-grained Evaluation Capability in Language Models." arXiv:2310.08491, 2023.
+
+[20] L. Zheng, W.-L. Chiang, Y. Sheng, S. Zhuang, Z. Wu, et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena." NeurIPS, 2023.
+
+[21] M. A. Bakker, M. J. Chadwick, H. R. Sheahan, M. H. Tessler, L. Campbell-Gillingham, et al. "Fine-tuning language models to find agreement among humans with diverse preferences." NeurIPS, 2022.
+
+[22] V. Padmakumar, C. Jin, H. R. Kirk, and H. He. "Beyond the Binary: Capturing Diverse Preferences With Reward Regularization." arXiv:2412.03822, 2024.
+
+[23] M. J. Q. Zhang, Z. Wang, J. D. Hwang, Y. Dong, O. Delalleau, et al. "Diverging Preferences: When do Annotators Disagree and do Models Know?" arXiv:2410.14632, 2024.
+
+[24] Z. Xie, J. Wu, Y. Shen, Y. Xia, X. Li, et al. "A Survey on Personalized and Pluralistic Preference Alignment in Large Language Models." arXiv:2504.07070, 2025.
